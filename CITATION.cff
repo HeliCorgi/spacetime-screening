@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use ideas, text, or code from this repository, please cite the repository and the relevant referenced literature."
+title: "Spacetime Screening: A Curvature-Induced Transition Beyond Black-Hole Singularities"
+type: software
+authors:
+  - family-names: "HeliCorgi"
+    alias: "HeliCorgi"
+repository-code: "https://github.com/HeliCorgi/spacetime-screening"
+url: "https://github.com/HeliCorgi/spacetime-screening"
+date-released: 2026-09-21
+abstract: >-
+  Exploratory research repository studying whether black-hole singularities
+  can be replaced by curvature-induced gravitational screening, finite-curvature
+  cores, or a transition to a non-geometric quantum phase.
+keywords:
+  - quantum gravity
+  - black holes
+  - regular black holes
+  - curvature screening
+  - spacetime emergence
+  - singularity resolution
