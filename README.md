@@ -115,6 +115,7 @@ A viable model should satisfy, at minimum:
 - [docs/spacetime-phase-transition.md](docs/spacetime-phase-transition.md) — branch changes and non-geometric phases.
 - [docs/open-problems.md](docs/open-problems.md) — failure modes and unresolved questions.
 - [notes/derivations.md](notes/derivations.md) — derivations and toy calculations.
+- [notes/effective-stress-energy.md](notes/effective-stress-energy.md) — Hayward effective density, pressures, conservation, and energy conditions.
 - [src/](src/) — future symbolic/numerical code.
 
 ## Starting references
