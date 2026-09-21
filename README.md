@@ -411,3 +411,4 @@ See:
 - [notes/ss-completion-ambiguity.md](notes/ss-completion-ambiguity.md)
 - [notes/nlqt-base-hessian-inheritance.md](notes/nlqt-base-hessian-inheritance.md)
 - [notes/nlqt-zero-kernel-kinetic-core-status.md](notes/nlqt-zero-kernel-kinetic-core-status.md)
+- [notes/cosmological-heavy-seed-interface.md](notes/cosmological-heavy-seed-interface.md) — Chon et al. heavy-seed cosmological simulation as a realistic outer-boundary benchmark for screened-BH formation/accretion.
