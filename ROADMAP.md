@@ -361,7 +361,7 @@ The 4D NLQT branch should no longer require exact Hayward asymptotics.
 
 Reason:
 
-- normalized Cotton/Weyl NPG bases fail the smooth-core differentiability gate;
+- bare normalized Cotton/Weyl projectors are nondifferentiable at a smooth core, while the full NPQT rational densities still require an explicit C²-extension test;
 - analytic 4D GQTG bases are differentiable order by order but their first
   genuine correction is cubic;
 - cubic GQTG changes Schwarzschild at \(O(r^{-6})\), while Hayward changes it
@@ -390,3 +390,26 @@ Then:
 
 The screening mechanism, not the exact Hayward metric, is now the invariant
 design target.
+
+
+## NPQT full-density differentiability refinement
+
+The normalized-projector warning has been narrowed.
+
+The 2025 four-dimensional NPQT densities contain high-degree curvature
+numerators multiplying their common rational denominator.  Therefore the
+complete density can have harmless \(O(\delta R^3)\) fixed-ray scaling even
+though the normalized directional building blocks themselves are singular.
+
+The unresolved gate is now:
+
+1. factor the full rational numerator/denominator near a maximally symmetric
+   core;
+2. determine the full denominator-zero set in algebraic curvature space;
+3. test whether each numerator vanishes with sufficient multiplicity on that
+   set;
+4. construct, or rule out, a C² covariant extension;
+5. only then use that NPQT density as the 4D base of NLQT.
+
+This is a more precise target than declaring all non-polynomial/projector
+bases unsuitable.
