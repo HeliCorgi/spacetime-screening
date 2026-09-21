@@ -437,3 +437,97 @@ python src/symbolic/nonlocal_qtg_gate.py
 \`\`\`
 
 together with the existing GQTG core-scaling scripts.
+
+
+## 10. Generic factorization warning
+
+The zero-free entire-function argument should not be extended beyond the
+subspaces on which the source proves the required operator identities.
+
+Schematically the quadratic operator is
+
+\[
+\mathcal Q
+=
+\mathcal D
++
+\hat{\mathcal D}^{\dagger}
+\mathcal F(\hat{\mathcal D})
+\hat{\mathcal D}.
+\]
+
+On the proven subspace,
+
+\[
+\mathcal D
+=
+\hat{\mathcal D}
+=
+\hat{\mathcal D}^{\dagger},
+\]
+
+so
+
+\[
+\mathcal Q
+=
+\hat{\mathcal D}
+e^{\Omega(\hat{\mathcal D})}.
+\]
+
+For a generic nonspherical regular-black-hole perturbation define
+
+\[
+\Delta\mathcal D
+=
+\mathcal D-\hat{\mathcal D}.
+\]
+
+Even in a commuting scalar toy reduction,
+
+\[
+\mathcal D=h+\delta,
+\qquad
+\hat{\mathcal D}=h,
+\]
+
+the quadratic eigenvalue becomes
+
+\[
+Q(h,\delta)
+=
+\delta
++
+h e^{\Omega(h)}.
+\]
+
+The exponential can be zero-free while \(Q\) still vanishes because of the
+mismatch term \(\delta\).
+
+Therefore:
+
+\[
+\boxed{
+e^{\Omega}\ \text{zero-free}
+\not\Rightarrow
+\mathcal Q\ \text{zero-kernel}
+}
+\]
+
+unless the factorizing operator relation is established.
+
+This does not demonstrate an NLQT ghost.  It identifies the exact operator
+that must be controlled next:
+
+\[
+\boxed{
+\Delta\mathcal D_{\rm odd/even}
+=
+\delta
+\left(
+2\nabla^c\nabla^dP_{acbd}
+\right).
+}
+\]
+
+See \`src/symbolic/nonlocal_qtg_nonspherical_gate.py\`.
