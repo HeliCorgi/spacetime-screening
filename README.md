@@ -380,3 +380,34 @@ the workflow is enabled in this repository.
 Early-stage research repository. The project is deliberately adversarial:
 candidate models are expected to fail tests, and those failures are treated as
 useful results.
+
+
+## NLQT status: restricted PASS, generic 4D sector still open
+
+The current leading candidate, nonlocal QTG, passes several important gates:
+
+- exact regular spherical background;
+- restored derivative order relative to local QT;
+- zero-free form-factor proof on maximally symmetric backgrounds;
+- zero-kernel proof on the spherical perturbation subspace;
+- ordinary massless-graviton pole structure on flat space.
+
+But the repository does **not** presently claim generic four-dimensional
+principal safety.
+
+Two obstructions remain:
+
+1. the spherical response does not uniquely determine the off-spherical
+   quadratic action;
+2. the nonlocal operator inherits the differentiability of the chosen local
+   QT base action.
+
+Therefore the next NLQT task starts by choosing a differentiable full 4D QT
+base action, not merely by specifying the Hayward response \(h(\psi)\).
+
+See:
+
+- [notes/principal-gate-classII-nlqt.md](notes/principal-gate-classII-nlqt.md)
+- [notes/ss-completion-ambiguity.md](notes/ss-completion-ambiguity.md)
+- [notes/nlqt-base-hessian-inheritance.md](notes/nlqt-base-hessian-inheritance.md)
+- [notes/nlqt-zero-kernel-kinetic-core-status.md](notes/nlqt-zero-kernel-kinetic-core-status.md)
