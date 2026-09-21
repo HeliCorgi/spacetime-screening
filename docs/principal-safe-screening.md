@@ -396,3 +396,69 @@ A candidate intended as a smooth effective spacetime should therefore either:
 1. keep the required curvature-derivative invariants finite; or
 2. explicitly declare the derivative expansion invalid and replace it by a
    better-defined microscopic/nonlocal description before that point.
+
+
+## 15. Auxiliary derivative-mixing gate
+
+For a quadratic principal kinetic sector
+
+\[
+\mathcal L_{\rm kin}
+=
+\frac12\dot x^{\rm T}A\dot x
++
+\dot x^{\rm T}B\dot y
++
+\frac12\dot y^{\rm T}C\dot y,
+\]
+
+with a healthy block
+
+\[
+A>0,
+\]
+
+the reduced kinetic matrix after completing the healthy square is
+
+\[
+\boxed{
+K_{\rm red}
+=
+C-B^{\rm T}A^{-1}B.
+}
+\]
+
+Therefore, if an extra field sector has no direct kinetic term,
+
+\[
+C=0,
+\]
+
+then
+
+\[
+\boxed{
+K_{\rm red}
+=
+-B^{\rm T}A^{-1}B
+\le0.
+}
+\]
+
+Any derivative-active direction that survives the constraint/gauge reduction
+inherits negative kinetic sign.
+
+This gives a fast action-selection gate:
+
+1. identify fields with vanishing bare kinetic matrix;
+2. compute their derivative mixing \(B\) with healthy physical modes;
+3. if \(B\neq0\), require an explicit constraint/gauge proof that every
+   active direction is removed;
+4. otherwise reject the candidate before relying on background regularity.
+
+The two-vector Hayward benchmark is an explicit example: the null vector
+combination is auxiliary, while the derivative-active combination survives
+and becomes a direct asymptotic odd ghost.
+
+See
+[notes/auxiliary-derivative-mixing-lemma.md](../notes/auxiliary-derivative-mixing-lemma.md).
