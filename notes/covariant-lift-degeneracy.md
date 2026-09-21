@@ -432,7 +432,176 @@ principle and notes that:
 
 The present calculation provides a concrete example of that warning.
 
-## 10. Consequence for the tensor-principal-symbol program
+## 10. A branch-adapted square-root lift also becomes nondifferentiable
+
+One can avoid the branch-wide \(0/0\) value by using the traceless-Ricci norm
+directly on the single-function branch.
+
+There,
+
+\[
+I_{\hat R^2}
+=
+\frac14(\mathcal R-2\psi)^2.
+\]
+
+Together with
+
+\[
+I_R
+=
+\mathcal R-4\eta+2\psi,
+\]
+
+this gives, on a branch of fixed sign,
+
+\[
+\psi
+=
+\eta+\frac{I_R}{4}
+\pm\frac12\sqrt{I_{\hat R^2}}.
+\]
+
+For the Hayward solution,
+
+\[
+\mathcal R-2\psi<0
+\]
+
+for finite \(r>0\), so the appropriate branch is
+
+\[
+\boxed{
+\psi
+=
+\eta+\frac{I_R}{4}
++\frac12\sqrt{I_{\hat R^2}}.
+}
+\]
+
+This reconstructs the correct value without the \(0/0\).
+
+However,
+
+\[
+\frac{\partial\psi}
+{\partial I_{\hat R^2}}
+=
+\frac{1}{4\sqrt{I_{\hat R^2}}},
+\]
+
+which diverges when the traceless Ricci tensor vanishes.
+
+For Hayward,
+
+\[
+I_{\hat R^2}
+=
+\frac{
+1296M^4\ell^4r^6
+}{
+(r^3+2M\ell^2)^6
+},
+\]
+
+so it vanishes both at the de Sitter core and asymptotically.
+
+Thus the square-root alternative trades a value singularity for a
+differentiability singularity.
+
+See
+\`src/symbolic/branch_adapted_lift.py\`.
+
+## 11. Weyl-ratio densities have additional degeneracy surfaces
+
+The representative density
+
+\[
+\mathcal H
+=
+-\frac16 I_R
++
+\frac{I_{C^3}}{I_{C^2}}
+\]
+
+contains a Weyl-invariant ratio.
+
+On a warped product,
+
+\[
+I_{C^2}
+=
+\frac{\Omega^2}{3},
+\qquad
+I_{C^3}
+=
+\frac{\Omega^3}{18},
+\]
+
+so after cancellation,
+
+\[
+\frac{I_{C^3}}{I_{C^2}}
+=
+\frac{\Omega}{6}.
+\]
+
+But the literal four-dimensional derivatives are
+
+\[
+\boxed{
+\frac{\partial\mathcal H}{\partial I_{C^3}}
+=
+\frac{3}{\Omega^2},
+}
+\]
+
+and
+
+\[
+\boxed{
+\frac{\partial\mathcal H}{\partial I_{C^2}}
+=
+-\frac{1}{2\Omega}.
+}
+\]
+
+For the Hayward solution,
+
+\[
+\Omega(r)
+=
+\frac{
+12Mr^3(r^3-4M\ell^2)
+}{
+(r^3+2M\ell^2)^3
+}.
+\]
+
+Therefore
+
+\[
+\Omega=0
+\]
+
+at
+
+\[
+r=0,
+\qquad
+r^3=4M\ell^2,
+\]
+
+and \(\Omega\to0\) at infinity.
+
+So the representative Weyl-ratio lift possesses additional
+nondifferentiable surfaces even apart from the branch-wide
+\(\mathcal P,\mathcal K\) degeneracy.
+
+See
+\`src/symbolic/weyl_ratio_degeneracy.py\`.
+
+## 12. Consequence for the tensor-principal-symbol program
 
 The original next step was:
 
@@ -462,7 +631,7 @@ The next meaningful options are therefore:
    in which case nonspherical perturbations are outside its domain and it
    cannot yet serve as a full four-dimensional screening theory.
 
-## 11. Updated design lesson
+## 13. Updated design lesson
 
 The project now has a fourth regularity requirement in addition to metric and
 principal-symbol regularity:
@@ -486,6 +655,8 @@ Run
 \`\`\`bash
 python src/symbolic/covariant_lift_degeneracy.py
 python src/symbolic/covariant_lift_action_gradient.py
+python src/symbolic/branch_adapted_lift.py
+python src/symbolic/weyl_ratio_degeneracy.py
 \`\`\`
 
 to verify the common factor, the removable spherical ratios, the divergent
