@@ -238,6 +238,52 @@ See:
 - \`src/symbolic/axial_vector_auxiliary.py\`
 - \`notes/odd-parity-vector-auxiliary.md\`
 
+### Odd-vector negative kinetic combination
+
+Using the published generalized-Proca odd-parity quadratic-action structure,
+extended to the additive two-vector action, the repository finds
+
+\[
+K_{\rm vec}
+=
+-\frac{cc^{\rm T}}{C_1}.
+\]
+
+Hence the vector kinetic matrix has one negative eigenvalue and one zero
+eigenvalue whenever the background hair is nonzero.
+
+For \(l=1\), where the local odd gravitational-wave mode is nondynamical, the
+principal vector action reduces to
+
+\[
+\mathcal L_{\rm vec}^{\rm pr}
+=
+-\frac1{C_1}
+\left[
+c^{\rm T}(\dot u-fu')
+\right]^2.
+\]
+
+The corresponding canonical Hamiltonian has a negative quadratic momentum
+term.
+
+**Status:** NEW CALCULATION CANDIDATE — HIGH PRIORITY.
+
+This is currently a stronger viability obstruction than the hidden tensor
+cone, but the project still requires a direct two-vector harmonic expansion
+from the original action before making a publication-level ghost claim.
+
+A targeted search performed in September 2026 did not identify a published
+odd-parity stability analysis of the Eichhorn–Fernandes two-vector regular
+black holes.  This is not a priority claim.
+
+See:
+
+- \`src/symbolic/vector_odd_kinetic_matrix.py\`
+- \`src/symbolic/vector_odd_reduced_principal.py\`
+- \`src/symbolic/vector_l1_odd_ghost.py\`
+- \`notes/vector-odd-kinetic-analysis.md\`
+
 ### Hidden radial TT Schwarzschild characteristic
 
 For a local radial pure-TT perturbation, the repository obtains the principal
@@ -486,6 +532,10 @@ Equivalent technical version:
 ## 13. Immediate priority
 
 ### P0 — complete the vector odd-parity calculation
+
+Current interim result: the standard odd-action reduction gives a rank-one
+negative vector kinetic block and an (l=1) ghost candidate.  This must now be
+verified by direct expansion of the original two-vector action.
 
 Derive from the full action:
 
