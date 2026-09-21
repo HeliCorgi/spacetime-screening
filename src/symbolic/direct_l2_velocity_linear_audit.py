@@ -102,8 +102,6 @@ def main():
     print("One-velocity audit completed.")
 
 
-if __name__=="__main__":
-    main()
 
 
 # ---------------------------------------------------------------------------
@@ -133,3 +131,7 @@ Q_V=sp.factor((Qvec.T*eV)[0])
 assert sp.simplify(J_V)==0
 assert sp.simplify(Q_V)==0
 
+
+
+if __name__=="__main__":
+    main()
