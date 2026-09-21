@@ -559,3 +559,45 @@ Q_H
 
 that can be replaced once the strong-field inner accretion spectrum is
 derived.
+
+
+## 12. End-to-end feedback sensitivity layer
+
+The repository now contains
+
+\`src/numerical/heavy_seed_feedback_sensitivity.py\`,
+
+which joins:
+
+\[
+\text{source-constrained accretion phase}
+\rightarrow
+L_{\rm bol}
+\rightarrow
+Q_H.
+\]
+
+The included example compares the paper's baseline against an intentionally
+phenomenological test closure with:
+
+- a \(50\%\) luminosity transfer factor;
+- a \(30\%\) inner wind mass fraction.
+
+Those numbers are **not** predictions of Spacetime Screening.  They exist only
+to verify that a future strong-field closure can be swapped into the pipeline
+without modifying the cosmological-boundary layer.
+
+With the baseline SED shape held fixed,
+
+\[
+Q_H\propto L_{\rm bol},
+\]
+
+so the interface test must reproduce the same luminosity-transfer factor in
+the ionizing photon rate.
+
+This provides a clean separation between:
+
+1. source-derived cosmological feeding information;
+2. an independently derived strong-field inner solution;
+3. the radiation/kinetic quantities returned to a future AREPO rerun.
