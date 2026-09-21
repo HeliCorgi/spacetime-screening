@@ -353,3 +353,40 @@ Therefore the next NLQT calculation must proceed in this order:
 
 Until step 1 is resolved, the generic odd problem is underdetermined rather
 than merely technically incomplete.
+
+
+## GQTG-compatible regular target
+
+The 4D NLQT branch should no longer require exact Hayward asymptotics.
+
+Reason:
+
+- normalized Cotton/Weyl NPG bases fail the smooth-core differentiability gate;
+- analytic 4D GQTG bases are differentiable order by order but their first
+  genuine correction is cubic;
+- cubic GQTG changes Schwarzschild at \(O(r^{-6})\), while Hayward changes it
+  already at \(O(r^{-4})\).
+
+### New construction target
+
+Find a static spherical regular metric satisfying
+
+\[
+f(r)
+=
+1-\frac{2M}{r}
++O(r^{-6})
+\]
+
+at large \(r\), together with a smooth finite-curvature core and a screened
+curvature response.
+
+Then:
+
+1. inverse-match an analytic 4D GQTG infinite tower to that solution;
+2. test convergence and the resummed curvature Hessian;
+3. use the resulting differentiable base in the NLQT completion;
+4. perform the generic odd/even zero-kernel and kinetic tests.
+
+The screening mechanism, not the exact Hayward metric, is now the invariant
+design target.
