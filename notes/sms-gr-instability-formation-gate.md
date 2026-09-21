@@ -232,3 +232,122 @@ No screening-induced shift is currently claimed.
   *Overmassive black holes and little red dots naturally form in
   simulations*, Nature **657**, 621–625 (2026),
   DOI \`10.1038/s41586-026-10985-8\`.
+
+
+## 7. The GRI starts far below the strong-curvature regime
+
+Saio et al. also tabulate the surface compactness
+
+\[
+\mathcal C_*
+=
+\frac{2GM}{Rc^2}
+\]
+
+at the instability threshold.
+
+Across their GRI models,
+
+\[
+\boxed{
+1.1\times10^{-5}
+\lesssim
+\mathcal C_*
+\lesssim
+1.7\times10^{-4}.
+}
+\]
+
+For the particularly relevant
+
+\[
+\dot M_*=1M_\odot\,{\rm yr}^{-1}
+\]
+
+model,
+
+\[
+\boxed{
+\mathcal C_*=2.9\times10^{-5}.
+}
+\]
+
+This matters for the interpretation of Spacetime Screening.
+
+Using the exterior Schwarzschild curvature only as a scale diagnostic,
+
+\[
+K(r)
+=
+\frac{48M_{\rm geo}^2}{r^6},
+\]
+
+so relative to the same-mass horizon scale,
+
+\[
+\boxed{
+\frac{K(R_*)}{K(2M_{\rm geo})}
+=
+\mathcal C_*^6.
+}
+\]
+
+At \(\dot M_*=1M_\odot\,{\rm yr}^{-1}\),
+
+\[
+\mathcal C_*^6
+\simeq
+5.9\times10^{-28}.
+\]
+
+Even at the most compact tabulated GRI model,
+
+\[
+\mathcal C_*=1.7\times10^{-4},
+\]
+
+the ratio is only of order
+
+\[
+10^{-23}.
+\]
+
+The exact stellar-interior curvature differs from the exterior surface
+estimate, but the scale separation is enormous.
+
+### Consequence
+
+If Spacetime Screening is genuinely a **high-local-curvature** phenomenon
+whose corrections become appreciable only near a black-hole/horizon/core
+scale, then the natural expectation is
+
+\[
+\boxed{
+\Delta M_{\rm crit}\approx0
+}
+\]
+
+at the onset of the SMS GR instability.
+
+A large shift in \(M_{\rm crit}\) would instead mean that the proposed theory
+also modifies weak/post-Newtonian stellar gravity, which would require a
+separate low-curvature consistency analysis.
+
+Thus the formation problem splits into:
+
+\[
+\boxed{
+\text{GR-like GRI onset}
+\longrightarrow
+\text{nonlinear relativistic collapse}
+\longrightarrow
+\text{screening activation at high curvature}.
+}
+\]
+
+The **nonlinear collapse after the instability begins** is therefore the more
+direct singularity-resolution test.
+
+The compactness/curvature scale check is implemented in
+
+\`src/numerical/sms_gri_curvature_separation.py\`.
