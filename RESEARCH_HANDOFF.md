@@ -851,6 +851,109 @@ Only after those checks should its curvature Hessian be fed into NLQT.
 This replaces the earlier mainline idea of solving the problem primarily by
 adding spherical-vanishing squares to the old denominator.
 
+
+## 8.4 Local spectral-cluster PASS away from the core
+
+The first constructive continuation test now passes locally in the
+purely-electric sector.
+
+For a real symmetric tracefree electric-Weyl operator (E) with an isolated
+simple eigenvalue (lambda_s), define
+
+[
+I_2=operatorname{tr}(E^2),
+]
+
+[
+oxed{
+P_s
+=
+rac{
+E^2+lambda_s E+
+left(lambda_s^2-rac12I_2ight)I
+}{
+3lambda_s^2-rac12I_2
+}.
+}
+]
+
+Then (h=I-P_s) projects onto the two-dimensional eigenvalue cluster that
+becomes the repeated spherical/type-D plane.
+
+For
+
+[
+operatorname{spec}(E)=(-2q,q+delta,q-delta),
+]
+
+the gap denominator is
+
+[
+oxed{
+3lambda_s^2-rac12I_2=9q^2-delta^2.
+}
+]
+
+Thus at the type-D point (delta=0), the cluster projector is smooth whenever
+(q
+e0).
+
+With
+
+[
+Theta_{m ext}
+=
+rac12operatorname{tr}(hZ_{m sp}),
+]
+
+the explicit rotated split family gives exactly
+
+[
+oxed{
+Theta_{m ext}=Theta,
+}
+]
+
+independent of the Weyl splitting, the rotation inside the cluster, and
+Ricci anisotropy inside that plane. Hence
+
+[
+oxed{
+T_{m ext}=W_2Theta_{m ext}
+=
+(48q^2+16delta^2)Theta
+	o
+48q^2Theta.
+}
+]
+
+So
+
+[
+oxed{
+	ext{type-D}	o	ext{type-I eigenvalue splitting is not itself a local
+obstruction away from }W=0.
+}
+]
+
+Key files:
+
+- `notes/npqt-principal-plane-spectral-extension.md`;
+- `src/symbolic/npqt_principal_plane_spectral_toy.py`.
+
+The remaining main obstruction is now sharper:
+
+[
+oxed{
+	ext{construct one generic 4D, magnetic-Weyl-aware, single-valued }
+C^2
+	ext{ extension through }W=0.
+}
+]
+
+That construction must also control type-II/III/N directions and global
+branch selection before the curvature Hessian is meaningful.
+
 ---
 
 # 9. Normalized-projector warning
@@ -1301,28 +1404,31 @@ Continue the **4D NPQT representative-design problem**.
 
 Start from:
 
-- \`notes/npqt-explicit-singular-direction.md\`
-- \`notes/npqt-petrov-regulator-toy.md\`
-- \`notes/nlqt-no-perturbative-base-rescue.md\`
-- \`notes/principal-gate-classII-nlqt.md\`
+- `notes/npqt-explicit-singular-direction.md`
+- `notes/npqt-petrov-regulator-toy.md`
+- `notes/npqt-petrov-regulator-continuity-gate.md`
+- `notes/npqt-principal-plane-spectral-extension.md`
+- `notes/nlqt-no-perturbative-base-rescue.md`
+- `notes/principal-gate-classII-nlqt.md`
 
 Immediate goal:
 
-\[
-\boxed{
-\text{construct a full covariant 4D representative with}
-}
-\]
+[
+oxed{
+	ext{construct a full covariant 4D extension of }W_2Theta
+]
 
-\[
-\boxed{
-\text{same spherical reduction}
+with
+
+[
+oxed{
+	ext{same spherical reduction}
 +
-\text{no real off-spherical pole}
+	ext{generic off-spherical single-valuedness}
 +
-C^2\text{ core extension}.
+C^2	ext{ core extension}.
 }
-\]
+]
 
 Then compute its curvature Hessian and only after that feed it into the NLQT
 operator.
@@ -1385,19 +1491,21 @@ Read in this order:
 
 Then, for the current main theoretical task:
 
-7. \`notes/npqt-explicit-singular-direction.md\`
-8. \`notes/npqt-petrov-regulator-toy.md\`
-9. \`notes/nlqt-no-perturbative-base-rescue.md\`
-10. \`notes/principal-gate-classII-nlqt.md\`
+7. `notes/npqt-explicit-singular-direction.md`
+8. `notes/npqt-petrov-regulator-toy.md`
+9. `notes/npqt-petrov-regulator-continuity-gate.md`
+10. `notes/npqt-principal-plane-spectral-extension.md`
+11. `notes/nlqt-no-perturbative-base-rescue.md`
+12. `notes/principal-gate-classII-nlqt.md`
 
 For dynamical formation:
 
-11. \`notes/cosmological-heavy-seed-interface.md\`
-12. \`notes/sms-gr-instability-formation-gate.md\`
-13. \`notes/sms-post-gri-fate-gate.md\`
-14. \`notes/sms-screening-activation-scale.md\`
-15. \`notes/sms-gr-collapse-endpoints.md\`
-16. \`notes/sms-formation-systematics.md\`
+13. `notes/cosmological-heavy-seed-interface.md`
+14. `notes/sms-gr-instability-formation-gate.md`
+15. `notes/sms-post-gri-fate-gate.md`
+16. `notes/sms-screening-activation-scale.md`
+17. `notes/sms-gr-collapse-endpoints.md`
+18. `notes/sms-formation-systematics.md`
 
 ---
 
@@ -1431,12 +1539,15 @@ A future session can resume with:
 
 > Read \`RESEARCH_HANDOFF.md\`, \`NOVELTY.md\`, and \`ROADMAP.md\` from
 > HeliCorgi/spacetime-screening and continue from the current mainline.
-> Prioritize the 4D NPQT off-spherical representative-design problem:
-> improve the Petrov-discriminant regulator into a genuinely regular
-> covariant representative with the same spherical reduction, no real
-> Lorentzian denominator-zero pole, and a C² extension at the maximally
-> symmetric core.  Use the heavy-seed/SMS work only as the dynamical-formation
-> benchmark.  Commit substantive calculations directly and use Issue #1 as
-> the CI handoff.
+> Prioritize the 4D NPQT off-spherical representative-design problem.
+> The Petrov-discriminant denominator toy is now known to fail already at C0
+> on a spherical simultaneous-zero set. Start instead from the exact
+> spherical target (N/D=W_2Theta) and the local principal-plane spectral
+> extension. Construct a magnetic-Weyl-aware, single-valued covariant
+> extension of (W_2Theta) and test whether it is genuinely C² through the
+> maximally symmetric (W=0) core before feeding its Hessian into NLQT.
+> Use the heavy-seed/SMS work only as the dynamical-formation benchmark.
+> Commit substantive calculations directly and use Issue #1 as the CI
+> handoff.
 
 That is the intended restart point.
