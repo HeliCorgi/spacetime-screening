@@ -413,3 +413,51 @@ The unresolved gate is now:
 
 This is a more precise target than declaring all non-polynomial/projector
 bases unsuitable.
+
+
+## Chon et al. heavy-seed formation benchmark
+
+The 2026 Nature simulation by Chon et al. provides a realistic external
+formation/accretion environment for \(10^6M_\odot\)-class heavy seeds.
+
+This is useful for Phase 4, but only with a clean scale separation.
+
+The AREPO calculation follows cosmological collapse, protostellar growth,
+Bondi-scale gas capture, radiation feedback and host-galaxy assembly, while
+the actual strong-field interior is represented by sink/BH particles.
+
+Published subgrid interfaces include:
+
+- stellar-sink \(\rightarrow\) BH-particle conversion;
+- unresolved accretion inside a sink/Bondi radius;
+- a fixed \(\epsilon_r=0.1\) slim-disk luminosity prescription;
+- no kinetic jet/wind feedback;
+- BH particle mergers below 10 physical pc.
+
+The high-resolution accretion follow-up reaches about 500 au.  For a
+\(10^6M_\odot\) BH this is roughly \(2.5\times10^4\) Schwarzschild radii.
+
+### Project use
+
+Treat the cosmological simulation as an **outer-boundary generator**, not as a
+direct test of singularity resolution.
+
+The minimum handoff is
+
+\[
+\{M,\dot M,\rho,T,j\}_{r_{\rm sink}}
+\longrightarrow
+\text{screened strong-field model}
+\longrightarrow
+\{M_{\rm grav},L_{\rm bol},{\rm SED},\epsilon_{\rm rad},
+\dot M_{\rm wind},\dot E_{\rm kin}\}.
+\]
+
+The first practical experiment does not require modifying AREPO:
+
+1. obtain a heavy-seed \(M(t),\dot M(t)\) history from the published run;
+2. feed it into the screened-BH inner model;
+3. replace the fixed slim-disk luminosity closure;
+4. compare growth and ionizing feedback.
+
+See \`notes/cosmological-heavy-seed-interface.md\`.
