@@ -788,7 +788,95 @@ directions.
 See
 [notes/covariant-lift-degeneracy.md](notes/covariant-lift-degeneracy.md).
 
-## 16. Phase-transition hypothesis
+
+## 16. QTG-TNT regularity by singular constitutive law
+
+A separate June 2026 four-dimensional construction extends
+quasi-topological integrability to the full Taub-NUT-type symmetry class.
+
+Its first-order family has action
+
+\[
+I_1
+=
+\int\sqrt{-g}
+\left[
+-2\Lambda+R+A(\ell^2R_3)R_4
+\right].
+\]
+
+For the static spherical SF branch,
+
+\[
+R_4=0,
+\qquad
+R_3=\frac{2(1-a)}{r^2}.
+\]
+
+The simple infinite-tower choice
+
+\[
+A(x)=\frac{2x}{1-x}
+\]
+
+gives the exact metric
+
+\[
+a(r)
+=
+\frac{
+(r-2m)(r^2-2\ell^2)
+}{
+r^3-2r\ell^2+4m\ell^2
+}.
+\]
+
+The center has finite polynomial curvature,
+
+\[
+R(0)=\frac6{\ell^2},
+\qquad
+K(0)=\frac6{\ell^4},
+\]
+
+but
+
+\[
+\Box R\sim\frac{10}{m\ell^2r}.
+\]
+
+More importantly, the reduced field equation requires
+
+\[
+x=\ell^2R_3\to1
+\]
+
+at the regular center, exactly where
+
+\[
+A(x)\to\infty.
+\]
+
+Thus this model regularizes the metric through a **singular constitutive
+function** rather than a smoothly vanishing curvature susceptibility.
+
+The theory's representative invariants are non-analytic and the SF branch is
+defined by \(R_4=0\). Generic off-symmetry perturbative differentiability is
+not established and is outside the source paper's scope.
+
+This provides another design constraint:
+
+\[
+\boxed{
+\text{finite curvature produced by a singular action derivative is not
+principal-safe screening}.
+}
+\]
+
+See
+[notes/qtg-tnt-2026-benchmark.md](notes/qtg-tnt-2026-benchmark.md).
+
+## 17. Phase-transition hypothesis
 
 The stronger version of the project is
 
@@ -814,7 +902,7 @@ A conceptual state-space picture is
 
 where states in \(\mathcal H_{\rm geometric}\) admit an approximate description by \((M,g_{\mu\nu},\Phi)\), while sufficiently quantum states need not.
 
-## 17. What would count as success
+## 18. What would count as success
 
 A serious model must derive, rather than assume:
 
