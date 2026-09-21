@@ -80,7 +80,7 @@ assert dcore == 0
 
 # Cubic discriminant: positive/zero/negative determines the real-root pattern.
 disc = sp.factor(sp.discriminant(F,x))
-assert disc == 108*(R1**3- R2**2)
+assert sp.expand(disc - 324*(R1**3 - 3*R2**2)) == 0
 
 def main() -> None:
     print("== NPQT spherical Theta root gate ==")

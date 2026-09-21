@@ -110,8 +110,8 @@ F = sp.factor((a - theta) ** 2 - b**2)
 S = sp.factor(-a**2 + 2 * a * theta + b**2 + 3 * theta**2)
 
 assert W2 == 48 * q**2
-assert M22 == -4 * q * F * S
-assert M23 == 4 * q * theta * F * S
+assert sp.expand(M22 + 4 * q * F * S) == 0
+assert sp.expand(M23 - 4 * q * theta * F * S) == 0
 assert sp.simplify(M23 + theta * M22) == 0
 
 T_alt = sp.factor(-W2 * M23 / M22)

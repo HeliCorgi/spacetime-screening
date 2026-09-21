@@ -79,7 +79,7 @@ for a, b in itertools.product(range(4), repeat=2):
         value += C[a, c, d, e] * C_b_up
     S[a, b] = sp.factor(value)
 
-assert W2 == 16 * (e1**2 + e1 * e2 + e2**2)
+assert sp.expand(W2 - 16 * (e1**2 + e1 * e2 + e2**2)) == 0
 assert sp.simplify(S - eta * W2 / 4) == sp.zeros(4)
 
 z0, z1, z2 = sp.symbols("z0 z1 z2", real=True)

@@ -55,7 +55,7 @@ assert k_norm == -T
 # Scalar principal polynomial P(xi)=g^{ab} xi_a xi_b.
 xi = sp.Matrix([xi_T, xi_psi])
 P = sp.factor((xi.T * g_inv * xi)[0])
-assert P == T * xi_T**2 - 2 * xi_T * xi_psi
+assert sp.expand(P - (T * xi_T**2 - 2 * xi_T * xi_psi)) == 0
 
 # The horizon T=0 is characteristic: its normal is dT.
 dT = sp.Matrix([1, 0])
