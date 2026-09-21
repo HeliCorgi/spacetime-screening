@@ -1,0 +1,8 @@
+mdot_msun_per_yr,metallicity_zsun,log_tc_gri,m_gri_msun,m_core_gri_msun,outcome,log_tc_max,e_nuc_1e54_erg,m_ejected_msun,e_kin_1e54_erg,source
+0.1,0,8.184,53250,23750,collapse,,,,,NageleUmeda2024
+1,0,8.202,93560,17560,pulsation,8.709,1.059,3051,0.1312,NageleUmeda2024
+10,0,8.199,141800,9349,pulsation,8.471,0.6154,0,0,NageleUmeda2024
+50,0,8.226,213800,5881,pulsation,8.519,1.138,1046,0.01036,NageleUmeda2024
+90,0,8.239,264800,10200,collapse,,,,,NageleUmeda2024
+100,0,8.253,274200,7148,collapse,,,,,NageleUmeda2024
+200,0,8.254,184600,6954,pulsation,8.649,1.792,3878,0.1255,NageleUmeda2024
