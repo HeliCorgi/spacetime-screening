@@ -325,3 +325,31 @@ uses a zero-free entire form factor.
 \]
 
 with the 4D base-action differentiability issue tracked separately.
+
+
+## NLQT prerequisite: fix the 4D off-spherical completion
+
+The source-proven zero-kernel result does not determine generic nonspherical
+regular-black-hole perturbations in four dimensions.
+
+Reason:
+
+- the spherical response \(h(\psi)\) does not uniquely determine the odd
+  quadratic action;
+- a covariant deformation such as \(({}^\star RR)^2\) can leave the entire
+  spherical background unchanged while modifying odd perturbations;
+- \(\hat{\mathcal D}\) inherits the curvature Hessian of the chosen QT base
+  action.
+
+Therefore the next NLQT calculation must proceed in this order:
+
+1. select a differentiable full 4D QT base action;
+2. verify its curvature Hessian on the regular core;
+3. derive \(\hat{\mathcal D}_{\rm odd}\);
+4. derive \(\mathcal D_{\rm odd}\);
+5. compute \(\Delta\mathcal D_{\rm odd}\);
+6. test the complete nonlocal odd operator for zero kernel, kinetic sign,
+   hyperbolicity and core regularity.
+
+Until step 1 is resolved, the generic odd problem is underdetermined rather
+than merely technically incomplete.
