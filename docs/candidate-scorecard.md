@@ -427,3 +427,63 @@ nonlocal form factor.
 
 **Next prerequisite:** specify a differentiable off-spherical 4D QT base
 action before computing the full NLQT odd operator.
+
+
+## 4D base-action search update
+
+The latest search narrows the 4D NLQT base options further.
+
+### Normalized Cotton/Weyl NPG representatives
+
+Recent 4D non-polynomial gravities admit exact regular black holes and even
+non-conformally-flat vacuum geometries.  This helps away from conformally-flat
+regions.
+
+However, a smooth spherical center has
+
+\[
+C_{\mu\nu\rho\sigma}=O(r^2),
+\qquad
+C_{\alpha\beta\gamma}^{\rm Cotton}=O(r),
+\]
+
+so normalized direction tensors schematically of the form
+
+\[
+u\sim\frac{CC}{C^2}
+\]
+
+have generic first/second variations scaling like
+
+\[
+\delta u\sim r^{-1},
+\qquad
+\delta^2u\sim r^{-2}.
+\]
+
+Thus the non-conformally-flat-vacuum construction does not automatically pass
+the regular-core Hessian gate.
+
+### Analytic 4D GQTG base
+
+Polynomial GQTG densities avoid the normalized-projector problem order by
+order.  However, the genuine 4D family starts at cubic curvature order.
+
+Its Schwarzschild asymptotic corrections begin at
+
+\[
+\delta f_3=O(r^{-6}),
+\]
+
+whereas exact Hayward begins at
+
+\[
+\delta f_H=O(r^{-4}).
+\]
+
+Therefore exact Hayward cannot be inherited from a normally convergent
+analytic 4D GQTG tower.
+
+**Design decision:** a principal-safe 4D NLQT program should stop requiring
+the exact Hayward metric and instead search for a regular screening solution
+with GQTG-compatible asymptotics.
