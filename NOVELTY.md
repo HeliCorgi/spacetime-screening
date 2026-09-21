@@ -806,6 +806,61 @@ See:
 - `src/symbolic/npqt_selfdual_principal_plane_toy.py`
 - `notes/npqt-selfdual-principal-plane-extension.md`
 
+### Self-dual Weyl branch-monodromy obstruction
+
+The local self-dual spectral continuation does not provide a global Weyl-only
+eigenline label.
+
+For the explicit complex symmetric tracefree family
+
+[
+mathcal W(t)
+=
+egin{pmatrix}
+a&b&0\\
+b&-a&0\\
+0&0&0
+end{pmatrix},
+qquad
+a=rac{1+t}{2},
+qquad
+b=rac{1-t}{2i},
+]
+
+with (t=s^2),
+
+[
+chi(lambda)
+=
+lambda(lambda^2-t).
+]
+
+Although
+
+[
+mathcal W(s)=mathcal W(-s),
+]
+
+the nonzero eigenprojectors are exchanged:
+
+[
+P_+(-s)=P_-(s).
+]
+
+A generic Ricci contraction distinguishes the two sheets, and the whole loop
+can be scaled arbitrarily close to (W=0).
+
+**Status:** NEW CALCULATION CANDIDATE / OBSTRUCTION TO GLOBAL WEYL-ONLY
+EIGENLINE SELECTION.
+
+This does not rule out permutation-symmetric or mixed Weyl-Ricci
+representatives.
+
+See:
+
+- `src/symbolic/npqt_selfdual_branch_monodromy.py`
+- `notes/npqt-selfdual-branch-monodromy.md`
+
 ## 10. Nonlocal zero-free form factor
 
 The use of zero-free entire functions to avoid additional propagator poles is
