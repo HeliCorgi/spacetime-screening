@@ -132,6 +132,8 @@ A viable model should satisfy, at minimum:
 - [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md) — radial pure-TT characteristic cone and the hidden Schwarzschild geometry.
 - [notes/pure-gravity-qtg-benchmark.md](notes/pure-gravity-qtg-benchmark.md) — intrinsic curvature screening in four-dimensional nonpolynomial quasitopological gravity.
 - [notes/covariant-lift-degeneracy.md](notes/covariant-lift-degeneracy.md) — why the explicit rational 4D lift is 0/0 on the single-function branch and nondifferentiable off it.
+- [notes/r4-differentiability.md](notes/r4-differentiability.md) — square-root cusp and divergent curvature derivatives of the 2026 QTG-TNT (R_4) representative.
+- [notes/r4-analyticity-obstruction.md](notes/r4-analyticity-obstruction.md) — why nontrivial first-order Class-I QTG-TNT is structurally non-analytic.
 - [notes/limiting-curvature-response.md](notes/limiting-curvature-response.md) — inverse-response falloff and `beta_eff -> 2` limiting-curvature diagnostic.
 - [notes/nonlocal-zero-free-form-factor.md](notes/nonlocal-zero-free-form-factor.md) — generic zero-free entire-form-factor pole test for the nonlocal v2 direction.
 - [src/](src/) — reproducible symbolic/numerical code.
