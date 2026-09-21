@@ -83,6 +83,67 @@ When continuing this repository:
    - CI assertion;
    - only then README/scorecard promotion.
 
+
+## 1.1 Computation-budget / timeout policy
+
+Long symbolic calculations have repeatedly exceeded interactive-session limits.
+Treat this as a design constraint for future research.
+
+Rules:
+
+1. **Do not start with the full 4D tensor/Hessian calculation.**
+   First test every candidate on the smallest algebraic-curvature family that
+   can falsify it.
+
+2. Keep each new symbolic claim in a **small independent script**. Prefer
+
+   \[
+   \text{one question}
+   \longleftrightarrow
+   \text{one script}
+   \longleftrightarrow
+   \text{one short note section}.
+   \]
+
+3. Commit after each substantive checkpoint. A later timeout should lose at
+   most one small calculation, not an entire research branch.
+
+4. Reuse closed-form expressions already established in earlier scripts.
+   Do not recompute large tensor contractions merely to recover invariants
+   whose formulas are already checked.
+
+5. Test in this order whenever possible:
+
+   \[
+   \boxed{
+   \text{reduced algebraic family}
+   \rightarrow
+   \text{explicit counterexample paths}
+   \rightarrow
+   C^0/C^1/C^2\text{ directional gates}
+   \rightarrow
+   \text{full covariant tensor calculation}
+   }
+   \]
+
+6. If a candidate fails an early gate, stop expanding it. Record the failure
+   and move to the next representative.
+
+7. Let GitHub Actions run the repository-wide suite. The interactive session
+   should focus on the new small script and use Issue #1 as the persistent CI
+   handoff.
+
+8. For a calculation that is still too large, split it into committed stages:
+
+   - invariant construction;
+   - spherical reduction;
+   - off-spherical pole test;
+   - core differentiability;
+   - only then the full Hessian.
+
+This policy is part of the research workflow, not merely a convenience.
+
+
 ---
 
 # 2. Current research priority
@@ -854,305 +915,274 @@ adding spherical-vanishing squares to the old denominator.
 
 ## 8.4 Local spectral-cluster PASS away from the core
 
-The first constructive continuation test now passes locally in the
+The first constructive continuation test passes locally in the
 purely-electric sector.
 
-For a real symmetric tracefree electric-Weyl operator (E) with an isolated
-simple eigenvalue (lambda_s), define
+For a real symmetric tracefree electric-Weyl operator \(E\) with an isolated
+simple eigenvalue \(\lambda_s\), define
 
-[
-I_2=operatorname{tr}(E^2),
-]
+\[
+I_2=\operatorname{tr}(E^2),
+\]
 
-[
-oxed{
+\[
+\boxed{
 P_s
 =
-rac{
-E^2+lambda_s E+
-left(lambda_s^2-rac12I_2ight)I
+\frac{
+E^2+\lambda_s E+
+\left(\lambda_s^2-\frac12 I_2\right)I
 }{
-3lambda_s^2-rac12I_2
+3\lambda_s^2-\frac12 I_2
 }.
 }
-]
+\]
 
-Then (h=I-P_s) projects onto the two-dimensional eigenvalue cluster that
-becomes the repeated spherical/type-D plane.
+Then
+
+\[
+h=I-P_s
+\]
+
+projects onto the two-dimensional eigenvalue cluster that becomes the
+repeated spherical/type-D plane.
 
 For
 
-[
-operatorname{spec}(E)=(-2q,q+delta,q-delta),
-]
+\[
+\operatorname{spec}(E)=(-2q,q+\delta,q-\delta),
+\]
 
 the gap denominator is
 
-[
-oxed{
-3lambda_s^2-rac12I_2=9q^2-delta^2.
+\[
+\boxed{
+3\lambda_s^2-\frac12I_2
+=
+9q^2-\delta^2.
 }
-]
+\]
 
-Thus at the type-D point (delta=0), the cluster projector is smooth whenever
-(q
-e0).
+Thus at the type-D point \(\delta=0\), the cluster projector is smooth whenever
+
+\[
+q\neq0.
+\]
 
 With
 
-[
-Theta_{m ext}
+\[
+\Theta_{\rm ext}
 =
-rac12operatorname{tr}(hZ_{m sp}),
-]
+\frac12\operatorname{tr}(hZ_{\rm sp}),
+\]
 
-the explicit rotated split family gives exactly
+the explicit rotated split family gives
 
-[
-oxed{
-Theta_{m ext}=Theta,
+\[
+\boxed{
+\Theta_{\rm ext}=\Theta,
 }
-]
+\]
 
 independent of the Weyl splitting, the rotation inside the cluster, and
 Ricci anisotropy inside that plane. Hence
 
-[
-oxed{
-T_{m ext}=W_2Theta_{m ext}
+\[
+\boxed{
+T_{\rm ext}
 =
-(48q^2+16delta^2)Theta
-	o
-48q^2Theta.
-}
-]
-
-So
-
-[
-oxed{
-	ext{type-D}	o	ext{type-I eigenvalue splitting is not itself a local
-obstruction away from }W=0.
-}
-]
-
-Key files:
-
-- `notes/npqt-principal-plane-spectral-extension.md`;
-- `src/symbolic/npqt_principal_plane_spectral_toy.py`.
-
-The remaining main obstruction is now sharper:
-
-[
-oxed{
-	ext{construct one generic 4D, magnetic-Weyl-aware, single-valued }
-C^2
-	ext{ extension through }W=0.
-}
-]
-
-The self-dual local test now covers magnetic Weyl curvature near nonzero
-type D.  The construction must still control type-II/III/N directions,
-global branch selection, and the gap-closing core before the curvature
-Hessian is meaningful.
-
-
-## 8.5 Self-dual local PASS with magnetic Weyl
-
-The spectral construction has now been lifted from a real purely-electric
-Weyl matrix to the full complex self-dual Weyl operator (mathcal W).
-
-For the local complex split
-
-[
-operatorname{spec}(mathcal W)
+W_2\Theta_{\rm ext}
 =
-(-2ho,ho+delta,ho-delta),
-]
-
-define
-
-[
-a=operatorname{tr}(mathcal W^2).
-]
-
-The simple-eigenline projector has denominator
-
-[
-oxed{
-3lambda_s^2-rac12a
-=
-9ho^2-delta^2,
-qquad
-lambda_s=-2ho.
+(48q^2+16\delta^2)\Theta
+\rightarrow
+48q^2\Theta.
 }
-]
-
-Thus at a non-conformally-flat type-D point,
-
-[
-delta=0,
-qquad
-ho
-eq0,
-]
-
-the self-dual simple eigenline continues analytically through a sufficiently
-small generic complex splitting.  Complex (ho,delta) include electric and
-magnetic Weyl curvature.
-
-At exact type D,
-
-[
-a=6ho^2,
-qquad
-b=operatorname{tr}(mathcal W^3)=-6ho^3,
-]
-
-so
-
-[
-oxed{
-ho=-rac ba,
-}
-]
-
-and
-
-[
-oxed{
-P_D
-=
-rac13
-left(
-mathcal G-rac{mathcal W}{ho}
-ight)
-=
-rac13
-left(
-mathcal G+rac abmathcal W
-ight).
-}
-]
-
-The normalized canonical self-dual eigenbivector determines the real Weyl
-principal (2+2) structure.  Therefore magnetic Weyl curvature is not, by
-itself, a local obstruction near a nonzero type-D point.
-
-Key files:
-
-- `notes/npqt-selfdual-principal-plane-extension.md`;
-- `src/symbolic/npqt_selfdual_principal_plane_toy.py`.
-
-The central unresolved problem is now:
-
-[
-oxed{
-	ext{global branch single-valuedness}
-+
-	ext{Petrov II/III/N control}
-+
-C^2	ext{ extension through }ho=0.
-}
-]
-
-The conformally-flat core is exactly where the spectral gap vanishes, so the
-core gate cannot be settled by ordinary isolated-eigenvalue perturbation
-theory.
-
-
-## 8.6 Global Weyl-only branch selection FAIL
-
-The local self-dual spectral projector cannot be promoted to a globally
-single-valued Weyl-only branch label on the full generic curvature
-neighborhood.
-
-An explicit complex symmetric tracefree self-dual Weyl loop is
-
-[
-mathcal W(t)
-=
-egin{pmatrix}
-a&b&0\\
-b&-a&0\\
-0&0&0
-end{pmatrix},
-qquad
-a=rac{1+t}{2},
-qquad
-b=rac{1-t}{2i}.
-]
-
-Writing (t=s^2),
-
-[
-chi(lambda)
-=
-lambda(lambda^2-t),
-]
-
-so the nonzero eigenvalues are (pm s).
-
-The Weyl operator satisfies
-
-[
-oxed{
-mathcal W(s)=mathcal W(-s),
-}
-]
-
-but its two nonzero eigenprojectors obey
-
-[
-oxed{
-P_+(-s)=P_-(s).
-}
-]
-
-A generic Ricci contraction distinguishes the two sheets.  At (t=1), for
-
-[
-Z=operatorname{diag}(z_1,z_2,z_3),
-]
-
-the complementary rank-two contractions differ by
-
-[
-oxed{
-Theta_+-Theta_-
-=
-rac{z_2-z_1}{2}.
-}
-]
-
-Scaling the entire Weyl loop by arbitrary nonzero (epsilon) preserves this
-exchange while moving it arbitrarily close to (W=0).
+\]
 
 Therefore
 
-[
-oxed{
-	ext{global branch-specific Weyl projector: FAIL}.
+\[
+\boxed{
+\text{type-D}\rightarrow\text{type-I splitting is not itself a local
+obstruction away from }W=0.
 }
-]
-
-This does **not** rule out a regular NPQT representative.  It changes the
-constructive target to
-
-[
-oxed{
-	ext{permutation-symmetric or mixed Weyl-Ricci extension of }W_2Theta.
-}
-]
+\]
 
 Key files:
 
-- `notes/npqt-selfdual-branch-monodromy.md`;
-- `src/symbolic/npqt_selfdual_branch_monodromy.py`.
+- notes/npqt-principal-plane-spectral-extension.md
+- src/symbolic/npqt_principal_plane_spectral_toy.py
 
-The next design must avoid globally labeling a Weyl eigenline, or must use
-additional curvature data in a way that remains single-valued and (C^2) at
-the core.
+## 8.5 Self-dual local PASS with magnetic Weyl
+
+The same local spectral construction extends to the complex self-dual Weyl
+operator \(\mathcal W\).
+
+For
+
+\[
+\operatorname{spec}(\mathcal W)
+=
+(-2\rho,\rho+\delta,\rho-\delta),
+\]
+
+with
+
+\[
+a=\operatorname{tr}(\mathcal W^2),
+\qquad
+\lambda_s=-2\rho,
+\]
+
+the simple-eigenline projector has gap
+
+\[
+\boxed{
+3\lambda_s^2-\frac12a
+=
+9\rho^2-\delta^2.
+}
+\]
+
+At exact non-conformally-flat type D,
+
+\[
+\delta=0,
+\qquad
+\rho\neq0,
+\]
+
+the self-dual simple eigenline is therefore locally analytic even when
+electric and magnetic Weyl curvature are both present.
+
+At exact type D,
+
+\[
+a=6\rho^2,
+\qquad
+b=\operatorname{tr}(\mathcal W^3)=-6\rho^3,
+\]
+
+so
+
+\[
+\boxed{
+\rho=-\frac ba,
+}
+\]
+
+and
+
+\[
+\boxed{
+P_D
+=
+\frac13
+\left(
+\mathcal G-\frac{\mathcal W}{\rho}
+\right)
+=
+\frac13
+\left(
+\mathcal G+\frac ab\mathcal W
+\right).
+}
+\]
+
+Thus magnetic Weyl curvature is not, by itself, a local obstruction near a
+nonzero type-D point.
+
+Key files:
+
+- notes/npqt-selfdual-principal-plane-extension.md
+- src/symbolic/npqt_selfdual_principal_plane_toy.py
+
+## 8.6 Global Weyl-only branch selection FAIL
+
+The local self-dual projector cannot be promoted to a globally single-valued
+Weyl-only eigenline label.
+
+An explicit self-dual Weyl loop satisfies
+
+\[
+\boxed{
+\mathcal W(s)=\mathcal W(-s),
+}
+\]
+
+while its nonzero eigenprojectors exchange,
+
+\[
+\boxed{
+P_+(-s)=P_-(s).
+}
+\]
+
+A generic Ricci contraction distinguishes the two sheets. The loop can be
+scaled arbitrarily close to \(W=0\), so the obstruction accumulates at the
+maximally symmetric core.
+
+Therefore
+
+\[
+\boxed{
+\text{global branch-specific Weyl projector: FAIL}.
+}
+\]
+
+This does not rule out a regular NPQT representative. It changes the
+constructive target to
+
+\[
+\boxed{
+\text{permutation-symmetric or mixed Weyl--Ricci extension of }W_2\Theta.
+}
+\]
+
+Key files:
+
+- notes/npqt-selfdual-branch-monodromy.md
+- src/symbolic/npqt_selfdual_branch_monodromy.py
+
+## 8.7 Immediate next algebraic problem
+
+Do **not** proceed directly to a full curvature Hessian.
+
+The next mainline problem is to find a branch-free invariant representation
+of the exact spherical target
+
+\[
+\boxed{
+T_{\rm sph}=W_2\Theta.
+}
+\]
+
+The preferred route is to work in the ring of permutation-symmetric mixed
+Weyl--Ricci scalar contractions.
+
+First search for alternative covariant rational representations
+
+\[
+\boxed{
+T_i=\frac{N_i(W,Z)}{D_i(W,Z)}
+}
+\]
+
+that all reduce to \(W_2\Theta\) on the spherical locus but use inequivalent
+denominators.
+
+The purpose of this "invariant atlas" is diagnostic:
+
+- determine whether the old denominator pole is specific to one invariant
+  chart;
+- identify mixed invariants that distinguish the spherical angular Ricci mode
+  without globally labeling a Weyl eigenline;
+- locate unavoidable common-zero strata before attempting a full action.
+
+A piecewise atlas is **not** itself an acceptable final action. The final
+representative must still be one covariant, single-valued \(C^2\) density.
+
 
 ---
 
@@ -1602,38 +1632,115 @@ Key files:
 
 Continue the **4D NPQT representative-design problem**.
 
-Start from:
+Read first:
 
-- `notes/npqt-explicit-singular-direction.md`
-- `notes/npqt-petrov-regulator-toy.md`
-- `notes/npqt-petrov-regulator-continuity-gate.md`
-- `notes/npqt-principal-plane-spectral-extension.md`
-- `notes/npqt-selfdual-principal-plane-extension.md`
-- `notes/npqt-selfdual-branch-monodromy.md`
-- `notes/nlqt-no-perturbative-base-rescue.md`
-- `notes/principal-gate-classII-nlqt.md`
+- notes/npqt-petrov-regulator-continuity-gate.md
+- notes/npqt-principal-plane-spectral-extension.md
+- notes/npqt-selfdual-principal-plane-extension.md
+- notes/npqt-selfdual-branch-monodromy.md
+- notes/npqt-explicit-singular-direction.md
 
-Immediate goal:
+The exact spherical target is
 
-[
-oxed{
-	ext{construct a full covariant 4D extension of }W_2Theta
-]
-
-with
-
-[
-oxed{
-	ext{same spherical reduction}
-+
-	ext{generic off-spherical single-valuedness}
-+
-C^2	ext{ core extension}.
+\[
+\boxed{
+T_{\rm sph}=W_2\Theta.
 }
-]
+\]
 
-Then compute its curvature Hessian and only after that feed it into the NLQT
-operator.
+The Weyl-only branch-projector route is locally useful but globally rejected
+by monodromy. The immediate target is therefore
+
+\[
+\boxed{
+\text{a permutation-symmetric or mixed Weyl--Ricci covariant extension of }
+W_2\Theta.
+}
+\]
+
+### A1 — next concrete calculation: mixed-invariant atlas
+
+This is the **next task to do**.
+
+Build a small library of independent low-degree mixed Weyl--Ricci scalar
+contractions and reduce them on the spherical/type-D algebraic family.
+
+Then solve, algebraically, for alternative rational expressions
+
+\[
+T_i=\frac{N_i}{D_i}
+\]
+
+satisfying
+
+\[
+\left.T_i\right|_{\rm spherical}=W_2\Theta.
+\]
+
+Requirements for this stage:
+
+1. use permutation-symmetric scalar invariants;
+2. do not choose or label a Weyl eigenvalue branch;
+3. keep each invariant/relation in a small script;
+4. test the known simultaneous-zero and explicit type-I pole points
+   immediately;
+5. if no low-degree alternative exists, record that negative result instead of
+   increasing algebraic complexity without a reason.
+
+Suggested output:
+
+- src/symbolic/npqt_mixed_invariant_atlas_*.py
+- notes/npqt-mixed-invariant-atlas.md
+
+### A2 — branch-free stress tests
+
+Only after A1 produces a candidate, test it separately on:
+
+1. the explicit old type-I pole direction;
+2. the spherical simultaneous zero \(D=\Delta_W=0\);
+3. the self-dual branch-monodromy loop;
+4. common scaling
+   \[
+   (W,Z)\rightarrow\epsilon(W,Z)
+   \]
+   toward the maximally symmetric core.
+
+Use one short script per logically distinct failure mechanism.
+
+### A3 — \(C^0/C^1/C^2\) core gate
+
+Only a candidate that passes A2 should be tested for differentiability.
+
+Start with finite-dimensional algebraic curvature paths and directional
+derivatives. Require path-independent value, gradient, and Hessian limits
+before attempting the full Riemann-tensor Hessian.
+
+A failure here ends that candidate.
+
+### A4 — full covariant density
+
+Only after A3 passes:
+
+1. restore the complete cubic NPQT density;
+2. verify exact spherical reduced equations;
+3. check that no new denominator-zero strata appear in the full expression.
+
+### A5 — curvature Hessian and NLQT
+
+Only after A4:
+
+\[
+\frac{\partial^2\mathcal L}
+{\partial R_{\mu\nu\rho\sigma}\partial R_{\alpha\beta\gamma\delta}}
+\]
+
+should be computed on the regular-black-hole/core backgrounds.
+
+Only then feed the base action into the generic nonspherical NLQT operator.
+
+This ordering is deliberate: **do not spend a long symbolic run on A4/A5
+before the cheap algebraic gates A1--A3 have passed.**
+
 
 ## Task B — once a viable theory exists
 
@@ -1741,17 +1848,18 @@ If a future run fails:
 
 A future session can resume with:
 
-> Read \`RESEARCH_HANDOFF.md\`, \`NOVELTY.md\`, and \`ROADMAP.md\` from
-> HeliCorgi/spacetime-screening and continue from the current mainline.
-> Prioritize the 4D NPQT off-spherical representative-design problem.
-> The Petrov-discriminant denominator toy is now known to fail already at C0
-> on a spherical simultaneous-zero set. Start instead from the exact
-> spherical target (N/D=W_2Theta) and the local principal-plane spectral
-> extension. Construct a magnetic-Weyl-aware, single-valued covariant
-> extension of (W_2Theta) and test whether it is genuinely C² through the
-> maximally symmetric (W=0) core before feeding its Hessian into NLQT.
-> Use the heavy-seed/SMS work only as the dynamical-formation benchmark.
-> Commit substantive calculations directly and use Issue #1 as the CI
-> handoff.
+> Read RESEARCH_HANDOFF.md, NOVELTY.md, and the current NPQT notes listed
+> under Task A. Continue from the mainline, not the chronology side branch.
+>
+> The next concrete task is **A1: mixed-invariant atlas**. Start from the exact
+> spherical target \(T_{\rm sph}=W_2\Theta\). Search for low-degree,
+> permutation-symmetric mixed Weyl--Ricci covariant scalar ratios
+> \(T_i=N_i/D_i\) that reproduce \(W_2\Theta\) on the spherical locus without
+> globally labeling a Weyl eigenline.
+>
+> Keep the calculation timeout-safe: one invariant/relation per small script,
+> commit each substantive checkpoint, and test the known type-I pole,
+> spherical simultaneous zero, monodromy loop, and core scaling before doing
+> any full 4D Hessian calculation. Use Issue #1 as the persistent CI handoff.
 
 That is the intended restart point.
