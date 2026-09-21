@@ -72,3 +72,10 @@ the regular hair surface.
 Derives the double-zero extremal horizon, the equal-radius
 (AdS_2\times S^2) throat, exact horizon curvature invariants,
 Maxwell-like effective stress tensor, and the core/horizon curvature ratio.
+
+
+### `aretakis_test_scalar.py`
+
+Derives the massless s-wave horizon conservation law on the fully extremal
+regular branch and the late-time linear growth of the second transverse
+derivative under the standard decay assumption.
