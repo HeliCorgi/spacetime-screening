@@ -79,3 +79,29 @@ Maxwell-like effective stress tensor, and the core/horizon curvature ratio.
 Derives the massless s-wave horizon conservation law on the fully extremal
 regular branch and the late-time linear growth of the second transverse
 derivative under the standard decay assumption.
+
+
+### \`axial_vector_auxiliary.py\`
+
+Derives the algebraic odd-parity vector constraint coefficient and shows that
+it equals the effective tangential stress anisotropy.  The constraint is
+nondegenerate at the extremal horizon but degenerates at the center and
+asymptotic vacuum.
+
+### \`generalized_proca_mapping.py\`
+
+Maps the interaction to its generalized-Proca \(G_2/G_3/G_4\) structure and
+shows that at least one longitudinal vector profile is unavoidable at every
+positive-radius horizon.
+
+### \`tensor_principal_cone.py\`
+
+Derives the radial pure-TT principal Kerr-Schild deformation and verifies the
+exact cancellation
+
+\[
+f_{\rm T}(r)=1-\frac{2M}{r}.
+\]
+
+It also checks that the candidate tensor characteristic horizon \(2M\) lies
+outside every regular-background horizon on the \(q>0\) branch.
