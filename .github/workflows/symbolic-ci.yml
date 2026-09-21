@@ -5,11 +5,15 @@ on:
     branches: [main]
     paths:
       - "src/symbolic/**"
+      - "src/numerical/**"
+      - "data/heavy_seed_source_envelope.csv"
       - "requirements.txt"
       - ".github/workflows/symbolic-ci.yml"
   pull_request:
     paths:
       - "src/symbolic/**"
+      - "src/numerical/**"
+      - "data/heavy_seed_source_envelope.csv"
       - "requirements.txt"
       - ".github/workflows/symbolic-ci.yml"
   workflow_dispatch:
@@ -41,9 +45,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
-      - name: Compile symbolic scripts
+      - name: Compile research scripts
         run: |
-          python -m compileall -q src/symbolic
+          python -m compileall -q src/symbolic src/numerical
 
       - name: Run symbolic assertions
         shell: bash
@@ -61,9 +65,21 @@ jobs:
             echo "::endgroup::"
           done
 
+      - name: Run numerical harnesses
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(find src/numerical -maxdepth 1 -type f -name '*.py' | sort)
+          for file in "${files[@]}"; do
+            echo "::group::${file}"
+            python "${file}"
+            echo "::endgroup::"
+          done
+
       - name: Summary
         if: always()
         run: |
           echo "### Symbolic CI" >> "$GITHUB_STEP_SUMMARY"
           echo "- Python: ${{ matrix.python-version }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Scripts: $(find src/symbolic -maxdepth 1 -type f -name '*.py' | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Symbolic scripts: $(find src/symbolic -maxdepth 1 -type f -name '*.py' | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Numerical harnesses: $(find src/numerical -maxdepth 1 -type f -name '*.py' | wc -l)" >> "$GITHUB_STEP_SUMMARY"
