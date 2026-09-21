@@ -951,8 +951,114 @@ C^2
 }
 ]
 
-That construction must also control type-II/III/N directions and global
-branch selection before the curvature Hessian is meaningful.
+The self-dual local test now covers magnetic Weyl curvature near nonzero
+type D.  The construction must still control type-II/III/N directions,
+global branch selection, and the gap-closing core before the curvature
+Hessian is meaningful.
+
+
+## 8.5 Self-dual local PASS with magnetic Weyl
+
+The spectral construction has now been lifted from a real purely-electric
+Weyl matrix to the full complex self-dual Weyl operator (mathcal W).
+
+For the local complex split
+
+[
+operatorname{spec}(mathcal W)
+=
+(-2ho,ho+delta,ho-delta),
+]
+
+define
+
+[
+a=operatorname{tr}(mathcal W^2).
+]
+
+The simple-eigenline projector has denominator
+
+[
+oxed{
+3lambda_s^2-rac12a
+=
+9ho^2-delta^2,
+qquad
+lambda_s=-2ho.
+}
+]
+
+Thus at a non-conformally-flat type-D point,
+
+[
+delta=0,
+qquad
+ho
+eq0,
+]
+
+the self-dual simple eigenline continues analytically through a sufficiently
+small generic complex splitting.  Complex (ho,delta) include electric and
+magnetic Weyl curvature.
+
+At exact type D,
+
+[
+a=6ho^2,
+qquad
+b=operatorname{tr}(mathcal W^3)=-6ho^3,
+]
+
+so
+
+[
+oxed{
+ho=-rac ba,
+}
+]
+
+and
+
+[
+oxed{
+P_D
+=
+rac13
+left(
+mathcal G-rac{mathcal W}{ho}
+ight)
+=
+rac13
+left(
+mathcal G+rac abmathcal W
+ight).
+}
+]
+
+The normalized canonical self-dual eigenbivector determines the real Weyl
+principal (2+2) structure.  Therefore magnetic Weyl curvature is not, by
+itself, a local obstruction near a nonzero type-D point.
+
+Key files:
+
+- `notes/npqt-selfdual-principal-plane-extension.md`;
+- `src/symbolic/npqt_selfdual_principal_plane_toy.py`.
+
+The central unresolved problem is now:
+
+[
+oxed{
+	ext{global branch single-valuedness}
++
+	ext{Petrov II/III/N control}
++
+C^2	ext{ extension through }ho=0.
+}
+]
+
+The conformally-flat core is exactly where the spectral gap vanishes, so the
+core gate cannot be settled by ordinary isolated-eigenvalue perturbation
+theory.
 
 ---
 
@@ -1408,6 +1514,7 @@ Start from:
 - `notes/npqt-petrov-regulator-toy.md`
 - `notes/npqt-petrov-regulator-continuity-gate.md`
 - `notes/npqt-principal-plane-spectral-extension.md`
+- `notes/npqt-selfdual-principal-plane-extension.md`
 - `notes/nlqt-no-perturbative-base-rescue.md`
 - `notes/principal-gate-classII-nlqt.md`
 
@@ -1495,17 +1602,18 @@ Then, for the current main theoretical task:
 8. `notes/npqt-petrov-regulator-toy.md`
 9. `notes/npqt-petrov-regulator-continuity-gate.md`
 10. `notes/npqt-principal-plane-spectral-extension.md`
-11. `notes/nlqt-no-perturbative-base-rescue.md`
-12. `notes/principal-gate-classII-nlqt.md`
+11. `notes/npqt-selfdual-principal-plane-extension.md`
+12. `notes/nlqt-no-perturbative-base-rescue.md`
+13. `notes/principal-gate-classII-nlqt.md`
 
 For dynamical formation:
 
-13. `notes/cosmological-heavy-seed-interface.md`
-14. `notes/sms-gr-instability-formation-gate.md`
-15. `notes/sms-post-gri-fate-gate.md`
-16. `notes/sms-screening-activation-scale.md`
-17. `notes/sms-gr-collapse-endpoints.md`
-18. `notes/sms-formation-systematics.md`
+14. `notes/cosmological-heavy-seed-interface.md`
+15. `notes/sms-gr-instability-formation-gate.md`
+16. `notes/sms-post-gri-fate-gate.md`
+17. `notes/sms-screening-activation-scale.md`
+18. `notes/sms-gr-collapse-endpoints.md`
+19. `notes/sms-formation-systematics.md`
 
 ---
 
