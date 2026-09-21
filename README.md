@@ -1,160 +1,384 @@
 # Spacetime Screening
 
-**Spacetime Screening** is an exploratory research repository about whether black-hole singularities can be replaced by a high-curvature regime in which the effective gravitational response is screened, saturates, or changes phase.
+**Spacetime Screening** is a research repository about a narrower question than
+"can a regular black-hole metric be written down?":
 
-The project starts from a simple question:
+> **Can quantum-gravity-motivated screening make black-hole curvature regular
+> without hiding the singular behavior in physical propagation modes,
+> constraints, or the four-dimensional action itself?**
 
-> What if increasing curvature does not make gravity arbitrarily stronger, but instead drives the effective gravitational description toward a screened or non-geometric regime?
-
-A schematic target behavior is
+The project began from the intuition
 
 \[
-\mathcal{K} \uparrow
-\quad\Longrightarrow\quad
-G_{\mathrm{eff}} \downarrow
-\quad\Longrightarrow\quad
-\text{curvature growth is self-limited},
+\text{high curvature}
+\rightarrow
+\text{weaker effective response}
+\rightarrow
+\text{singularity avoidance},
 \]
 
-where \(\mathcal{K}=R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}\) is a curvature invariant.
-
-This repository does **not** claim a completed theory of quantum gravity. It is a workspace for turning the idea into precise models, deriving consistency conditions, comparing them with existing approaches, and identifying falsifiable consequences.
-
-## Core hypothesis
-
-The working hypothesis is that sufficiently high curvature may trigger one or both of the following:
-
-1. **Gravitational screening:** the dimensionful effective Newton coupling decreases with the relevant invariant/RG scale.
-2. **Spacetime phase change:** the metric description itself ceases to be the most useful set of variables and is replaced by another quantum phase, from which a semiclassical spacetime can later re-emerge.
-
-A minimal effective picture is
+but the main research direction is now **principal safety**:
 
 \[
-\text{GR regime}
-\rightarrow
-\text{screening regime}
-\rightarrow
-\text{finite-curvature or non-geometric core}.
+\boxed{
+\text{regular background}
+\not\Rightarrow
+\text{regular dynamics}.
+}
 \]
 
-The distinction between these possibilities matters. A de Sitter-like regular core can remain geometrical. A genuinely Minkowski-like or non-geometric core may require a branch change or additional order parameter rather than a single smooth GR branch.
+This repository does **not** claim a completed quantum-gravity theory.
 
-## What is established vs. what is speculative
+## Current working definition of screening
 
-### Established context
-
-- Regular black-hole geometries can replace a curvature singularity with a finite-curvature core.
-- Hayward's nonsingular black-hole model has a cosmological-constant-like small-radius core.
-- In asymptotic-safety scenarios, the dimensionful Newton coupling can scale as \(G(k)\sim g_*/k^2\) near a non-Gaussian UV fixed point.
-- Static regular black holes often introduce an inner/Cauchy horizon, whose stability is a serious constraint.
-- Spacetime emergence from more fundamental quantum structure is an active research direction, especially in holography and quantum-information-inspired approaches.
-
-### Working conjectures in this repository
-
-- Screening may be best formulated as a covariant response to curvature invariants or a dynamically selected RG scale, not as an ad hoc \(G(r)\).
-- A strictly regular center plus asymptotic GR can force qualitative changes in the effective gravitational response.
-- A Minkowski-like core may require a phase/branch transition rather than a single-valued smooth curvature response.
-- The physically relevant end state of collapse may be dynamical and non-geometric rather than a permanently static regular core.
-
-These conjectures are research targets, not results.
-
-## Current model target
-
-The original minimal static-radial scalar screening ansatz has an ansatz-level
-no-go under healthy canonical boundary conditions. The current target is
-therefore a covariant constrained/degenerate scalar, auxiliary-vector, or
-higher-curvature realization.
-
-A schematic order-parameter action remains useful as intuition:
+For a symmetry-reduced curvature response
 
 \[
-S[g,\chi,\ldots]
+\psi=\psi(s),
+\]
+
+define the dimensionless logarithmic response
+
+\[
+\boxed{
+\mathscr S
 =
-\int d^4x\sqrt{-g}
+\frac{d\ln\psi}{d\ln s}.
+}
+\]
+
+For the Hayward/QTG response
+
+\[
+\psi(s)=\frac{s}{1+\ell^2s},
+\]
+
+one finds
+
+\[
+\mathscr S
+=
+\frac1{1+\ell^2s}
+=
+1-\ell^2\psi
+\rightarrow0
+\]
+
+at high source scale.
+
+The spherical response itself is mostly known physics. The repo's focus is
+whether a theory realizing such screening also has a healthy **physical
+quadratic/principal structure**.
+
+## Main research criterion
+
+A candidate is not considered to have resolved the singularity unless it
+passes, at minimum,
+
+\[
+\boxed{
+\begin{aligned}
+&\text{bounded background curvature},\\
+&\text{differentiable 4D action},\\
+&\text{controlled constraint rank},\\
+&\text{positive physical kinetic matrix},\\
+&\text{finite, hyperbolic principal symbol},\\
+&\text{nonzero strong-coupling scale},\\
+&\text{dynamical formation from regular data}.
+\end{aligned}
+}
+\]
+
+See [docs/principal-safe-screening.md](docs/principal-safe-screening.md).
+
+## Current strongest calculation candidates
+
+These are **not priority claims**. See [NOVELTY.md](NOVELTY.md) for status and
+scope.
+
+### 1. Two-vector odd-sector kinetic obstruction
+
+For the Eichhorn–Fernandes regular two-vector black hole, mapping the exact
+action to the published generalized-Proca odd-parity quadratic formalism gives,
+for the derivative-active vector sector,
+
+\[
+\boxed{
+K_{\rm vec}
+=
+-\frac{cc^{\rm T}}{C_1}.
+}
+\]
+
+In the static exterior \(C_1>0\), so this matrix has
+
+- one **negative** kinetic eigenvalue;
+- one **zero** kinetic eigenvalue.
+
+The \(l=1\) odd sector isolates the vector mode because the local axial
+gravitational-wave mode is nondynamical. At principal derivative order,
+
+\[
+\boxed{
+\mathcal L_{l=1}^{\rm pr}
+=
+-\frac1{C_1}
 \left[
-\frac{F(\chi)}{16\pi G_N}R
--\frac12(\nabla\chi)^2
--V(\chi,\mathcal I)
-+\mathcal L_{\rm higher\ curvature}
-+\cdots
-\right],
+c^{\rm T}(\dot u-fu')
+\right]^2.
+}
 \]
 
-with a covariant invariant \(\mathcal I\), such that
+The generalized-Proca source formulas were checked explicitly. The standard
+formalism contains a canonical Maxwell term, and the present model maps to
 
 \[
-F(\chi)\to 1
-\quad\text{at low curvature},
+G_2=-F+24\sigma\ell^2X^2,
 \]
 
-while at high curvature a new branch or condensate can drive
+so that the Maxwell kinetic term is exactly cancelled and
 
 \[
-G_{\rm eff}\sim \frac{G_N}{F(\chi)}
+C_5=C_6=C_7=0.
 \]
 
-downward without introducing ghosts, violating unitarity, or destroying the GR limit.
+The remaining publication-level task is a direct independent two-vector
+harmonic expansion / full constraint derivation from the original action.
 
-## Consistency requirements
+See:
 
-A viable model should satisfy, at minimum:
+- [notes/vector-odd-kinetic-analysis.md](notes/vector-odd-kinetic-analysis.md)
+- [src/symbolic/odd_coefficients_from_source.py](src/symbolic/odd_coefficients_from_source.py)
+- [src/symbolic/vector_l1_odd_ghost.py](src/symbolic/vector_l1_odd_ghost.py)
 
-- general covariance;
-- a controlled GR + QFT low-energy limit;
-- finite curvature invariants or a well-defined replacement of geometry;
-- no propagating negative-norm degrees of freedom;
-- well-posed dynamics;
-- stress-energy consistency / Bianchi identities;
-- acceptable black-hole thermodynamics;
-- control of inner-horizon or mass-inflation instabilities;
-- a path to dynamical collapse and evaporation, not only static metrics;
-- observable consequences that distinguish the model from GR and other quantum-gravity scenarios.
+### 2. Hidden Schwarzschild tensor characteristic
+
+The same odd quadratic-action coefficient block gives
+
+\[
+q_T=\frac{f-\Delta}{2f^2},
+\]
+
+with radial characteristic roots
+
+\[
+v_-=-f,
+\qquad
+v_+
+=
+f\frac{f+\Delta}{f-\Delta}.
+\]
+
+On the exact regular branch,
+
+\[
+\boxed{
+f+\Delta
+=
+1-\frac{2M}{r}.
+}
+\]
+
+Thus
+
+\[
+\boxed{
+r_T=2M
+}
+\]
+
+appears as a tensor characteristic horizon even though the regular background
+metric is not on a horizon there.
+
+At \(r=2M\),
+
+\[
+q_T>0,
+\]
+
+so this is not merely a kinetic-sign crossing.
+
+See:
+
+- [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md)
+- [notes/vector-odd-kinetic-analysis.md](notes/vector-odd-kinetic-analysis.md)
+- [src/symbolic/vector_odd_tensor_reduction.py](src/symbolic/vector_odd_tensor_reduction.py)
+
+### 3. Restricted scalar-tensor no-go
+
+For a canonical static radial scalar with
+
+\[
+F(\chi)R,
+\]
+
+the one-function metric ansatz gives
+
+\[
+F''(r)
+=
+-8\pi G\,\chi'(r)^2\le0.
+\]
+
+Regular-center and asymptotically constant boundary conditions force the
+localized scalar profile to be trivial.
+
+This is a restricted ansatz-level result, not a general scalar-tensor no-hair
+theorem.
+
+See [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md).
+
+## Candidate models already stress-tested
+
+### Two auxiliary vectors
+
+**Background:** regular Hayward-type geometry.
+
+**Problems found:** degenerate vector quadratic structure, candidate negative
+odd kinetic mode, hidden Schwarzschild tensor characteristic, extremal
+test-field Aretakis channel.
+
+### Nonpolynomial pure-gravity QTG
+
+**Background:** excellent curvature-response saturation,
+
+\[
+\psi=\frac{s}{1+\ell^2s}.
+\]
+
+**Problem found:** the explicit rational four-dimensional lift used as a
+representative construction is nondifferentiable on the single-function
+branch in generic curvature directions.
+
+### 2026 first-order QTG-TNT
+
+**Background:** exact regular black-hole solutions and GR-like first-order
+integrability.
+
+**Problem found:** the covariant
+
+\[
+R_4
+=
+\sqrt{
+\frac{2I_6}{3}
+-
+\frac{2I_{11}}{I_1}
+}
+\]
+
+has a square-root cusp on the single-function branch and divergent curvature
+derivatives. The source classification also implies that nontrivial
+first-order Class-I QTG-TNT is structurally non-analytic.
+
+### Regularized-Lovelock / Horndeski infinite tower
+
+**Background:** regular known planar branch.
+
+**Problem already known in the literature:** odd ghost/gradient instability
+and an infinitely strongly-coupled even scalar mode on that branch.
+
+See [docs/candidate-scorecard.md](docs/candidate-scorecard.md).
+
+## Research priority
+
+The present priority order is:
+
+1. **P0 — finish the two-vector odd-sector derivation directly from the
+   original action.**
+2. **P1 — turn recurring failure mechanisms into model-independent
+   principal-safety / no-go statements where possible.**
+3. **P2 — compare analytic Class-II QTG-TNT and nonlocal-QTG completions only
+   after P0 is resolved.**
+
+See [ROADMAP.md](ROADMAP.md).
+
+## Novelty policy
+
+The repository explicitly separates:
+
+- **KNOWN**
+- **REPRODUCED HERE**
+- **NEW CALCULATION CANDIDATE**
+- **SYNTHESIS / CRITERION**
+- **CONJECTURE**
+
+in [NOVELTY.md](NOVELTY.md).
+
+No "first", "new theorem", or similar priority claim should be made until the
+derivation is complete and a targeted literature search has been documented.
 
 ## Repository map
 
-- [THEORY.md](THEORY.md) — current mathematical skeleton and assumptions.
-- [ROADMAP.md](ROADMAP.md) — concrete research program and milestones.
-- [docs/motivation.md](docs/motivation.md) — physical motivation.
-- [docs/screening-hypothesis.md](docs/screening-hypothesis.md) — screening mechanisms and covariant formulations.
-- [docs/regular-black-holes.md](docs/regular-black-holes.md) — regular-core geometry and inner-horizon issues.
-- [docs/spacetime-phase-transition.md](docs/spacetime-phase-transition.md) — branch changes and non-geometric phases.
-- [docs/open-problems.md](docs/open-problems.md) — failure modes and unresolved questions.
-- [docs/principal-safe-screening.md](docs/principal-safe-screening.md) — upgraded acceptance criteria for background, constraints, and physical characteristics.
-- [notes/derivations.md](notes/derivations.md) — derivations and toy calculations.
-- [notes/effective-stress-energy.md](notes/effective-stress-energy.md) — Hayward effective density, pressures, conservation, and energy conditions.
-- [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md) — why the simplest static radial scalar realization fails.
-- [notes/vector-hair-benchmark.md](notes/vector-hair-benchmark.md) — exact action-level Hayward-type benchmark and extremality/curvature tradeoff.
-- [notes/vector-constraint-analysis.md](notes/vector-constraint-analysis.md) — radial stability, absent asymptotic vector quadratic action, principal-symbol degeneracy, and regularity sensitivity.
-- [notes/vector-odd-kinetic-analysis.md](notes/vector-odd-kinetic-analysis.md) — two-vector odd kinetic matrix, (l=1) ghost diagnostic, and strengthened Schwarzschild principal factor.
-- [notes/extremal-near-horizon.md](notes/extremal-near-horizon.md) — AdS2 x S2 extremal throat and Maxwell-like horizon stress.
-- [notes/aretakis-test-scalar.md](notes/aretakis-test-scalar.md) — explicit s-wave test-field Aretakis conserved quantity and derivative growth.
-- [notes/odd-parity-vector-auxiliary.md](notes/odd-parity-vector-auxiliary.md) — axial vector perturbations are algebraic auxiliaries and become degenerate at the endpoints.
-- [notes/generalized-proca-mapping.md](notes/generalized-proca-mapping.md) — mapping to quartic generalized Proca and the known odd-mode instability warning.
-- [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md) — radial pure-TT characteristic cone and the hidden Schwarzschild geometry.
-- [notes/pure-gravity-qtg-benchmark.md](notes/pure-gravity-qtg-benchmark.md) — intrinsic curvature screening in four-dimensional nonpolynomial quasitopological gravity.
-- [notes/covariant-lift-degeneracy.md](notes/covariant-lift-degeneracy.md) — why the explicit rational 4D lift is 0/0 on the single-function branch and nondifferentiable off it.
-- [notes/r4-differentiability.md](notes/r4-differentiability.md) — square-root cusp and divergent curvature derivatives of the 2026 QTG-TNT (R_4) representative.
-- [notes/r4-analyticity-obstruction.md](notes/r4-analyticity-obstruction.md) — why nontrivial first-order Class-I QTG-TNT is structurally non-analytic.
-- [notes/limiting-curvature-response.md](notes/limiting-curvature-response.md) — inverse-response falloff and `beta_eff -> 2` limiting-curvature diagnostic.
-- [notes/nonlocal-zero-free-form-factor.md](notes/nonlocal-zero-free-form-factor.md) — generic zero-free entire-form-factor pole test for the nonlocal v2 direction.
-- [src/](src/) — reproducible symbolic/numerical code.
+Core documents:
+
+- [NOVELTY.md](NOVELTY.md) — novelty/status map and priority-claim policy.
+- [THEORY.md](THEORY.md) — current mathematical skeleton.
+- [ROADMAP.md](ROADMAP.md) — research priorities and open calculations.
+- [docs/principal-safe-screening.md](docs/principal-safe-screening.md) —
+  acceptance criteria.
+- [docs/candidate-scorecard.md](docs/candidate-scorecard.md) — candidate
+  comparison.
+- [docs/open-problems.md](docs/open-problems.md) — unresolved failure modes.
+
+Selected calculations:
+
+- [notes/vector-odd-kinetic-analysis.md](notes/vector-odd-kinetic-analysis.md)
+- [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md)
+- [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md)
+- [notes/covariant-lift-degeneracy.md](notes/covariant-lift-degeneracy.md)
+- [notes/r4-differentiability.md](notes/r4-differentiability.md)
+
+Reproducible symbolic checks live under [src/symbolic/](src/symbolic/).
+
+## Reproducibility
+
+Install dependencies:
+
+\`\`\`bash
+python -m pip install -r requirements.txt
+\`\`\`
+
+Run all symbolic checks:
+
+\`\`\`bash
+for f in src/symbolic/*.py; do
+  echo "==> $f"
+  python "$f" || exit 1
+done
+\`\`\`
+
+GitHub Actions also runs the symbolic suite on pushes and pull requests once
+the workflow is enabled in this repository.
 
 ## Starting references
 
-1. S. A. Hayward, *Formation and Evaporation of Nonsingular Black Holes*, Phys. Rev. Lett. **96**, 031103 (2006). DOI: https://doi.org/10.1103/PhysRevLett.96.031103
-2. M. Reuter and F. Saueressig, *The Asymptotic Safety Scenario in Quantum Gravity*, Living Rev. Relativity. https://link.springer.com/article/10.12942/lrr-2006-5
-3. F. Di Filippo, I. Kolář, and D. Kubizňák, *Inner-extremal regular black holes from pure gravity*, Phys. Rev. D **111**, L041505 (2025). DOI: https://doi.org/10.1103/PhysRevD.111.L041505
-4. M. Van Raamsdonk, *Building up spacetime with quantum entanglement*, Gen. Rel. Grav. **42**, 2323–2329 (2010). arXiv:1005.3035
-5. K. Giesel, H. Liu, P. Singh, S. Weigl, *Regular black holes and their relationship to polymerized models and mimetic gravity*, Phys. Rev. D **111**, 064064 (2025). DOI: https://doi.org/10.1103/PhysRevD.111.064064
-6. A. Eichhorn, P. G. S. Fernandes, *Regular black holes without mass-inflation instability and gravastars from modified gravity*, Phys. Rev. D **113**, L081501 (2026). DOI: https://doi.org/10.1103/nqz2-88zf
+1. S. A. Hayward, *Formation and Evaporation of Nonsingular Black Holes*,
+   Phys. Rev. Lett. **96**, 031103 (2006).
+2. R. Kase, M. Minamitsuji, S. Tsujikawa, Y.-L. Zhang,
+   *Black hole perturbations in vector-tensor theories: The odd-mode
+   analysis*, JCAP **02** (2018) 048, arXiv:1801.01787.
+3. F. Di Filippo, I. Kolář, D. Kubizňák,
+   *Inner-extremal regular black holes from pure gravity*,
+   Phys. Rev. D **111**, L041505 (2025).
+4. A. Eichhorn, P. G. S. Fernandes,
+   *Regular black holes without mass-inflation instability and gravastars
+   from modified gravity*, Phys. Rev. D **113**, L081501 (2026).
+5. J. Borissova, R. Carballo-Rubio,
+   *Regular black holes from pure gravity in four dimensions*,
+   Phys. Rev. D **113**, 124004 (2026).
+6. A. Colléaux, I. Kolář, T. Málek,
+   *Quasi-topological gravity for 4-dimensional Taub-NUT, near-horizon
+   extreme Kerr, and swirling symmetries*, arXiv:2606.17784.
 
 ## License
 
-- **Code**: Apache License 2.0 — see [LICENSE](LICENSE).
-- **Research text, documentation, equations, and original figures**: Creative Commons Attribution 4.0 International — see [LICENSE-DOCS](LICENSE-DOCS).
-
-Unless a file states otherwise, this scope applies by file type.
+- **Code:** Apache License 2.0 — see [LICENSE](LICENSE).
+- **Research text, documentation, equations, and original figures:** CC BY
+  4.0 — see [LICENSE-DOCS](LICENSE-DOCS).
 
 ## Status
 
-Early-stage research notebook. Expect assumptions to change as consistency checks become stricter.
+Early-stage research repository. The project is deliberately adversarial:
+candidate models are expected to fail tests, and those failures are treated as
+useful results.
