@@ -125,6 +125,7 @@ A viable model should satisfy, at minimum:
 - [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md) — why the simplest static radial scalar realization fails.
 - [notes/vector-hair-benchmark.md](notes/vector-hair-benchmark.md) — exact action-level Hayward-type benchmark and extremality/curvature tradeoff.
 - [notes/vector-constraint-analysis.md](notes/vector-constraint-analysis.md) — radial stability, absent asymptotic vector quadratic action, principal-symbol degeneracy, and regularity sensitivity.
+- [notes/vector-odd-kinetic-analysis.md](notes/vector-odd-kinetic-analysis.md) — two-vector odd kinetic matrix, (l=1) ghost diagnostic, and strengthened Schwarzschild principal factor.
 - [notes/extremal-near-horizon.md](notes/extremal-near-horizon.md) — AdS2 x S2 extremal throat and Maxwell-like horizon stress.
 - [notes/aretakis-test-scalar.md](notes/aretakis-test-scalar.md) — explicit s-wave test-field Aretakis conserved quantity and derivative growth.
 - [notes/odd-parity-vector-auxiliary.md](notes/odd-parity-vector-auxiliary.md) — axial vector perturbations are algebraic auxiliaries and become degenerate at the endpoints.
