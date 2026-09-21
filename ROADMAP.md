@@ -180,3 +180,58 @@ reduction.
 **Next target:** identify or construct a regular four-dimensional lift /
 polynomial-infinite-tower / nonlocal completion before resuming the tensor
 principal-symbol calculation.
+
+
+## R4 differentiability gate: completed
+
+The June-2026 first-order QTG-TNT candidate fails the full four-dimensional
+action-selection gate:
+
+\[
+R_4
+=
+\sqrt{
+\frac{2I_6}{3}
+-
+\frac{2I_{11}}{I_1}
+}
+\]
+
+is not differentiable on the single-function branch \(R_4=0\), with generic
+curvature derivatives scaling as
+
+\[
+\partial R_4\sim R_4^{-1},
+\qquad
+\partial^2R_4\sim R_4^{-3}.
+\]
+
+Even within TNT, the covariant square root reconstructs a signed linear
+reduced perturbation as an absolute-value cusp.
+
+The classification result shows that this is structurally tied to the
+first-order/algebraic Class-I mechanism: analytic Riemann-only scalar actions
+contain only even powers of \(R_4\).
+
+### Next branch
+
+Move to one of:
+
+1. analytic Class-II QTG-TNT / generalized-QTG infinite towers, accepting a
+   higher-order reduced equation;
+2. a nonlocal entire-function completion with a regular curved-background
+   quadratic operator;
+3. a formulation with additional regular fundamental fields in which the
+   signed reduced degree of freedom is not reconstructed through a curvature
+   square root.
+
+Immediate task:
+
+\[
+\boxed{
+\text{Can analytic Class II reproduce limiting-curvature screening in 4D?}
+}
+\]
+
+If not, prioritize extraction of the exact nonlocal-QTG black-hole quadratic
+operator.
