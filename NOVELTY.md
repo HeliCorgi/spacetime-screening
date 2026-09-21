@@ -238,51 +238,66 @@ See:
 - \`src/symbolic/axial_vector_auxiliary.py\`
 - \`notes/odd-parity-vector-auxiliary.md\`
 
-### Odd-vector negative kinetic combination
+### Direct odd-sector ghost in the asymptotic exterior
 
-Using the published generalized-Proca odd-parity quadratic-action structure,
-extended to the additive two-vector action, the repository finds
+The repository now contains a **direct four-dimensional harmonic expansion of
+the original two-vector action**, without importing the published one-vector
+generalized-Proca odd coefficients.
 
-\[
-K_{\rm vec}
-=
--\frac{cc^{\rm T}}{C_1}.
-\]
-
-Hence the vector kinetic matrix has one negative eigenvalue and one zero
-eigenvalue whenever the background hair is nonzero.
-
-For \(l=1\), where the local odd gravitational-wave mode is nondynamical, the
-principal vector action reduces to
+For \(l=2\), after passing to the active/null vector basis and eliminating the
+nondynamical metric variable \(Q\), the direct reduced kinetic determinant
+satisfies
 
 \[
-\mathcal L_{\rm vec}^{\rm pr}
+\boxed{
+\lim_{r\to\infty}
+r^5\det K_{\rm red}
 =
--\frac1{C_1}
-\left[
-c^{\rm T}(\dot u-fu')
-\right]^2.
+-
+\frac{1152\pi^2}{25}
+M\ell^4
+(16M^2+q^2)
+<0.
+}
 \]
 
-The corresponding canonical Hamiltonian has a negative quadratic momentum
-term.
+Therefore, for sufficiently large but finite \(r\), the direct physical
+odd-sector kinetic matrix has one positive and one negative eigenvalue.
 
-**Status:** NEW CALCULATION CANDIDATE — HIGH PRIORITY.
+The derivative-null vector combination is independently shown to have
 
-This is currently a stronger viability obstruction than the hidden tensor
-cone, but the project still requires a direct two-vector harmonic expansion
-from the original action before making a publication-level ghost claim.
+- no quadratic velocity;
+- no linear velocity mixing with the remaining kinetic variables;
+- positive algebraic stiffness on the regular branch.
 
-A targeted search performed in September 2026 did not identify a published
-odd-parity stability analysis of the Eichhorn–Fernandes two-vector regular
-black holes.  This is not a priority claim.
+Thus it is an auxiliary direction and does not remove the negative active
+mode.
+
+A separate local/canonical \(l=1\) derivation obtains the same sign structure,
+and a full \(l=1\) four-dimensional harmonic expansion is included as an
+additional CI cross-check.
+
+**Technical status:** DIRECT RESULT in the stated asymptotic exterior region.
+
+**Novelty status:** NEW CALCULATION CANDIDATE.  A targeted September-2026
+search did not identify a published odd-parity ghost analysis of this exact
+Eichhorn-Fernandes two-vector branch, but priority is **not** claimed.
+
+This result is sufficient to reject the benchmark as a globally healthy
+principal-safe theory even if special radii have different constraint rank.
 
 See:
 
-- \`src/symbolic/vector_odd_kinetic_matrix.py\`
-- \`src/symbolic/vector_odd_reduced_principal.py\`
-- \`src/symbolic/vector_l1_odd_ghost.py\`
-- \`notes/vector-odd-kinetic-analysis.md\`
+- \`src/symbolic/direct_two_vector_odd_l2.py\`
+- \`src/symbolic/direct_two_vector_odd_principal_tr.py\`
+- \`src/symbolic/direct_l2_velocity_linear_audit.py\`
+- \`src/symbolic/direct_odd_active_null_constraints.py\`
+- \`src/symbolic/direct_odd_asymptotic_ghost.py\`
+- \`src/symbolic/direct_asymptotic_ghost_robustness.py\`
+- \`src/symbolic/direct_ab_odd_fourier.py\`
+- \`src/symbolic/direct_ab_odd_constraints.py\`
+- \`notes/direct-two-vector-odd-expansion.md\`
+- \`notes/direct-asymptotic-odd-ghost.md\`
 
 ### Hidden radial TT Schwarzschild characteristic
 
