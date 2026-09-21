@@ -101,3 +101,29 @@ The model must be extraordinarily close to GR at accessible curvatures.
 ## Current priority
 
 The immediate target is not to "solve quantum gravity." It is to find the simplest covariant model that survives Problems 1–5. Failure there should be treated as useful information.
+
+
+## 16. Quasitopological inner horizons
+
+Standard GR mass-inflation arguments often use null thin shells. Recent
+quasitopological-gravity work finds that the relevant pure-gravity regular
+black-hole solutions do not admit such null thin shells within standard
+distributional theory.
+
+**Question:** what replaces the GR thin-shell diagnostic in the actual
+quasitopological field equations, and do smooth perturbations generate an
+inner-horizon singularity?
+
+Thin-shell arguments should therefore not be treated as a proof either for or
+against stability in the v2 benchmark.
+
+## 17. Background versus principal limiting curvature
+
+A universal bound on background curvature does not automatically bound the
+curvature or coefficients of physical characteristic operators.
+
+The vector benchmark demonstrated this explicitly.
+
+**Question:** does the local/nonlocal QTG completion satisfy a limiting-
+curvature property for its *physical perturbation principal symbols and Green
+functions*, not only for the background metric?
