@@ -277,3 +277,51 @@ Return effort to candidate theories that may survive the principal-safe gate:
 2. the exact nonlocal-QTG completion and its regular-BH fluctuation operator;
 3. model-independent no-go / necessary-condition statements extracted from
    the failure catalogue.
+
+
+## Post-vector gate decision
+
+Applying the auxiliary-mixing and principal-rank gates gives:
+
+### Local analytic Class-II / GQTG
+
+- passes the "no auxiliary derivative mixing" test;
+- remains useful as a polynomial/EFT control family;
+- fails the full-completion gate because of the known reduced-spectrum /
+  strong-coupling structure of local ECG/GQTG-like theories;
+- any regular finite-curvature vacuum core requires a nonuniform infinite
+  resummation beyond finite analytic truncations.
+
+**Decision:** no longer the primary completion candidate.
+
+### Nonlocal QTG
+
+The source construction explicitly restores principal derivative order and
+uses a zero-free entire form factor.
+
+**Passes so far:**
+
+- no two-vector-style auxiliary-hair failure;
+- no derivative-order reduction on the symmetric backgrounds analyzed in the
+  source;
+- no extra propagator poles on maximally symmetric backgrounds for the
+  zero-free entire choice;
+- healthy SS perturbative/Birkhoff subspace.
+
+**Next gates:**
+
+1. specify a differentiable four-dimensional QT base action;
+2. derive the generic odd-parity nonspherical regular-BH quadratic operator;
+3. test whether the curved-background nonlocal operator remains zero-kernel
+   and whether its physical kinetic/principal structure is finite at the
+   horizon and core.
+
+### Immediate next research target
+
+\[
+\boxed{
+\text{NLQT odd-parity perturbations on the regular black-hole background}
+}
+\]
+
+with the 4D base-action differentiability issue tracked separately.
