@@ -98,6 +98,36 @@ assert sp.simplify(B_qtg-expected)==0
 # vanishes.  Nontrivial nonpolynomial H4 needs the additional condition.
 assert expected.subs({H4p:0,H4pp:0})==0
 
+# Hayward representative functions from the paper.
+# A convenient dimensionless spot check M=ell=r=1 is sufficient to show
+# that the extra cancellation condition is not an identity on the solution.
+p,l,M,r=sp.symbols("p l M r", positive=True)
+
+H4_hayward=(
+    1
+    - l**2*p/(1-l**2*p)
+    + 2*l**2*p*sp.log((1-l**2*p)/p)
+)
+
+f_h=1-2*M*r**2/(r**3+2*M*l**2)
+psi_h=sp.factor((1-f_h)/r**2)
+eta_h=sp.factor(sp.diff(f_h,r)/r)
+R_h=sp.factor(-sp.diff(f_h,r,2))
+
+B_h=sp.factor(
+    (
+        (R_h-2*psi_h)*sp.diff(H4_hayward,p)
+        +(eta_h+2*psi_h)**2*sp.diff(H4_hayward,p,2)
+    ).subs(p,psi_h)
+)
+
+B_spot=sp.simplify(
+    B_h.subs({M:1,l:1,r:1})
+)
+expected_spot=4+sp.Rational(16,3)*sp.log(2)
+assert sp.simplify(B_spot-expected_spot)==0
+assert B_spot!=0
+
 
 def main():
     print("== Representative-lift action gradient ==")
@@ -122,6 +152,11 @@ def main():
         "If it is not satisfied on the background, the representative "
         "4D first variation diverges as 1/delta."
     )
+    print()
+    print("== Hayward spot check ==")
+    print("Using the paper's H4 and units M=ell=r=1:")
+    print(f"B_Hayward = {B_spot}")
+    print("This is nonzero, so the cancellation condition is not an identity.")
     print("All symbolic assertions passed.")
 
 
