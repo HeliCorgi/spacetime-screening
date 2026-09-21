@@ -32,7 +32,7 @@ jobs:
           {
             echo "## Symbolic CI run #$RUN_NUMBER — $RUN_CONCLUSION"
             echo
-            echo "- Commit: `$RUN_SHA`"
+            printf -- '- Commit: `%s`\n' "$RUN_SHA"
             echo "- Run: $RUN_URL"
             echo "- Conclusion: **$RUN_CONCLUSION**"
             echo
