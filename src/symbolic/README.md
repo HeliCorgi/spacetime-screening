@@ -174,3 +174,19 @@ Ricci tensor vanishes.
 Shows that the representative \(I_{C^3}/I_{C^2}\) Weyl ratio has removable
 values but divergent four-dimensional invariant gradients on Hayward
 Weyl-zero surfaces.
+
+
+### \`qtg_tnt_2026_benchmark.py\`
+
+Reproduces the June-2026 first-order QTG-TNT static solution
+
+\[
+a(r)=
+\frac{(r-2m)(r^2-2\ell^2)}
+{r^3-2r\ell^2+4m\ell^2},
+\]
+
+its finite center curvature, divergent \(\Box R\), exact horizons,
+extremal/critical masses, curvature-coupling pole \(x=1\), and the
+nondifferentiability warning associated with the \(R_4=0\) single-function
+branch.
