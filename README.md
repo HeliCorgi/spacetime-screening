@@ -494,3 +494,6 @@ See:
 - [src/numerical/sms_gri_benchmark.py](src/numerical/sms_gri_benchmark.py)
 - [src/numerical/sms_gri_curvature_separation.py](src/numerical/sms_gri_curvature_separation.py)
 - [src/numerical/sms_post_gri_fate_benchmark.py](src/numerical/sms_post_gri_fate_benchmark.py)
+- [notes/sms-formation-systematics.md](notes/sms-formation-systematics.md) — constant-rate versus cosmological variable-accretion applicability.
+- [notes/sms-screening-activation-scale.md](notes/sms-screening-activation-scale.md) — GR-to-screened matching radius from curvature-scale separation.
+- [notes/sms-gr-collapse-endpoints.md](notes/sms-gr-collapse-endpoints.md) — rotating full-GR endpoint benchmarks for horizon/remnant/disk/ejecta comparisons.
