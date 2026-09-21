@@ -160,3 +160,23 @@ Prefer predictions that are insensitive to arbitrary core parametrization.
     equations rather than importing GR thin-shell arguments.
 15. Use the vector benchmark failure as a permanent design constraint:
     background regularity without principal-symbol regularity is insufficient.
+
+
+## Immediate v2 action-selection gate
+
+Before computing any nonspherical principal symbol for a nonpolynomial
+four-dimensional lift, require:
+
+1. the action density is finite on the exact black-hole background;
+2. its first curvature derivatives are finite there;
+3. the Hessian needed for the quadratic action is finite;
+4. no extraction of spherical directions relies on a \(0/0\), singular
+   projector, or nondifferentiable square-root branch.
+
+The representative 2026 rational lift currently fails this gate on the
+single-function Hayward branch, despite having a perfectly finite spherical
+reduction.
+
+**Next target:** identify or construct a regular four-dimensional lift /
+polynomial-infinite-tower / nonlocal completion before resuming the tensor
+principal-symbol calculation.
