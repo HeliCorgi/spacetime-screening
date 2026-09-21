@@ -209,3 +209,21 @@ explicit regular-BH example.
 Encodes the classification consequence that analytic TNT curvature scalars
 depend on \(R_4\) only through even powers and therefore cannot generate the
 nonzero linear \(R_4\) term required by the first-order Class-I mechanism.
+
+
+### \`vector_odd_kinetic_matrix.py\`
+
+Builds the two-vector odd kinetic Schur complement from the quartic
+metric-vector mixing and finds one negative and one zero kinetic eigenvalue.
+
+### \`vector_odd_reduced_principal.py\`
+
+Generalizes the one-vector odd high-frequency \(K,R,G\) coefficients to the
+additive two-vector model and derives the double null characteristic
+\((\omega+fk)^2\) of the derivative-active vector combination.
+
+### \`vector_l1_odd_ghost.py\`
+
+Uses the odd dipole sector, where the local gravitational-wave mode is
+nondynamical, to isolate the negative vector kinetic combination and its
+unbounded quadratic Hamiltonian term.
