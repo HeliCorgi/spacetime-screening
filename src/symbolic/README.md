@@ -32,3 +32,28 @@ The script verifies:
   - maximum Hawking temperature.
 
 All expected identities are encoded as symbolic assertions, so a failed algebraic check stops the script.
+
+
+## Available scripts
+
+### `black_holes.py`
+
+Schwarzschild/Hayward curvature invariants, horizon structure, surface gravity,
+and Hawking temperature.
+
+### `effective_stress_energy.py`
+
+Reconstructs the Hayward effective anisotropic stress tensor in Einstein
+gravity and checks NEC/WEC/SEC/DEC boundaries and conservation.
+
+### `scalar_tensor_no_go.py`
+
+Checks the ansatz-level obstruction for a static radial canonical
+(F(\chi)R) screening field and its healthy radial k-essence extension.
+
+### `vector_hair_benchmark.py`
+
+Reproduces the regularity condition and Hayward-type branch of the published
+two-vector action benchmark, including core curvature, SEC violation,
+extremality, screening factor, and the universal-curvature/extremality
+tradeoff.
