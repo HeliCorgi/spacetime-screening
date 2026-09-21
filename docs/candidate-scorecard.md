@@ -400,3 +400,30 @@ Two project-specific gates remain:
 **Status:** leading candidate, but not yet principal-safe verified in 4D.
 
 See \`notes/principal-gate-classII-nlqt.md\`.
+
+
+## NLQT zero-kernel / kinetic / core status
+
+Current verdict:
+
+- **regular background core:** PASS;
+- **zero-kernel:** PASS only on the source-proven maximally symmetric and
+  spherical-perturbation subspaces;
+- **healthy flat/maximally-symmetric spectrum:** PASS;
+- **generic nonspherical RBH zero-kernel:** OPEN;
+- **generic nonspherical RBH kinetic sign:** OPEN;
+- **fluctuation-operator regularity at the core:** OPEN for a generic 4D
+  completion.
+
+A four-dimensional completion ambiguity prevents inference of the odd
+quadratic operator from the spherical response \(h(\psi)\) alone.  Terms such
+as \(({}^\star RR)^2\) leave the static spherical background unchanged while
+modifying the odd quadratic action.
+
+In addition, the NLQT operator \(\hat{\mathcal D}\) inherits the curvature
+Hessian of the local QT base action.  Therefore the previously studied
+nondifferentiable rational 4D base lift is not rescued automatically by the
+nonlocal form factor.
+
+**Next prerequisite:** specify a differentiable off-spherical 4D QT base
+action before computing the full NLQT odd operator.
