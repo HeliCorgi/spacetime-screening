@@ -315,19 +315,30 @@ characteristic is Schwarzschild-like.
 
 **Status:** NEW CALCULATION CANDIDATE — HIGHEST PRIORITY.
 
-**Critical limitation:** the present symbolic code verifies the local TT
-principal expansion and the exact background simplification, but does **not**
-yet derive the complete result from
+**Updated support:** the same factor has now been recovered from the standard
+Regge-Wheeler odd quadratic-action coefficient block.  The reduced tensor
+kinetic coefficient and radial characteristics are
 
 \[
-S_{\rm full}^{(2)}
-\rightarrow
-\text{all metric/vector constraints}
-\rightarrow
-S_{\rm physical,odd}^{(2)}.
+q_T=\frac{f-\Delta}{2f^2},
+\qquad
+v_-=-f,
+\qquad
+v_+=f\frac{f+\Delta}{f-\Delta},
 \]
 
-Therefore this is **not yet a theorem or publication-ready priority claim**.
+with
+
+\[
+f+\Delta=1-\frac{2M}{r}.
+\]
+
+At (r=2M), (q_T>0) and the background metric is regular, so this behaves as
+a tensor characteristic horizon rather than a kinetic ghost surface.
+
+The remaining limitation is an **independent direct harmonic expansion of the
+original two-vector action**, including its complete constraint algebra.
+Therefore this is still not labeled a publication-ready priority claim.
 
 The immediate research goal is to determine whether the same characteristic
 survives the full \(l\ge2\) odd-parity Regge-Wheeler reduction.
