@@ -20,7 +20,7 @@ Legend:
 | Candidate | 4D covariant action | Regular BH background | Dynamical formation | Covariant-lift differentiability | Physical kinetic matrix | Principal-symbol regularity | Strong coupling | Inner-horizon status | Current role |
 |---|---|---|---|---|---|---|---|---|---|
 | Minimal static \(F(\chi)R\) scalar | PASS | FAIL for target one-function Hayward ansatz | OPEN | PASS | N/A | N/A | N/A | N/A | Rejected minimal toy |
-| Two auxiliary vectors | PASS | PASS | OPEN | PASS | PARTIAL | FAIL in radial pure-TT diagnostic | OPEN/concern | PARTIAL via extremality | Counterexample / diagnostic |
+| Two auxiliary vectors | PASS | PASS | OPEN | PASS | **FAIL candidate: negative odd-vector kinetic mode** | FAIL candidate in radial TT diagnostic | **strong ghost/degeneracy concern** | PARTIAL via extremality | Counterexample / diagnostic; direct 2-vector expansion pending |
 | Nonpolynomial pure-gravity rational QTG lift | PASS as representative formula | PASS in spherical reduction | Related models: PARTIAL | **FAIL for displayed lift** | OPEN | not well-defined generically before lift repair | OPEN | OPEN | Spherical response benchmark |
 | Regularized-Lovelock/Horndeski infinite tower | PASS | PASS for known planar branch | OPEN | PASS | **FAIL on known planar branch** | **FAIL on known planar branch** | **FAIL** | not main issue | Rejected known regular branch |
 | Polynomial QTG, \(D\ge5\) | PASS | PASS | PASS in studied collapse models | PASS | OPEN on generic RBH | OPEN | OPEN | OPEN | Higher-D clean benchmark |
@@ -297,3 +297,35 @@ However:
 **Status:** strong symmetry-sector construction and useful integrability
 benchmark, but **FAIL** as the present full four-dimensional perturbative
 candidate under the covariant-action differentiability criterion.
+
+
+## Odd-vector kinetic update
+
+Applying the standard generalized-Proca odd quadratic-action reduction to the
+additive two-vector benchmark gives
+
+\[
+K_{\rm vec}
+=
+-\frac{cc^{\rm T}}{C_1}.
+\]
+
+In the static exterior \(C_1>0\), so the derivative-active vector combination
+has a negative kinetic eigenvalue.  The orthogonal vector combination has zero
+principal kinetic coefficient.
+
+The \(l=1\) sector is especially diagnostic because there is no local odd
+gravitational-wave degree of freedom.  At principal derivative order,
+
+\[
+\mathcal L_{l=1}^{\rm pr}
+=
+-\frac1{C_1}
+[c^{\rm T}(\dot u-fu')]^2.
+\]
+
+This is now the leading viability obstruction for the vector benchmark.
+
+The score remains labeled **candidate** rather than a completed theorem until
+the full two-vector harmonic action is rederived directly from the original
+action and its constraint algebra is explicitly checked.
