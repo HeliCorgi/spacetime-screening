@@ -1,4 +1,4 @@
-# Normalized Cotton Projectors Fail the Smooth-Core Differentiability Gate
+# Normalized Cotton Projectors: Smooth-Core Differentiability Warning
 
 The August-2026 non-polynomial-gravity construction suggests a possible way
 to avoid globally conformally-flat vacua: use exact non-conformally-flat
@@ -157,8 +157,12 @@ an open region with \(r>0\).
 But if the regular black hole has a smooth spherical center, the Cotton and
 Weyl tensors vanish in the \(r\to0\) limit.
 
-Therefore a base action fundamentally built from normalized Cotton/Weyl
-projectors still fails the repository's requirement that
+Therefore a bare normalized Cotton/Weyl projector does not itself possess a
+regular generic variation at the center.  However, the full NPQT densities
+multiply such non-analytic structures by higher-order curvature numerators,
+so a cancellation at the level of the complete action is possible in
+principle.  The correct requirement is therefore to test whether the **full
+rational density** admits a C² extension for which
 
 \[
 \mathcal L,\quad
@@ -169,13 +173,15 @@ projectors still fails the repository's requirement that
 have a regular extension to the center, unless the complete action exhibits a
 nontrivial cancellation.
 
-This means the non-conformally-flat-vacuum branch does **not** automatically
-provide the differentiable 4D QT base needed by NLQT.
+This means the non-conformally-flat-vacuum branch does **not automatically**
+provide the differentiable 4D QT base needed by NLQT, but this note alone does
+not prove that the complete NPQT action fails.
 
 ## 5. Stronger design rule
 
-For a principal-safe regular spherical center, avoid fundamental action
-variables that normalize a curvature tensor which vanishes at the center.
+For a principal-safe regular spherical center, normalized curvature
+projectors should trigger an explicit full-density extension test rather than
+being accepted from their symmetry-reduced value alone.
 
 Schematically, avoid
 
@@ -213,3 +219,41 @@ Run
 \`\`\`bash
 python src/symbolic/npg_cotton_projector_core.py
 \`\`\`.
+
+
+## 7. Important refinement: homogeneous full densities
+
+The explicit 2025 NPQT representatives are not simply normalized projectors.
+Their rational terms contain higher-degree curvature numerators.
+
+Consequently a complete rational term can be homogeneous of positive degree
+\(m\ge3\).  Along a fixed curvature-space ray whose denominator coefficient is
+nonzero, such a term can scale as
+
+\[
+\mathcal Z_{\rm rat}=O(\epsilon^m),
+\]
+
+so its first and second derivatives may vanish as the maximally symmetric
+point is approached.
+
+This means the projector derivative estimate above is a **warning about the
+building block**, not a completed Hessian calculation for the full NPQT
+density.
+
+However fixed-ray power counting is still insufficient.  A homogeneous
+denominator can have nontrivial zero directions, and a path approaching such
+a direction can invalidate continuity unless the full numerator cancels the
+zero set strongly enough.
+
+The remaining precise question is therefore:
+
+\[
+\boxed{
+\text{Does each full NPQT rational density admit a C² covariant extension
+across its denominator-zero set near the regular core?}
+}
+\]
+
+See \`src/symbolic/npqt_homogeneous_c2_gate.py\` for a toy demonstration that
+positive homogeneous degree alone does not guarantee such an extension.
