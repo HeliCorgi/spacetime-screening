@@ -77,7 +77,7 @@ assert m6 == 0
 # Remaining published syzygies.
 assert sp.simplify(6 * w2**2 - w1**3) == 0
 assert sp.simplify((3 * m2 - w1 * r1) * w1 - 3 * m1 * w2) == 0
-assert sp.simpl((3 * m5 - w1 * m1) * w1 - 3 * m3 * w2) == 0
+assert sp.simplify((3 * m5 - w1 * m1) * w1 - 3 * m3 * w2) == 0
 assert sp.simplify(6 * m4 + w1 * r2) == 0
 assert sp.simplify(m3 - m2) == 0
 assert sp.simplify(
