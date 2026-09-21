@@ -237,37 +237,43 @@ If not, prioritize extraction of the exact nonlocal-QTG black-hole quadratic
 operator.
 
 
-## P0 vector odd-sector status
+## P0 vector odd-sector status: direct failure established
 
-Completed intermediate checks:
+Completed:
 
-- mapped the derivative sector to the published generalized-Proca odd
-  quadratic-action coefficients;
-- found the two-vector Schur-complement kinetic matrix
+- direct \(l=2\) four-dimensional expansion of the original \(A-B\) action;
+- direct full-\((t,r)\) principal metric-vector mixing;
+- direct active/null vector basis;
+- proof that the null vector combination has no velocity mixing and positive
+  algebraic stiffness;
+- local/canonical \(l=1\) reduction;
+- algorithmic linearized-Einstein cross-check;
+- asymptotic elimination of nondynamical \(Q\) and null \(V\);
+- proof that
   \[
-  K_{\rm vec}=-cc^{\rm T}/C_1;
+  \lim_{r\to\infty}
+  r^5\det K_{\rm red}<0.
   \]
-- found one negative and one zero vector kinetic eigenvalue;
-- derived
-  \[
-  P_{\rm vec}\propto(\omega+fk)^2;
-  \]
-- used the \(l=1\) dipole sector to isolate the negative vector kinetic mode
-  from any propagating odd graviton;
-- strengthened the metric principal calculation: the standard odd
-  coefficient block contains
-  \[
-  f+\Delta=1-\frac{2M}{r}
-  \]
-  exactly on the regular branch.
 
-Remaining publication-level P0 task:
+Thus the vector benchmark fails the physical-kinetic criterion in an
+asymptotic exterior open region.
 
-1. expand the original \(A-B\) action directly in two-vector axial harmonics;
-2. reproduce every derivative coefficient without importing the one-vector
-   formula;
-3. derive the full primary/secondary constraint algebra;
-4. determine whether the zero-kinetic vector combination is auxiliary or
-   strongly coupled;
-5. confirm whether the negative active combination survives all constraints;
-6. only then return to the \(l\ge2\) physical tensor master characteristic.
+Remaining vector-model work is no longer required to decide viability.
+
+Optional follow-up only:
+
+1. complete the global-in-\(r\) Dirac rank map to identify every
+   rank-changing surface;
+2. finish the direct physical \(l\ge2\) tensor master equation to decide the
+   separate hidden-Schwarzschild-cone claim;
+3. convert the direct odd calculation into a concise publication-style
+   derivation and broaden the literature search.
+
+### Main research branch now
+
+Return effort to candidate theories that may survive the principal-safe gate:
+
+1. analytic Class-II / generalized-QTG infinite towers;
+2. the exact nonlocal-QTG completion and its regular-BH fluctuation operator;
+3. model-independent no-go / necessary-condition statements extracted from
+   the failure catalogue.
