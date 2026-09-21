@@ -131,7 +131,10 @@ Prefer predictions that are insensitive to arbitrary core parametrization.
 1. Derive curvature invariants for a one-parameter screening family.
 2. Prove the regular-center scaling conditions.
 3. Compare the vector-hair benchmark with extended mimetic reconstruction and identify the smaller healthy field content.
-4. Compute the quadratic perturbation action / constraint count for the chosen action.
-5. Test whether the extremal branch avoids classical mass inflation without introducing semiclassical or strong-coupling instabilities.
-6. Determine whether universal limiting curvature can coexist with extremality across arbitrary black-hole masses.
-7. Decide whether a Minkowski core is dynamically possible on one branch or genuinely requires a phase label.
+4. Perform a full ADM/Dirac constraint count for the two-vector action.
+5. Derive odd-parity non-spherical perturbation equations and their characteristic speeds.
+6. Derive even-parity non-spherical perturbations and test for hidden kinetic degeneracy.
+7. Analyze the extremal AdS2 x S2 throat for Aretakis-type conserved quantities.
+8. Test whether the extremal branch avoids classical mass inflation without introducing semiclassical or strong-coupling instabilities.
+9. Determine whether universal limiting curvature can coexist with extremality across arbitrary black-hole masses.
+10. Decide whether a Minkowski core is dynamically possible on one branch or genuinely requires a phase label.
