@@ -124,3 +124,22 @@ susceptibility
 (1-\ell^2\psi)^2
 \to0.
 \]
+
+
+### \`limiting_curvature_response.py\`
+
+Computes the large-source inverse-response falloff for the Hayward QTG
+relation, including
+
+\[
+\beta_{\rm eff}
+=
+-\frac{d\log(\partial\psi/\partial s)}{d\log s}
+\to2.
+\]
+
+### \`nonlocal_zero_free_form_factor.py\`
+
+Implements a generic zero-free entire quadratic form-factor toy and checks the
+absence of additional finite propagator zeros. This is a design diagnostic,
+not a transcription of a specific nonlocal-QTG action.
