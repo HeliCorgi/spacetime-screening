@@ -78,7 +78,7 @@ def main():
 
     assert sp.simplify(f_over_r2 + 1/ell**2)==0
     assert sp.simplify(X0 - 1/(2*ell**2))==0
-    assert sp.simplify(R0 + 12/ell**2)==0
+    assert sp.simplify(R0 - 12/ell**2)==0
     assert sp.simplify(K0 - 24/ell**4)==0
 
     # Odd angular speed becomes negative and divergent.
