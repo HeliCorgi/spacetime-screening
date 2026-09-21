@@ -6,6 +6,16 @@ singular.
 
 This note tests one concrete repair mechanism.
 
+> **Update — 2026-09-22:** the follow-up continuity calculation shows that
+> this toy is **not C0** at an intended spherical simultaneous zero
+> \(D=\Delta_W=0\).  A spherical path tends to \(48q^2\theta\), while a
+> Weyl-splitting path tends to zero.  See
+> `notes/npqt-petrov-regulator-continuity-gate.md` and
+> `src/symbolic/npqt_petrov_regulator_continuity_gate.py`.
+>
+> Accordingly, this file is retained only as the pointwise type-I-pole
+> proof of concept; it is no longer the mainline representative candidate.
+
 ## 1. Freedom away from spherical symmetry
 
 The source literature emphasizes that many inequivalent four-dimensional
@@ -159,30 +169,46 @@ Remaining problems include:
    D=\Delta_W=0;
    \]
 2. type-II/D algebraically special but nonspherical configurations;
-3. Weyl tensors with nonzero magnetic part, for which the full complex
-   speciality discriminant must be used;
-4. points with \(Z_2=0\);
-5. C² extendibility at the maximally symmetric core;
-6. whether the modified full density still has the required second-order
-   spherical equations after all terms and normalization conventions are
-   restored.
+3. Weyl tensors with nonzero magnetic part, for which the full com## 5. Updated mainline problem
 
-The important result is narrower:
+The denominator-only design problem has now been sharpened.
+
+The follow-up calculation finds that, on a general spherical algebraic
+curvature configuration,
 
 \[
 \boxed{
-\text{off-spherical representative freedom can remove at least the explicit
-type-I pole without changing the spherical ratio.}
+\frac ND=W_2\Theta,
 }
 \]
 
-This keeps the search for a better 4D NPQT base alive.
+where \(\Theta\) is the repeated angular eigenvalue of the traceless Ricci
+tensor in the spherical decomposition.
 
-## 5. Next algebraic problem
+Therefore the next construction should seek a smooth 4D covariant extension
 
-The representative-design problem can be formulated as follows.
+\[
+\Theta_{\rm ext}
+\]
 
-Find spherical-vanishing polynomial invariants \(S_i\) such that a modified
+and test
+
+\[
+\boxed{
+T_{\rm ext}=W_2\Theta_{\rm ext}
+}
+\]
+
+directly for a genuine \(C^2\) curvature extension.  A simple
+Petrov-discriminant denominator lift cannot solve the type-D directional
+problem because \(\Delta_W\) vanishes identically on that whole locus.
+
+See:
+
+- `notes/npqt-petrov-regulator-continuity-gate.md`;
+- `src/symbolic/npqt_petrov_regulator_continuity_gate.py`.
+
+hat a modified
 denominator
 
 \[
