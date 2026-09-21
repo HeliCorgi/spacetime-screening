@@ -35,10 +35,17 @@ Replace metric engineering with an action.
 
 Candidate classes:
 
-- scalar-tensor order-parameter models;
+- extended mimetic / degenerate scalar-tensor models;
+- auxiliary-vector / generalized Proca-type models;
 - higher-curvature / quasitopological actions;
 - nonlocal ghost-free form factors;
 - RG-improved effective actions only where the scale identification is derived consistently.
+
+Current status:
+
+- a minimal static radial canonical (F(\chi)R) model has an ansatz-level no-go;
+- a published two-vector action provides an exact Hayward-type benchmark;
+- the next task is to analyze the propagating degrees of freedom and stability of an action-level realization rather than invent another metric ansatz.
 
 Checks:
 
@@ -123,6 +130,8 @@ Prefer predictions that are insensitive to arbitrary core parametrization.
 
 1. Derive curvature invariants for a one-parameter screening family.
 2. Prove the regular-center scaling conditions.
-3. Find the minimal covariant action realizing them.
-4. Test whether an inner-extremal horizon can avoid classical mass inflation without semiclassical instability.
-5. Decide whether a Minkowski core is dynamically possible on one branch or genuinely requires a phase label.
+3. Compare the vector-hair benchmark with extended mimetic reconstruction and identify the smaller healthy field content.
+4. Compute the quadratic perturbation action / constraint count for the chosen action.
+5. Test whether the extremal branch avoids classical mass inflation without introducing semiclassical or strong-coupling instabilities.
+6. Determine whether universal limiting curvature can coexist with extremality across arbitrary black-hole masses.
+7. Decide whether a Minkowski core is dynamically possible on one branch or genuinely requires a phase label.
