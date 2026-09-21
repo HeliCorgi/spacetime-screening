@@ -268,3 +268,64 @@ Run
 \`\`\`bash
 python src/symbolic/npqt_explicit_singular_direction.py
 \`\`\`.
+
+
+## 6. Full cubic-density source check
+
+The source equation for the displayed cubic NPQT density is
+
+\[
+\mathcal Z_{(3)}
+=
+\text{polynomial cubic curvature contractions}
++
+\frac92
+\frac{
+W_3 Z_3 W_2
+}{
+(WZZ)W_2-2W_3Z_2
+}.
+\]
+
+There is no second rational term in \(\mathcal Z_{(3)}\) with which this pole
+could cancel.  All other cubic terms are ordinary polynomial contractions and
+remain finite on a finite algebraic curvature tensor.
+
+The repository has now also reconstructed the Weyl tensor explicitly in a
+Lorentzian orthonormal frame and recomputed
+
+\[
+W_2,\quad W_3,\quad Z_2,\quad Z_3,\quad WZZ
+\]
+
+by direct index contraction.
+
+This independent tensor-level check gives the same values,
+
+\[
+W_2=496,\qquad
+W_3=1440,
+\]
+
+\[
+Z_3=-\frac{384}{61},
+\]
+
+\[
+D_{\rm NPQT}=0,
+\]
+
+and
+
+\[
+W_3Z_3W_2
+=
+-\frac{274268160}{61}.
+\]
+
+Thus the pole is a property of the full displayed cubic density, not an
+artifact of the shorthand invariant formulas.
+
+See
+
+\`src/symbolic/npqt_explicit_pole_tensor_check.py\`.
