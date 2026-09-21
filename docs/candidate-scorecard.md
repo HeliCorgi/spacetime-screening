@@ -20,7 +20,7 @@ Legend:
 | Candidate | 4D covariant action | Regular BH background | Dynamical formation | Covariant-lift differentiability | Physical kinetic matrix | Principal-symbol regularity | Strong coupling | Inner-horizon status | Current role |
 |---|---|---|---|---|---|---|---|---|---|
 | Minimal static \(F(\chi)R\) scalar | PASS | FAIL for target one-function Hayward ansatz | OPEN | PASS | N/A | N/A | N/A | N/A | Rejected minimal toy |
-| Two auxiliary vectors | PASS | PASS | OPEN | PASS | **FAIL candidate: negative odd-vector kinetic mode** | FAIL candidate in radial TT diagnostic | **strong ghost/degeneracy concern** | PARTIAL via extremality | Counterexample / diagnostic; direct 2-vector expansion pending |
+| Two auxiliary vectors | PASS | PASS | OPEN | PASS | **FAIL: direct odd ghost in asymptotic exterior** | FAIL candidate in radial TT diagnostic | **FAIL / asymptotic degeneracy** | PARTIAL via extremality | Rejected as healthy benchmark; retained as counterexample |
 | Nonpolynomial pure-gravity rational QTG lift | PASS as representative formula | PASS in spherical reduction | Related models: PARTIAL | **FAIL for displayed lift** | OPEN | not well-defined generically before lift repair | OPEN | OPEN | Spherical response benchmark |
 | Regularized-Lovelock/Horndeski infinite tower | PASS | PASS for known planar branch | OPEN | PASS | **FAIL on known planar branch** | **FAIL on known planar branch** | **FAIL** | not main issue | Rejected known regular branch |
 | Polynomial QTG, \(D\ge5\) | PASS | PASS | PASS in studied collapse models | PASS | OPEN on generic RBH | OPEN | OPEN | OPEN | Higher-D clean benchmark |
@@ -81,8 +81,25 @@ Failures/concerns found in this repository:
   \(f_T=1-2M/r\);
 - test fields on the extremal throat possess an Aretakis instability.
 
-**Status:** valuable counterexample showing that background regularity is
-insufficient.
+Direct source-action follow-up now shows that, in a sufficiently large but
+finite asymptotic exterior region, the reduced odd (l=2) physical kinetic
+matrix has negative determinant after the nondynamical directions are
+eliminated:
+
+\[
+\lim_{r\to\infty}
+r^5\det K_{\rm red}
+=
+-\frac{1152\pi^2}{25}
+M\ell^4(16M^2+q^2)<0.
+\]
+
+Hence one reduced odd kinetic eigenvalue is negative in that open region.
+The derivative-null vector combination has positive algebraic stiffness and
+no velocity mixing, so it does not remove the negative mode.
+
+**Status:** rejected as a globally healthy perturbative benchmark; retained as
+a counterexample showing that background regularity is insufficient.
 
 ## 3. Nonpolynomial pure-gravity QTG
 
@@ -299,33 +316,38 @@ benchmark, but **FAIL** as the present full four-dimensional perturbative
 candidate under the covariant-action differentiability criterion.
 
 
-## Odd-vector kinetic update
+## Direct odd-sector ghost update
 
-Applying the standard generalized-Proca odd quadratic-action reduction to the
-additive two-vector benchmark gives
+The original two-vector action has now been expanded directly in four-
+dimensional axial harmonics.
 
-\[
-K_{\rm vec}
-=
--\frac{cc^{\rm T}}{C_1}.
-\]
-
-In the static exterior \(C_1>0\), so the derivative-active vector combination
-has a negative kinetic eigenvalue.  The orthogonal vector combination has zero
-principal kinetic coefficient.
-
-The \(l=1\) sector is especially diagnostic because there is no local odd
-gravitational-wave degree of freedom.  At principal derivative order,
+The direct calculation reproduces:
 
 \[
-\mathcal L_{l=1}^{\rm pr}
-=
--\frac1{C_1}
-[c^{\rm T}(\dot u-fu')]^2.
+\text{no intrinsic }\dot u^2
+\quad+\quad
+\text{metric-vector derivative mixing}
+\quad+\quad
+\text{one derivative-null vector combination}.
 \]
 
-This is now the leading viability obstruction for the vector benchmark.
+After transforming to active/null vector variables, the null combination is
+purely auxiliary in the asymptotic exterior:
 
-The score remains labeled **candidate** rather than a completed theorem until
-the full two-vector harmonic action is rederived directly from the original
-action and its constraint algebra is explicitly checked.
+- no quadratic velocity;
+- no linear velocity mixing;
+- positive algebraic stiffness.
+
+After eliminating \(Q\), the remaining \((W,U)\) kinetic determinant is
+strictly negative for sufficiently large finite \(r\).
+
+Therefore the benchmark contains a linear odd-sector ghost in that asymptotic
+open region.
+
+This is a technical result of the direct quadratic calculation.  Novelty
+priority remains unclaimed pending a broader literature review.
+
+See:
+
+- \`notes/direct-two-vector-odd-expansion.md\`
+- \`notes/direct-asymptotic-odd-ghost.md\`
