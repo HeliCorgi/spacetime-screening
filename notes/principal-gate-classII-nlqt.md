@@ -531,3 +531,19 @@ that must be controlled next:
 \]
 
 See \`src/symbolic/nonlocal_qtg_nonspherical_gate.py\`.
+
+
+## References
+
+- A. Colléaux, I. Kolář, T. Málek,
+  *Quasi-topological gravity for 4-dimensional Taub-NUT, near-horizon extreme
+  Kerr, and swirling symmetries*, arXiv:2606.17784.
+- J. Beltrán Jiménez, A. Jiménez-Cano,
+  *On the strong coupling of Einsteinian Cubic Gravity and its
+  generalisations*, JCAP **01** (2021) 069, arXiv:2009.08197.
+- J. Beltrán Jiménez, A. Jiménez-Cano,
+  *On the physical viability of black hole solutions in Einsteinian Cubic
+  Gravity and its generalisations*, Phys. Dark Univ. **43** (2024) 101387.
+- P. Bueno, P. A. Cano, R. A. Hennigar, Á. J. Murcia,
+  *Regular Black Holes in Nonlocal Quasitopological Gravity*,
+  arXiv:2607.07790 (2026).
