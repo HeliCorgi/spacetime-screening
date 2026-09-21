@@ -192,9 +192,12 @@ def main() -> None:
                 f"event={row['event']} mass={row['mass_msun'] or 'n/a'}"
             )
 
-    # Cosmic time increases as redshift decreases.
-    anchors_sorted = sorted(anchors, reverse=True)
-    ages = [x[1] for x in anchors_sorted]
+    # Cosmic time increases as redshift decreases.  Multiple source rows can
+    # legitimately share the same redshift (for example two simulation
+    # contexts at z=14), so test monotonicity on unique redshift anchors.
+    age_by_z = {z: age for z, age, _, _ in anchors}
+    unique_z_desc = sorted(age_by_z, reverse=True)
+    ages = [age_by_z[z] for z in unique_z_desc]
     assert all(b > a for a, b in zip(ages, ages[1:]))
 
     # Explicit source anchors.
