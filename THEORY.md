@@ -697,7 +697,98 @@ See
 and
 [docs/principal-safe-screening.md](docs/principal-safe-screening.md).
 
-## 15. Phase-transition hypothesis
+
+## 15. Covariant-lift differentiability
+
+The explicit representative four-dimensional lift used to realize the
+nonpolynomial spherical theory has an additional obstruction that appears
+before a nonspherical tensor principal symbol can be defined.
+
+The densities \(\mathcal P\) and \(\mathcal K\) contain the denominator
+
+\[
+D
+=
+I_{C^2}I_{R^2C}
++
+2I_{\hat R^2}I_{C^3}.
+\]
+
+On a generic warped-product background,
+
+\[
+\boxed{
+D
+=
+-\frac13
+(\eta^2-2\tau)\Omega^3.
+}
+\]
+
+For a static single-function metric,
+
+\[
+\tau=\frac{\eta^2}{2},
+\]
+
+so
+
+\[
+D=0
+\]
+
+identically along the entire Hayward branch.  The corresponding numerators
+also vanish and the spherical ratios possess the removable limits
+\(\mathcal P\to\psi\) and \(\mathcal K\to\mathcal R\).
+
+However, generic four-dimensional invariant gradients behave as
+
+\[
+\frac{\partial\mathcal P}
+{\partial I_{\hat R^3}}
+\sim
+\frac{1}{6(\eta^2-2\tau)},
+\]
+
+\[
+\frac{\partial\mathcal K}
+{\partial I_{\hat R^3}}
+\sim
+-\frac{1}{3(\eta^2-2\tau)}.
+\]
+
+For the complete representative QTG action, cancellation of this divergence
+would require the additional background condition
+
+\[
+(\mathcal R-2\psi)H_4'
++
+(\eta+2\psi)^2H_4''
+=
+0.
+\]
+
+The explicit Hayward functions do not satisfy this identically.
+
+Alternative algebraic lifts do not trivially cure the problem. A
+square-root extraction from \(I_{\hat R^2}\) reconstructs the correct
+single-function branch, but its derivative diverges when the traceless Ricci
+tensor vanishes.  The Weyl-ratio density \(\mathcal H\) likewise has divergent
+invariant gradients on Weyl-zero surfaces.
+
+Therefore the representative rational lift is suitable as a spherical
+proof-of-principle construction but is not presently a regular starting point
+for a generic nonspherical perturbation calculation.
+
+This does not invalidate the reduced QTG response law.  It strengthens the
+requirement that a full screening theory possess a four-dimensional action
+that is differentiable on the background in the physical perturbation
+directions.
+
+See
+[notes/covariant-lift-degeneracy.md](notes/covariant-lift-degeneracy.md).
+
+## 16. Phase-transition hypothesis
 
 The stronger version of the project is
 
@@ -723,7 +814,7 @@ A conceptual state-space picture is
 
 where states in \(\mathcal H_{\rm geometric}\) admit an approximate description by \((M,g_{\mu\nu},\Phi)\), while sufficiently quantum states need not.
 
-## 16. What would count as success
+## 17. What would count as success
 
 A serious model must derive, rather than assume:
 
