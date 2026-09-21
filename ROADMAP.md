@@ -562,3 +562,48 @@ See:
 - \`notes/sms-post-gri-fate-gate.md\`;
 - \`data/sms_gri_gr_benchmark.csv\`;
 - \`data/sms_post_gri_fates.csv\`.
+
+
+### Nonlinear collapse benchmark vector
+
+For a GR branch that genuinely proceeds beyond GRI into strong-field collapse,
+compare the screened theory against published rotating-GR endpoints using
+
+\[
+\left\{
+t_{\rm AH},
+M_{\rm AH}/M,
+a_{\rm rem},
+M_{\rm disk}/M,
+M_{\rm eject}/M,
+E_{\rm eject}/(Mc^2)
+\right\}.
+\]
+
+If screening prevents apparent-horizon formation, replace the first three by
+
+\[
+\left\{
+R_{\rm min},
+K_{\rm max},
+M_{\rm core}/M
+\right\}.
+\]
+
+Use the curvature-scale matching variable
+
+\[
+\eta=K/K_h
+\]
+
+to overlap a GR outer collapse with the future screened strong-field solver.
+
+The matching radius obeys
+
+\[
+r_{\rm act}/r_s=\eta_{\rm act}^{-1/6}.
+\]
+
+This makes the next numerical objective concrete: evolve a known GR-collapse
+SMS branch to an overlap surface, then continue it with a principal-safe
+screened theory and test convergence as the overlap surface is moved.
