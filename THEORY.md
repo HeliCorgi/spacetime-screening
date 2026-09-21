@@ -494,7 +494,116 @@ See
 [notes/extremal-near-horizon.md](notes/extremal-near-horizon.md) and
 [notes/aretakis-test-scalar.md](notes/aretakis-test-scalar.md).
 
-## 13. Phase-transition hypothesis
+## 13. Radial tensor principal cone
+
+The strongest current obstruction to the two-vector benchmark comes from the
+high-frequency radial tensor principal symbol.
+
+For a local transverse-traceless graviton propagating radially, the two
+background vectors are parallel and null. Their difference enters through
+
+\[
+D_{\mu\nu}
+=
+A_\mu A_\nu-B_\mu B_\nu.
+\]
+
+The pure-TT quadratic principal action is a null Kerr-Schild deformation with
+
+\[
+\boxed{
+g_{\rm T}^{\mu\nu}
+=
+g^{\mu\nu}
++
+4\ell^2
+\left(
+A^\mu A^\nu-B^\mu B^\nu
+\right)
+}.
+\]
+
+On the regular branch,
+
+\[
+a^2-b^2
+=
+-\frac{Mq}{r(r^3+2q\ell^2)}.
+\]
+
+Since the null vectors point along the ingoing radial direction, the effective
+radial characteristic function is
+
+\[
+f_{\rm T}
+=
+f+4\ell^2(a^2-b^2).
+\]
+
+Using
+
+\[
+f
+=
+1-\frac{2Mr^2}{r^3+2q\ell^2},
+\]
+
+the screening terms cancel exactly:
+
+\[
+\boxed{
+f_{\rm T}(r)
+=
+1-\frac{2M}{r}.
+}
+\]
+
+Thus the radial pure-TT characteristic cone is Schwarzschild-like even though
+the background metric is regular.
+
+Its characteristic horizon is
+
+\[
+\boxed{
+r_{\rm T}=2M,
+}
+\]
+
+while every regular-background horizon obeys
+
+\[
+r_h<2M
+\]
+
+for \(q>0\).
+
+If this principal metric survives the complete spherical constraint
+reduction, its characteristic curvature is
+
+\[
+K_{\rm T}
+=
+\frac{48M^2}{r^6},
+\]
+
+so the perturbation operator retains a Schwarzschild-like singular core.
+
+This is not yet a proof that the full theory is ill posed. The complete
+\(l\ge2\) odd quadratic action must still be reduced. It is, however, a sharp
+warning that
+
+\[
+\boxed{
+\text{background regularity}
+\not\Rightarrow
+\text{regular characteristic geometry}.
+}
+\]
+
+See
+[notes/tensor-principal-cone.md](notes/tensor-principal-cone.md).
+
+## 14. Phase-transition hypothesis
 
 The stronger version of the project is
 
@@ -520,7 +629,7 @@ A conceptual state-space picture is
 
 where states in \(\mathcal H_{\rm geometric}\) admit an approximate description by \((M,g_{\mu\nu},\Phi)\), while sufficiently quantum states need not.
 
-## 14. What would count as success
+## 15. What would count as success
 
 A serious model must derive, rather than assume:
 
