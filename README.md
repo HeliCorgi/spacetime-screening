@@ -459,3 +459,38 @@ The paper's full simulation outputs are not public in the cited data release;
 the Nature data-availability statement says they are available from the
 corresponding author on reasonable request.  The repository therefore avoids
 presenting hand-read figure values as exact source data.
+
+
+## SMS collapse formation gate
+
+The heavy-seed benchmark now distinguishes three different pieces of physics:
+
+\[
+\boxed{
+\text{cosmological feeding}
+\rightarrow
+\text{SMS radial instability}
+\rightarrow
+\text{post-GRI fate}
+\rightarrow
+\text{BH/screened-object accretion}.
+}
+\]
+
+Saio et al. (2024) provide a GR radial-mode benchmark
+\(M_{\rm crit}(\dot M_*)\), including the very small compactness at GRI onset.
+Nagele & Umeda (2024) then show with GR hydrodynamics that GRI does **not**
+automatically imply BH formation: Pop III models can collapse or undergo
+thermonuclear pulsations depending non-monotonically on the accretion rate.
+
+For a genuinely high-curvature screening theory, the most direct formation
+test is therefore the nonlinear evolution of a GR-collapse branch after GRI,
+not an ad hoc shift of the weak-field stellar threshold.
+
+See:
+
+- [notes/sms-gr-instability-formation-gate.md](notes/sms-gr-instability-formation-gate.md)
+- [notes/sms-post-gri-fate-gate.md](notes/sms-post-gri-fate-gate.md)
+- [src/numerical/sms_gri_benchmark.py](src/numerical/sms_gri_benchmark.py)
+- [src/numerical/sms_gri_curvature_separation.py](src/numerical/sms_gri_curvature_separation.py)
+- [src/numerical/sms_post_gri_fate_benchmark.py](src/numerical/sms_post_gri_fate_benchmark.py)
