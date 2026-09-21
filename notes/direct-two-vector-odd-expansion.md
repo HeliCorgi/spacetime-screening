@@ -671,3 +671,121 @@ Persistent CI results are posted to:
 \[
 \texttt{GitHub Issue \#1: CI monitor: symbolic calculations}.
 \]
+
+
+## 13. Exact four-dimensional odd dipole cross-check
+
+The direct source-action calculation has also been repeated with the exact
+\(l=1,m=0\) axial Killing harmonic,
+
+\[
+S_\phi=\sin^2\theta.
+\]
+
+No local inertial or generalized-Proca reduction is used.  The script
+
+\[
+\texttt{src/symbolic/direct\_two\_vector\_odd\_l1.py}
+\]
+
+recomputes the four-dimensional Christoffels, Ricci tensor, Ricci scalar,
+Einstein tensor, original vector action, angular integral, and quadratic
+temporal derivative sector.
+
+The exact dipole coefficients are
+
+\[
+\boxed{
+A_{\rm EH}^{(l=1)}
+=
+\frac{4\pi}{3},
+}
+\]
+
+\[
+\boxed{
+B_{W u}^{(l=1)}
+=
+-\frac{32\pi p}{3f},
+}
+\]
+
+and
+
+\[
+\boxed{
+D_{Q u}^{(l=1)}
+=
+-\frac{64\pi p}{3rf}
+=
+\frac{2}{r}B_{Wu}^{(l=1)}.
+}
+\]
+
+Again,
+
+\[
+\boxed{
+\frac{\partial^2\mathcal L_V^{(2)}}
+{\partial\dot u^2}=0.
+}
+\]
+
+For the complete \(A-B\) theory the direct dipole velocity Hessian has the
+same signature pattern as the \(l=2\) calculation:
+
+\[
+\boxed{
+(+,-,0).
+}
+\]
+
+Its null vector is again
+
+\[
+\boxed{
+(0,b,a).
+}
+\]
+
+Thus the active/null vector decomposition is harmonic-independent between the
+explicit \(l=1\) and \(l=2\) checks.
+
+GitHub Actions run #19 passes the complete symbolic suite on Python 3.11 and
+3.12 with this direct dipole expansion included.
+
+## 14. Current direct-source-action conclusion
+
+The earlier methodological concern that the odd instability might be an
+artifact of mapping onto a one-vector generalized-Proca formalism is now
+substantially removed.
+
+The same structure has been obtained independently from:
+
+1. brute-force \(l=2\) four-dimensional expansion of the original action;
+2. brute-force \(l=1\) four-dimensional expansion;
+3. full-\((t,r)\) direct principal expansion;
+4. algorithmic local linearized-Einstein calculation;
+5. canonical dipole constraint reduction;
+6. asymptotic auxiliary reduction.
+
+The direct \(l=2\) reduced kinetic determinant satisfies
+
+\[
+\boxed{
+\lim_{r\to\infty}
+r^5\det K_{\rm red}
+=
+-
+\frac{1152\pi^2}{25}
+M\ell^4(16M^2+q^2)<0.
+}
+\]
+
+Therefore the existence of an odd negative-kinetic mode in a sufficiently
+large finite asymptotic exterior region is now a direct result of the
+quadratic source-action calculation.
+
+The remaining uncertainty is not whether the vector benchmark is viable—it
+already fails the kinetic criterion—but whether the **separate tensor master
+mode** retains the hidden Schwarzschild characteristic globally.
