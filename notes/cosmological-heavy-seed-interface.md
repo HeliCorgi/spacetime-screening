@@ -601,3 +601,76 @@ This provides a clean separation between:
 1. source-derived cosmological feeding information;
 2. an independently derived strong-field inner solution;
 3. the radiation/kinetic quantities returned to a future AREPO rerun.
+
+
+## 13. Strong-field / cosmological timescale separation
+
+There is also a very large temporal separation.
+
+For a black hole,
+
+\[
+t_g=\frac{GM}{c^3}.
+\]
+
+At
+
+\[
+M=10^6M_\odot,
+\]
+
+this gives
+
+\[
+\boxed{
+t_g\simeq4.93\ {\rm s}.
+}
+\]
+
+The source states that the initial super-Eddington episode lasts less than
+roughly \(1\) Myr.
+
+Therefore
+
+\[
+\boxed{
+\frac{1{\rm\,Myr}}{t_g}
+\sim6.4\times10^{12}
+}
+\]
+
+for a \(10^6M_\odot\) seed.
+
+Even the dynamical time at the \(500\) au inner resolution scale is of order
+years, still many orders of magnitude longer than \(t_g\).
+
+This suggests a practical first coupling scheme:
+
+\[
+\boxed{
+\text{outer simulation history}
+\rightarrow
+\text{sequence of quasi-stationary strong-field inner solutions}.
+}
+\]
+
+At each outer timestep the inner solver receives slowly varying data such as
+
+\[
+M,\quad
+\dot M,\quad
+j,\quad
+\rho,\quad
+T,
+\]
+
+and returns luminosity/SED/outflow closure data.
+
+This is a scale-separation approximation, not a proof that every possible
+screened-core mode equilibrates on \(t_g\).  Any model containing an
+independently long-lived internal degree of freedom would require an explicit
+time-dependent inner calculation.
+
+The estimate is reproduced by
+
+\`src/numerical/heavy_seed_timescale_separation.py\`.
