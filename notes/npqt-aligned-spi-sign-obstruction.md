@@ -413,7 +413,211 @@ It is not a theorem about:
 
 ---
 
-# 8. Next research decision
+# 8. Root structure of the spherical angular mode
+
+For a general spherical traceless-Ricci spectrum
+
+\[
+\{\lambda_1,\lambda_2,\Theta,\Theta\},
+\qquad
+\lambda_1+\lambda_2+2\Theta=0,
+\]
+
+with the CM normalizations
+
+\[
+r_1=\frac14\operatorname{tr}(S^2),
+\qquad
+r_2=-\frac18\operatorname{tr}(S^3),
+\]
+
+the repeated angular eigenvalue obeys
+
+\[
+\boxed{
+3\Theta^3-3r_1\Theta+2r_2=0.
+}
+\]
+
+Thus \(\Theta\) is naturally an algebraic root over the scalar-invariant
+field.
+
+At the aligned stratum,
+
+\[
+r_1=\Theta_0^2,
+\qquad
+r_2=0,
+\]
+
+the polynomial becomes
+
+\[
+\boxed{
+3x(x-\Theta_0)(x+\Theta_0).
+}
+\]
+
+The invariant data therefore admit the three roots
+
+\[
+0,\qquad+\Theta_0,\qquad-\Theta_0.
+\]
+
+For either nonzero root,
+
+\[
+\left.
+\frac{\partial}{\partial x}
+(3x^3-3r_1x+2r_2)
+\right|_{x=\pm\Theta_0}
+=
+6\Theta_0^2
+\neq0.
+\]
+
+So a **chosen** nonzero branch is locally analytic at a fixed aligned point.
+
+At the maximally symmetric core,
+
+\[
+r_1=r_2=x=0,
+\]
+
+all roots coalesce and the same derivative vanishes.
+
+Reproducibility:
+
+    python src/symbolic/npqt_spherical_theta_root_gate.py
+
+This clarifies the obstruction:
+
+\[
+\boxed{
+\text{local branch analyticity away from the core: possible}
+}
+\]
+
+but
+
+\[
+\boxed{
+\text{single-valued branch selection on the full spherical invariant space:
+not supplied by SPIs}.
+}
+\]
+
+## 8.1 Principal absolute-root prescription fails at \(C^1\)
+
+The simplest single-valued real prescription on the aligned family is
+
+\[
+\Theta_{\rm abs}
+=
+\sqrt{3I_6}
+=
+|\Theta|.
+\]
+
+It gives
+
+\[
+T_{\rm abs}
+=
+48q^2|\Theta|.
+\]
+
+At
+
+\[
+\Theta=0,
+\qquad
+q\neq0,
+\]
+
+the one-sided derivatives are
+
+\[
+\partial_\Theta T_{\rm abs}|_{0^+}
+=
++48q^2,
+\]
+
+\[
+\partial_\Theta T_{\rm abs}|_{0^-}
+=
+-48q^2.
+\]
+
+Therefore the principal absolute-root completion is not \(C^1\).
+
+Such cusp points occur arbitrarily close to the maximally symmetric core by
+taking \(q\) arbitrarily small but nonzero.
+
+Reproducibility:
+
+    python src/symbolic/npqt_spi_absolute_root_c1_gate.py
+
+This rejects the most direct branch-independent square-root repair.  It does
+not reject a locally signed tensorial principal-plane construction.
+
+## 8.2 Full cubic density inherits the sign obstruction
+
+The displayed cubic NPQT density has the structure
+
+\[
+\mathcal Z_{(3)}
+=
+P_{(3)}(R_{abcd})
++
+\frac92\frac ND,
+\]
+
+where \(P_{(3)}\) is polynomial in curvature and
+
+\[
+\left.\frac ND\right|_{\rm sph}
+=
+W_2\Theta.
+\]
+
+On the paired aligned tensors, all polynomial SPIs agree, so
+
+\[
+P_{(3)}(+\Theta)
+=
+P_{(3)}(-\Theta).
+\]
+
+But
+
+\[
+\boxed{
+\mathcal Z_{(3)}(+\Theta)
+-
+\mathcal Z_{(3)}(-\Theta)
+=
+9W_2\Theta
+=
+432q^2\Theta.
+}
+\]
+
+A deformation which vanishes identically on all spherical configurations
+takes the same zero value on both branches and cannot erase this distinction.
+
+Therefore the obstruction applies to the entire class of representatives
+that preserve the **pointwise spherical density** by adding
+spherical-vanishing terms.
+
+Reproducibility:
+
+    python src/symbolic/npqt_full_cubic_sign_pair_gate.py
+
+This does not rule out changing the reduced action by a spherical total
+derivative while preserving only the spherical equations of motion.
+
+# 9. Next research decision
 
 The previous plan was to keep generating alternative rational scalar charts.
 
@@ -456,7 +660,7 @@ resolved.
 
 ---
 
-# 9. References
+# 10. References
 
 1. E. Zakhary, C. B. G. McIntosh,
    *A Complete Set of Riemann Invariants*,
