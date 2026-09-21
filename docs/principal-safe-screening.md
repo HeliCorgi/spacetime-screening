@@ -503,3 +503,123 @@ Therefore require:
    principal operator.
 
 This is the next gate for nonlocal QTG.
+
+
+## 17. SMS dynamical-formation gate
+
+The 2026 heavy-seed cosmological simulation provides a concrete environment
+for testing the dynamical-formation criterion, but the strong-gravity
+formation problem has multiple stages.
+
+### A. Cosmological feeding
+
+The outer calculation supplies a variable accretion history and environment,
+
+\[
+\dot M_*(t),\quad
+\rho(t),\quad
+T(t),\quad
+j(t).
+\]
+
+These data should not be replaced by a single effective constant accretion
+rate when constructing the stellar progenitor.
+
+### B. Relativistic radial instability
+
+Published GR calculations define the onset through the physical fundamental
+radial mode,
+
+\[
+\omega_0^2=0.
+\]
+
+The instability occurs at surface compactness only
+
+\[
+2GM/(Rc^2)\sim10^{-5}-10^{-4},
+\]
+
+so a theory intended to modify gravity only at high local curvature should
+recover this threshold approximately.
+
+A large shift in
+
+\[
+M_{\rm crit}(\dot M_*)
+\]
+
+would require separate weak/post-Newtonian consistency checks.
+
+### C. Post-GRI fate
+
+The instability does not imply a black hole.
+
+GR hydrodynamic calculations of accreting primordial SMSs produce collapse,
+thermonuclear pulsation, or explosion depending on the stellar structure and
+accretion history.
+
+Therefore the formation criterion is not
+
+\[
+\text{GRI}\Rightarrow\text{BH}.
+\]
+
+A candidate theory must evolve the unstable configuration far enough to
+determine the nonlinear fate.
+
+### D. Strong-field matching
+
+Use a curvature-scale overlap parameter
+
+\[
+\eta=K/K_h.
+\]
+
+For a Schwarzschild curvature diagnostic,
+
+\[
+r_{\rm act}/r_s=\eta_{\rm act}^{-1/6}.
+\]
+
+This allows an outer GR stellar-collapse calculation to overlap a future
+screened strong-field solver before the modification becomes order unity.
+
+### E. Endpoint observables
+
+If an apparent horizon forms, compare
+
+\[
+\left\{
+t_{\rm AH},
+M_{\rm AH}/M,
+a,
+M_{\rm disk}/M,
+M_{\rm eject}/M,
+E_{\rm eject}/(Mc^2)
+\right\}.
+\]
+
+If no horizon forms, compare
+
+\[
+\left\{
+R_{\rm min},
+K_{\rm max},
+M_{\rm core}/M,
+M_{\rm eject}/M,
+E_{\rm eject}/(Mc^2)
+\right\}.
+\]
+
+A candidate passes the dynamical-formation gate only if the evolution remains
+well posed and principal-safe throughout the transition, not merely because
+a static regular solution exists.
+
+See:
+
+- \`notes/cosmological-heavy-seed-interface.md\`;
+- \`notes/sms-gr-instability-formation-gate.md\`;
+- \`notes/sms-post-gri-fate-gate.md\`;
+- \`notes/sms-screening-activation-scale.md\`;
+- \`notes/sms-gr-collapse-endpoints.md\`.
