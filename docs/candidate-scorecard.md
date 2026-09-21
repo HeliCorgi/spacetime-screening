@@ -276,9 +276,24 @@ However:
 - the physical solution reaches that pole at \(r=0\) and at
   \(r=\sqrt2\,\ell\);
 - \(\Box R\sim1/r\) at the center;
-- the covariant SF selector is \(R_4=0\), while the action is linear in a
-  non-analytic \(R_4\);
-- generic nonsymmetric perturbations were not analyzed in the source.
+- the covariant SF selector is
+  \[
+  R_4=\sqrt{\frac{2I_6}{3}-\frac{2I_{11}}{I_1}},
+  \]
+  so on the SF branch
+  \[
+  \partial R_4/\partial I_6\sim1/R_4,
+  \qquad
+  \partial^2R_4/\partial I_6^2\sim1/R_4^3;
+  \]
+- even within TNT, the covariant square root gives an \(|\epsilon|\) cusp
+  when the signed reduced \(R_4\) crosses zero;
+- the full correction \(A(R_3)R_4\) therefore has no ordinary generic 4D
+  first variation on the SF branch unless \(A=0\);
+- the source classification proves this is structural: analytic curvature
+  scalars contain only even powers of \(R_4\), so the nontrivial first-order
+  Class-I mechanism necessarily requires non-analyticity.
 
-**Status:** strong symmetry-sector construction, but it fails the current
-covariant-action/principal-safe gate as a full four-dimensional candidate.
+**Status:** strong symmetry-sector construction and useful integrability
+benchmark, but **FAIL** as the present full four-dimensional perturbative
+candidate under the covariant-action differentiability criterion.
