@@ -309,6 +309,7 @@ derivation is complete and a targeted literature search has been documented.
 
 Core documents:
 
+- [RESEARCH_HANDOFF.md](RESEARCH_HANDOFF.md) — current restart point, completed results, open branches, and next-session instructions.
 - [NOVELTY.md](NOVELTY.md) — novelty/status map and priority-claim policy.
 - [THEORY.md](THEORY.md) — current mathematical skeleton.
 - [ROADMAP.md](ROADMAP.md) — research priorities and open calculations.
