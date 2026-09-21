@@ -315,7 +315,160 @@ For a static asymptotically flat metric with \(f(\infty)>0\) and a regular cente
 
 Static regular black holes therefore naturally tend to develop an inner horizon. Inner-horizon stability is a central constraint.
 
-## 11. Phase-transition hypothesis
+
+## 11. Perturbative status of the vector benchmark
+
+The vector benchmark has a published linear radial-stability result. In the
+spherically symmetric time-dependent sector, the vector equations constrain
+the vector perturbations in terms of the metric perturbations, and the
+remaining equations reduce to a pure time-reparametrization mode. Thus there
+is no nontrivial radial linear mode.
+
+However, the asymptotic quadratic spectrum is highly degenerate.
+
+For one vector,
+
+\[
+\mathcal L[W]
+=
+4G^{\mu\nu}W_\mu W_\nu
++
+8W^2\nabla_\mu W^\mu
++
+6(W^2)^2.
+\]
+
+Around
+
+\[
+g_{\mu\nu}=\eta_{\mu\nu},
+\qquad
+W_\mu=0,
+\]
+
+the interaction orders are
+
+\[
+G^{\mu\nu}W_\mu W_\nu=O(hw^2),
+\]
+
+\[
+W^2\partial\cdot W=O(w^3),
+\]
+
+\[
+(W^2)^2=O(w^4).
+\]
+
+Therefore
+
+\[
+\boxed{
+S^{(2)}_{\rm vector}=0
+}
+\]
+
+on the asymptotic Minkowski vacuum.
+
+This is compatible with the authors' interpretation of the vectors as
+nonlinear constraints. It also means that, if a vector degree of freedom
+survives the complete constraint analysis, it has no conventional quadratic
+propagator and would be strongly coupled around the vacuum.
+
+On a constant null vector background, the quadratic fixed-metric vector
+Lagrangian is only first order in derivatives,
+
+\[
+\mathcal L_2
+=
+16(\bar W\cdot w)\partial\cdot w
++
+24(\bar W\cdot w)^2,
+\]
+
+and its velocity Hessian vanishes.
+
+The corresponding principal symbol is
+
+\[
+P^\mu{}_\nu(k)
+=
+2(\bar W^\mu k_\nu-k^\mu\bar W_\nu),
+\]
+
+which obeys
+
+\[
+\det P=0,
+\qquad
+{\rm rank}\,P\le2.
+\]
+
+Thus the vector sector is a degenerate constrained system, not an ordinary
+hyperbolic Proca wave operator.
+
+The decisive next step is a full metric-vector ADM/Dirac constraint count and
+non-spherical perturbation analysis.
+
+See
+[notes/vector-constraint-analysis.md](notes/vector-constraint-analysis.md).
+
+## 12. Extremal near-horizon structure
+
+For the fully extremal regular branch,
+
+\[
+f(r)
+=
+1-
+\frac{2Mr^2}{r^3+32M^3/27},
+\qquad
+r_h=\frac{4M}{3}.
+\]
+
+The horizon is a double zero and
+
+\[
+f''(r_h)=\frac{9}{8M^2}.
+\]
+
+Consequently the near-horizon geometry is
+
+\[
+\boxed{
+AdS_2\times S^2
+}
+\]
+
+with equal radii
+
+\[
+L_{AdS_2}=R_{S^2}=r_h=\frac{4M}{3}.
+\]
+
+At the horizon,
+
+\[
+R=0,
+\]
+
+and the effective stress tensor satisfies
+
+\[
+p_r=-\rho,
+\qquad
+p_t=+\rho,
+\]
+
+so it is traceless and Maxwell-like.
+
+This extremal throat explains why the Aretakis instability is a natural next
+stability question even though ordinary mass inflation has been removed.
+
+See
+[notes/extremal-near-horizon.md](notes/extremal-near-horizon.md).
+
+## 13. Phase-transition hypothesis
 
 The stronger version of the project is
 
@@ -341,7 +494,7 @@ A conceptual state-space picture is
 
 where states in \(\mathcal H_{\rm geometric}\) admit an approximate description by \((M,g_{\mu\nu},\Phi)\), while sufficiently quantum states need not.
 
-## 12. What would count as success
+## 14. What would count as success
 
 A serious model must derive, rather than assume:
 
