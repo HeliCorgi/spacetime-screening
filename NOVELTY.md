@@ -506,6 +506,80 @@ It is retained because it provides an independent example of
 }
 \]
 
+
+### Smooth-core normalized-projector obstruction
+
+For a smooth single-function spherical center,
+
+\[
+f(r)=1-cr^2+dr^4+\cdots,
+\]
+
+the Weyl tensor vanishes as \(O(r^2)\) and the Cotton tensor as \(O(r)\).
+
+Therefore covariant action variables of the normalized-projector form
+
+\[
+U[T]
+=
+\frac{T\otimes T}{T^2}
+\]
+
+can possess a finite directional value while generic variations scale as
+
+\[
+\delta U\sim r^{-1},
+\qquad
+\delta^2U\sim r^{-2}.
+\]
+
+**Status:** NEW CALCULATION CANDIDATE / STRUCTURAL DIAGNOSTIC.
+
+This applies directly to NPG representatives built from normalized
+Cotton/Weyl direction tensors.  It does not rule out every possible
+non-polynomial representation; a full-action cancellation could evade it.
+
+See:
+
+- \`src/symbolic/npg_cotton_projector_core.py\`
+- \`notes/npg-cotton-projector-core.md\`
+
+### Analytic GQTG / regular-core conditional no-go
+
+For the genuine 4D GQTG tower, each curvature order contributes
+
+\[
+F_n
+=
+-\frac12\lambda_n c^n r^3
+\]
+
+on an exact de Sitter-type core.
+
+A nonzero mass constant at finite limiting curvature therefore requires a
+nonuniform resummation
+
+\[
+G(c)=\sum\lambda_n c^n
+\to\infty
+\]
+
+as \(c\to c_*\).
+
+If the local curvature expansion and its curvature Hessian converge normally
+and are termwise differentiable in an open neighborhood of \(c_*\), then
+\(G(c_*)\) is finite and the nonzero-mass core cannot be supported.
+
+**Status:** NEW CONDITIONAL NO-GO CANDIDATE.
+
+The assumptions are essential.  This is not claimed for arbitrary
+nonperturbative summation prescriptions.
+
+See:
+
+- \`src/symbolic/gqtg_core_hessian_conditional_no_go.py\`
+- \`notes/gqtg-core-hessian-conditional-no-go.md\`
+
 ## 10. Nonlocal zero-free form factor
 
 The use of zero-free entire functions to avoid additional propagator poles is
