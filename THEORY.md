@@ -603,7 +603,101 @@ warning that
 See
 [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md).
 
-## 14. Phase-transition hypothesis
+
+## 14. Pure-gravity quasitopological benchmark
+
+The current replacement benchmark is four-dimensional nonpolynomial
+quasitopological gravity, where the screening mechanism is encoded directly
+in the curvature response rather than in auxiliary-field cancellation.
+
+For the Hayward realization define
+
+\[
+\psi=\frac{1-f}{r^2},
+\qquad
+s=\frac{2M}{r^3}.
+\]
+
+The characteristic relation is
+
+\[
+\boxed{
+\frac{\psi}{1-\ell^2\psi}=s
+}
+\]
+
+or
+
+\[
+\boxed{
+\psi(s)=\frac{s}{1+\ell^2s}.
+}
+\]
+
+Therefore
+
+\[
+\psi\to\frac1{\ell^2},
+\qquad
+\frac{d\psi}{ds}
+=
+\frac1{(1+\ell^2s)^2}
+\to0
+\]
+
+in the strong-source limit.
+
+This motivates a more intrinsic definition of screening:
+
+\[
+\boxed{
+\text{screening}
+=
+\text{suppression of curvature susceptibility}
+}
+\]
+
+rather than a literal coordinate-dependent Newton constant.
+
+Defining
+
+\[
+\Sigma=1-\ell^2\psi,
+\]
+
+one finds
+
+\[
+\Sigma(r)
+=
+\frac{r^3}{r^3+2M\ell^2}
+\]
+
+and
+
+\[
+\frac{d\psi}{ds}=\Sigma^2.
+\]
+
+Thus the old diagnostic screening factor has a direct interpretation as the
+distance from the saturation pole in curvature-response space.
+
+The local nonpolynomial theory gives the exact regular vacuum background and
+second-order spherical dynamics, but full nonspherical perturbative health
+still has to be established.
+
+A July 2026 nonlocal-quasitopological preprint reports an infinite-derivative
+completion that is ghost-free, avoids strong-coupling instabilities, preserves
+exact spherical regular black holes, and satisfies a perturbative Birkhoff
+theorem. These claims now define the next benchmark to reproduce on the
+black-hole background.
+
+See
+[notes/pure-gravity-qtg-benchmark.md](notes/pure-gravity-qtg-benchmark.md)
+and
+[docs/principal-safe-screening.md](docs/principal-safe-screening.md).
+
+## 15. Phase-transition hypothesis
 
 The stronger version of the project is
 
@@ -629,7 +723,7 @@ A conceptual state-space picture is
 
 where states in \(\mathcal H_{\rm geometric}\) admit an approximate description by \((M,g_{\mu\nu},\Phi)\), while sufficiently quantum states need not.
 
-## 15. What would count as success
+## 16. What would count as success
 
 A serious model must derive, rather than assume:
 
