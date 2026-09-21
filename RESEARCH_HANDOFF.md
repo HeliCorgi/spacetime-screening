@@ -1658,39 +1658,107 @@ W_2\Theta.
 }
 \]
 
-### A1 — next concrete calculation: mixed-invariant atlas
+### A1 — mixed-invariant atlas: first checkpoint completed
 
-This is the **next task to do**.
+The first atlas pass is now complete.
 
-Build a small library of independent low-degree mixed Weyl--Ricci scalar
-contractions and reduce them on the spherical/type-D algebraic family.
+New files:
 
-Then solve, algebraically, for alternative rational expressions
-
-\[
-T_i=\frac{N_i}{D_i}
-\]
-
-satisfying
-
-\[
-\left.T_i\right|_{\rm spherical}=W_2\Theta.
-\]
-
-Requirements for this stage:
-
-1. use permutation-symmetric scalar invariants;
-2. do not choose or label a Weyl eigenvalue branch;
-3. keep each invariant/relation in a small script;
-4. test the known simultaneous-zero and explicit type-I pole points
-   immediately;
-5. if no low-degree alternative exists, record that negative result instead of
-   increasing algebraic complexity without a reason.
-
-Suggested output:
-
-- src/symbolic/npqt_mixed_invariant_atlas_*.py
 - notes/npqt-mixed-invariant-atlas.md
+- src/symbolic/npqt_mixed_invariant_atlas_cubic_gate.py
+- src/symbolic/npqt_mixed_invariant_atlas_chart1.py
+- src/symbolic/npqt_mixed_invariant_atlas_old_pole.py
+- src/symbolic/npqt_mixed_invariant_atlas_chart1_c0.py
+- src/symbolic/npqt_spherical_sign_blind_spi_gate.py
+
+Results:
+
+1. the direct cubic polynomial contraction
+   \[
+   Z^{ab}W_{acde}W_b{}^{cde}
+   \]
+   vanishes by the 4D dimensionally dependent Weyl identity;
+
+2. an alternative rational chart exists,
+   \[
+   T_{\rm alt}
+   =
+   -W_2\frac{M_{23}}{M_{22}},
+   \]
+   with
+   \[
+   M_{22}=W(Z^2)(Z^2),
+   \qquad
+   M_{23}=W(Z^2)(Z^3),
+   \]
+   and it reproduces \(W_2\Theta\) exactly on the spherical locus;
+
+3. this alternative chart is finite at the explicit type-I pole of the old
+   representative, so that pole is chart-specific;
+
+4. chart 1 still fails \(C^0\) at the aligned spherical simultaneous zero;
+
+5. at that stratum,
+   \[
+   Z^a{}_b=\operatorname{diag}(-\Theta,-\Theta,\Theta,\Theta),
+   \qquad
+   Z^2=\Theta^2I,
+   \]
+   and the checked scalar polynomial invariant coordinates are blind to
+   \(\Theta\rightarrow-\Theta\).
+
+The last observation agrees with the published class-B warped-product
+syzygies.  In particular the odd mixed CM invariant obeys
+\[
+6m_4+w_1r_2=0,
+\]
+and \(r_2=0\) on this stratum.
+
+### A1-next — invariant-ring sign gate
+
+This is now the **next task to do**.
+
+Do not generate a large new atlas yet.
+
+First determine how far the sign blindness can be promoted:
+
+\[
+\boxed{
+(q,\Theta)
+\quad\text{vs}\quad
+(q,-\Theta)
+}
+\]
+
+on the aligned spherical/type-D stratum.
+
+Proceed in timeout-safe stages:
+
+1. **degree \(\le5\):** use the Carminati--McLenaghan + Zakhary--McIntosh
+   generating set and the class-B syzygies to show explicitly whether all
+   scalar polynomial Riemann invariants through degree five agree on the two
+   sign branches;
+
+2. **all-degree question:** search invariant-theory literature / derive whether
+   class-B scalar polynomial invariants can ever recover this discrete sign,
+   or whether only a root/Cartan branch can do so;
+
+3. if all-degree sign blindness is established, formulate the conditional
+   no-go carefully:
+   \[
+   \boxed{
+   \text{SPI-only single-valued algebraic lift of }W_2\Theta
+   \text{ cannot reproduce both sign branches}.
+   }
+   \]
+
+4. only then decide the escape route:
+   - restrict to one invariant branch;
+   - introduce an explicit nonanalytic root/sign prescription and test \(C^2\);
+   - use derivative invariants / extra covariant structure;
+   - or abandon this spherical target as a globally differentiable NLQT base.
+
+Do not compute the full curvature Hessian before this sign gate is resolved.
 
 ### A2 — branch-free stress tests
 
@@ -1848,18 +1916,19 @@ If a future run fails:
 
 A future session can resume with:
 
-> Read RESEARCH_HANDOFF.md, NOVELTY.md, and the current NPQT notes listed
-> under Task A. Continue from the mainline, not the chronology side branch.
+> Read RESEARCH_HANDOFF.md, NOVELTY.md, and
+> notes/npqt-mixed-invariant-atlas.md. Continue from the mainline.
 >
-> The next concrete task is **A1: mixed-invariant atlas**. Start from the exact
-> spherical target \(T_{\rm sph}=W_2\Theta\). Search for low-degree,
-> permutation-symmetric mixed Weyl--Ricci covariant scalar ratios
-> \(T_i=N_i/D_i\) that reproduce \(W_2\Theta\) on the spherical locus without
-> globally labeling a Weyl eigenline.
+> The next concrete task is **A1-next: invariant-ring sign gate**. At the
+> aligned spherical/type-D simultaneous-zero stratum,
+> \(Z=\mathrm{diag}(-\Theta,-\Theta,\Theta,\Theta)\), the current low-degree
+> scalar invariants are blind to \(\Theta\to-\Theta\), while the required
+> spherical target \(W_2\Theta\) changes sign.
 >
-> Keep the calculation timeout-safe: one invariant/relation per small script,
-> commit each substantive checkpoint, and test the known type-I pole,
-> spherical simultaneous zero, monodromy loop, and core scaling before doing
-> any full 4D Hessian calculation. Use Issue #1 as the persistent CI handoff.
+> First settle the degree-\(\le5\) statement using the CM+ZM generators and
+> published class-B syzygies, then investigate whether the sign blindness
+> persists to all scalar polynomial Riemann invariants. Keep each claim in a
+> small script/note checkpoint. Do not return to a full 4D Hessian until this
+> branch-information gate is resolved.
 
 That is the intended restart point.
