@@ -462,3 +462,100 @@ with one of:
 
 The harness API is already designed so the data source can be replaced without
 changing the strong-field closure interface.
+
+
+## 11. Radiation-feedback adapter
+
+The paper also supplies a concrete baseline SED for accreting BHs:
+
+\[
+F_\nu\propto\nu^{-0.6},
+\qquad
+1{\rm\,eV}<h\nu<10{\rm\,eV},
+\]
+
+and
+
+\[
+F_\nu\propto\nu^{-1.5},
+\qquad
+10{\rm\,eV}<h\nu<1{\rm\,keV}.
+\]
+
+The source specifies the slopes and intervals but does not explicitly state
+the relative normalization of the two branches in the quoted Methods text.
+
+For the repository's interface adapter we therefore make one transparent
+additional assumption:
+
+\[
+\boxed{
+F_\nu\ \text{is continuous at }10{\rm\,eV}.
+}
+\]
+
+Under that convention,
+
+\[
+\frac{B}{A}=10^{0.9}
+\]
+
+for the high-energy and low-energy amplitudes.
+
+The resulting baseline has approximately
+
+\[
+\boxed{
+\frac{L_{E>13.6{\rm eV}}}{L_{\rm bol}}
+\simeq0.4584
+}
+\]
+
+and mean hydrogen-ionizing photon energy
+
+\[
+\boxed{
+\langle E\rangle_{\rm ion}
+\simeq36.10{\rm\,eV}.
+}
+\]
+
+Thus
+
+\[
+Q_H
+\simeq
+7.93\times10^{9}
+\left(
+\frac{L_{\rm bol}}{{\rm erg\,s^{-1}}}
+\right)
+{\rm s^{-1}}.
+\]
+
+For example,
+
+\[
+L_{\rm bol}=10^{44}{\rm\,erg\,s^{-1}}
+\]
+
+corresponds to
+
+\[
+Q_H\simeq7.9\times10^{53}{\rm\,s^{-1}}.
+\]
+
+This is implemented in
+
+\`src/numerical/heavy_seed_sed_adapter.py\`.
+
+The point is not to assume that a screened object has the same SED.  It gives
+a baseline map
+
+\[
+L_{\rm bol}
+\longrightarrow
+Q_H
+\]
+
+that can be replaced once the strong-field inner accretion spectrum is
+derived.
