@@ -461,3 +461,104 @@ The first practical experiment does not require modifying AREPO:
 4. compare growth and ionizing feedback.
 
 See \`notes/cosmological-heavy-seed-interface.md\`.
+
+
+## SMS GRI / post-GRI formation gate
+
+The Chon et al. heavy-seed benchmark exposes an earlier interface than
+post-BH accretion: the fate of the accreting supermassive star itself.
+
+Published GR work now supplies two distinct gates.
+
+### Gate 1 — onset of relativistic radial instability
+
+Use the Saio et al. GR benchmark
+
+\[
+\omega_0^2(M,\dot M_*)=0
+\]
+
+to define
+
+\[
+M_{\rm crit,GR}(\dot M_*).
+\]
+
+The source models encounter the instability at very low compactness,
+
+\[
+2GM/(Rc^2)\sim10^{-5}-10^{-4}.
+\]
+
+Therefore a genuinely high-curvature screening theory is expected to leave
+this onset approximately GR-like.
+
+Primary observable:
+
+\[
+\Delta M_{\rm crit}
+=
+M_{\rm crit,screened}
+-
+M_{\rm crit,GR}.
+\]
+
+A large shift would imply that the theory modifies weak/post-Newtonian stellar
+gravity and would require a separate low-curvature consistency analysis.
+
+### Gate 2 — nonlinear fate after GRI
+
+GRI does not imply immediate BH formation.
+
+Nagele & Umeda (2024) find, for Pop III constant-accretion models:
+
+- \(0.1M_\odot/{\rm yr}\): collapse;
+- \(1,10,50M_\odot/{\rm yr}\): pulsation;
+- \(90,100M_\odot/{\rm yr}\): collapse;
+- \(200M_\odot/{\rm yr}\): pulsation.
+
+Thus the formation closure must be
+
+\[
+\text{SMS}
+\rightarrow
+\text{GRI}
+\rightarrow
+\{\text{collapse},\text{pulsation},\text{explosion}\},
+\]
+
+not simply
+
+\[
+\text{SMS}\rightarrow\text{BH particle}.
+\]
+
+### Spacetime-Screening target
+
+The clean high-curvature test is to start from a GR branch that genuinely
+collapses and ask whether, before a trapped/singular region forms, the
+candidate theory produces:
+
+- a screened finite-curvature core;
+- a bounce;
+- a delayed collapse that changes nuclear burning;
+- or an instability/pathology of the physical principal operator.
+
+Track
+
+\[
+\Delta t_{\rm collapse},
+\qquad
+\Delta E_{\rm nuc},
+\qquad
+\Delta M_{\rm eject},
+\qquad
+M_{\rm remnant}.
+\]
+
+See:
+
+- \`notes/sms-gr-instability-formation-gate.md\`;
+- \`notes/sms-post-gri-fate-gate.md\`;
+- \`data/sms_gri_gr_benchmark.csv\`;
+- \`data/sms_post_gri_fates.csv\`.
