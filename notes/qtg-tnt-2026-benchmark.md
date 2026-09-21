@@ -428,6 +428,62 @@ m_{\rm ext}>m_{\rm crit},
 so semiclassical Hawking evolution can in principle stop at extremality before
 entering the low-mass singular parameter region.
 
+## 10.5 Restricted limiting curvature
+
+The curvature variable
+
+\[
+x(r)=
+\frac{4m\ell^2}
+{r^3-2r\ell^2+4m\ell^2}
+\]
+
+reaches its largest value at
+
+\[
+r=\sqrt{\frac23}\,\ell,
+\]
+
+the same radius at which the denominator is minimized.
+
+Using
+
+\[
+m_{\rm crit}
+=
+\frac{2\ell}{3\sqrt6},
+\]
+
+we find
+
+\[
+\boxed{
+x_{\max}
+=
+\frac{m}{m-m_{\rm crit}}.
+}
+\]
+
+Therefore
+
+\[
+x_{\max}\to\infty
+\qquad
+(m\to m_{\rm crit}^{+}).
+\]
+
+This explains why the source paper states limiting curvature only in the
+restricted sense
+
+\[
+m\ge m_{\rm crit}+\epsilon
+\]
+
+for fixed positive \(\epsilon\).
+
+There is no solution-independent curvature bound uniform over the entire
+regular mass interval.
+
 ## 11. Surface gravities
 
 At the mass-dependent horizon,
