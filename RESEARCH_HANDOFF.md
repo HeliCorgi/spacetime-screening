@@ -656,102 +656,200 @@ Key note:
 
 ---
 
-# 8. Current constructive idea: change the NPQT representative
+# 8. Current constructive idea: extend the spherical target, not the old denominator
 
-The source literature allows many inequivalent 4D covariant representatives
-with the same spherical reduction.
+The Petrov-discriminant regulator remains useful only as a proof that the
+explicit type-I pole can be removed pointwise.
 
-The repository has a proof-of-concept regulator using a spherical-vanishing
-Petrov-speciality discriminant.
-
-For the purely electric normalization,
+For the displayed cubic rational term,
 
 \[
-\Delta_W
-=
-W_2^3-12W_3^2,
+D=(WZZ)W_2-2W_3Z_2,
+\qquad
+N=W_3Z_3W_2,
 \]
 
-which vanishes on the type-D spherical Weyl locus.
-
-A toy replacement is
+the previous toy was
 
 \[
-\boxed{
 \mathcal R_\mu
 =
-\frac{
-N D
-}{
-D^2+\mu\,\Delta_W Z_2^2
-},
+\frac{ND}{D^2+\mu\Delta_WZ_2^2},
 \qquad
-\mu>0.
-}
+\Delta_W=W_2^3-12W_3^2.
 \]
 
-On the spherical type-D locus,
+## 8.1 New continuity failure of the Petrov toy
 
-\[
-\Delta_W=0,
-\]
-
-so the original ratio is recovered wherever \(D\ne0\).
-
-At the explicit type-I pole,
-
-\[
-D=0,\quad
-N\ne0,\quad
-\Delta_W\ne0,
-\]
-
-the toy regulator gives a finite value.
-
-Key note:
-
-- \`notes/npqt-petrov-regulator-toy.md\`
-- \`src/symbolic/npqt_petrov_regulator_toy.py\`
-
-This is **not yet a full solution**.
-
-Open issues:
-
-1. simultaneous zeros
-   \[
-   D=\Delta_W=0;
-   \]
-2. type-II/D but nonspherical configurations;
-3. magnetic Weyl / full complex speciality invariants;
-4. \(Z_2=0\);
-5. \(C^2\) extendibility at maximally symmetric core;
-6. preservation of the exact spherical reduced equations for the full density.
-
-## Recommended theoretical restart task
+A direct general-spherical Lorentzian contraction now gives
 
 \[
 \boxed{
-\text{solve the off-spherical representative-design problem}
+\left.\frac ND\right|_{\rm spherical}=W_2\Theta,
 }
 \]
 
-more systematically:
-
-find spherical-vanishing polynomial invariants \(S_i\) such that
+where \(\Theta\) is the repeated angular eigenvalue in
 
 \[
-D_{\rm reg}
+Z_{ab}
 =
-D^{2m}
+\delta_a^\mu\delta_b^\nu\mathcal S_{\mu\nu}
 +
-\sum_i S_i^2
+\Theta\sigma_{ab}.
 \]
 
-has no unwanted real Lorentzian zero, while the numerator is chosen so that
-the spherical ratio is exactly preserved and the whole density admits a
-\(C^2\) covariant extension at the core.
+On the type-D diagonal branch
 
-This is currently the most concrete route to a viable 4D QT base for NLQT.
+\[
+(e_1,e_2,e_3)=(-2q,q,q),
+\]
+
+define
+
+\[
+A=z_0+z_2,
+\qquad
+B=z_1+z_2,
+\qquad
+\theta=z_2.
+\]
+
+Then
+
+\[
+D=-288q^3(A^2+B^2),
+\]
+
+\[
+N=-13824q^5AB(A+B-2\theta).
+\]
+
+The spherical locus is \(A+B=0\), and its restricted ratio is
+
+\[
+\frac ND=48q^2\theta.
+\]
+
+At the simultaneous spherical zero \(A=B=0\), the old Petrov toy has
+incompatible path limits:
+
+\[
+\boxed{
+\lim_{\rm spherical}\mathcal R_\mu=48q^2\theta,
+\qquad
+\lim_{\rm Weyl\ split}\mathcal R_\mu=0.
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+\text{Petrov toy: FAIL already at }C^0
+\text{ on the intended simultaneous-zero set.}
+}
+\]
+
+Moreover, entirely within exact type D,
+
+\[
+A=\epsilon,
+\qquad
+B=k\epsilon
+\]
+
+gives
+
+\[
+\boxed{
+\lim_{\epsilon\to0}\frac ND
+=
+-\frac{96k}{1+k^2}q^2\theta.
+}
+\]
+
+Thus a Weyl-speciality invariant alone cannot resolve the type-D directional
+problem.
+
+Key files:
+
+- `notes/npqt-petrov-regulator-continuity-gate.md`;
+- `src/symbolic/npqt_petrov_regulator_continuity_gate.py`;
+- `notes/npqt-petrov-regulator-toy.md` — retained only as the earlier
+  pointwise type-I-pole proof of concept.
+
+## 8.2 Principal-plane target
+
+Let \(h^a{}_b\) denote the repeated spacelike Weyl two-plane projector on a
+local type-D branch.  Define
+
+\[
+\Theta_h=\frac12h^a{}_bZ_a{}^b.
+\]
+
+In the diagonal family,
+
+\[
+T=W_2\Theta_h
+=-24q^2(A+B-2\theta)
+\]
+
+reproduces the spherical ratio exactly.
+
+The Ricci anisotropy in the repeated Weyl plane is
+
+\[
+J_h=\frac12(A+B)^2,
+\]
+
+and the old numerator mismatch factorizes as
+
+\[
+\boxed{
+N-TD
+=
+-6912q^5(A+B-2\theta)(A+B)^2.
+}
+\]
+
+A first alignment blend can be made continuous, but its second directional
+curvature derivatives disagree at the simultaneous zero; it therefore fails
+the required \(C^2\) gate.
+
+## 8.3 Revised representative-design problem
+
+The immediate constructive target is now
+
+\[
+\boxed{
+\Theta_{\rm ext}
+=\text{smooth 4D covariant extension of the spherical angular Ricci mode}
+}
+\]
+
+followed by
+
+\[
+\boxed{
+T_{\rm ext}=W_2\Theta_{\rm ext}.
+}
+\]
+
+The next calculation must determine whether a Weyl-principal-plane
+concomitant can be made:
+
+1. single-valued under generic type-D \(\rightarrow\) type-I splitting;
+2. covariant with magnetic Weyl curvature included;
+3. controlled on type-II/III/N directions;
+4. genuinely \(C^2\) at the maximally symmetric core after the \(W_2\)
+   weighting;
+5. exactly spherical-equivalent when inserted into the full cubic density.
+
+Only after those checks should its curvature Hessian be fed into NLQT.
+
+This replaces the earlier mainline idea of solving the problem primarily by
+adding spherical-vanishing squares to the old denominator.
 
 ---
 
