@@ -1060,6 +1060,100 @@ The conformally-flat core is exactly where the spectral gap vanishes, so the
 core gate cannot be settled by ordinary isolated-eigenvalue perturbation
 theory.
 
+
+## 8.6 Global Weyl-only branch selection FAIL
+
+The local self-dual spectral projector cannot be promoted to a globally
+single-valued Weyl-only branch label on the full generic curvature
+neighborhood.
+
+An explicit complex symmetric tracefree self-dual Weyl loop is
+
+[
+mathcal W(t)
+=
+egin{pmatrix}
+a&b&0\\
+b&-a&0\\
+0&0&0
+end{pmatrix},
+qquad
+a=rac{1+t}{2},
+qquad
+b=rac{1-t}{2i}.
+]
+
+Writing (t=s^2),
+
+[
+chi(lambda)
+=
+lambda(lambda^2-t),
+]
+
+so the nonzero eigenvalues are (pm s).
+
+The Weyl operator satisfies
+
+[
+oxed{
+mathcal W(s)=mathcal W(-s),
+}
+]
+
+but its two nonzero eigenprojectors obey
+
+[
+oxed{
+P_+(-s)=P_-(s).
+}
+]
+
+A generic Ricci contraction distinguishes the two sheets.  At (t=1), for
+
+[
+Z=operatorname{diag}(z_1,z_2,z_3),
+]
+
+the complementary rank-two contractions differ by
+
+[
+oxed{
+Theta_+-Theta_-
+=
+rac{z_2-z_1}{2}.
+}
+]
+
+Scaling the entire Weyl loop by arbitrary nonzero (epsilon) preserves this
+exchange while moving it arbitrarily close to (W=0).
+
+Therefore
+
+[
+oxed{
+	ext{global branch-specific Weyl projector: FAIL}.
+}
+]
+
+This does **not** rule out a regular NPQT representative.  It changes the
+constructive target to
+
+[
+oxed{
+	ext{permutation-symmetric or mixed Weyl-Ricci extension of }W_2Theta.
+}
+]
+
+Key files:
+
+- `notes/npqt-selfdual-branch-monodromy.md`;
+- `src/symbolic/npqt_selfdual_branch_monodromy.py`.
+
+The next design must avoid globally labeling a Weyl eigenline, or must use
+additional curvature data in a way that remains single-valued and (C^2) at
+the core.
+
 ---
 
 # 9. Normalized-projector warning
@@ -1515,6 +1609,7 @@ Start from:
 - `notes/npqt-petrov-regulator-continuity-gate.md`
 - `notes/npqt-principal-plane-spectral-extension.md`
 - `notes/npqt-selfdual-principal-plane-extension.md`
+- `notes/npqt-selfdual-branch-monodromy.md`
 - `notes/nlqt-no-perturbative-base-rescue.md`
 - `notes/principal-gate-classII-nlqt.md`
 
@@ -1603,17 +1698,18 @@ Then, for the current main theoretical task:
 9. `notes/npqt-petrov-regulator-continuity-gate.md`
 10. `notes/npqt-principal-plane-spectral-extension.md`
 11. `notes/npqt-selfdual-principal-plane-extension.md`
-12. `notes/nlqt-no-perturbative-base-rescue.md`
-13. `notes/principal-gate-classII-nlqt.md`
+12. `notes/npqt-selfdual-branch-monodromy.md`
+13. `notes/nlqt-no-perturbative-base-rescue.md`
+14. `notes/principal-gate-classII-nlqt.md`
 
 For dynamical formation:
 
-14. `notes/cosmological-heavy-seed-interface.md`
-15. `notes/sms-gr-instability-formation-gate.md`
-16. `notes/sms-post-gri-fate-gate.md`
-17. `notes/sms-screening-activation-scale.md`
-18. `notes/sms-gr-collapse-endpoints.md`
-19. `notes/sms-formation-systematics.md`
+15. `notes/cosmological-heavy-seed-interface.md`
+16. `notes/sms-gr-instability-formation-gate.md`
+17. `notes/sms-post-gri-fate-gate.md`
+18. `notes/sms-screening-activation-scale.md`
+19. `notes/sms-gr-collapse-endpoints.md`
+20. `notes/sms-formation-systematics.md`
 
 ---
 
