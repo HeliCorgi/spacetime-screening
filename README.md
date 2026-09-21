@@ -126,6 +126,9 @@ A viable model should satisfy, at minimum:
 - [notes/vector-constraint-analysis.md](notes/vector-constraint-analysis.md) — radial stability, absent asymptotic vector quadratic action, principal-symbol degeneracy, and regularity sensitivity.
 - [notes/extremal-near-horizon.md](notes/extremal-near-horizon.md) — AdS2 x S2 extremal throat and Maxwell-like horizon stress.
 - [notes/aretakis-test-scalar.md](notes/aretakis-test-scalar.md) — explicit s-wave test-field Aretakis conserved quantity and derivative growth.
+- [notes/odd-parity-vector-auxiliary.md](notes/odd-parity-vector-auxiliary.md) — axial vector perturbations are algebraic auxiliaries and become degenerate at the endpoints.
+- [notes/generalized-proca-mapping.md](notes/generalized-proca-mapping.md) — mapping to quartic generalized Proca and the known odd-mode instability warning.
+- [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md) — radial pure-TT characteristic cone and the hidden Schwarzschild geometry.
 - [src/](src/) — reproducible symbolic/numerical code.
 
 ## Starting references
