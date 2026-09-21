@@ -235,3 +235,39 @@ Immediate task:
 
 If not, prioritize extraction of the exact nonlocal-QTG black-hole quadratic
 operator.
+
+
+## P0 vector odd-sector status
+
+Completed intermediate checks:
+
+- mapped the derivative sector to the published generalized-Proca odd
+  quadratic-action coefficients;
+- found the two-vector Schur-complement kinetic matrix
+  \[
+  K_{\rm vec}=-cc^{\rm T}/C_1;
+  \]
+- found one negative and one zero vector kinetic eigenvalue;
+- derived
+  \[
+  P_{\rm vec}\propto(\omega+fk)^2;
+  \]
+- used the \(l=1\) dipole sector to isolate the negative vector kinetic mode
+  from any propagating odd graviton;
+- strengthened the metric principal calculation: the standard odd
+  coefficient block contains
+  \[
+  f+\Delta=1-\frac{2M}{r}
+  \]
+  exactly on the regular branch.
+
+Remaining publication-level P0 task:
+
+1. expand the original \(A-B\) action directly in two-vector axial harmonics;
+2. reproduce every derivative coefficient without importing the one-vector
+   formula;
+3. derive the full primary/secondary constraint algebra;
+4. determine whether the zero-kinetic vector combination is auxiliary or
+   strongly coupled;
+5. confirm whether the negative active combination survives all constraints;
+6. only then return to the \(l\ge2\) physical tensor master characteristic.
