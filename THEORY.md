@@ -1073,94 +1073,77 @@ See
 [notes/r4-analyticity-obstruction.md](notes/r4-analyticity-obstruction.md).
 
 
-## 19. Odd-vector kinetic obstruction in the two-vector benchmark
+## 19. Direct odd-sector ghost in the two-vector benchmark
 
-Using the published generalized-Proca odd-parity quadratic-action structure,
-the additive two-vector model has no direct Maxwell-type transverse-vector
-kinetic block.  The metric-vector derivative mixing therefore induces
+The original two-vector action has now been expanded directly in
+four-dimensional axial harmonics.
+
+For \(l=2\), the direct source-action calculation gives:
+
+- a healthy Einstein-Hilbert metric kinetic term;
+- no intrinsic \(\dot u_A^2\) or \(\dot u_B^2\) term;
+- nonzero metric-vector derivative mixing;
+- one derivative-active vector combination;
+- one derivative-null vector combination.
+
+Define
 
 \[
-\boxed{
-K_{\rm vec}
+U
 =
--\frac{cc^{\rm T}}{C_1}.
-}
-\]
-
-For the static exterior,
-
-\[
-C_1>0,
-\]
-
-so the derivative-active vector combination has a negative kinetic
-eigenvalue.  The vector combination orthogonal to \(c\) has zero principal
-quadratic kinetic term.
-
-On the regular branch,
-
-\[
-\lambda_{\rm vec}
-=
--\frac{
-8\ell^4(a^2+b^2)
-}{
-f^2r^2
-},
-\]
-
-and near the regular center,
-
-\[
-\lambda_{\rm vec}
-\sim
--\frac{\ell^4q^2}{r^6}.
-\]
-
-The corresponding radial principal matrices satisfy
-
-\[
-R=-2fK,
+\frac{-a\,u_A+b\,u_B}{\sqrt{a^2+b^2}},
 \qquad
-G=f^2K,
-\]
-
-so the derivative-active vector mode has
-
-\[
-\boxed{
-P_{\rm vec}(\omega,k)
-\propto
-(\omega+fk)^2.
-}
-\]
-
-The \(l=1\) sector makes the sign especially transparent.  Since there is no
-local odd gravitational-wave degree of freedom for the dipole, the principal
-derivative action reduces to
-
-\[
-\boxed{
-\mathcal L_{l=1}^{\rm pr}
+V
 =
--\frac1{C_1}
-\left[
-c^{\rm T}(\dot u-fu')
-\right]^2.
+\frac{b\,u_A+a\,u_B}{\sqrt{a^2+b^2}}.
+\]
+
+The null combination \(V\) has no quadratic velocity and, after canonical time
+integration by parts, no linear velocity mixing with either \(W\) or \(Q\).
+It has positive algebraic stiffness on the regular branch and is therefore an
+auxiliary direction rather than the negative kinetic mode.
+
+In the asymptotic exterior, the nondynamical metric variable \(Q\) has
+
+\[
+\lim_{r\to\infty}r^2E_Q
+=
+\frac{48\pi}{5}>0.
+\]
+
+After eliminating \(Q\), the direct reduced kinetic determinant obeys
+
+\[
+\boxed{
+\lim_{r\to\infty}
+r^5\det K_{\rm red}
+=
+-
+\frac{1152\pi^2}{25}
+M\ell^4(16M^2+q^2)
+<0.
 }
 \]
 
-Its canonical Hamiltonian contains a negative quadratic momentum term.
+Therefore there exists a sufficiently large but finite open region in which
+the reduced odd kinetic matrix has one positive and one negative eigenvalue.
 
-This is currently a **new-calculation candidate**, not yet a publication-level
-ghost theorem.  The final check is to reproduce the entire two-vector
-spherical-harmonic quadratic action directly from the original action and
-verify that no additional degeneracy removes the active negative-kinetic
-combination.
+With the Einstein-Hilbert graviton sign fixing the healthy normalization, the
+negative eigenvalue is a linear odd-sector ghost in that region.
 
-This result is independent of, and more immediately damaging than, the
-separate question of whether the \(l\ge2\) physical tensor master mode retains
-the hidden Schwarzschild characteristic.
+This is already enough to reject the two-vector regular branch as a globally
+healthy principal-safe screening solution.
 
-See
-[notes/vector-odd-kinetic-analysis.md](notes/vector-odd-kinetic-analysis.md).
+A separate \(l=1\) direct canonical calculation reaches the same sign
+conclusion with the odd metric dipole acting only as a two-dimensional
+constraint/gauge sector.
+
+The hidden Schwarzschild tensor characteristic remains a logically separate
+question: it concerns the physical \(l\ge2\) tensor master cone, not the
+existence of the vector-sector ghost.
+
+See:
+
+- [notes/direct-two-vector-odd-expansion.md](notes/direct-two-vector-odd-expansion.md)
+- [notes/direct-asymptotic-odd-ghost.md](notes/direct-asymptotic-odd-ghost.md)
+- [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md)
