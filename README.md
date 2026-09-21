@@ -58,9 +58,14 @@ The distinction between these possibilities matters. A de Sitter-like regular co
 
 These conjectures are research targets, not results.
 
-## Minimal model target
+## Current model target
 
-We seek an action of the schematic form
+The original minimal static-radial scalar screening ansatz has an ansatz-level
+no-go under healthy canonical boundary conditions. The current target is
+therefore a covariant constrained/degenerate scalar, auxiliary-vector, or
+higher-curvature realization.
+
+A schematic order-parameter action remains useful as intuition:
 
 \[
 S[g,\chi,\ldots]
@@ -116,7 +121,9 @@ A viable model should satisfy, at minimum:
 - [docs/open-problems.md](docs/open-problems.md) — failure modes and unresolved questions.
 - [notes/derivations.md](notes/derivations.md) — derivations and toy calculations.
 - [notes/effective-stress-energy.md](notes/effective-stress-energy.md) — Hayward effective density, pressures, conservation, and energy conditions.
-- [src/](src/) — future symbolic/numerical code.
+- [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md) — why the simplest static radial scalar realization fails.
+- [notes/vector-hair-benchmark.md](notes/vector-hair-benchmark.md) — exact action-level Hayward-type benchmark and extremality/curvature tradeoff.
+- [src/](src/) — reproducible symbolic/numerical code.
 
 ## Starting references
 
@@ -124,6 +131,8 @@ A viable model should satisfy, at minimum:
 2. M. Reuter and F. Saueressig, *The Asymptotic Safety Scenario in Quantum Gravity*, Living Rev. Relativity. https://link.springer.com/article/10.12942/lrr-2006-5
 3. F. Di Filippo, I. Kolář, and D. Kubizňák, *Inner-extremal regular black holes from pure gravity*, Phys. Rev. D **111**, L041505 (2025). DOI: https://doi.org/10.1103/PhysRevD.111.L041505
 4. M. Van Raamsdonk, *Building up spacetime with quantum entanglement*, Gen. Rel. Grav. **42**, 2323–2329 (2010). arXiv:1005.3035
+5. K. Giesel, H. Liu, P. Singh, S. Weigl, *Regular black holes and their relationship to polymerized models and mimetic gravity*, Phys. Rev. D **111**, 064064 (2025). DOI: https://doi.org/10.1103/PhysRevD.111.064064
+6. A. Eichhorn, P. G. S. Fernandes, *Regular black holes without mass-inflation instability and gravastars from modified gravity*, Phys. Rev. D **113**, L081501 (2026). DOI: https://doi.org/10.1103/nqz2-88zf
 
 ## License
 
