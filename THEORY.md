@@ -918,3 +918,85 @@ A serious model must derive, rather than assume:
 10. observables that can distinguish the theory.
 
 Until these are obtained, spacetime screening is a research program and organizing hypothesis.
+
+
+## 19. 4D analytic GQTG core-scaling constraint
+
+For the known four-dimensional genuine GQTG family, the all-order integrated
+single-function equation gives a sharp regular-core scaling law.
+
+For an exact de Sitter-type core
+
+\[
+f(r)=1-cr^2,
+\]
+
+the order-\(n\) genuine GQTG contribution behaves as
+
+\[
+\boxed{
+F_n=-\frac12 c^n r^3
+}
+\]
+
+up to the normalization of the order-\(n\) coupling.
+
+For a generic regular series
+
+\[
+f(r)=1-cr^2+dr^3+O(r^4),
+\]
+
+one still finds
+
+\[
+\boxed{
+\frac{F_n}{r^3}
+\to
+-\frac12c^n
++\frac{3}{16}n(n-1)c^{n-3}d^2.
+}
+\]
+
+Thus every finite curvature order is \(O(r^3)\) at the center.
+
+A finite truncation therefore cannot balance a nonzero vacuum mass integration
+constant at a regular center.  If an infinite tower converges normally at the
+limiting curvature, its sum also remains \(O(r^3)\).
+
+Hence a nonzero-mass regular vacuum core requires a non-uniform resummation at
+the limiting curvature.
+
+If a finite curvature variable approaches
+
+\[
+c(r)-c_*=a r^p+\cdots,
+\]
+
+and the integrated equation has the schematic form
+
+\[
+M_0=r^3\mathcal G(c(r))+\cdots,
+\qquad M_0\ne0,
+\]
+
+then necessarily
+
+\[
+\boxed{
+\mathcal G(c)
+\sim
+|c-c_*|^{-3/p}.
+}
+\]
+
+This clarifies an important point: a pole in the **inverse/reduced response**
+is not automatically pathological.  Curvature saturation with an unbounded
+source necessarily makes the inverse response diverge.
+
+The actual acceptance test is whether the full four-dimensional action and
+the reduced physical perturbation operator remain differentiable,
+nondegenerate, and hyperbolic at the limiting curvature.
+
+See
+[notes/analytic-gqtg-core-scaling.md](notes/analytic-gqtg-core-scaling.md).
