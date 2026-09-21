@@ -140,6 +140,11 @@ def main():
         sp.diff(den,r).subs({r:rcrit,m:mcrit})
     )==0
 
+    # For regular m>mcrit, x is maximal at the denominator minimum.
+    xcrit=sp.factor(x.subs(r,rcrit))
+    expected_xcrit=sp.factor(m/(m-mcrit))
+    assert sp.simplify(xcrit-expected_xcrit)==0
+
     # Action pole x=1 at center and fixed horizon.
     assert sp.limit(x,r,0)==1
     assert sp.simplify(
@@ -203,6 +208,8 @@ def main():
     print("r_h2 = sqrt(2) ell")
     print(f"m_ext = {m_ext}")
     print(f"m_crit = {mcrit}")
+    print(f"x_max at r=sqrt(2/3)ell = {xcrit}")
+    print("x_max -> infinity as m -> m_crit from above.")
     print()
 
     print("== Curvature/action pole ==")
