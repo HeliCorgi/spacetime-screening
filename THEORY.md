@@ -1000,3 +1000,74 @@ nondegenerate, and hyperbolic at the limiting curvature.
 
 See
 [notes/analytic-gqtg-core-scaling.md](notes/analytic-gqtg-core-scaling.md).
+
+
+## 18. 2026 QTG-TNT square-root obstruction
+
+The first-order QTG-TNT construction of Colléaux, Kolář, and Málek uses
+
+\[
+R_4
+=
+\sqrt{
+\frac{2I_6}{3}
+-
+\frac{2I_{11}}{I_1}
+}
+\]
+
+and a correction
+
+\[
+A(\ell^2R_3)R_4.
+\]
+
+The single-function black-hole branch is exactly \(R_4=0\).
+
+Generic curvature derivatives satisfy
+
+\[
+\frac{\partial R_4}{\partial I_6}
+=
+\frac{1}{3R_4},
+\qquad
+\frac{\partial^2R_4}{\partial I_6^2}
+=
+-\frac{1}{9R_4^3}.
+\]
+
+Within TNT, a smooth signed perturbation
+\(R_4^{\rm signed}\propto\epsilon\) is reconstructed covariantly as
+\(\sqrt{(R_4^{\rm signed})^2}\propto|\epsilon|\), so the first variation has a
+cusp even before considering generic nonsymmetric directions.
+
+For the explicit regular-black-hole example
+
+\[
+A(x)=\frac{2x}{1-x},
+\]
+
+one finds
+
+\[
+A(x(r))
+=
+\frac{8m\ell^2}{r(r^2-2\ell^2)}
+\sim-\frac{4m}{r}
+\]
+
+at the regular center, and \(A\) also diverges at
+\(r=\sqrt2\,\ell\).
+
+The source classification proves that this tension is structural:
+analytic Riemann-only scalar actions restricted to TNT contain \(R_4\) only
+through even powers. Therefore a nonzero linear \(R_4\) term, which is what
+gives the nontrivial first-order/algebraic Class-I equations, necessarily
+requires non-analytic curvature dependence.
+
+The project therefore keeps this construction as a symmetry-sector
+integrability benchmark, not as the current principal-safe 4D completion.
+
+See
+[notes/r4-differentiability.md](notes/r4-differentiability.md) and
+[notes/r4-analyticity-obstruction.md](notes/r4-analyticity-obstruction.md).
