@@ -310,7 +310,8 @@ A candidate will be considered "principal-safe" only if it satisfies
 &\text{principal symbols finite and hyperbolic},\\
 &\text{constraint rank controlled},\\
 &\text{strong-coupling scale nonzero},\\
-&\text{regular solution dynamically formable}.
+&\text{regular solution dynamically formable},\\
+&\text{regular branch predictively selected from admissible data}.
 \end{aligned}
 }
 \]
@@ -623,3 +624,69 @@ See:
 - \`notes/sms-post-gri-fate-gate.md\`;
 - \`notes/sms-screening-activation-scale.md\`;
 - \`notes/sms-gr-collapse-endpoints.md\`.
+
+
+## 18. Predictive-realizability gate
+
+The chronology side branch exposed a useful general distinction:
+
+\[
+\boxed{
+\text{regular background}
++
+\text{healthy local principal symbol}
+\not\Rightarrow
+\text{globally/predictively realizable history}.
+}
+\]
+
+Misner space is the clean control example: the local metric and
+Klein--Gordon principal symbol remain regular at the chronology horizon, while
+ordinary global Cauchy predictivity and standard Hadamard QFT admissibility
+fail at the relevant horizon structure.
+
+For spacetime screening, the corresponding lesson is not about CTCs
+specifically.  It is that a candidate regular branch must be selected by the
+theory's physical evolution rather than introduced as an arbitrary extension
+after the predictive initial-value problem has ended.
+
+Therefore add the following gate.
+
+Given regular admissible initial data \(S\), require that:
+
+1. the evolution equations determine the screened strong-field region inside
+   the theory's predictive domain;
+2. no arbitrary post-Cauchy-horizon extension is required to obtain the
+   regular core;
+3. local principal hyperbolicity remains valid along the entire evolution;
+4. physical states/observables remain defined in any quantum or semiclassical
+   regime used by the model;
+5. the regular endpoint is dynamically accessible to physical perturbations,
+   not merely present as a disconnected or formal branch.
+
+Schematically,
+
+\[
+\boxed{
+\text{regular initial data}
+\rightarrow
+\text{predictive principal-safe evolution}
+\rightarrow
+\text{regular screened endpoint}.
+}
+\]
+
+A static regular solution demonstrates only the last element.
+
+This strengthens, but does not replace, the existing dynamical-formation
+criterion.  In particular, the future SMS-collapse test should verify not only
+that a regular inner solution exists, but that moving the GR-to-screened
+matching surface does not introduce branch ambiguity or loss of predictivity.
+
+Chronology references and the detailed audit remain isolated in:
+
+- notes/chronology-protection-principal-safety.md
+- notes/chronology-realizability-counterexample-audit.md
+
+The chronology analysis is used here only as a conceptual control example; it
+does not imply a chronology theorem for the screening theory.
