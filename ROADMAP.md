@@ -131,10 +131,18 @@ Prefer predictions that are insensitive to arbitrary core parametrization.
 1. Derive curvature invariants for a one-parameter screening family.
 2. Prove the regular-center scaling conditions.
 3. Compare the vector-hair benchmark with extended mimetic reconstruction and identify the smaller healthy field content.
-4. Perform a full ADM/Dirac constraint count for the two-vector action.
-5. Derive odd-parity non-spherical perturbation equations and their characteristic speeds.
-6. Derive even-parity non-spherical perturbations and test for hidden kinetic degeneracy.
-7. Analyze the extremal AdS2 x S2 throat for Aretakis-type conserved quantities.
-8. Test whether the extremal branch avoids classical mass inflation without introducing semiclassical or strong-coupling instabilities.
-9. Determine whether universal limiting curvature can coexist with extremality across arbitrary black-hole masses.
-10. Decide whether a Minkowski core is dynamically possible on one branch or genuinely requires a phase label.
+4. Complete the l>=2 odd-parity quadratic action and test whether the radial
+   pure-TT Schwarzschild principal cone survives auxiliary-field elimination.
+5. Perform a full ADM/Dirac constraint count for the two-vector action.
+6. Determine whether the tensor characteristic horizon at r=2M is a genuine
+   graviton horizon and whether the core principal operator is singular.
+7. Derive even-parity non-spherical perturbations and test for hidden kinetic
+   degeneracy.
+8. Analyze coupled metric-vector Aretakis quantities on the extremal throat.
+9. Test whether the extremal branch avoids classical mass inflation without
+   introducing semiclassical or strong-coupling instabilities.
+10. Determine whether universal limiting curvature can coexist with
+    extremality across arbitrary black-hole masses.
+11. If the vector benchmark fails at the principal-symbol level, use that
+    failure as a design constraint for the next screening action rather than
+    attempting to repair the metric ansatz alone.
