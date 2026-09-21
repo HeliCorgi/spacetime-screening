@@ -689,3 +689,116 @@ The vector benchmark now has **two logically independent problems**:
 
 Either one would prevent the model from satisfying the repository's
 principal-safe screening criterion if confirmed by direct expansion.
+
+
+## 10. Source-formula cross-check
+
+The generalized-Proca source action used by Kase et al. contains the canonical
+Maxwell term
+
+\[
+F=-\frac14F_{\mu\nu}F^{\mu\nu}
+\]
+
+**explicitly**, outside \(G_2\).
+
+Therefore the correct mapping of one auxiliary-vector sector is not simply
+\(G_2\propto X^2\).  To reproduce the present model, which has no Maxwell
+kinetic term, one must set schematically
+
+\[
+\boxed{
+G_2=-F+24\sigma\ell^2X^2,
+}
+\]
+
+\[
+G_3=-16\sigma\ell^2X,
+\qquad
+G_{4,X}=4\sigma\ell^2,
+\]
+
+with
+
+\[
+\sigma=+1
+\]
+
+for \(A_\mu\) and
+
+\[
+\sigma=-1
+\]
+
+for \(B_\mu\).
+
+Thus
+
+\[
+1+G_{2,F}=0.
+\]
+
+Substituting this mapping directly into Appendix C of
+arXiv:1801.01787 gives, on the null \(h=f\) branch,
+
+\[
+\boxed{
+C_2
+=
+-\frac{\beta A_0}{2fr^2},
+}
+\]
+
+\[
+\boxed{
+C_3
+=
+\frac{\beta A_0}{2r^2}
+=
+-fC_2,
+}
+\]
+
+and
+
+\[
+\boxed{
+C_5=C_6=C_7=0.
+}
+\]
+
+For one vector the published no-ghost coefficient therefore becomes
+
+\[
+q_2
+=
+\frac{C_1C_5-C_2^2}{C_1}
+=
+-\frac{C_2^2}{C_1}.
+\]
+
+For \(C_1>0\) and nonzero longitudinal hair,
+
+\[
+\boxed{
+q_2<0.
+}
+\]
+
+Because the full two-vector action is additive in the two vector sectors
+before the common metric constraint is eliminated, their derivative mixing
+vectors combine into the rank-one Schur complement
+
+\[
+K_{\rm vec}
+=
+-\frac{cc^{\rm T}}{C_1}.
+\]
+
+This source-formula check removes an earlier ambiguity about whether a hidden
+canonical Maxwell contribution could restore \(C_5>0\): it cannot, because the
+mapping explicitly cancels the Maxwell term.
+
+See:
+
+\`src/symbolic/odd_coefficients_from_source.py\`.
