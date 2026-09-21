@@ -1071,3 +1071,96 @@ integrability benchmark, not as the current principal-safe 4D completion.
 See
 [notes/r4-differentiability.md](notes/r4-differentiability.md) and
 [notes/r4-analyticity-obstruction.md](notes/r4-analyticity-obstruction.md).
+
+
+## 19. Odd-vector kinetic obstruction in the two-vector benchmark
+
+Using the published generalized-Proca odd-parity quadratic-action structure,
+the additive two-vector model has no direct Maxwell-type transverse-vector
+kinetic block.  The metric-vector derivative mixing therefore induces
+
+\[
+\boxed{
+K_{\rm vec}
+=
+-\frac{cc^{\rm T}}{C_1}.
+}
+\]
+
+For the static exterior,
+
+\[
+C_1>0,
+\]
+
+so the derivative-active vector combination has a negative kinetic
+eigenvalue.  The vector combination orthogonal to \(c\) has zero principal
+quadratic kinetic term.
+
+On the regular branch,
+
+\[
+\lambda_{\rm vec}
+=
+-\frac{
+8\ell^4(a^2+b^2)
+}{
+f^2r^2
+},
+\]
+
+and near the regular center,
+
+\[
+\lambda_{\rm vec}
+\sim
+-\frac{\ell^4q^2}{r^6}.
+\]
+
+The corresponding radial principal matrices satisfy
+
+\[
+R=-2fK,
+\qquad
+G=f^2K,
+\]
+
+so the derivative-active vector mode has
+
+\[
+\boxed{
+P_{\rm vec}(\omega,k)
+\propto
+(\omega+fk)^2.
+}
+\]
+
+The \(l=1\) sector makes the sign especially transparent.  Since there is no
+local odd gravitational-wave degree of freedom for the dipole, the principal
+derivative action reduces to
+
+\[
+\boxed{
+\mathcal L_{l=1}^{\rm pr}
+=
+-\frac1{C_1}
+\left[
+c^{\rm T}(\dot u-fu')
+\right]^2.
+}
+\]
+
+Its canonical Hamiltonian contains a negative quadratic momentum term.
+
+This is currently a **new-calculation candidate**, not yet a publication-level
+ghost theorem.  The final check is to reproduce the entire two-vector
+spherical-harmonic quadratic action directly from the original action and
+verify that no additional degeneracy removes the active negative-kinetic
+combination.
+
+This result is independent of, and more immediately damaging than, the
+separate question of whether the \(l\ge2\) physical tensor master mode retains
+the hidden Schwarzschild characteristic.
+
+See
+[notes/vector-odd-kinetic-analysis.md](notes/vector-odd-kinetic-analysis.md).
