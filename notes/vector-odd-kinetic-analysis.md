@@ -536,3 +536,156 @@ python src/symbolic/vector_l1_odd_ghost.py
 to reproduce the negative-semidefinite two-vector kinetic matrix, the radial
 vector principal polynomial, the \(l=1\) Hamiltonian sign, and the
 Schwarzschild factor in the odd metric principal block.
+
+
+## 8. Reduced tensor kinetic coefficient and characteristic horizon
+
+The standard odd-action tensor block can be pushed one step further.
+
+Define
+
+\[
+\Delta
+=
+4\ell^2(a^2-b^2).
+\]
+
+On the single-function null background,
+
+\[
+C_1=\frac1{2r^2},
+\]
+
+\[
+C_8
+=
+-\frac{f+\Delta}{2r^4},
+\]
+
+\[
+D_{WQ}
+=
+\frac{\Delta}{fr^4},
+\]
+
+and
+
+\[
+C_{10}
+=
+\frac{f-\Delta}{2f^2r^4}.
+\]
+
+The characteristic discriminant is exactly
+
+\[
+\boxed{
+D_{WQ}^2-4C_8C_{10}
+=
+\frac1{r^8}.
+}
+\]
+
+The reduced tensor kinetic coefficient is
+
+\[
+\boxed{
+q_T
+=
+\frac{f-\Delta}{2f^2}.
+}
+\]
+
+The radial coordinate characteristics are
+
+\[
+\boxed{
+v_-=-f,
+}
+\]
+
+and
+
+\[
+\boxed{
+v_+
+=
+f\frac{f+\Delta}{f-\Delta}.
+}
+\]
+
+On the exact regular branch,
+
+\[
+\boxed{
+f+\Delta
+=
+1-\frac{2M}{r}.
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+r_T=2M
+}
+\]
+
+is a tensor characteristic horizon.
+
+At that radius the background metric itself is regular and static:
+
+\[
+f(2M)
+=
+\frac{q\ell^2}{4M^3+q\ell^2}
+>0.
+\]
+
+Moreover,
+
+\[
+\boxed{
+q_T(2M)
+=
+\frac1{f(2M)}
+>0.
+}
+\]
+
+So \(r=2M\) is not a tensor ghost surface.  It is a genuine candidate
+characteristic horizon of the odd tensor principal block.
+
+Toward the regular metric core,
+
+\[
+\boxed{
+q_T
+\sim
+\frac{M}{r}
+}
+\]
+
+diverges positively.
+
+Hence the tensor kinetic sign remains positive while its characteristic
+geometry retains the Schwarzschild-type singular structure.
+
+This substantially strengthens the original local-TT calculation: the hidden
+factor \(1-2M/r\) now appears directly in the standard Regge-Wheeler
+high-frequency coefficient block.
+
+The final independent check remains a direct two-vector harmonic expansion
+from the original action.
+
+## 9. Updated status
+
+The vector benchmark now has **two logically independent problems**:
+
+1. an odd vector negative-kinetic mode candidate, already visible in \(l=1\);
+2. a regular-background / singular-characteristic mismatch in the tensor
+   sector.
+
+Either one would prevent the model from satisfying the repository's
+principal-safe screening criterion if confirmed by direct expansion.
