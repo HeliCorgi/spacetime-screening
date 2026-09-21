@@ -601,6 +601,43 @@ Generic heterotic-coset formalism is not enough to mark this gate as passed.
 
 ---
 
+## 7.1 Nearby BRST technology already exists
+
+**PUBLISHED RESULT / methodological prior art.**
+
+The absence of a Taub--NUT-specific chronology-state calculation should not be
+confused with absence of BRST technology for asymmetric heterotic cosets.
+
+For related \(SL(2,\mathbb R)\times U(1)\) asymmetric gauged-WZW models,
+physical vertex operators have been constructed by:
+
+1. introducing the coset gauge ghosts and auxiliary boson;
+2. constructing a nilpotent \(U(1)\) BRST current;
+3. requiring affine primaries dressed by the gauge boson to be BRST closed;
+4. imposing Virasoro/mass-shell conditions;
+5. quotienting BRST-exact polarizations.
+
+The ordinary \(SL(2,\mathbb R)/U(1)\) black-hole coset also has a substantial
+literature on explicit vertex operators, spectrum, and BRST cohomology.
+
+Therefore the next Taub--NUT step is technically well posed:
+
+\[
+\boxed{
+\text{generalize the known one-}U(1)\text{ BRST construction to the actual }
+U(1)_A\times U(1)_B\text{ heterotic gauging.}
+}
+\]
+
+What remains special to Taub--NUT is that the chronology fiber is tied to the
+large \(U(1)_B\) identification.  The physical state must therefore combine
+affine Cartan charges, heterotic left charges, and the gauge topological
+sector consistently.
+
+This sharply reduces the novelty target: the new content, if any, would be
+the **Taub--NUT chronology-sector application**, not BRST quantization of
+gauged WZW models itself.
+
 # 8. Minisuperspace crossing diagnostic
 
 **NOT YET PERFORMED in this note.**
@@ -1018,6 +1055,17 @@ Level A is strong; Levels B/C remain open; Level D is absent.
 8. M. Berkooz, B. Durin, B. Pioline, D. Reichmann,
    *Closed Strings in Misner Space: Stringy Fuzziness with a Twist*,
    arXiv:hep-th/0407216.
+
+9. K. Itoh, H. Kunitomo, N. Ohta, M. Sakaguchi,
+   *BRST Analysis of Physical States in Two-Dimensional Black Hole*,
+   Phys. Rev. D **48**, 3793 (1993),
+   arXiv:hep-th/9305179.
+
+10. D. P. Jatkar,
+    *The Spectrum of \(SL(2,R)/U(1)\) Black Hole Conformal Field Theory*,
+    Nucl. Phys. B **395**, 167 (1993),
+    arXiv:hep-th/9203063.
+
 
 ---
 
