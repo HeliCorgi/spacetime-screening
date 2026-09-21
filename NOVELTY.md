@@ -743,6 +743,69 @@ See:
 - `src/symbolic/npqt_principal_plane_spectral_toy.py`
 - `notes/npqt-principal-plane-spectral-extension.md`
 
+### Self-dual local principal-plane extension
+
+The local spectral-cluster construction also extends to the complex self-dual
+Weyl operator, so magnetic Weyl curvature is included at the algebraic level.
+
+For
+
+[
+operatorname{spec}(mathcal W)
+=
+(-2ho,ho+delta,ho-delta),
+]
+
+the isolated simple-root projector has gap factor
+
+[
+oxed{
+9ho^2-delta^2.
+}
+]
+
+At exact non-conformally-flat type D,
+
+[
+delta=0,
+qquad
+ho
+eq0,
+]
+
+the gap is nonzero.  The exact type-D invariants satisfy
+
+[
+ho=-rac{
+operatorname{tr}(mathcal W^3)
+}{
+operatorname{tr}(mathcal W^2)
+},
+]
+
+and the simple-line projector can be written intrinsically as
+
+[
+P_D
+=
+rac13
+left(
+mathcal G-rac{mathcal W}{ho}
+ight).
+]
+
+Thus magnetic Weyl curvature does not create a separate local obstruction to
+continuing the type-D principal plane.  The remaining obstruction is global
+branch selection / algebraically special non-D directions / the
+gap-closing conformally-flat core.
+
+**Status:** NEW CALCULATION CANDIDATE / LOCAL CONSTRUCTIVE PASS ONLY.
+
+See:
+
+- `src/symbolic/npqt_selfdual_principal_plane_toy.py`
+- `notes/npqt-selfdual-principal-plane-extension.md`
+
 ## 10. Nonlocal zero-free form factor
 
 The use of zero-free entire functions to avoid additional propagator poles is
