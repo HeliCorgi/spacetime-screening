@@ -626,6 +626,123 @@ See:
 - \`src/symbolic/npqt_explicit_pole_tensor_check.py\`
 - \`notes/npqt-explicit-singular-direction.md\`
 
+### NPQT spherical-target identity and Petrov-regulator continuity failure
+
+For the displayed cubic rational piece
+
+[
+rac ND,
+qquad
+D=(WZZ)W_2-2W_3Z_2,
+qquad
+N=W_3Z_3W_2,
+]
+
+a direct Lorentzian contraction on a general local spherical algebraic
+curvature configuration gives
+
+[
+oxed{
+left.rac NDight|_{m spherical}=W_2Theta,
+}
+]
+
+where (Theta) is the repeated angular traceless-Ricci eigenvalue.
+
+The earlier Petrov-discriminant toy
+
+[
+mathcal R_mu
+=
+rac{ND}{D^2+muDelta_WZ_2^2}
+]
+
+removes the previously identified explicit type-I pole pointwise, but the
+follow-up calculation finds incompatible limits at a spherical simultaneous
+zero:
+
+[
+oxed{
+lim_{m spherical}mathcal R_mu=48q^2	heta,
+qquad
+lim_{m Weyl split}mathcal R_mu=0.
+}
+]
+
+Thus that toy has no (C^0) extension there.
+
+**Status:** NEW CALCULATION CANDIDATE / OBSTRUCTION TO THE TOY REGULATOR.
+
+See:
+
+- `src/symbolic/npqt_petrov_regulator_continuity_gate.py`
+- `notes/npqt-petrov-regulator-continuity-gate.md`
+- `notes/npqt-petrov-regulator-toy.md`
+
+### Local principal-plane spectral extension
+
+In the purely-electric sector, let (E) be the spatial electric-Weyl operator
+and let (lambda_s) be an isolated simple eigenvalue.  The complementary
+rank-two spectral-cluster projector can be constructed from
+
+[
+P_s
+=
+rac{
+E^2+lambda_sE+
+left(lambda_s^2-rac12I_2ight)I
+}{
+3lambda_s^2-rac12I_2
+},
+qquad
+h=I-P_s.
+]
+
+For the local split family
+
+[
+operatorname{spec}(E)=(-2q,q+delta,q-delta),
+]
+
+the spectral gap factor is
+
+[
+9q^2-delta^2,
+]
+
+which is nonzero at the type-D point (delta=0) whenever (q
+eq0).
+
+The candidate extension
+
+[
+Theta_{m ext}
+=
+rac12operatorname{tr}(hZ_{m sp})
+]
+
+then remains exactly equal to the cluster-average Ricci eigenvalue and
+recovers
+
+[
+W_2Theta_{m ext}
+	o
+48q^2Theta.
+]
+
+So local type-D to type-I splitting is not by itself an obstruction away from
+the conformally-flat core.
+
+**Status:** NEW CALCULATION CANDIDATE / LOCAL CONSTRUCTIVE PASS ONLY.
+
+The magnetic-Weyl, type-II/III/N, global branch-selection, and (C^2)
+(W=0) core problems remain open.
+
+See:
+
+- `src/symbolic/npqt_principal_plane_spectral_toy.py`
+- `notes/npqt-principal-plane-spectral-extension.md`
+
 ## 10. Nonlocal zero-free form factor
 
 The use of zero-free entire functions to avoid additional propagator poles is
@@ -677,52 +794,49 @@ Equivalent technical version:
 
 ## 13. Immediate priority
 
-### P0 — complete the vector odd-parity calculation
+### P0 — construct a differentiable 4D NPQT base representative
 
-Current interim result: the standard odd-action reduction gives a rank-one
-negative vector kinetic block and an (l=1) ghost candidate.  This must now be
-verified by direct expansion of the original two-vector action.
+The direct two-vector odd-parity failure test is complete and no longer the
+mainline task.
 
-Derive from the full action:
+The current target is the displayed NPQT spherical rational response rewritten
+as
 
-\[
-S^{(2)}_{\rm full,odd}
-\]
+[
+oxed{
+T_{m sph}=W_2Theta.
+}
+]
 
-for \(l\ge2\), then:
+Continue from the local principal-plane spectral construction and determine
+whether there exists one generic 4D covariant extension that is
 
-1. decompose metric and both vectors into axial harmonics;
-2. identify all nondynamical variables;
-3. analyze the constraint matrix **before** dividing by coefficients that
-   vanish at the center or infinity;
-4. integrate out the auxiliary vector modes;
-5. integrate out the nondynamical metric mode;
-6. obtain the physical Regge-Wheeler quadratic action;
-7. compute its kinetic coefficient, gradient coefficient, and characteristic
-   polynomial;
-8. test whether
+1. single-valued for generic off-spherical curvature;
+2. valid with magnetic Weyl curvature;
+3. controlled on Petrov II/III/N directions;
+4. genuinely (C^2) through the maximally symmetric (W=0) core;
+5. exactly equivalent to the required spherical reduced density.
 
-\[
-f_{\rm phys}(r)
+Only after those gates pass should the curvature Hessian be inserted into the
+NLQT operator.
+
+### P1 — generic nonspherical NLQT principal operator
+
+Once a differentiable 4D QT/NPQT base exists, compute the odd/even mismatch
+
+[
+Deltamathcal D
 =
-1-\frac{2M}{r}
-\]
+mathcal D-hat{mathcal D}
+]
 
-survives.
+and test the physical kinetic/principal structure on the regular-black-hole
+background.
 
-If yes, this becomes the repository's strongest new-result candidate.
+### P2 — dynamical formation
 
-If no, document exactly which constraint cancels the local-TT heuristic.
-
-### P1 — classification / no-go synthesis
-
-Generalize the failure criteria into model-independent statements where
-possible.
-
-### P2 — analytic Class-II / nonlocal-QTG candidates
-
-Continue candidate construction only as comparison / replacement models after
-P0 is resolved.
+Use the SMS GR-instability and nonlinear-collapse benchmarks only after a
+principal-safe strong-field theory exists.
 
 ## 14. Priority-claim policy
 
