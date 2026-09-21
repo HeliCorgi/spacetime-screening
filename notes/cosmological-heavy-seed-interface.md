@@ -371,3 +371,94 @@ python src/symbolic/heavy_seed_scale_separation.py
 \`\`\`
 
 to reproduce the scale-separation estimates.
+
+
+## 8. Source-constrained envelope instead of fake precision
+
+The Nature data-availability statement distinguishes between:
+
+- public simulation **inputs/configuration/initial conditions** at Zenodo;
+- full simulation **outputs**, available from the corresponding author on
+  reasonable request.
+
+Accordingly, this repository does **not** label hand-read values from Fig. 1
+as exact simulation data.
+
+Instead, \`data/heavy_seed_source_envelope.csv\` records only numerical anchors
+and phase descriptions explicitly stated in the paper.
+
+Important example: the paper contains two MBH1 mass statements in different
+simulation contexts:
+
+- the high-resolution isolated-cloud follow-up describes an MBH1 seed with
+  final mass \(6\times10^5M_\odot\);
+- a later characteristic-mass discussion associates approximately
+  \(3\times10^5M_\odot\) and \(6\times10^5M_\odot\) with MBH1 and MBH2.
+
+The repository preserves those contexts separately rather than silently
+reconciling them.
+
+For prose such as
+
+> several to a few tens of times the Eddington limit,
+
+the numerical interval used by the harness,
+
+\[
+3\le \dot m\le30,
+\]
+
+is explicitly marked as an **operational interpretation**, not source data.
+
+## 9. Offline inner-boundary harness
+
+The first coupling code is
+
+\`src/numerical/heavy_seed_boundary_harness.py\`.
+
+It implements the paper's Eq. (4) in dimensionless form,
+
+\[
+\frac{L_{\rm bol}}{L_{\rm Edd}}
+=
+\begin{cases}
+\dot m,&\dot m\le2,\\[1mm]
+2\left[1+\ln(\dot m/2)\right],&\dot m>2,
+\end{cases}
+\]
+
+and exposes the inner closure as a replaceable callable.
+
+The baseline is the Chon et al. slim-disk prescription.
+
+A second, deliberately phenomenological closure is included only as an
+interface test; it rescales luminosity and can attach wind/kinetic-feedback
+fractions. It is **not** presented as a prediction of Spacetime Screening.
+
+This cleanly separates:
+
+\[
+\boxed{
+\text{source-derived outer history}
+}
+\]
+
+from
+
+\[
+\boxed{
+\text{future strong-field closure}.
+}
+\]
+
+## 10. Next data step
+
+For a quantitative feedback rerun, replace the source-constrained envelope
+with one of:
+
+1. author-supplied full \(M(t),\dot M(t)\) outputs;
+2. a documented digitization of Fig. 1e/f;
+3. a rerun of the archived AREPO setup.
+
+The harness API is already designed so the data source can be replaced without
+changing the strong-field closure interface.
