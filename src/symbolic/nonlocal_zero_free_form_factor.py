@@ -64,9 +64,10 @@ def main():
     # Compare to a bad polynomial higher-derivative example:
     # O_bad = x (1 - x/m_g^2), which adds a second pole.
     mg=sp.symbols("m_g", positive=True, finite=True)
-    O_bad=sp.factor(x*(1-x/mg**2))
-    bad_roots=sp.solve(sp.Eq(O_bad,0),x)
-    assert set(bad_roots)=={0,mg**2}
+    z=sp.symbols("z", finite=True)
+    O_bad=sp.factor(z*(1-z/mg**2))
+    bad_roots=sp.solve(sp.Eq(O_bad,0),z)
+    assert set(bad_roots)=={sp.Integer(0),mg**2}
 
     print("== Zero-free entire toy form factor ==")
     print(f"F(x) = {F}")
