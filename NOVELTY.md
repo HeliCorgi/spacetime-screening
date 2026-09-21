@@ -861,6 +861,103 @@ See:
 - `src/symbolic/npqt_selfdual_branch_monodromy.py`
 - `notes/npqt-selfdual-branch-monodromy.md`
 
+### NPQT mixed-invariant atlas and aligned sign obstruction
+
+The exact spherical cubic rational target can be written as
+
+\[
+T_{\rm sph}=W_2\Theta.
+\]
+
+A new scalar-contraction chart,
+
+\[
+M_{22}=W(Z^2)(Z^2),
+\qquad
+M_{23}=W(Z^2)(Z^3),
+\]
+
+obeys on the general spherical family
+
+\[
+M_{23}=-\Theta M_{22},
+\]
+
+so
+
+\[
+\boxed{
+T_{\rm alt}
+=
+-W_2\frac{M_{23}}{M_{22}}
+=
+W_2\Theta.
+}
+\]
+
+At the previously identified explicit type-I pole of the displayed
+representative,
+
+\[
+D_{\rm old}=0,
+\]
+
+the new denominator is nonzero:
+
+\[
+M_{22}
+=
+-\frac{138240}{3721}.
+\]
+
+Thus the old explicit pole is **chart-specific**, not a common zero of all
+spherical-equivalent invariant ratios.
+
+However, chart 1 still has incompatible limits at the aligned spherical
+simultaneous-zero stratum and therefore fails already at \(C^0\).
+
+More structurally, on
+
+\[
+Z^a{}_b
+=
+\operatorname{diag}(-\Theta,-\Theta,\Theta,\Theta),
+\]
+
+the complete CM+ZM scalar-polynomial set through degree five is invariant
+under
+
+\[
+\Theta\rightarrow-\Theta,
+\]
+
+while \(W_2\Theta\) is odd.
+
+Using the published Zakhary--McIntosh algebraic-completeness classification
+for Petrov D and Segre \([(1,1)(11)]\), the complete algebraic set
+\(\{R,I,I_6,K\}\) is likewise sign blind on this stratum.
+
+**Status:** NEW CALCULATION CANDIDATE / CONDITIONAL NO-GO FOR SINGLE-VALUED
+SPI-ONLY ALGEBRAIC LIFTS.
+
+Scope:
+
+- no priority claim;
+- no curvature-derivative invariants are included;
+- branch-restricted/root prescriptions are not ruled out;
+- tensorial/Cartan/nonlocal/extra-field completions are not ruled out.
+
+See:
+
+- notes/npqt-mixed-invariant-atlas.md
+- notes/npqt-aligned-spi-sign-obstruction.md
+- src/symbolic/npqt_mixed_invariant_atlas_chart1.py
+- src/symbolic/npqt_mixed_invariant_atlas_old_pole.py
+- src/symbolic/npqt_mixed_invariant_atlas_chart1_c0.py
+- src/symbolic/npqt_spi_sign_blind_degree5.py
+- src/symbolic/npqt_aligned_spi_all_degree_gate.py
+- src/symbolic/npqt_aligned_spi_core_scaling_gate.py
+
 ## 10. Nonlocal zero-free form factor
 
 The use of zero-free entire functions to avoid additional propagator poles is
