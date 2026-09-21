@@ -105,3 +105,22 @@ f_{\rm T}(r)=1-\frac{2M}{r}.
 
 It also checks that the candidate tensor characteristic horizon \(2M\) lies
 outside every regular-background horizon on the \(q>0\) branch.
+
+
+### \`pure_gravity_qtg_benchmark.py\`
+
+Implements the four-dimensional pure-gravity Hayward characteristic relation
+
+\[
+\frac{\psi}{1-\ell^2\psi}=\frac{2M}{r^3},
+\]
+
+derives the exact regular metric, and verifies the intrinsic screening
+susceptibility
+
+\[
+\frac{d\psi}{ds}
+=
+(1-\ell^2\psi)^2
+\to0.
+\]
