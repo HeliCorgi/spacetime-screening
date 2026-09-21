@@ -24,9 +24,9 @@ Legend:
 | Nonpolynomial pure-gravity rational QTG lift | PASS as representative formula | PASS in spherical reduction | Related models: PARTIAL | **FAIL for displayed lift** | OPEN | not well-defined generically before lift repair | OPEN | OPEN | Spherical response benchmark |
 | Regularized-Lovelock/Horndeski infinite tower | PASS | PASS for known planar branch | OPEN | PASS | **FAIL on known planar branch** | **FAIL on known planar branch** | **FAIL** | not main issue | Rejected known regular branch |
 | Polynomial QTG, \(D\ge5\) | PASS | PASS | PASS in studied collapse models | PASS | OPEN on generic RBH | OPEN | OPEN | OPEN | Higher-D clean benchmark |
-| 4D generalized quasi-topological gravity | PASS, polynomial order by order | no infinite-tower regular vacuum BH established here | OPEN | PASS | OPEN | OPEN | OPEN | OPEN | Candidate building blocks |
+| 4D analytic Class-II / GQTG | PASS, polynomial order by order | no principal-safe infinite-tower regular vacuum BH established here | OPEN | PASS order by order | **FAIL/strong-coupling concern as complete local theory** | **FAIL/degenerate principal structure concern** | concern from reduced spectrum | OPEN | EFT/building block only |
 | First-order QTG-TNT (2026) | PASS as non-analytic metric action | PASS only above critical mass | OPEN | **FAIL/ill-defined on SF branch generically** | OPEN | OPEN | concern from non-differentiable action | extremal remnant; perturbative status OPEN | Symmetry-sector benchmark / rejected v3 |
-| Nonlocal QTG completion | Reported PASS | Reported PASS | OPEN | expected to avoid projector lift; exact check pending | Reported ghost-free in source | OPEN on regular-BH background | Reported avoidance | OPEN | Leading v3 benchmark |
+| Nonlocal QTG completion | PASS as pure-metric nonlocal construction | PASS in inherited SS sector | OPEN | **OPEN in 4D: depends on nonpolynomial QT base** | PASS on maximally-symmetric/SS proven subspaces | **OPEN for generic nonspherical RBH modes** | PASS for order-reduction mechanism in source | OPEN | Leading surviving candidate |
 
 ## 1. Minimal canonical scalar
 
@@ -351,3 +351,52 @@ See:
 
 - \`notes/direct-two-vector-odd-expansion.md\`
 - \`notes/direct-asymptotic-odd-ghost.md\`
+
+
+## Class-II / NLQT gate update
+
+The auxiliary derivative-mixing failure found in the two-vector model is not
+present in pure-metric Class-II/GQTG or NLQT theories.  However, a stronger
+gate is needed.
+
+### Local analytic Class-II / GQTG
+
+The \(n=0\) even Class-II family reduces to four-dimensional generalized
+quasi-topological gravity, including Einsteinian cubic gravity at cubic
+order.
+
+These theories have the known reduced-spectrum / strong-coupling problem:
+their linearized equations degenerate on maximally symmetric and highly
+symmetric backgrounds relative to generic backgrounds.
+
+For use as a complete nonperturbative singularity-resolution theory, this
+violates the repository's principal-rank criterion.
+
+In addition, the repository's all-order spherical scaling shows that every
+finite analytic curvature order vanishes as \(r^3\) at a regular de
+Sitter-type core.  A nonzero mass therefore requires a nonuniform infinite
+resummation.
+
+**Status:** reject as the full completion; retain as EFT/polynomial building
+blocks.
+
+### Nonlocal QTG
+
+The nonlocal completion adds a quadratic \(\hat{\mathcal E}\mathcal F
+\hat{\mathcal E}\) term chosen so the linearized derivative order does not
+drop on symmetric backgrounds.
+
+For zero-free entire form factors, the source proves no additional poles on
+maximally symmetric backgrounds and on the spherically symmetric perturbation
+subspace of spherically symmetric vacuum backgrounds.
+
+Two project-specific gates remain:
+
+1. the target four-dimensional QT base action is nonpolynomial and must itself
+   pass the covariant-action differentiability test;
+2. generic nonspherical odd/even perturbations of the regular black hole are
+   not covered by the clean self-adjoint factorization used in the source.
+
+**Status:** leading candidate, but not yet principal-safe verified in 4D.
+
+See \`notes/principal-gate-classII-nlqt.md\`.
