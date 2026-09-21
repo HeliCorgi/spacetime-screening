@@ -509,3 +509,37 @@ covariant-action gate.
 This is narrower than rejecting the entire NPQT spherical theory:
 alternative covariant representatives remain logically possible and are now
 an explicit design target.
+
+
+## Dynamical-formation benchmark update
+
+The project now has an external astrophysical benchmark chain for the
+dynamical-formation criterion:
+
+\[
+\text{cosmological inflow}
+\to
+\text{accreting SMS}
+\to
+\text{GRI}
+\to
+\text{post-GRI fate}
+\to
+\text{strong-field endpoint}.
+\]
+
+Published inputs include:
+
+- Chon et al. (2026): realistic heavy-seed cosmological environment;
+- Saio et al. (2024): GR radial-instability threshold and compactness;
+- Nagele & Umeda (2024): nonlinear collapse/pulsation/explosion fate for
+  accreting Pop III SMS models;
+- Shibata & Shapiro (2002) and Fujibayashi et al. (2025): rotating
+  strong-field GR endpoint benchmarks.
+
+This does **not** turn any current candidate's dynamical-formation entry into
+PASS.  It defines the calculation required to change that entry.
+
+For nonlocal QTG in particular, the remaining task is still to produce a
+well-defined four-dimensional principal-safe evolution system before it can be
+inserted into this collapse benchmark.
