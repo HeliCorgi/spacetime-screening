@@ -119,6 +119,7 @@ A viable model should satisfy, at minimum:
 - [docs/regular-black-holes.md](docs/regular-black-holes.md) — regular-core geometry and inner-horizon issues.
 - [docs/spacetime-phase-transition.md](docs/spacetime-phase-transition.md) — branch changes and non-geometric phases.
 - [docs/open-problems.md](docs/open-problems.md) — failure modes and unresolved questions.
+- [docs/principal-safe-screening.md](docs/principal-safe-screening.md) — upgraded acceptance criteria for background, constraints, and physical characteristics.
 - [notes/derivations.md](notes/derivations.md) — derivations and toy calculations.
 - [notes/effective-stress-energy.md](notes/effective-stress-energy.md) — Hayward effective density, pressures, conservation, and energy conditions.
 - [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md) — why the simplest static radial scalar realization fails.
@@ -129,6 +130,7 @@ A viable model should satisfy, at minimum:
 - [notes/odd-parity-vector-auxiliary.md](notes/odd-parity-vector-auxiliary.md) — axial vector perturbations are algebraic auxiliaries and become degenerate at the endpoints.
 - [notes/generalized-proca-mapping.md](notes/generalized-proca-mapping.md) — mapping to quartic generalized Proca and the known odd-mode instability warning.
 - [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md) — radial pure-TT characteristic cone and the hidden Schwarzschild geometry.
+- [notes/pure-gravity-qtg-benchmark.md](notes/pure-gravity-qtg-benchmark.md) — intrinsic curvature screening in four-dimensional nonpolynomial quasitopological gravity.
 - [src/](src/) — reproducible symbolic/numerical code.
 
 ## Starting references
