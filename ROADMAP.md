@@ -31,6 +31,11 @@ Tasks:
 
 ## Phase 2 — Covariant action
 
+**Current benchmark transition:** the auxiliary-vector model is retained as a
+counterexample showing that background regularity is insufficient.  The active
+v2 benchmark is pure-gravity quasitopological screening, followed by its
+nonlocal completion.
+
 Replace metric engineering with an action.
 
 Candidate classes:
@@ -143,6 +148,15 @@ Prefer predictions that are insensitive to arbitrary core parametrization.
    introducing semiclassical or strong-coupling instabilities.
 10. Determine whether universal limiting curvature can coexist with
     extremality across arbitrary black-hole masses.
-11. If the vector benchmark fails at the principal-symbol level, use that
-    failure as a design constraint for the next screening action rather than
-    attempting to repair the metric ansatz alone.
+11. Reproduce the pure-gravity QTG Hayward characteristic relation and
+    curvature susceptibility (completed).
+12. Extract or reconstruct the nonlocal-QTG quadratic operator and test it on
+    the regular black-hole background, not only flat/maximally symmetric
+    space.
+13. Check whether all tensor/scalar principal symbols remain bounded at the
+    regular core and whether their characteristic horizons coincide with or
+    differ from the metric horizon.
+14. Revisit inner-horizon stability using the actual quasitopological
+    equations rather than importing GR thin-shell arguments.
+15. Use the vector benchmark failure as a permanent design constraint:
+    background regularity without principal-symbol regularity is insufficient.
