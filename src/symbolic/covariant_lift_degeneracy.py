@@ -163,6 +163,54 @@ def main():
         NK_delta/D_delta - R
     )==0
 
+    # Generic 4D invariant gradients before imposing the warped-product
+    # relations.  Treat the Zakhary-McIntosh invariants as independent.
+    IR, IR2, IR3, C2, C3, R2C = sp.symbols(
+        "I_R I_Rhat2 I_Rhat3 I_C2 I_C3 I_R2C",
+        finite=True,
+    )
+    D4 = C2*R2C + 2*IR2*C3
+
+    P4 = (
+        IR/sp.Integer(12)
+        + C3/C2
+        - IR3*C3/D4
+    )
+
+    K4_num = (
+        sp.Rational(1,6)*IR*C2*R2C
+        + sp.Rational(1,3)*IR*IR2*C3
+        + 4*IR2*C3**2/C2
+        + 2*IR3*C3
+        + 2*C3*R2C
+    )
+    K4 = K4_num/D4
+
+    dP_dIR3 = sp.factor(sp.diff(P4, IR3))
+    dK_dIR3 = sp.factor(sp.diff(K4, IR3))
+
+    assert sp.simplify(dP_dIR3 + C3/D4) == 0
+    assert sp.simplify(dK_dIR3 - 2*C3/D4) == 0
+
+    # Evaluate these gradients on the regulated warped-product family
+    # A = eta^2-2 tau = delta.
+    grad_subs = {
+        C2: IC2.subs(tau, tau_delta),
+        C3: IC3.subs(tau, tau_delta),
+        IR2: Sigma.subs(tau, tau_delta),
+        R2C: IR2C.subs(tau, tau_delta),
+    }
+
+    dP_delta = sp.factor(dP_dIR3.subs(grad_subs))
+    dK_delta = sp.factor(dK_dIR3.subs(grad_subs))
+
+    assert sp.simplify(
+        dP_delta - 1/(6*delta)
+    ) == 0
+    assert sp.simplify(
+        dK_delta + 1/(3*delta)
+    ) == 0
+
     print("== Warped-product invariant identities ==")
     print(f"D = {D}")
     print(f"N_P = {NP}")
@@ -188,6 +236,14 @@ def main():
     print(f"D(delta) = {D_delta}")
     print(f"N_P/D = {sp.factor(NP_delta/D_delta)}")
     print(f"N_K/D = {sp.factor(NK_delta/D_delta)}")
+    print()
+    print("== Off-branch 4D invariant gradients ==")
+    print(f"dP/dI_Rhat3 = {dP_delta}")
+    print(f"dK/dI_Rhat3 = {dK_delta}")
+    print(
+        "Both gradients diverge as 1/delta when the exact "
+        "single-function branch is approached."
+    )
     print()
 
     print(
