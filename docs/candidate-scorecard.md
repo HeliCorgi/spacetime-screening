@@ -487,3 +487,25 @@ analytic 4D GQTG tower.
 **Design decision:** a principal-safe 4D NLQT program should stop requiring
 the exact Hayward metric and instead search for a regular screening solution
 with GQTG-compatible asymptotics.
+
+
+## Explicit 2025 NPQT representative pole
+
+The displayed cubic NPQT density has the rational term
+
+\[
+\frac92
+\frac{W_3Z_3W_2}
+{(WZZ)W_2-2W_3Z_2}.
+\]
+
+A direct Lorentzian algebraic-curvature construction gives a point with
+denominator zero and numerator nonzero.  The same result is reproduced by
+direct tensor index contraction.
+
+Therefore the **displayed representative** fails the open-neighborhood
+covariant-action gate.
+
+This is narrower than rejecting the entire NPQT spherical theory:
+alternative covariant representatives remain logically possible and are now
+an explicit design target.
