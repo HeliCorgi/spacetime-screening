@@ -465,8 +465,34 @@ so it is traceless and Maxwell-like.
 This extremal throat explains why the Aretakis instability is a natural next
 stability question even though ordinary mass inflation has been removed.
 
+A direct test-field calculation confirms that a minimally coupled massless
+s-wave has the horizon conserved quantity
+
+\[
+H_0
+=
+\left[
+\partial_r\Phi+\frac{\Phi}{r_h}
+\right]_{r_h},
+\qquad
+\partial_vH_0=0.
+\]
+
+If \(\Phi\) decays along the horizon while \(H_0\neq0\), then
+
+\[
+\partial_r^2\Phi
+\sim
+-\frac{H_0}{r_h^2}v,
+\]
+
+so the second transverse derivative grows linearly. Thus the benchmark has a
+genuine Aretakis channel for external test fields even though the published
+coupled radial metric-vector sector has no nontrivial linear mode.
+
 See
-[notes/extremal-near-horizon.md](notes/extremal-near-horizon.md).
+[notes/extremal-near-horizon.md](notes/extremal-near-horizon.md) and
+[notes/aretakis-test-scalar.md](notes/aretakis-test-scalar.md).
 
 ## 13. Phase-transition hypothesis
 
