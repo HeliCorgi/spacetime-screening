@@ -1,0 +1,63 @@
+name: Symbolic CI Monitor
+
+on:
+  workflow_run:
+    workflows: ["Symbolic CI"]
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build CI report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          RUN_SHA: ${{ github.event.workflow_run.head_sha }}
+          RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          repo="$GITHUB_REPOSITORY"
+          jobs_json="$(gh api "repos/$repo/actions/runs/$RUN_ID/jobs?per_page=100")"
+
+          {
+            echo "## Symbolic CI run #$RUN_NUMBER — $RUN_CONCLUSION"
+            echo
+            echo "- Commit: `$RUN_SHA`"
+            echo "- Run: $RUN_URL"
+            echo "- Conclusion: **$RUN_CONCLUSION**"
+            echo
+            echo "### Jobs"
+            echo
+            echo "$jobs_json" | jq -r '
+              .jobs[] |
+              "- **" + .name + "**: " + (.conclusion // .status) +
+              (if ([.steps[]? | select(.conclusion == "failure")] | length) > 0
+               then "\n  - Failed steps: " +
+                    ([.steps[] | select(.conclusion == "failure") | .name] | join(", "))
+               else "" end)
+            '
+            echo
+            if [ "$RUN_CONCLUSION" != "success" ]; then
+              echo "### Follow-up"
+              echo
+              echo "Inspect the failed job logs from the run link above. The monitor records the failing job/step names even if the interactive research session has ended."
+            fi
+          } > /tmp/ci-report.md
+
+      - name: Post report to CI monitor issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api             --method POST             "repos/$GITHUB_REPOSITORY/issues/1/comments"             -f body="$(cat /tmp/ci-report.md)"
