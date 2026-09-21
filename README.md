@@ -412,3 +412,50 @@ See:
 - [notes/nlqt-base-hessian-inheritance.md](notes/nlqt-base-hessian-inheritance.md)
 - [notes/nlqt-zero-kernel-kinetic-core-status.md](notes/nlqt-zero-kernel-kinetic-core-status.md)
 - [notes/cosmological-heavy-seed-interface.md](notes/cosmological-heavy-seed-interface.md) — Chon et al. heavy-seed cosmological simulation as a realistic outer-boundary benchmark for screened-BH formation/accretion.
+
+
+## Cosmological heavy-seed formation benchmark
+
+The 2026 Nature calculation by Chon et al.,
+
+*Overmassive black holes and little red dots naturally form in simulations*,
+Nature **657**, 621–625 (2026),
+DOI \`10.1038/s41586-026-10985-8\`,
+
+is used as a **realistic outer-boundary benchmark**, not as a direct
+strong-field test.
+
+The simulation resolves cosmological collapse and BH feeding down to
+approximately \(500\) au in a dedicated accretion zoom, while the
+horizon/core scale of a \(10^6M_\odot\) BH is many orders of magnitude
+smaller.
+
+The repository therefore separates
+
+\[
+\text{cosmological feeding}
+\longrightarrow
+\text{strong-field inner closure}
+\longrightarrow
+\text{radiative / kinetic feedback}.
+\]
+
+Current interface pieces:
+
+- [notes/cosmological-heavy-seed-interface.md](notes/cosmological-heavy-seed-interface.md)
+  — source/subgrid audit and coupling design;
+- [data/heavy_seed_source_envelope.csv](data/heavy_seed_source_envelope.csv)
+  — source-stated anchors and clearly labelled operational phase descriptors;
+- [src/numerical/heavy_seed_boundary_harness.py](src/numerical/heavy_seed_boundary_harness.py)
+  — replaceable inner-boundary closure;
+- [src/numerical/heavy_seed_sed_adapter.py](src/numerical/heavy_seed_sed_adapter.py)
+  — baseline broken-power-law radiation adapter;
+- [src/numerical/heavy_seed_feedback_sensitivity.py](src/numerical/heavy_seed_feedback_sensitivity.py)
+  — end-to-end feedback sensitivity plumbing;
+- [src/numerical/heavy_seed_timescale_separation.py](src/numerical/heavy_seed_timescale_separation.py)
+  — quasi-stationary inner-solution timescale check.
+
+The paper's full simulation outputs are not public in the cited data release;
+the Nature data-availability statement says they are available from the
+corresponding author on reasonable request.  The repository therefore avoids
+presenting hand-read figure values as exact source data.
