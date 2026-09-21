@@ -493,6 +493,74 @@ Reproducibility:
 
     python src/symbolic/npqt_spherical_sign_blind_spi_gate.py
 
+## 6.1 Complete degree-five gate
+
+The sign-blindness can be upgraded from selected examples to the full
+degree-five scalar polynomial invariant sector.
+
+On the aligned stratum the CM normalizations are
+
+\[
+r_1=\Theta^2,\qquad
+r_2=0,\qquad
+r_3=\frac14\Theta^4,
+\]
+
+\[
+w_1=6q^2,\qquad
+w_2=-6q^3,\qquad
+m_1=-2q\Theta^2.
+\]
+
+The published class-B syzygies then imply
+
+\[
+m_2=m_3=4q^2\Theta^2,
+\]
+
+\[
+m_4=m_6=0,
+\]
+
+\[
+m_5=-8q^3\Theta^2.
+\]
+
+Every member of the complete CM+ZM degree-five set is therefore invariant
+under
+
+\[
+\Theta\rightarrow-\Theta.
+\]
+
+Since the published CM+ZM set is complete through degree five, all scalar
+polynomial Riemann invariants through that degree are sign blind here.
+
+Reproducibility:
+
+    python src/symbolic/npqt_spi_sign_blind_degree5.py
+
+## 6.2 All-degree algebraic SPI gate
+
+The stronger Petrov/Segre specialization is documented separately in
+
+- notes/npqt-aligned-spi-sign-obstruction.md
+- src/symbolic/npqt_aligned_spi_all_degree_gate.py
+- src/symbolic/npqt_aligned_spi_core_scaling_gate.py
+
+Using the published Zakhary--McIntosh algebraic-completeness classification
+for Petrov D and Segre \([(1,1)(11)]\), the complete set
+
+\[
+\{R,I,I_6,K\}
+\]
+
+takes identical values on \((q,\Theta)\) and \((q,-\Theta)\), while
+\(W_2\Theta\) changes sign.
+
+Thus the current strongest result is a conditional no-go for a
+**single-valued SPI-only algebraic lift** on both sign branches.
+
 ## Interpretation
 
 The spherical target changes sign,
