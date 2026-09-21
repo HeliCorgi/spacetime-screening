@@ -580,6 +580,52 @@ See:
 - \`src/symbolic/gqtg_core_hessian_conditional_no_go.py\`
 - \`notes/gqtg-core-hessian-conditional-no-go.md\`
 
+
+### Explicit pole in the displayed 2025 NPQT representative
+
+The displayed cubic 4D NPQT density contains
+
+\[
+\frac92
+\frac{
+W_3 Z_3 W_2
+}{
+(WZZ)W_2-2W_3Z_2
+}.
+\]
+
+The repository constructs a real Lorentzian algebraic curvature tensor for
+which
+
+\[
+(WZZ)W_2-2W_3Z_2=0
+\]
+
+while
+
+\[
+W_3 Z_3 W_2
+=
+-\frac{274268160}{61}
+\neq0.
+\]
+
+The result has been independently checked by explicit tensor index
+contractions in an orthonormal Lorentzian frame.
+
+**Status:** NEW CALCULATION CANDIDATE / EXPLICIT OBSTRUCTION TO THE DISPLAYED
+REPRESENTATIVE.
+
+This does **not** establish that every covariant representative with the same
+spherical reduction is singular.  The source literature explicitly stresses
+the degeneracy of off-spherical completions.
+
+See:
+
+- \`src/symbolic/npqt_explicit_singular_direction.py\`
+- \`src/symbolic/npqt_explicit_pole_tensor_check.py\`
+- \`notes/npqt-explicit-singular-direction.md\`
+
 ## 10. Nonlocal zero-free form factor
 
 The use of zero-free entire functions to avoid additional propagator poles is
