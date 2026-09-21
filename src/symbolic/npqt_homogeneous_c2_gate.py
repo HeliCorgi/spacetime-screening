@@ -23,7 +23,7 @@ Along a generic ray y=a x with 1+a^5 !=0,
 Along the tuned path
     y=-x+x^5,
 the denominator cancels at leading order and
-    F ~ -1/(5 x),
+    F ~ +1/(5 x),
 so the origin is not even continuous.
 
 This is the correct caution for 4D NPQT rational densities: degree counting
@@ -57,7 +57,7 @@ Fbad=sp.factor(F.subs(y,-x+x**5))
 
 # Leading divergence.
 lead=sp.simplify(sp.limit(x*Fbad,x,0))
-assert lead == -sp.Rational(1,5)
+assert lead == sp.Rational(1,5)
 
 def main():
     print("== Homogeneous rational C^2 gate ==")
@@ -72,7 +72,7 @@ def main():
     print("Tuned path y=-x+x^5:")
     print(f"F = {Fbad}")
     print(f"x F -> {lead}")
-    print("=> F ~ -1/(5x): no continuous extension.")
+    print("=> F ~ +1/(5x): no continuous extension.")
     print()
     print("Conclusion: positive homogeneous degree is insufficient.")
     print("Need denominator-zero-set cancellation/divisibility for a true C^2 extension.")
