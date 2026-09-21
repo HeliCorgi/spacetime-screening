@@ -73,8 +73,8 @@ eperp=sp.Matrix([-cB,cA])
 
 assert sp.simplify(
     K*epar-traceK*epar
-)==sp.zeros(2)
-assert sp.simplify(K*eperp)==sp.zeros(2)
+)==sp.zeros(2,1)
+assert sp.simplify(K*eperp)==sp.zeros(2,1)
 
 # Full kinetic Hessian in velocities (Xg_dot-like metric odd velocity, uA,uB)
 # for L = C1 x^2 + 2(c.u_dot)x.
