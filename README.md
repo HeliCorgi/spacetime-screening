@@ -123,6 +123,8 @@ A viable model should satisfy, at minimum:
 - [notes/effective-stress-energy.md](notes/effective-stress-energy.md) — Hayward effective density, pressures, conservation, and energy conditions.
 - [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md) — why the simplest static radial scalar realization fails.
 - [notes/vector-hair-benchmark.md](notes/vector-hair-benchmark.md) — exact action-level Hayward-type benchmark and extremality/curvature tradeoff.
+- [notes/vector-constraint-analysis.md](notes/vector-constraint-analysis.md) — radial stability, absent asymptotic vector quadratic action, principal-symbol degeneracy, and regularity sensitivity.
+- [notes/extremal-near-horizon.md](notes/extremal-near-horizon.md) — AdS2 x S2 extremal throat and Maxwell-like horizon stress.
 - [src/](src/) — reproducible symbolic/numerical code.
 
 ## Starting references
