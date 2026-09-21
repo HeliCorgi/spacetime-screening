@@ -131,6 +131,7 @@ A viable model should satisfy, at minimum:
 - [notes/generalized-proca-mapping.md](notes/generalized-proca-mapping.md) — mapping to quartic generalized Proca and the known odd-mode instability warning.
 - [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md) — radial pure-TT characteristic cone and the hidden Schwarzschild geometry.
 - [notes/pure-gravity-qtg-benchmark.md](notes/pure-gravity-qtg-benchmark.md) — intrinsic curvature screening in four-dimensional nonpolynomial quasitopological gravity.
+- [notes/covariant-lift-degeneracy.md](notes/covariant-lift-degeneracy.md) — why the explicit rational 4D lift is 0/0 on the single-function branch and nondifferentiable off it.
 - [notes/limiting-curvature-response.md](notes/limiting-curvature-response.md) — inverse-response falloff and `beta_eff -> 2` limiting-curvature diagnostic.
 - [notes/nonlocal-zero-free-form-factor.md](notes/nonlocal-zero-free-form-factor.md) — generic zero-free entire-form-factor pole test for the nonlocal v2 direction.
 - [src/](src/) — reproducible symbolic/numerical code.
