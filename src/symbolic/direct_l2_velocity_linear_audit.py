@@ -87,8 +87,49 @@ def main():
         "the derivative-null vector combination couples to the remaining "
         "kinetic variables after basis rotation."
     )
+    print()
+    print("== Two-vector active/null basis ==")
+    print(f"W*dot(U) coefficient = {J_U}")
+    print(f"W*dot(V) coefficient = {J_V}")
+    print(f"Q*dot(U) coefficient = {Q_U}")
+    print(f"Q*dot(V) coefficient = {Q_V}")
+    print()
+    print(
+        "The derivative-null V combination has no linear velocity mixing "
+        "with either W or Q.  All one-velocity mixing lies in the active U "
+        "direction."
+    )
     print("One-velocity audit completed.")
 
 
 if __name__=="__main__":
     main()
+
+
+# ---------------------------------------------------------------------------
+# Two-vector active/null basis audit
+# ---------------------------------------------------------------------------
+
+a,b,ell=sp.symbols("a b ell", real=True, finite=True)
+n=sp.sqrt(a**2+b**2)
+
+# Full A-B canonical W*udot coefficient vector:
+#   +ell^2 J(a) for A, -ell^2 J(b) for B.
+Jpref=sp.Rational(192,5)*sp.pi*ell**2/d.r
+Jvec=sp.Matrix([Jpref*a,-Jpref*b])
+
+# Full A-B Q*udot coefficient vector:
+Qpref=-sp.Rational(192,5)*sp.pi*ell**2/(d.r*d.f)
+Qvec=sp.Matrix([Qpref*a,-Qpref*b])
+
+eU=sp.Matrix([-a,b])/n
+eV=sp.Matrix([b,a])/n
+
+J_U=sp.factor((Jvec.T*eU)[0])
+J_V=sp.factor((Jvec.T*eV)[0])
+Q_U=sp.factor((Qvec.T*eU)[0])
+Q_V=sp.factor((Qvec.T*eV)[0])
+
+assert sp.simplify(J_V)==0
+assert sp.simplify(Q_V)==0
+
