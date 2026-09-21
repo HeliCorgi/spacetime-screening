@@ -176,9 +176,97 @@ V(\chi,\mathcal I)
 
 For \(\mathcal I<\mathcal I_*\), the symmetric phase \(\chi=0\) is preferred. For sufficiently large \(\mathcal I\), a nonzero \(\chi\) can become preferred and the effective dimensionful gravitational response can decrease.
 
-This is a toy mechanism. Scalar-tensor mixing, stability, strong coupling, and the correct number of degrees of freedom must be checked explicitly.
+This remains useful as an order-parameter intuition, but the simplest static radial realization is now known to be insufficient.
 
-## 7. Connection with asymptotic safety
+For the restricted action
+
+\[
+S=\int\sqrt{-g}\left[
+\frac{F(\chi)}{16\pi G}R
+-\frac12(\partial\chi)^2
+-V(\chi)
+\right]
+\]
+
+with
+
+\[
+ds^2=-f(r)dt^2+\frac{dr^2}{f(r)}+r^2d\Omega^2,
+\qquad
+\chi=\chi(r),
+\]
+
+the identity \(G^t{}_t=G^r{}_r\) implies
+
+\[
+\boxed{
+F''(r)=-8\pi G\,\chi'(r)^2\le0
+}.
+\]
+
+Smooth-center and asymptotically constant boundary conditions give
+\(F'(0)=F'(\infty)=0\). Concavity then forces \(F'\equiv0\) and
+\(\chi'\equiv0\). Therefore a nontrivial localized canonical radial scalar
+cannot support the one-function Hayward geometry in this minimal model.
+
+The same obstruction persists for healthy radial k-essence with \(P_X\ge0\).
+
+See [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md).
+
+## 7. Covariant action benchmark: auxiliary vector hair
+
+A 2026 vector-tensor construction provides an explicit action benchmark. In
+geometric units, the regular branch has
+
+\[
+f(r)
+=
+1-
+\frac{2Mr^2}{r^3+2q_a\ell^2}.
+\]
+
+It follows from a generally covariant two-vector action rather than from an
+ad-hoc replacement \(G\to G(r)\).
+
+The associated diagnostic screening factor is
+
+\[
+S(r)
+=
+\frac{r^3}{r^3+2q_a\ell^2},
+\]
+
+with \(S(0)=0\) and \(S(\infty)=1\).
+
+The core scale is
+
+\[
+L_{\rm core}^2
+=
+\frac{q_a\ell^2}{M},
+\]
+
+so
+
+\[
+K(0)=\frac{24}{L_{\rm core}^4}.
+\]
+
+Two choices expose an important tradeoff:
+
+- \(q_a=M\): the original Hayward form has universal
+  \(K(0)=24/\ell^4\), but only one special mass is extremal.
+- \(q_a=16M^3/(27\ell^2)\): every mass can lie on a fully extremal regular
+  branch, but \(K(0)=2187/(32M^4)\), so the limiting curvature is no longer
+  universal.
+
+This benchmark therefore demonstrates that covariant screening-like geometry
+is possible, while sharpening the next question: can one retain both a
+universal microscopic curvature scale and robust inner-horizon stability?
+
+See [notes/vector-hair-benchmark.md](notes/vector-hair-benchmark.md).
+
+## 8. Connection with asymptotic safety
 
 At a non-Gaussian UV fixed point, a dimensionless Newton coupling
 
@@ -195,7 +283,7 @@ G(k)\sim\frac{g_*}{k^2}
 
 This is conceptually compatible with high-energy weakening of the dimensionful Newton coupling. It does not imply that quantum gravity becomes trivial, and it does not justify an arbitrary substitution \(G_N\to G(k(r))\).
 
-## 8. Regularity can require more than screening
+## 9. Regularity can require more than screening
 
 Suppose diagnostically
 
@@ -221,13 +309,13 @@ Within this simplified interpretation, the innermost region is effectively repul
 
 This is not a theorem for all covariant gravity theories. It is a warning that screening alone may not stop already collapsing matter. A bounce, pressure, effective repulsion, branch transition, or non-geometric regime may be required.
 
-## 9. Horizon-structure constraint
+## 10. Horizon-structure constraint
 
 For a static asymptotically flat metric with \(f(\infty)>0\) and a regular center with \(f(0)>0\), a non-extremal outer horizon makes \(f\) negative immediately inside. Continuity then generically requires another zero before reaching the positive central region.
 
 Static regular black holes therefore naturally tend to develop an inner horizon. Inner-horizon stability is a central constraint.
 
-## 10. Phase-transition hypothesis
+## 11. Phase-transition hypothesis
 
 The stronger version of the project is
 
@@ -253,7 +341,7 @@ A conceptual state-space picture is
 
 where states in \(\mathcal H_{\rm geometric}\) admit an approximate description by \((M,g_{\mu\nu},\Phi)\), while sufficiently quantum states need not.
 
-## 11. What would count as success
+## 12. What would count as success
 
 A serious model must derive, rather than assume:
 
