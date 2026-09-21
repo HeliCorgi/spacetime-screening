@@ -190,3 +190,22 @@ its finite center curvature, divergent \(\Box R\), exact horizons,
 extremal/critical masses, curvature-coupling pole \(x=1\), and the
 nondifferentiability warning associated with the \(R_4=0\) single-function
 branch.
+
+
+### \`r4_differentiability.py\`
+
+Tests the 2026 QTG-TNT covariant invariant
+
+\[
+R_4=\sqrt{\frac{2I_6}{3}-\frac{2I_{11}}{I_1}},
+\]
+
+showing \(1/R_4\) first-derivative and \(1/R_4^3\) Hessian singularities,
+the cusp across the single-function branch, and the divergent coupling in the
+explicit regular-BH example.
+
+### \`r4_analyticity_obstruction.py\`
+
+Encodes the classification consequence that analytic TNT curvature scalars
+depend on \(R_4\) only through even powers and therefore cannot generate the
+nonzero linear \(R_4\) term required by the first-order Class-I mechanism.
