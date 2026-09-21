@@ -1,0 +1,8 @@
+mdot_msun_per_yr,mcrit_msun,status,source,source_detail
+0.01,,stable_through_final_model,Saio2024,"No GRI obtained in the modeled evolution; Table 1 lists the final model instead of a GRI critical mass."
+0.05,82000,gri,Saio2024,"Table 1: M_GRI = 0.82 x 10^5 Msun."
+0.1,106000,gri,Saio2024,"Table 1: M_GRI = 1.06 x 10^5 Msun."
+1,216000,gri,Saio2024,"Table 1: M_GRI = 2.16 x 10^5 Msun."
+10,456000,gri,Saio2024,"Table 1: M_GRI = 4.56 x 10^5 Msun."
+100,708000,gri,Saio2024,"Table 1: M_GRI = 7.08 x 10^5 Msun."
+1000,1060000,gri,Saio2024,"Table 1: M_GRI = 10.6 x 10^5 Msun."
