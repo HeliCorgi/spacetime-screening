@@ -317,3 +317,32 @@ A candidate will be considered "principal-safe" only if it satisfies
 
 This is now the project's minimum standard before discussing a
 non-geometric completion.
+
+
+## 14. Covariant-action differentiability
+
+A symmetry-reduced action may remain finite even when the four-dimensional
+representative used to generate it is not differentiable on the exact
+background.
+
+For any proposed fundamental four-dimensional action require that:
+
+\[
+\boxed{
+\mathcal L,\qquad
+\frac{\partial\mathcal L}{\partial R_{\mu\nu\rho\sigma}},
+\qquad
+\frac{\partial^2\mathcal L}
+{\partial R_{\mu\nu\rho\sigma}\partial R_{\alpha\beta\gamma\delta}}
+}
+\]
+
+exist and are finite in the directions needed for the physical quadratic
+problem, modulo controlled gauge/constraint degeneracies.
+
+A removable \(0/0\) after imposing spherical symmetry is not sufficient,
+because nonspherical perturbations probe directions that leave the reduced
+submanifold.
+
+The explicit rational lift analyzed in
+\`notes/covariant-lift-degeneracy.md\` demonstrates this distinction.
