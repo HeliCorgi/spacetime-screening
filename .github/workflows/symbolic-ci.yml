@@ -52,29 +52,39 @@ jobs:
       - name: Run symbolic assertions
         shell: bash
         run: |
-          set -euo pipefail
+          set -uo pipefail
           mapfile -t files < <(find src/symbolic -maxdepth 1 -type f -name '*.py' | sort)
           if [ "${#files[@]}" -eq 0 ]; then
             echo "No symbolic scripts found."
             exit 1
           fi
 
+          status=0
           for file in "${files[@]}"; do
             echo "::group::${file}"
-            python "${file}"
+            if ! python "${file}"; then
+              echo "::error file=${file}::symbolic assertion failed"
+              status=1
+            fi
             echo "::endgroup::"
           done
+          exit "${status}"
 
       - name: Run numerical harnesses
         shell: bash
         run: |
-          set -euo pipefail
+          set -uo pipefail
           mapfile -t files < <(find src/numerical -maxdepth 1 -type f -name '*.py' | sort)
+          status=0
           for file in "${files[@]}"; do
             echo "::group::${file}"
-            python "${file}"
+            if ! python "${file}"; then
+              echo "::error file=${file}::numerical harness failed"
+              status=1
+            fi
             echo "::endgroup::"
           done
+          exit "${status}"
 
       - name: Summary
         if: always()
