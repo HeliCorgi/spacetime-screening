@@ -201,6 +201,33 @@ def main() -> None:
     )
     assert sp.simplify(f_ext - expected_f_ext) == 0
 
+    # Core-curvature tradeoff.
+    # Define L_core^2 = qa ell^2 / M so f=1-r^2/L_core^2+...
+    Lcore2 = sp.factor(qa * ell**2 / M)
+    K0_general = sp.factor(24 / Lcore2**2)
+    assert sp.simplify(K0_general - K0) == 0
+
+    # Original Hayward choice qa=M gives universal limiting curvature.
+    K0_hayward = sp.simplify(K0_general.subs(qa, M))
+    assert sp.simplify(K0_hayward - 24 / ell**4) == 0
+
+    # Fully extremal choice removes ell from the metric and makes the
+    # core curvature mass-dependent.
+    Lcore2_ext = sp.factor(Lcore2.subs(qa, qa_ext))
+    K0_ext = sp.factor(K0_general.subs(qa, qa_ext))
+    assert sp.simplify(
+        Lcore2_ext - sp.Rational(16, 27) * M**2
+    ) == 0
+    assert sp.simplify(
+        K0_ext - sp.Rational(2187, 32) / M**4
+    ) == 0
+
+    # Screening factor at the degenerate horizon.
+    S_ext_h = sp.simplify(
+        S.subs({qa: qa_ext, r: rh_ext})
+    )
+    assert sp.simplify(S_ext_h - sp.Rational(2, 3)) == 0
+
     print("== General family ==")
     print(f"f_general = {fg}")
     print(f"coefficient of 1/r near center = {singular_coeff}")
@@ -228,6 +255,16 @@ def main() -> None:
     print(f"q_a,ext = {qa_ext}")
     print(f"f_ext = {f_ext}")
     print("surface gravity vanishes at the degenerate horizon")
+    print(f"L_core^2(extremal) = {Lcore2_ext}")
+    print(f"K_core(extremal) = {K0_ext}")
+    print(f"screening factor at extremal horizon = {S_ext_h}")
+    print()
+    print("== Limiting-curvature tradeoff ==")
+    print(f"K_core(general) = {K0_general}")
+    print(f"K_core(q_a=M) = {K0_hayward}")
+    print("q_a=M keeps the core curvature set by ell.")
+    print("q_a=16 M^3/(27 ell^2) makes all masses extremal,")
+    print("but the core curvature scales as M^-4.")
     print()
     print("All symbolic assertions passed.")
 
