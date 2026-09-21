@@ -346,3 +346,53 @@ submanifold.
 
 The explicit rational lift analyzed in
 \`notes/covariant-lift-degeneracy.md\` demonstrates this distinction.
+
+
+## 15. Curvature-derivative regularity
+
+Finite polynomial curvature invariants are weaker than smooth geometric
+regularity.
+
+A candidate with
+
+\[
+R,\quad
+R_{\mu\nu}R^{\mu\nu},\quad
+R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+\]
+
+finite can still have divergent invariants containing covariant derivatives,
+for example
+
+\[
+\Box R
+\]
+
+or
+
+\[
+\nabla_\alpha R_{\mu\nu\rho\sigma}
+\nabla^\alpha R^{\mu\nu\rho\sigma}.
+\]
+
+The 2026 first-order QTG-TNT black hole gives an explicit example:
+
+\[
+a(r)
+=
+1-\frac{r^2}{2\ell^2}
+-\frac{r^3}{4m\ell^2}
++\cdots
+\]
+
+has finite polynomial curvature at \(r=0\), but
+
+\[
+\Box R\sim\frac{1}{r}.
+\]
+
+A candidate intended as a smooth effective spacetime should therefore either:
+
+1. keep the required curvature-derivative invariants finite; or
+2. explicitly declare the derivative expansion invalid and replace it by a
+   better-defined microscopic/nonlocal description before that point.
