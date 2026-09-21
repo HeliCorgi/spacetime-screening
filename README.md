@@ -285,8 +285,8 @@ The present priority order is:
    the hidden-cone claim.**
 2. **P1 — turn recurring failure mechanisms into model-independent
    principal-safety / no-go statements where possible.**
-3. **P2 — move candidate work to analytic Class-II / generalized-QTG and
-   nonlocal-QTG completions.**
+3. **P2 — local analytic Class-II/GQTG is retained only as an EFT/control
+   family; the main surviving completion candidate is nonlocal QTG.**
 
 See [ROADMAP.md](ROADMAP.md).
 
@@ -325,6 +325,7 @@ Selected calculations:
 - [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md)
 - [notes/covariant-lift-degeneracy.md](notes/covariant-lift-degeneracy.md)
 - [notes/r4-differentiability.md](notes/r4-differentiability.md)
+- [notes/principal-gate-classII-nlqt.md](notes/principal-gate-classII-nlqt.md) — new-gate comparison of analytic Class-II/GQTG and nonlocal QTG
 
 Reproducible symbolic checks live under [src/symbolic/](src/symbolic/).
 
