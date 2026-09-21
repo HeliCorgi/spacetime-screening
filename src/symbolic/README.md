@@ -227,3 +227,16 @@ additive two-vector model and derives the double null characteristic
 Uses the odd dipole sector, where the local gravitational-wave mode is
 nondynamical, to isolate the negative vector kinetic combination and its
 unbounded quadratic Hamiltonian term.
+
+
+### \`vector_odd_tensor_reduction.py\`
+
+Derives the reduced odd tensor kinetic coefficient and radial characteristics
+from the standard Regge-Wheeler coefficient block, confirming
+
+\[
+f+\Delta=1-\frac{2M}{r}
+\]
+
+and the tensor characteristic horizon at \(r=2M\), where the regular
+background still has \(f>0\).
