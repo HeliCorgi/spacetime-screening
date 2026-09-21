@@ -76,6 +76,44 @@ def main():
     )
     assert sp.simplify(F4-expected_F4)==0
 
+    # General regular core with the first odd correction:
+    # f=1-c r^2+d r^3+O(r^4).
+    d=sp.symbols("d", finite=True)
+    freg=1-c*r**2+d*r**3
+
+    def F_nj_regular(nsym, jsym):
+        fpreg=sp.diff(freg,r)
+        fppreg=sp.diff(freg,r,2)
+        return sp.factor(
+            (-1)**(jsym+1)
+            /2**(jsym+1)
+            *r**(D-2+jsym-2*nsym)
+            *(k-freg)**(nsym-jsym-1)
+            *fpreg**(jsym-2)
+            *(
+                fpreg*(
+                    jsym*(D-1+jsym-2*nsym)*(k-freg)*freg
+                    -(jsym-1)*r*(k+(nsym-jsym-1)*freg)*fpreg
+                )
+                +jsym*(jsym-1)*r*(k-freg)*freg*fppreg
+            )
+        )
+
+    Freg=sp.factor(
+        F_nj_regular(n,n)
+        -n/(n-2)*F_nj_regular(n,n-1)
+    )
+    core_coeff=sp.simplify(
+        sp.limit(Freg/r**3,r,0)
+    )
+    expected_core_coeff=sp.factor(
+        -sp.Rational(1,2)*c**n
+        +sp.Rational(3,16)*n*(n-1)*c**(n-3)*d**2
+    )
+    assert sp.simplify(
+        core_coeff-expected_core_coeff
+    )==0
+
     # Einstein-Hilbert integrated contribution in D=4:
     # F_EH=-(D-2)(f-k) r^(D-3).
     FEH=sp.factor(
@@ -103,6 +141,11 @@ def main():
     print("= -(1/2) c^n r^3")
     print()
     print(f"Einstein term = {FEH}")
+    print()
+    print("== Generic regular core f=1-c r^2+d r^3+... ==")
+    print("F_n/r^3 ->")
+    print(core_coeff)
+    print("Thus the O(r^3) scaling survives the generic odd correction.")
     print()
     print("Any finite truncation therefore vanishes as r^3.")
     print(
