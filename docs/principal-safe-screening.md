@@ -462,3 +462,44 @@ and becomes a direct asymptotic odd ghost.
 
 See
 [notes/auxiliary-derivative-mixing-lemma.md](../notes/auxiliary-derivative-mixing-lemma.md).
+
+
+## 16. Nonlocal operator-mismatch gate
+
+For nonlocal candidates, a zero-free entire form factor is necessary but is
+not by itself sufficient on a curved background.
+
+If the physical quadratic operator has the schematic form
+
+\[
+\mathcal Q
+=
+\mathcal D
++
+\hat{\mathcal D}^{\dagger}
+\mathcal F(\hat{\mathcal D})
+\hat{\mathcal D},
+\]
+
+then a proof based on
+
+\[
+\mathcal Q
+=
+\mathcal D e^{\Omega(\mathcal D)}
+\]
+
+requires the operator identities used in that factorization to hold on the
+actual perturbation subspace.
+
+Therefore require:
+
+1. identify \(\mathcal D-\hat{\mathcal D}\);
+2. determine whether \(\hat{\mathcal D}\) is self-adjoint on the physical
+   subspace;
+3. verify zero kernel / acceptable pole structure of the **full** curved-
+   background operator, not only the entire form factor;
+4. check the horizon/core limits of the resulting pseudodifferential
+   principal operator.
+
+This is the next gate for nonlocal QTG.
