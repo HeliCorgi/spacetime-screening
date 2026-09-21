@@ -1,0 +1,8 @@
+object,event,z,mass_msun,eddington_descriptor,context,source_note
+MBH1,heavy-seed formation,14,600000,,high-resolution isolated-cloud follow-up,"Paper states the MBH1 seed has final mass 6e5 Msun and forms at z approximately 14."
+MBH1_cosmo,characteristic seed mass,14,300000,,cosmological heavy-seed comparison,"Methods later associates approximate resulting BH masses 3e5 and 6e5 Msun with MBH1 and MBH2 respectively; retained separately rather than reconciled with the high-resolution MBH1 value."
+MBH2,heavy-seed formation,13.1,600000,,cosmological/zoom-in BH-accretion setup,"Paper states the BH-accretion zoom starts when MBH2 forms at z=13.1; Methods associates MBH2 with an approximate 6e5 Msun resulting BH mass."
+representative_heavy_seed,immediate post-collapse growth,,,"several_to_few_tens","main-text qualitative phase","Accretion is several to a few tens times Eddington for less than 1 Myr; BH reaches several times 1e6 Msun shortly after formation."
+representative_heavy_seed,supply-limited growth,,,"0.1_to_1","main-text qualitative phase","After the early burst, accretion gradually decreases to 0.1-1 Eddington while BHs grow to >1e7 Msun by z approximately 10."
+representative_heavy_seed,post-stripping low state,10,10000000,"lt_0.01","main-text redshift anchor","At z approximately 10 accretion sharply declines below 1 percent Eddington; masses are already >=1e7 Msun."
+merged_or_central_heavy_BH,late central growth,8,30000000,"0.1_to_1","abstract/main-text redshift anchor","By z approximately 8 the massive BH system reaches about 3e7 Msun; after settling, accretion resumes at roughly 0.1-1 Eddington with a brief Eddington-level interval."
