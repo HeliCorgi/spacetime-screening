@@ -143,3 +143,34 @@ relation, including
 Implements a generic zero-free entire quadratic form-factor toy and checks the
 absence of additional finite propagator zeros. This is a design diagnostic,
 not a transcription of a specific nonlocal-QTG action.
+
+
+### \`covariant_lift_degeneracy.py\`
+
+Reduces the explicit rational four-dimensional QTG densities on warped
+products and proves that their common denominator is
+
+\[
+-\frac13(\eta^2-2\tau)\Omega^3.
+\]
+
+It verifies the branch-wide \(0/0\) on \(g_{tt}g_{rr}=-1\), the finite
+spherical limits, and the divergent off-branch invariant gradients.
+
+### \`covariant_lift_action_gradient.py\`
+
+Tracks the \(1/\delta\) singularity into the complete representative action
+and derives the additional cancellation condition needed for a finite first
+variation.  The explicit Hayward functions fail this condition generically.
+
+### \`branch_adapted_lift.py\`
+
+Tests a square-root reconstruction of \(\psi\).  The value is regular on the
+Hayward branch, but the invariant derivative diverges where the traceless
+Ricci tensor vanishes.
+
+### \`weyl_ratio_degeneracy.py\`
+
+Shows that the representative \(I_{C^3}/I_{C^2}\) Weyl ratio has removable
+values but divergent four-dimensional invariant gradients on Hayward
+Weyl-zero surfaces.
