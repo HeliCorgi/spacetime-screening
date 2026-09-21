@@ -83,8 +83,8 @@ assert sp.simplify(
 
 epar=sp.Matrix([cA,cB])
 eperp=sp.Matrix([-cB,cA])
-assert sp.simplify(H*eperp)==sp.zeros(2)
-assert sp.simplify(H*epar-tr*epar)==sp.zeros(2)
+assert sp.simplify(H*eperp)==sp.zeros(2,1)
+assert sp.simplify(H*epar-tr*epar)==sp.zeros(2,1)
 
 # Normalize the derivative-active mode locally:
 # y=(c.u)/sqrt(c^2), so L=-c^2/C1 (dot y - f y')^2.
