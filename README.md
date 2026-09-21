@@ -96,60 +96,56 @@ See [docs/principal-safe-screening.md](docs/principal-safe-screening.md).
 These are **not priority claims**. See [NOVELTY.md](NOVELTY.md) for status and
 scope.
 
-### 1. Two-vector odd-sector kinetic obstruction
+### 1. Direct odd-sector ghost in the two-vector benchmark
 
-For the Eichhorn–Fernandes regular two-vector black hole, mapping the exact
-action to the published generalized-Proca odd-parity quadratic formalism gives,
-for the derivative-active vector sector,
+The original Eichhorn-Fernandes \(A-B\) action has now been expanded directly
+in four-dimensional odd harmonics.  No one-vector perturbation formalism is
+needed for the core result.
 
-\[
-\boxed{
-K_{\rm vec}
-=
--\frac{cc^{\rm T}}{C_1}.
-}
-\]
-
-In the static exterior \(C_1>0\), so this matrix has
-
-- one **negative** kinetic eigenvalue;
-- one **zero** kinetic eigenvalue.
-
-The \(l=1\) odd sector isolates the vector mode because the local axial
-gravitational-wave mode is nondynamical. At principal derivative order,
+For \(l=2\), after eliminating the nondynamical directions in a sufficiently
+large finite asymptotic exterior region,
 
 \[
 \boxed{
-\mathcal L_{l=1}^{\rm pr}
+\lim_{r\to\infty}
+r^5\det K_{\rm red}
 =
--\frac1{C_1}
-\left[
-c^{\rm T}(\dot u-fu')
-\right]^2.
+-
+\frac{1152\pi^2}{25}
+M\ell^4(16M^2+q^2)
+<0.
 }
 \]
 
-The generalized-Proca source formulas were checked explicitly. The standard
-formalism contains a canonical Maxwell term, and the present model maps to
+Therefore the reduced physical odd kinetic matrix has one positive and one
+negative eigenvalue in that open region.
 
-\[
-G_2=-F+24\sigma\ell^2X^2,
-\]
+The derivative-null vector combination is separately shown to have
 
-so that the Maxwell kinetic term is exactly cancelled and
+- no quadratic velocity;
+- no linear velocity mixing;
+- positive algebraic stiffness.
 
-\[
-C_5=C_6=C_7=0.
-\]
+So that auxiliary direction does not remove the negative active mode.
 
-The remaining publication-level task is a direct independent two-vector
-harmonic expansion / full constraint derivation from the original action.
+Independent checks include:
+
+- brute-force \(l=2\) four-dimensional curvature expansion;
+- full-\((t,r)\) principal expansion;
+- local linearized-Einstein derivation;
+- \(l=1\) canonical constraint analysis;
+- published generalized-Proca coefficients used only afterward as a
+  cross-check.
+
+**Technical status:** the asymptotic odd ghost is directly established within
+the quadratic theory.  **Novelty priority is not claimed.**
 
 See:
 
-- [notes/vector-odd-kinetic-analysis.md](notes/vector-odd-kinetic-analysis.md)
-- [src/symbolic/odd_coefficients_from_source.py](src/symbolic/odd_coefficients_from_source.py)
-- [src/symbolic/vector_l1_odd_ghost.py](src/symbolic/vector_l1_odd_ghost.py)
+- [notes/direct-two-vector-odd-expansion.md](notes/direct-two-vector-odd-expansion.md)
+- [notes/direct-asymptotic-odd-ghost.md](notes/direct-asymptotic-odd-ghost.md)
+- [src/symbolic/direct_two_vector_odd_l2.py](src/symbolic/direct_two_vector_odd_l2.py)
+- [src/symbolic/direct_odd_asymptotic_ghost.py](src/symbolic/direct_odd_asymptotic_ghost.py)
 
 ### 2. Hidden Schwarzschild tensor characteristic
 
@@ -234,9 +230,9 @@ See [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md).
 
 **Background:** regular Hayward-type geometry.
 
-**Problems found:** degenerate vector quadratic structure, candidate negative
-odd kinetic mode, hidden Schwarzschild tensor characteristic, extremal
-test-field Aretakis channel.
+**Problems found:** directly established asymptotic odd ghost, degenerate
+vector/null sector, hidden Schwarzschild tensor characteristic candidate, and
+an extremal test-field Aretakis channel.
 
 ### Nonpolynomial pure-gravity QTG
 
@@ -284,12 +280,13 @@ See [docs/candidate-scorecard.md](docs/candidate-scorecard.md).
 
 The present priority order is:
 
-1. **P0 — finish the two-vector odd-sector derivation directly from the
-   original action.**
+1. **P0 — archive the two-vector odd result as a completed failure test and
+   finish the independent physical tensor-master reduction only if useful for
+   the hidden-cone claim.**
 2. **P1 — turn recurring failure mechanisms into model-independent
    principal-safety / no-go statements where possible.**
-3. **P2 — compare analytic Class-II QTG-TNT and nonlocal-QTG completions only
-   after P0 is resolved.**
+3. **P2 — move candidate work to analytic Class-II / generalized-QTG and
+   nonlocal-QTG completions.**
 
 See [ROADMAP.md](ROADMAP.md).
 
