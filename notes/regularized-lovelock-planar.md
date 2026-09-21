@@ -179,7 +179,7 @@ ds^2=-fdt^2+\frac{dr^2}{f}+r^2(dx^2+dy^2),
 the core approaches a constant-curvature geometry with
 
 \[
-R(0)=-\frac{12}{\ell^2},
+R(0)=+\frac{12}{\ell^2},
 \]
 
 and
