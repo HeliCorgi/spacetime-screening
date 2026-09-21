@@ -25,6 +25,7 @@ Legend:
 | Regularized-Lovelock/Horndeski infinite tower | PASS | PASS for known planar branch | OPEN | PASS | **FAIL on known planar branch** | **FAIL on known planar branch** | **FAIL** | not main issue | Rejected known regular branch |
 | Polynomial QTG, \(D\ge5\) | PASS | PASS | PASS in studied collapse models | PASS | OPEN on generic RBH | OPEN | OPEN | OPEN | Higher-D clean benchmark |
 | 4D generalized quasi-topological gravity | PASS, polynomial order by order | no infinite-tower regular vacuum BH established here | OPEN | PASS | OPEN | OPEN | OPEN | OPEN | Candidate building blocks |
+| First-order QTG-TNT (2026) | PASS as non-analytic metric action | PASS only above critical mass | OPEN | **FAIL/ill-defined on SF branch generically** | OPEN | OPEN | concern from non-differentiable action | extremal remnant; perturbative status OPEN | Symmetry-sector benchmark / rejected v3 |
 | Nonlocal QTG completion | Reported PASS | Reported PASS | OPEN | expected to avoid projector lift; exact check pending | Reported ghost-free in source | OPEN on regular-BH background | Reported avoidance | OPEN | Leading v3 benchmark |
 
 ## 1. Minimal canonical scalar
@@ -234,3 +235,50 @@ If that is not possible, the fallback route is to construct a polynomial
 four-dimensional GQTG infinite tower whose action is manifestly smooth and
 ask whether the desired curvature-susceptibility saturation can be reproduced
 without introducing an extra physical mode.
+
+
+## 8. First-order QTG-TNT (2026)
+
+The June 2026 QTG-TNT construction enlarges quasi-topological integrability to
+static spherical, Taub-NUT, NHEK, swirling, and related symmetry classes.
+
+The simplest regular static model has
+
+\[
+A(x)=\frac{2x}{1-x},
+\]
+
+and
+
+\[
+a(r)
+=
+\frac{(r-2m)(r^2-2\ell^2)}
+{r^3-2r\ell^2+4m\ell^2}.
+\]
+
+For
+
+\[
+m>\frac{2\ell}{3\sqrt6},
+\]
+
+the metric has finite polynomial curvature invariants at the center.  It
+reaches extremality at
+
+\[
+m=\frac{\ell}{\sqrt2}.
+\]
+
+However:
+
+- regularity requires \(A(x)\) to have a pole at the limiting curvature;
+- the physical solution reaches that pole at \(r=0\) and at
+  \(r=\sqrt2\,\ell\);
+- \(\Box R\sim1/r\) at the center;
+- the covariant SF selector is \(R_4=0\), while the action is linear in a
+  non-analytic \(R_4\);
+- generic nonsymmetric perturbations were not analyzed in the source.
+
+**Status:** strong symmetry-sector construction, but it fails the current
+covariant-action/principal-safe gate as a full four-dimensional candidate.
