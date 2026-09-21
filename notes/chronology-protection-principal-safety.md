@@ -1117,3 +1117,10 @@ dynamical-realizability chain required here.
     (2022) 212, arXiv:2107.14200, DOI 10.1007/JHEP03(2022)212.
 13. R. Emparan, M. Tomašević, *Quantum backreaction on chronology horizons*,
     JHEP **02** (2022) 182, arXiv:2109.03611.
+
+
+---
+
+## Second-phase follow-up
+
+See `notes/chronology-realizability-counterexample-audit.md` for the second-phase predictive-realizability / operational-counterexample audit.
