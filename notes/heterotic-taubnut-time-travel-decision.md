@@ -831,6 +831,9 @@ live but unproven candidate for physical travel to the past.
 10. R. Emparan and M. Tomašević, *Holography of time machines*,
     JHEP 03 (2022) 212, arXiv:2107.14200.
 
+11. G. Holzegel, *A Note on the Instability of Lorentzian Taub-NUT-Space*,
+    Class. Quant. Grav. 23 (2006) 3951, arXiv:gr-qc/0602045.
+
 ---
 
 # 17. Restart point
