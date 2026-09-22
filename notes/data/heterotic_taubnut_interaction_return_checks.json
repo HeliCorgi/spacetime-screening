@@ -1,0 +1,58 @@
+{
+  "scope": "conditional scalar/CFT-factor/local-geometry diagnostics",
+  "full_string_BRST_proved": false,
+  "interacting_coset_amplitude_computed": false,
+  "operational_past_return_proved": false,
+  "anomaly_and_assumed_weight_arithmetic": "PASS (conditional conventions)",
+  "scalar_radial_problem": {
+    "T": "0.9981303160644618772777619841266369671875847952571860827",
+    "R": "0.001869683935538122722238015873363032812415204742813917349",
+    "R_plus_T_minus_1": "-3.1626594e-81",
+    "relative_ODE_residuals": [
+      "1.2785916e-81",
+      "1.3642478e-81",
+      "8.1753238e-82",
+      "4.1409443e-82"
+    ],
+    "flux_samples": [
+      "-3.581138830084189665999447",
+      "-3.581138830084189665999447",
+      "-3.581138830084189665999447",
+      "-3.581138830084189665999447"
+    ],
+    "interpretation": "exterior radial flux ratio; NOT a string/past-return probability"
+  },
+  "spectator_selection": {
+    "self_three_point": "zero for this specific zero-momentum J polarization",
+    "four_current_factor": "(z**4 - 2*z**3 + 3*z**2 - 2*z + 1)/(z**2*(z**2 - 2*z + 1))",
+    "four_current_factor_at_z_half": 9,
+    "full_four_string_amplitude": "NOT computed; other coset/ghost/picture factors required"
+  },
+  "coupling": {
+    "g_s_horizon_over_g_s0": "0.664468539595557441918686308435",
+    "monotonicity": "D'>0 for x>=1, hence g_s decreases along positive NUT x",
+    "holding_acceleration": "a^2 ~ 1/[2 L^2 (x-1)]; finite at fixed x>1"
+  },
+  "one_way_horizon": {
+    "g_q_future_null_generator": "-L^2 q^x / d at x=1",
+    "conclusion": "future causal crossing has q^x>=0 for this Taub->NUT interface",
+    "scope": "no reverse future crossing through THIS interface; not a global all-extension no-go"
+  },
+  "local_boost": {
+    "b": "3.5090431314174289592226971503968805",
+    "exp_b": "33.416277495053078178675438497632611",
+    "meaning": "local quotient boost; NOT a required physical circuit gain for every state"
+  },
+  "conditional_backreaction": {
+    "singular_branch_derivative_squared": "Cout**2*Omega**2/zeta**2",
+    "two_null_stream_invariant": "8*tU*tV/(vv**2*zeta**2)",
+    "regular_branch_U_derivative": 0,
+    "epsilon_scaling": "epsilon(U)=epsilon0*(U0/U)^2, for a nonzero stationary singular branch",
+    "scope": "local EFT diagnostic, not a full string-loop/backreacted solution"
+  },
+  "scope_checks": {
+    "old_simple_descendant_formula": "grade k*w != k*w^2 for w>1; old symbolic CI did not check it",
+    "individual_asymptotic_radial_mode_L2_integral": "log(cutoff)",
+    "caution": "generalized mode is not an already constructed finite-norm physical packet"
+  }
+}

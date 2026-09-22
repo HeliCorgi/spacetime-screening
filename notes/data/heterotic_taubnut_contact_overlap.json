@@ -1,0 +1,53 @@
+{
+  "scope": "neutral scalar radial contact diagnostic only; no BRST or interaction amplitude claim",
+  "mpmath_dps": 35,
+  "radial_R": "0.00186968393553812272223801587336",
+  "radial_T": "0.998130316064461877277761984127",
+  "ode_flux_checks": [
+    {
+      "u": "0.03",
+      "relative_ode_residual": "8.853997688e-37",
+      "radial_flux": "-0.998130316064461877277762"
+    },
+    {
+      "u": "0.5",
+      "relative_ode_residual": "5.872794511e-37",
+      "radial_flux": "-0.998130316064461877277762"
+    },
+    {
+      "u": "2.0",
+      "relative_ode_residual": "1.199375083e-36",
+      "radial_flux": "-0.998130316064461877277762"
+    },
+    {
+      "u": "10.0",
+      "relative_ode_residual": "8.411152882e-37",
+      "radial_flux": "-0.998130316064461877277762"
+    }
+  ],
+  "contact_integral_convergence": [
+    {
+      "log_u_cutoff": 12,
+      "I4_cutoff": "0.4547501046708584278392961079"
+    },
+    {
+      "log_u_cutoff": 20,
+      "I4_cutoff": "0.4547632717030126224542716946"
+    },
+    {
+      "log_u_cutoff": 28,
+      "I4_cutoff": "0.4547632756913135498452269382"
+    }
+  ],
+  "I4_display": "0.45476328 (dimensionless radial factor; 8 displayed decimals)",
+  "low_tail_leading_estimate": "1.07427799562e-13",
+  "upper_tail_leading_envelope_estimate": "1.63802739623e-12",
+  "not_computed": [
+    "BRST inner product",
+    "exact coset four-point function",
+    "worldsheet moduli integral",
+    "genus-one tadpoles",
+    "backreacted solution",
+    "past-directed signalling probability"
+  ]
+}
