@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "python": "3.13.5",
+  "mpmath": "1.3.0",
+  "runs": [
+    {
+      "dps": 45,
+      "scope": "Published NW coefficient formulae; not a Taub--NUT amplitude",
+      "parameters": {
+        "k_NW": 10,
+        "j_SU2": "3",
+        "m": "3",
+        "mprime": "-2",
+        "s": "sqrt(3)/2"
+      },
+      "R_semiclassical": {
+        "re": "0.00432579844273873176750131002766",
+        "im": "-0.000284852995810164294560263393429"
+      },
+      "R_exact": {
+        "re": "0.00429853147842502607436820052292",
+        "im": "0.000562406014736704159350441777675"
+      },
+      "exact_over_semiclassical": {
+        "re": "0.980882095183357868559408761064",
+        "im": "0.194602968499213995088169169441"
+      },
+      "reflection_probability": "0.0000187936733964228622995233435809",
+      "finite_level_phase_rad": "0.195852664046543466022448780926",
+      "d_phase_d_s": "0.216824302151411977375515422623",
+      "allowed_lowest_oscillator_cases_checked": 26,
+      "max_enumerated_rate_residual": "3.503246161e-46",
+      "large_k_comparison": [
+        {
+          "k_NW": 10,
+          "phase_rad": "0.1958526640465434660224488",
+          "complex_ratio_error_from_one": "0.1955397904092265894161901",
+          "phase_cubic_expansion_error": "6.33395994448136e-5"
+        },
+        {
+          "k_NW": 20,
+          "phase_rad": "0.09945818999373402619382423",
+          "complex_ratio_error_from_one": "0.09941720199518557532658573",
+          "phase_cubic_expansion_error": "2.01004778871075e-6"
+        },
+        {
+          "k_NW": 40,
+          "phase_rad": "0.0499233427471891585760991",
+          "complex_ratio_error_from_one": "0.04991815849405317166463637",
+          "phase_cubic_expansion_error": "6.30589170021961e-8"
+        },
+        {
+          "k_NW": 100,
+          "phase_rad": "0.01999117376985186674106471",
+          "complex_ratio_error_from_one": "0.01999084087929830197642105",
+          "phase_cubic_expansion_error": "6.46429460339457e-10"
+        },
+        {
+          "k_NW": 1000,
+          "phase_rad": "0.001999529553027418809452105",
+          "complex_ratio_error_from_one": "0.001999529219929270283732709",
+          "phase_cubic_expansion_error": "6.46562812740924e-15"
+        },
+        {
+          "k_NW": 10000,
+          "phase_rad": "0.0001999533675427740953300481",
+          "complex_ratio_error_from_one": "0.0001999533672096738700888903",
+          "phase_cubic_expansion_error": "6.46564146574103e-20"
+        }
+      ]
+    },
+    {
+      "dps": 80,
+      "scope": "Published NW coefficient formulae; not a Taub--NUT amplitude",
+      "parameters": {
+        "k_NW": 10,
+        "j_SU2": "3",
+        "m": "3",
+        "mprime": "-2",
+        "s": "sqrt(3)/2"
+      },
+      "R_semiclassical": {
+        "re": "0.00432579844273873176750131002766",
+        "im": "-0.000284852995810164294560263393429"
+      },
+      "R_exact": {
+        "re": "0.00429853147842502607436820052292",
+        "im": "0.000562406014736704159350441777675"
+      },
+      "exact_over_semiclassical": {
+        "re": "0.980882095183357868559408761064",
+        "im": "0.194602968499213995088169169441"
+      },
+      "reflection_probability": "0.0000187936733964228622995233435809",
+      "finite_level_phase_rad": "0.195852664046543466022448780926",
+      "d_phase_d_s": "0.216824302151411977375515422623",
+      "allowed_lowest_oscillator_cases_checked": 26,
+      "max_enumerated_rate_residual": "3.162659383e-81",
+      "large_k_comparison": [
+        {
+          "k_NW": 10,
+          "phase_rad": "0.1958526640465434660224488",
+          "complex_ratio_error_from_one": "0.1955397904092265894161901",
+          "phase_cubic_expansion_error": "6.33395994448136e-5"
+        },
+        {
+          "k_NW": 20,
+          "phase_rad": "0.09945818999373402619382423",
+          "complex_ratio_error_from_one": "0.09941720199518557532658573",
+          "phase_cubic_expansion_error": "2.01004778871075e-6"
+        },
+        {
+          "k_NW": 40,
+          "phase_rad": "0.0499233427471891585760991",
+          "complex_ratio_error_from_one": "0.04991815849405317166463637",
+          "phase_cubic_expansion_error": "6.30589170021961e-8"
+        },
+        {
+          "k_NW": 100,
+          "phase_rad": "0.01999117376985186674106471",
+          "complex_ratio_error_from_one": "0.01999084087929830197642105",
+          "phase_cubic_expansion_error": "6.46429460339457e-10"
+        },
+        {
+          "k_NW": 1000,
+          "phase_rad": "0.001999529553027418809452105",
+          "complex_ratio_error_from_one": "0.001999529219929270283732709",
+          "phase_cubic_expansion_error": "6.46562812740924e-15"
+        },
+        {
+          "k_NW": 10000,
+          "phase_rad": "0.0001999533675427740953300481",
+          "complex_ratio_error_from_one": "0.0001999533672096738700888903",
+          "phase_cubic_expansion_error": "6.46564146574103e-20"
+        }
+      ]
+    }
+  ],
+  "not_calculated": [
+    "Taub--NUT BRST spectrum",
+    "Taub--NUT exact amplitude",
+    "operational past signalling",
+    "independent NW ODE integration"
+  ]
+}
