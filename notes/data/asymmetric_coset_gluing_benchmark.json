@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "python": "3.13.5",
+  "mpmath": "1.3.0",
+  "source": "Quella--Schomerus hep-th/0212119v3 sec.2.3 eqs.(7)-(8), sec.4.2 p=q=1",
+  "scope": "Compact rational asymmetric control only; no Taub--NUT BRST certification",
+  "runs": [
+    {
+      "k": 2,
+      "dps": 40,
+      "allowed_left": 18,
+      "allowed_right": 18,
+      "allowed_intersection": 10,
+      "common_identification_order": 1,
+      "chiral_dimension": 9,
+      "nonzero_gluing_entries": 9,
+      "largest_gluing_multiplicity": 2,
+      "vacuum_multiplicity": 1,
+      "T_invariance": "PASS (exact rational weights)",
+      "S_unitarity_residual": "1.14794370197e-41",
+      "S_invariance_residual": "1.14868785647e-41"
+    },
+    {
+      "k": 3,
+      "dps": 40,
+      "allowed_left": 48,
+      "allowed_right": 48,
+      "allowed_intersection": 24,
+      "common_identification_order": 1,
+      "chiral_dimension": 24,
+      "nonzero_gluing_entries": 24,
+      "largest_gluing_multiplicity": 1,
+      "vacuum_multiplicity": 1,
+      "T_invariance": "PASS (exact rational weights)",
+      "S_unitarity_residual": "3.44383110592e-41",
+      "S_invariance_residual": "3.1372900216e-41"
+    },
+    {
+      "k": 4,
+      "dps": 40,
+      "allowed_left": 100,
+      "allowed_right": 100,
+      "allowed_intersection": 52,
+      "common_identification_order": 1,
+      "chiral_dimension": 50,
+      "nonzero_gluing_entries": 50,
+      "largest_gluing_multiplicity": 2,
+      "vacuum_multiplicity": 1,
+      "T_invariance": "PASS (exact rational weights)",
+      "S_unitarity_residual": "6.7422397622e-41",
+      "S_invariance_residual": "1.01537114978e-40",
+      "negative_control": {
+        "wrong_quotient_representatives": 14,
+        "modular_residual": "0.75",
+        "status": "WRONG QUOTIENT REJECTED"
+      }
+    },
+    {
+      "k": 2,
+      "dps": 65,
+      "allowed_left": 18,
+      "allowed_right": 18,
+      "allowed_intersection": 10,
+      "common_identification_order": 1,
+      "chiral_dimension": 9,
+      "nonzero_gluing_entries": 9,
+      "largest_gluing_multiplicity": 2,
+      "vacuum_multiplicity": 1,
+      "T_invariance": "PASS (exact rational weights)",
+      "S_unitarity_residual": "7.89065815953e-67",
+      "S_invariance_residual": "1.30736705029e-66"
+    },
+    {
+      "k": 3,
+      "dps": 65,
+      "allowed_left": 48,
+      "allowed_right": 48,
+      "allowed_intersection": 24,
+      "common_identification_order": 1,
+      "chiral_dimension": 24,
+      "nonzero_gluing_entries": 24,
+      "largest_gluing_multiplicity": 1,
+      "vacuum_multiplicity": 1,
+      "T_invariance": "PASS (exact rational weights)",
+      "S_unitarity_residual": "5.12915635313e-66",
+      "S_invariance_residual": "5.23884379498e-66"
+    },
+    {
+      "k": 4,
+      "dps": 65,
+      "allowed_left": 100,
+      "allowed_right": 100,
+      "allowed_intersection": 52,
+      "common_identification_order": 1,
+      "chiral_dimension": 50,
+      "nonzero_gluing_entries": 50,
+      "largest_gluing_multiplicity": 2,
+      "vacuum_multiplicity": 1,
+      "T_invariance": "PASS (exact rational weights)",
+      "S_unitarity_residual": "9.29241956612e-66",
+      "S_invariance_residual": "1.03825158245e-65",
+      "negative_control": {
+        "wrong_quotient_representatives": 14,
+        "modular_residual": "0.75",
+        "status": "WRONG QUOTIENT REJECTED"
+      }
+    }
+  ]
+}

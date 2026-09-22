@@ -29,6 +29,18 @@
 **詳しい導出・6条件の判定・文献：** [6条件監査ノート](notes/heterotic-taubnut-six-gate-audit.md)  
 **再現可能な計算：** [Python](src/symbolic/chronology_six_gate_checks.py) ／ [Lean](src/lean/ChronologySixGate.lean) ／ [数値結果](notes/data/chronology_six_gate_checks.json)
 
+### 文献に基づく、状態空間・複素振幅の比較検算
+
+Taub–NUTの未検証部分を埋める前に、**既知の別模型で検査方法を確認**しました。
+
+| 対照系 | 実行したこと | 結果の範囲 |
+|---|---|---|
+| Quella–Schomerusのコンパクト非対称coset | 左右の許容集合・共通同一視・接合行列を作り、modular S/T整合性を検査 | `k=2,3,4`でPASS。誤った余分な同一視は検出できる。 |
+| EGKRのNappi–Witten模型 | 半古典的反射係数とexact二点関数を複素値で比較 | 反射率が同じでも有限レベルの位相差は残る。率だけの比較では不十分。 |
+
+**このPASSは既知模型の検算であり、上の6条件を通過したという意味ではありません。** Taub–NUTの状態空間や振幅に式をそのまま移していません。
+[照合した文献・具体的な数値・実行コード](notes/heterotic-taubnut-literature-bridge.md)
+
 ## ブラックホール研究の本筋
 
 本筋は **principal safety**：背景曲率が有限でも、物理的な摂動、拘束、運動項、4次元作用に特異性を移しただけでは解決としません。二ベクトル模型、非多項式QTG、非局所QTGなどを比較しています。
