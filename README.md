@@ -1,91 +1,92 @@
 # Spacetime Screening
 
-ブラックホールの特異点回避と、CTCを含む弦理論背景の物理的実現可能性を検証する研究リポジトリです。中心となる問いは、**「幾何が書ける」ことと「健全な物理過程として使える」ことは同じか**、です。完成した量子重力理論やタイムマシンを主張していません。
+ブラックホールの特異点回避と、CTC（閉じた時間的曲線）を含む弦理論背景が、健全な物理過程として使えるかを調べる研究リポジトリです。
 
-## 時間遡行：いま何が分かっている？
+## 時間遡行：過去へ、選んだ情報を送れた？
 
-> **過去へ選んだ情報を送れることは、まだ示せていません。**  
-> CTCを含む背景はありますが、下の6条件すべてを通過した物理的な通信過程はありません。これは時間遡行一般の不可能性の証明でもありません。
+> **まだ実証できていません。6条件をすべて通過した弦の通信過程はありません。**
+>
+> 今回は、状態候補の検算と、外部sourceでNUT側へ正則なスカラー応答を作る計算まで進みました。
+> **これは完全な弦状態でも、過去への情報送信でもありません。時間遡行一般の不可能性の証明でもありません。**
 
-| 検証条件 | 現在地 |
-|---|---|
-| **1. 完全なBRST物理状態** | 必要な電荷・ウェイトの算術は一致。完全なcohomologyの認定は未完了。 |
-| **2. 正ノルム・正常化** | Taub側のスカラーモードでは正で有限の初期KGノルム。完全な弦の物理内積は未確立。 |
-| **3. 全弦スペクトルに含まれる** | GSO・大域的接合・全射影が未完了。既存のSU(2)状態例の一つには具体的な誤りを確認。 |
-| **4. 逆反作用に耐える** | 特定のスカラー初期準備は地平面で非正則な枝を生む。回避する調整解もあり、全状態の排除ではない。 |
-| **5. NUT到達と因果構造** | 固定背景のCTCは既存。到達と「新たに因果構造を変えること」は別。 |
-| **6. 選んだ情報を過去へ送る** | 操作的な信号は未実証。完全な時空でなおchronalな受信点への通常の因果的帰還は不可。 |
+### 現在地 — 2026-09-23
 
-**重要：`99.813%` は指定した外側スカラー波動方程式の流束比です。時間遡行や情報送信の成功確率ではなく、完全な弦の透過確率としても未認定です。** 古いノートの無条件な `BRST / free-string PASS` は、後の監査で解釈を訂正しています。
-
-### 今回、実際に追加した結果
-
-**Taubの時間発展を計算。** 指定した有限時刻の正周波数スカラーデータから `|β|² = 0.002668579603…` の未来基底への混合が出ます。一方、混合をゼロにした準備も構成できるので、「必ず壊れる」とは言えません。この数値は粒子・情報の過去送信成功率ではありません。
-
-**状態の式を具体的に反証。** 既存ノートの `(K⁺₋₁)^(k w)|0⟩` は、`k=4, w=2` では主張された重み16を持たず、可積分真空表現ではnullです。これは特定の代表式の誤りであり、全ての候補状態やspectral flowを否定するものではありません。
-
-**限定した帰還禁止をLeanで確認。** 因果的な信号supportとpush-up性を仮定すると、過去の受信点へ戻れるならその点もCTC上にあります。Leanが検証したのはこの条件付き論理であり、弦理論全体の因果性や時間遡行の普遍的禁止ではありません。
-
-**詳しい導出・6条件の判定・文献：** [6条件監査ノート](notes/heterotic-taubnut-six-gate-audit.md)  
-**再現可能な計算：** [Python](src/symbolic/chronology_six_gate_checks.py) ／ [Lean](src/lean/ChronologySixGate.lean) ／ [数値結果](notes/data/chronology_six_gate_checks.json)
-
-### 文献に基づく、状態空間・複素振幅の比較検算
-
-Taub–NUTの未検証部分を埋める前に、**既知の別模型で検査方法を確認**しました。
-
-| 対照系 | 実行したこと | 結果の範囲 |
+| 必要な確認 | 判定 | 一言でいうと |
 |---|---|---|
-| Quella–Schomerusのコンパクト非対称coset | 左右の許容集合・共通同一視・接合行列を作り、modular S/T整合性を検査 | `k=2,3,4`でPASS。誤った余分な同一視は検出できる。 |
-| EGKRのNappi–Witten模型 | 半古典的反射係数とexact二点関数を複素値で比較 | 反射率が同じでも有限レベルの位相差は残る。率だけの比較では不十分。 |
+| **1. 完全なBRST物理状態** | **未認定** | 仮定した相対Abelianゲージ複体は検算。全heterotic cohomologyはまだ。 |
+| **2. 正ノルム・正常化可能** | **スカラーでは部分成立** | Taub上の正で有限なKGノルムは作れる。弦の物理内積は別。 |
+| **3. 全弦スペクトルで許容** | **未認定** | 必要条件を満たす候補を3組列挙。GSO・全射影・左右接合は未完了。 |
+| **4. 逆反作用込みで維持** | **未認定／障害あり** | 調整sourceなら正則だが、小さな誤差で非正則成分が戻る。全backreactionは未計算。 |
+| **5. NUT到達・因果構造変更** | **アクセスのスカラー例のみ** | 固定背景で正則に接続できる例。物理的な弦の到達・背景の構造変更は未認定。 |
+| **6. 選んだ情報を過去へ届ける** | **未実証** | 同じ準備の2設定から、過去の受信確率の差を得ていない。 |
 
-**このPASSは既知模型の検算であり、上の6条件を通過したという意味ではありません。** Taub–NUTの状態空間や振幅に式をそのまま移していません。
-[照合した文献・具体的な数値・実行コード](notes/heterotic-taubnut-literature-bridge.md)
+**CTCのある幾何 → スカラーの接続例 → 完全な弦状態の到達 → 操作的な過去通信**は、別々の検証段階です。
+既存のCTCを使うだけなら、新たに因果構造を変えること自体は必須ではありません。動的な形成・変更を求める場合は、追加で検証します。
+
+**最新の導出・6条件の判定・限界：** [操作的信号に向けた継続ノート](notes/heterotic-taubnut-operational-continuation.md)  
+**前回の監査：** [six-gate audit](notes/heterotic-taubnut-six-gate-audit.md)
+
+### 今回、何を計算した？
+
+**状態候補を具体化。** 仮定した2つのAbelianゲージ電流の相対BRST複体について、grade 0〜3の行列とhomotopyを検査しました。同じ背景の制限したansatzでは、必要な電荷・重み条件を満たす正周波数候補が3組あります。**全string spectrumへの所属はまだ証明していません。**
+
+**地平面の障害を1例から広げた。** 3候補のスカラー診断では、過去の正周波数modeから未来の非正則成分が生じます。混合の二乗は約 `0.0776154 / 0.0196993 / 0.00520611`。principal-continuous scalar族の一般式でも混合は非零です。**どれも情報送信の成功確率ではありません。**
+
+**正則に通す構成例と、その弱点を両方確認。** 同じ初期データから、有限時間の外部sourceで未来地平面を正則に渡るscalar modeを作り、NUTの `x=2` まで接続しました。ただしsourceは空間的に広がった処方で、局所的な弦の送信装置ではありません。小さなsource誤差で非正則成分が再発します。
+
+**数字の読み違いに注意：`99.813%` は指定した外側スカラー波動方程式の流束比です。**
+時間遡行・情報送信の成功率でも、認定済みのexact string透過確率でもありません。古いノートの無条件な `BRST / free-string PASS` は、後の監査で解釈を訂正しています。
+
+### 今回の計算を再現
+
+```bash
+python -m pip install -r requirements.txt
+python src/symbolic/heterotic_taubnut_relative_brst_complex.py
+python src/symbolic/heterotic_taubnut_horizon_transfer_family.py
+python src/symbolic/heterotic_taubnut_retarded_source_control.py
+```
+
+相対複体は厳密な整数・有理数検算、数値計算は50桁／80桁の比較です。適用範囲・sourceの定義・未計算の物理は[継続ノート](notes/heterotic-taubnut-operational-continuation.md)に記録しています。**CIの成功は実装した検算の成功であり、6条件の成立ではありません。**
+
+### 前回までの成果
+
+[6条件監査](notes/heterotic-taubnut-six-gate-audit.md)には、有限Taub時刻の準備からの混合、特定のSU(2) descendant式の誤り、chronalな過去の受信者への帰還に関する条件付きLean補題があります。
+[文献対照検算](notes/heterotic-taubnut-literature-bridge.md)では、別模型の非対称coset接合とNappi–Wittenの複素反射振幅を再現しました。これらのPASSをTaub–NUTの未検証条件へ移してはいません。
 
 ## ブラックホール研究の本筋
 
-本筋は **principal safety**：背景曲率が有限でも、物理的な摂動、拘束、運動項、4次元作用に特異性を移しただけでは解決としません。二ベクトル模型、非多項式QTG、非局所QTGなどを比較しています。
-
-従来の詳細READMEは、本文をそのまま [SCREENING_RESEARCH_OVERVIEW.md](SCREENING_RESEARCH_OVERVIEW.md) に保存しました。時間遡行の脇道と本筋の研究を混同せずに読めます。
+こちらは **principal safety**：背景曲率が有限でも、摂動・拘束・運動項・4次元作用に特異性を移しただけでは解決としません。時間遡行の研究とは区別しています。
 
 | 読みたいもの | 入口 |
 |---|---|
-| ブラックホール研究の詳細と既存成果 | [従来の研究概要](SCREENING_RESEARCH_OVERVIEW.md) |
-| 本筋の引き継ぎ・次の課題 | [RESEARCH_HANDOFF.md](RESEARCH_HANDOFF.md) |
+| ブラックホール研究の詳細と既存成果 | [研究概要](SCREENING_RESEARCH_OVERVIEW.md) |
+| ブラックホール側の引き継ぎ | [RESEARCH_HANDOFF.md](RESEARCH_HANDOFF.md) |
 | 健全性の判定基準 | [principal-safe-screening](docs/principal-safe-screening.md) |
 | 新規性・既知結果の区別 | [NOVELTY.md](NOVELTY.md) |
-| 時間遡行についての最新の6条件判定 | [six-gate audit](notes/heterotic-taubnut-six-gate-audit.md) |
+| **時間遡行の最新結果と再開点** | **[継続ノート](notes/heterotic-taubnut-operational-continuation.md)** |
+| 時間遡行についての前回の6条件判定 | [six-gate audit](notes/heterotic-taubnut-six-gate-audit.md) |
 
-## 再現と検証・AIの再開手順
+## AI・コントリビューターの再開手順とCI
 
-**次のAIも、まず [AGENTS.md](AGENTS.md) と [CI運用ルール](docs/ci-policy.md) を読んでください。**
-会話履歴に頼らず、検査対象・実行方法・結果の報告を引き継げるようにしています。
+まず [AGENTS.md](AGENTS.md) と [CI運用ルール](docs/ci-policy.md) を読んでください。ユーザーが時間遡行を指定している場合は、ブラックホール側の引き継ぎではなく上の継続ノートから再開します。
 
 | 変更／実行の目的 | 自動検査 |
 |---|---|
-| README・ノートだけ | ローカルリンク等の軽量検査。研究計算なし |
-| 独立した計算スクリプト | PR全体の変更・影響範囲をPython 3.12で検査 |
-| 共有コード・依存・入力データ、または影響不明 | Python全件に拡大（通常PRは3.12） |
-| 週次／手動の完全検証 | 全スクリプトをPython 3.11／3.12で実行 |
-| Leanの変更 | Leanを検査。PythonだけのPRでLeanを重複実行しない |
+| README・ノートだけ | ローカルリンク等の軽量検査 |
+| 独立した計算スクリプト | PR累積差分の影響対象をPython 3.12で検査 |
+| 共有コード・依存・入力データ・影響不明 | Python全件へ拡大 |
+| 週次／手動の完全検証 | 全スクリプトをPython 3.11／3.12、Leanも確認 |
+| Leanの変更 | Lean検査。PythonだけのPRでは重複実行しない |
 
-[PR checks](.github/workflows/pr-checks.yml) は対象と理由を記録し、古いPR runを自動キャンセルします。
-[Symbolic CI](.github/workflows/symbolic-ci.yml) は週次・手動の全件再現性検査です。
-**精度やassertを削らず、無関係な計算・重複実行を減らします。**
+[PR checks](.github/workflows/pr-checks.yml) が対象と理由を記録し、[Symbolic CI](.github/workflows/symbolic-ci.yml) は週次・手動の全件再現性を検査します。精度・assertを弱めず、無関係な重複実行を減らします。
 
 ```bash
-python scripts/ci/test_checks.py
-# コミット済みPR差分（未コミット変更は含まれません）
+# コミット済みPRの累積差分（未コミット変更は含まれません）
 python scripts/ci/checks.py plan --base origin/main --head HEAD --plan /tmp/ci-plan.json
 python scripts/ci/checks.py docs --plan /tmp/ci-plan.json
-python -m pip install -r requirements.txt
 python scripts/ci/checks.py run --plan /tmp/ci-plan.json
 ```
 
-六条件の検算を直接再現する場合は、引き続き
-`python src/symbolic/chronology_six_gate_checks.py --json /tmp/six-gate.json` を使えます。
-Leanは [再利用workflow](.github/workflows/chronology-six-gate.yml) に集約しています。
-**CIは選択された計算の検査であり、6条件の物理的成立を保証しません。**
-
 ## ライセンス
 
-コードは [Apache-2.0](LICENSE)、研究文章・式・図は [CC BY 4.0](LICENSE-DOCS)。計算の再現、先行研究、条件付きの推論、未解決の物理を区別して記録します。
+コードは [Apache-2.0](LICENSE)、研究文章・式・図は [CC BY 4.0](LICENSE-DOCS)。再現結果・条件付き推論・未解決の物理を区別して記録します。
