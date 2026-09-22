@@ -676,6 +676,16 @@ with CTCs; D-brane analyses found well-behaved probe wavefunctions in those
 regions. The Elitzur--Giveon--Kutasov--Rabinovici quotient CFT connects
 cosmological regions to static CTC-containing regions.
 
+There is also direct classical-gravity evidence that ordinary Lorentzian
+Taub--NUT is perturbatively fragile. Holzegel (gr-qc/0602045) found that
+finite time-dependent \(SU(2)\)-invariant tensor perturbations cannot be made
+regular both at the horizon and infinity, and interpreted this as linear
+instability of Lorentzian Taub--NUT. This is a serious negative prior, but it
+is not a theorem about the exact heterotic background: the latter contains a
+nontrivial dilaton, \(B\)-field and gauge fields and includes all
+\(\alpha'\) corrections in its target geometry. Thus the vacuum Einstein
+instability cannot simply be imported as the missing stringy no-go.
+
 But related models also supply warning signs: heterotic Gödel strings can
 destabilize chronology-violating backgrounds; Misner-space interactions can
 be singular; holographic time-machine constructions can generate
