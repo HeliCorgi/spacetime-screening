@@ -29,7 +29,11 @@ jobs:
         with:
           python-version: '3.12'
       - name: Test the selector and failure controls
-        run: python scripts/ci/test_checks.py
+        shell: bash
+        run: |
+          set -euo pipefail
+          unset GITHUB_STEP_SUMMARY
+          python scripts/ci/test_checks.py 2>&1 | sed 's/^::/[expected test control] ::/'
       - name: Plan from the entire PR diff, not just the last commit
         id: plan
         env:
@@ -68,6 +72,8 @@ jobs:
           name: pr-ci-plan
           path: ${{ runner.temp }}/ci-plan
       - run: python -m pip install -r requirements.txt
+      - name: Compile all research sources (including unimported helpers)
+        run: python -m compileall -q src/symbolic src/numerical
       - name: Execute selected assertions without reduced precision
         run: >-
           python scripts/ci/checks.py run --plan "$RUNNER_TEMP/ci-plan/ci-plan.json"
