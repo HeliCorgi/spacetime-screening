@@ -698,6 +698,106 @@ burden from geometry to physical-state and interaction consistency.
 
 ---
 
+
+# 13.1 Physical-state gate: passed at one explicit exact-CFT point
+
+The previous version of this note left the untwisted BRST physical-state
+existence question open.
+
+That gate has now been passed constructively.
+
+See:
+
+notes/heterotic-taubnut-explicit-brst-state.md
+
+and:
+
+src/symbolic/heterotic_taubnut_explicit_brst_state.py
+
+At the exact anomaly-free point
+
+\[
+k_1=8,\quad k_2=4,\quad
+(Q_A,P_A)=(2,0),\quad
+(Q_B,P_B)=(2,1),
+\]
+
+\[
+\delta^2=\frac85,\qquad \lambda^2=\frac25,
+\]
+
+the untwisted quantum numbers
+
+\[
+j=\frac12+\frac i2,\quad
+m=-2,\quad
+\bar M=\frac{\sqrt{10}}2,
+\]
+
+\[
+\ell=1,\quad
+n=0,\quad
+\bar N=-1
+\]
+
+satisfy both exact gauge constraints.
+
+The numerator affine weight is
+
+\[
+\frac1{12}+\frac13=\frac5{12},
+\]
+
+while the exact \(U(1)^2\) auxiliary BRST subtraction is also \(5/12\) on
+both chiralities. Hence
+
+\[
+\boxed{
+h_L^{\rm coset}=h_R^{\rm coset}=0.
+}
+\]
+
+A neutral spectator oscillator gives a standard heterotic NS state with
+
+\[
+(h_L,h_R)=(1,\tfrac12).
+\]
+
+The Abelian relative gauge-BRST class is closed and non-exact by a grade-zero
+argument: a ghost-number \(-1\), grade-zero preimage would require a
+\(b_0\) excitation, excluded in relative cohomology.
+
+The same state has
+
+\[
+\omega=\bar M=\frac{\sqrt{10}}2,\qquad
+q=\lambda\omega=1,\qquad
+\Lambda=1,
+\]
+
+and therefore the exact NUT radial exponent is
+
+\[
+-\frac12\pm\frac i2,
+\]
+
+matching its principal-continuous \(SL(2,\mathbb R)\) label.
+
+Its exact hypergeometric horizon-to-NUT connection coefficients are finite and
+nonzero.
+
+Therefore the previous D3 gate must be updated:
+
+\[
+\boxed{
+\textbf{D3: explicit chronology-relevant untwisted BRST physical state —
+PASSED at one exact anomaly-free model point.}
+}
+\]
+
+The next unresolved gate is a fully normalized physical transmission
+observable and then interactions/backreaction.
+
 # 14. Binary verdict
 
 If forced to choose only between “possible” and “impossible,” the current
