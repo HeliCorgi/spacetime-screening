@@ -1,0 +1,96 @@
+{
+  "scope": "Necessary algebra and neutral scalar/causal diagnostics only",
+  "all_six_physical_gates_passed": false,
+  "environment": {
+    "python": "3.13.5",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "algebra": {
+    "anomaly_residuals": [
+      "0",
+      "0",
+      "0"
+    ],
+    "formal_weight": "0",
+    "formal_weight_family": "s**2/6 - 1/24",
+    "su2_k4_norms_n0_to_n8": [
+      1,
+      4,
+      24,
+      144,
+      576,
+      0,
+      0,
+      0,
+      0
+    ],
+    "fable_w2_literal_grade": 8,
+    "fable_w2_claimed_grade": 16,
+    "taub_Omega_squared": "x**2/2 + 2*sqrt(10)*x + 6",
+    "future_exit_horizon_inner_product": "-K*vx/sqrt(Dh)",
+    "assumed_two_stream_invariant": "8*A*B*D**2/(K**2*p**2)"
+  },
+  "scalar_50_digits": {
+    "dps": 50,
+    "maximum_relative_ODE_residual": "6.1104737e-51",
+    "maximum_mode_Wronskian_error": "1.0691059e-50",
+    "finite_time_preparations": [
+      {
+        "eta0": 0,
+        "beta_squared": "0.0026685796034634138979658761240137822891"
+      },
+      {
+        "eta0": 1,
+        "beta_squared": "0.000093652834906026109528876106144637607996"
+      },
+      {
+        "eta0": 2,
+        "beta_squared": "0.0000019389301180476114071313959899227104261"
+      },
+      {
+        "eta0": 4,
+        "beta_squared": "0.00000000066357739315610650122938038530124915229"
+      }
+    ],
+    "tuned_future_regular_beta_squared": "3.2317871e-105",
+    "Taub_in_out_beta_squared": "0.077615394080350761309134300690308705964",
+    "Taub_in_out_alpha_squared": "1.077615394080350761309134300690308706",
+    "exterior_radial_T_NOT_signal_probability": "0.99813031606446187727776198412663696719",
+    "radial_L2_log_coefficient_NOT_BRST_norm": "2.0037393678710762454444760317467260656",
+    "outgoing_envelope_decay_threshold_gamma": "0.441518440112252887999262362955",
+    "kinematic_loop_x2_proper_time_string_units": "10.9632346614953341918343647906",
+    "kinematic_loop_x2_acceleration_squared_string_units": "0.0824567550669301727100729931991"
+  },
+  "scalar_80_digits": {
+    "dps": 80,
+    "maximum_relative_ODE_residual": "1.9547216e-81",
+    "maximum_mode_Wronskian_error": "1.6867517e-80",
+    "finite_time_preparations": [
+      {
+        "eta0": 0,
+        "beta_squared": "0.0026685796034634138979658761240137822891"
+      },
+      {
+        "eta0": 1,
+        "beta_squared": "0.000093652834906026109528876106144637607996"
+      },
+      {
+        "eta0": 2,
+        "beta_squared": "0.0000019389301180476114071313959899227104261"
+      },
+      {
+        "eta0": 4,
+        "beta_squared": "0.00000000066357739315610650122938038530124915229"
+      }
+    ],
+    "tuned_future_regular_beta_squared": "2.5233407e-164",
+    "Taub_in_out_beta_squared": "0.077615394080350761309134300690308705964",
+    "Taub_in_out_alpha_squared": "1.077615394080350761309134300690308706",
+    "exterior_radial_T_NOT_signal_probability": "0.99813031606446187727776198412663696719",
+    "radial_L2_log_coefficient_NOT_BRST_norm": "2.0037393678710762454444760317467260656",
+    "outgoing_envelope_decay_threshold_gamma": "0.441518440112252887999262362955",
+    "kinematic_loop_x2_proper_time_string_units": "10.9632346614953341918343647906",
+    "kinematic_loop_x2_acceleration_squared_string_units": "0.0824567550669301727100729931991"
+  }
+}
