@@ -394,6 +394,101 @@ Thus both chronology horizons are regular singular wave surfaces, not hard
 reflecting boundaries. A global continuation prescription is still required,
 but local analytic continuation exists.
 
+
+## 8.1 Exact horizon-to-NUT connection coefficient
+
+The hypergeometric form allows a stronger statement than local Frobenius
+regularity.
+
+Write
+
+\[
+a_+
+=
+\frac{\omega(1+\delta)}{2},
+\qquad
+a_-
+=
+\frac{\omega(\delta-1)}{2},
+\]
+
+and choose one horizon branch
+
+\[
+\alpha=-ia_+.
+\]
+
+Let \(\beta=\pm ia_-\), and define \(h\) by
+
+\[
+h(h+1)=C.
+\]
+
+With
+
+\[
+R=z^\alpha(1-z)^\beta\,{}_2F_1(a,b;c;z),
+\]
+
+the hypergeometric parameters may be chosen as
+
+\[
+a=\alpha+\beta-h,
+\qquad
+b=\alpha+\beta+h+1,
+\qquad
+c=1+2\alpha.
+\]
+
+For the first NUT region, \(x>1\) corresponds to \(z<0\), and
+\(x\to+\infty\) means \(z\to-\infty\).
+
+The standard hypergeometric connection formula gives two asymptotic powers,
+
+\[
+R
+\sim
+A_h(-z)^h
++
+B_h(-z)^{-h-1},
+\]
+
+with
+
+\[
+A_h
+=
+\frac{\Gamma(c)\Gamma(b-a)}
+{\Gamma(b)\Gamma(c-a)},
+\]
+
+\[
+B_h
+=
+\frac{\Gamma(c)\Gamma(a-b)}
+{\Gamma(a)\Gamma(c-b)}.
+\]
+
+The Gamma function has no zeros. Therefore these coefficients are generically
+nonzero; they vanish only on special discrete parameter loci where a
+denominator Gamma function has a pole.
+
+Hence:
+
+\[
+\boxed{
+\text{a horizon wave branch generically has nonzero continuation into the
+NUT asymptotic basis.}
+}
+\]
+
+This is stronger than saying that the local horizon potential is finite. It
+shows that the exact minisuperspace connection problem does not generically
+decouple the NUT region from the horizon.
+
+It still does not prove that the corresponding mode belongs to the full
+heterotic BRST cohomology.
+
 ---
 
 # 9. NUT infinity has a genuine continuum regime
