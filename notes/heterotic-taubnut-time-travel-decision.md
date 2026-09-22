@@ -45,7 +45,7 @@ algebra is in
 | D0 | Exact string background contains CTC geometry? | **YES / PUBLISHED** |
 | D1 | Taub and NUT regions are geometrically connected? | **YES / PUBLISHED** |
 | D2 | Exact metric+dilaton force zero wave flux at \(x=1\)? | **NO / CALCULATED HERE** |
-| D3 | Chronology-relevant untwisted BRST-physical string state exists? | **OPEN** |
+| D3 | Chronology-relevant untwisted BRST-physical string state exists? | **YES / EXPLICIT CONSTRUCTION** |
 | D4 | Such a state has nonzero Taub-to-NUT transmission? | **OPEN, but no local minisuperspace wall** |
 | D5 | Interactions and finite-\(g_s\) effects remain controlled? | **OPEN** |
 | D6 | Gauge-invariant observable realizes return to the causal past? | **OPEN** |
