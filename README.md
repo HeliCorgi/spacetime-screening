@@ -1,500 +1,63 @@
 # Spacetime Screening
 
-**Spacetime Screening** is a research repository about a narrower question than
-"can a regular black-hole metric be written down?":
+ブラックホールの特異点回避と、CTCを含む弦理論背景の物理的実現可能性を検証する研究リポジトリです。中心となる問いは、**「幾何が書ける」ことと「健全な物理過程として使える」ことは同じか**、です。完成した量子重力理論やタイムマシンを主張していません。
 
-> **Can quantum-gravity-motivated screening make black-hole curvature regular
-> without hiding the singular behavior in physical propagation modes,
-> constraints, or the four-dimensional action itself?**
+## 時間遡行：いま何が分かっている？
 
-The project began from the intuition
+> **過去へ選んだ情報を送れることは、まだ示せていません。**  
+> CTCを含む背景はありますが、下の6条件すべてを通過した物理的な通信過程はありません。これは時間遡行一般の不可能性の証明でもありません。
 
-\[
-\text{high curvature}
-\rightarrow
-\text{weaker effective response}
-\rightarrow
-\text{singularity avoidance},
-\]
-
-but the main research direction is now **principal safety**:
-
-\[
-\boxed{
-\text{regular background}
-\not\Rightarrow
-\text{regular dynamics}.
-}
-\]
-
-This repository does **not** claim a completed quantum-gravity theory.
+| 検証条件 | 現在地 |
+|---|---|
+| **1. 完全なBRST物理状態** | 必要な電荷・ウェイトの算術は一致。完全なcohomologyの認定は未完了。 |
+| **2. 正ノルム・正常化** | Taub側のスカラーモードでは正で有限の初期KGノルム。完全な弦の物理内積は未確立。 |
+| **3. 全弦スペクトルに含まれる** | GSO・大域的接合・全射影が未完了。既存のSU(2)状態例の一つには具体的な誤りを確認。 |
+| **4. 逆反作用に耐える** | 特定のスカラー初期準備は地平面で非正則な枝を生む。回避する調整解もあり、全状態の排除ではない。 |
+| **5. NUT到達と因果構造** | 固定背景のCTCは既存。到達と「新たに因果構造を変えること」は別。 |
+| **6. 選んだ情報を過去へ送る** | 操作的な信号は未実証。完全な時空でなおchronalな受信点への通常の因果的帰還は不可。 |
 
-## Current working definition of screening
+**重要：`99.813%` は指定した外側スカラー波動方程式の流束比です。時間遡行や情報送信の成功確率ではなく、完全な弦の透過確率としても未認定です。** 古いノートの無条件な `BRST / free-string PASS` は、後の監査で解釈を訂正しています。
 
-For a symmetry-reduced curvature response
+### 今回、実際に追加した結果
 
-\[
-\psi=\psi(s),
-\]
-
-define the dimensionless logarithmic response
-
-\[
-\boxed{
-\mathscr S
-=
-\frac{d\ln\psi}{d\ln s}.
-}
-\]
-
-For the Hayward/QTG response
+**Taubの時間発展を計算。** 指定した有限時刻の正周波数スカラーデータから `|β|² = 0.002668579603…` の未来基底への混合が出ます。一方、混合をゼロにした準備も構成できるので、「必ず壊れる」とは言えません。この数値は粒子・情報の過去送信成功率ではありません。
 
-\[
-\psi(s)=\frac{s}{1+\ell^2s},
-\]
+**状態の式を具体的に反証。** 既存ノートの `(K⁺₋₁)^(k w)|0⟩` は、`k=4, w=2` では主張された重み16を持たず、可積分真空表現ではnullです。これは特定の代表式の誤りであり、全ての候補状態やspectral flowを否定するものではありません。
 
-one finds
+**限定した帰還禁止をLeanで確認。** 因果的な信号supportとpush-up性を仮定すると、過去の受信点へ戻れるならその点もCTC上にあります。Leanが検証したのはこの条件付き論理であり、弦理論全体の因果性や時間遡行の普遍的禁止ではありません。
 
-\[
-\mathscr S
-=
-\frac1{1+\ell^2s}
-=
-1-\ell^2\psi
-\rightarrow0
-\]
+**詳しい導出・6条件の判定・文献：** [6条件監査ノート](notes/heterotic-taubnut-six-gate-audit.md)  
+**再現可能な計算：** [Python](src/symbolic/chronology_six_gate_checks.py) ／ [Lean](src/lean/ChronologySixGate.lean) ／ [数値結果](notes/data/chronology_six_gate_checks.json)
 
-at high source scale.
+## ブラックホール研究の本筋
 
-The spherical response itself is mostly known physics. The repo's focus is
-whether a theory realizing such screening also has a healthy **physical
-quadratic/principal structure**.
+本筋は **principal safety**：背景曲率が有限でも、物理的な摂動、拘束、運動項、4次元作用に特異性を移しただけでは解決としません。二ベクトル模型、非多項式QTG、非局所QTGなどを比較しています。
 
-## Main research criterion
+従来の詳細READMEは、本文をそのまま [SCREENING_RESEARCH_OVERVIEW.md](SCREENING_RESEARCH_OVERVIEW.md) に保存しました。時間遡行の脇道と本筋の研究を混同せずに読めます。
 
-A candidate is not considered to have resolved the singularity unless it
-passes, at minimum,
-
-\[
-\boxed{
-\begin{aligned}
-&\text{bounded background curvature},\\
-&\text{differentiable 4D action},\\
-&\text{controlled constraint rank},\\
-&\text{positive physical kinetic matrix},\\
-&\text{finite, hyperbolic principal symbol},\\
-&\text{nonzero strong-coupling scale},\\
-&\text{dynamical formation from regular data}.
-\end{aligned}
-}
-\]
+| 読みたいもの | 入口 |
+|---|---|
+| ブラックホール研究の詳細と既存成果 | [従来の研究概要](SCREENING_RESEARCH_OVERVIEW.md) |
+| 本筋の引き継ぎ・次の課題 | [RESEARCH_HANDOFF.md](RESEARCH_HANDOFF.md) |
+| 健全性の判定基準 | [principal-safe-screening](docs/principal-safe-screening.md) |
+| 新規性・既知結果の区別 | [NOVELTY.md](NOVELTY.md) |
+| 時間遡行についての最新の6条件判定 | [six-gate audit](notes/heterotic-taubnut-six-gate-audit.md) |
 
-See [docs/principal-safe-screening.md](docs/principal-safe-screening.md).
+## 再現と検証
 
-## Current strongest calculation candidates
+```bash
+python -m pip install sympy==1.14.0 mpmath==1.3.0
+python src/symbolic/chronology_six_gate_checks.py --json /tmp/six-gate.json
+```
 
-These are **not priority claims**. See [NOVELTY.md](NOVELTY.md) for status and
-scope.
+Lean 4.19.0がある場合：
 
-### 1. Direct odd-sector ghost in the two-vector benchmark
+```bash
+lean src/lean/ChronologySixGate.lean
+```
 
-The original Eichhorn-Fernandes \(A-B\) action has now been expanded directly
-in four-dimensional odd harmonics.  No one-vector perturbation formalism is
-needed for the core result.
+[専用GitHub Actions](.github/workflows/chronology-six-gate.yml) がPython 3.11／3.12とLeanを検査します。コードcommit `1a18f679…` の専用run #1は3jobとも成功。数値検算は50桁／80桁で比較しています。**CIは記述した計算を検査するもので、6条件の物理的成立を保証しません。**
 
-For \(l=2\), after eliminating the nondynamical directions in a sufficiently
-large finite asymptotic exterior region,
+## ライセンス
 
-\[
-\boxed{
-\lim_{r\to\infty}
-r^5\det K_{\rm red}
-=
--
-\frac{1152\pi^2}{25}
-M\ell^4(16M^2+q^2)
-<0.
-}
-\]
-
-Therefore the reduced physical odd kinetic matrix has one positive and one
-negative eigenvalue in that open region.
-
-The derivative-null vector combination is separately shown to have
-
-- no quadratic velocity;
-- no linear velocity mixing;
-- positive algebraic stiffness.
-
-So that auxiliary direction does not remove the negative active mode.
-
-Independent checks include:
-
-- brute-force \(l=2\) four-dimensional curvature expansion;
-- full-\((t,r)\) principal expansion;
-- local linearized-Einstein derivation;
-- \(l=1\) canonical constraint analysis;
-- published generalized-Proca coefficients used only afterward as a
-  cross-check.
-
-**Technical status:** the asymptotic odd ghost is directly established within
-the quadratic theory.  **Novelty priority is not claimed.**
-
-See:
-
-- [notes/direct-two-vector-odd-expansion.md](notes/direct-two-vector-odd-expansion.md)
-- [notes/direct-asymptotic-odd-ghost.md](notes/direct-asymptotic-odd-ghost.md)
-- [src/symbolic/direct_two_vector_odd_l2.py](src/symbolic/direct_two_vector_odd_l2.py)
-- [src/symbolic/direct_odd_asymptotic_ghost.py](src/symbolic/direct_odd_asymptotic_ghost.py)
-
-### 2. Hidden Schwarzschild tensor characteristic
-
-The same odd quadratic-action coefficient block gives
-
-\[
-q_T=\frac{f-\Delta}{2f^2},
-\]
-
-with radial characteristic roots
-
-\[
-v_-=-f,
-\qquad
-v_+
-=
-f\frac{f+\Delta}{f-\Delta}.
-\]
-
-On the exact regular branch,
-
-\[
-\boxed{
-f+\Delta
-=
-1-\frac{2M}{r}.
-}
-\]
-
-Thus
-
-\[
-\boxed{
-r_T=2M
-}
-\]
-
-appears as a tensor characteristic horizon even though the regular background
-metric is not on a horizon there.
-
-At \(r=2M\),
-
-\[
-q_T>0,
-\]
-
-so this is not merely a kinetic-sign crossing.
-
-See:
-
-- [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md)
-- [notes/vector-odd-kinetic-analysis.md](notes/vector-odd-kinetic-analysis.md)
-- [src/symbolic/vector_odd_tensor_reduction.py](src/symbolic/vector_odd_tensor_reduction.py)
-
-### 3. Restricted scalar-tensor no-go
-
-For a canonical static radial scalar with
-
-\[
-F(\chi)R,
-\]
-
-the one-function metric ansatz gives
-
-\[
-F''(r)
-=
--8\pi G\,\chi'(r)^2\le0.
-\]
-
-Regular-center and asymptotically constant boundary conditions force the
-localized scalar profile to be trivial.
-
-This is a restricted ansatz-level result, not a general scalar-tensor no-hair
-theorem.
-
-See [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md).
-
-## Candidate models already stress-tested
-
-### Two auxiliary vectors
-
-**Background:** regular Hayward-type geometry.
-
-**Problems found:** directly established asymptotic odd ghost, degenerate
-vector/null sector, hidden Schwarzschild tensor characteristic candidate, and
-an extremal test-field Aretakis channel.
-
-### Nonpolynomial pure-gravity QTG
-
-**Background:** excellent curvature-response saturation,
-
-\[
-\psi=\frac{s}{1+\ell^2s}.
-\]
-
-**Problem found:** the explicit rational four-dimensional lift used as a
-representative construction is nondifferentiable on the single-function
-branch in generic curvature directions.
-
-### 2026 first-order QTG-TNT
-
-**Background:** exact regular black-hole solutions and GR-like first-order
-integrability.
-
-**Problem found:** the covariant
-
-\[
-R_4
-=
-\sqrt{
-\frac{2I_6}{3}
--
-\frac{2I_{11}}{I_1}
-}
-\]
-
-has a square-root cusp on the single-function branch and divergent curvature
-derivatives. The source classification also implies that nontrivial
-first-order Class-I QTG-TNT is structurally non-analytic.
-
-### Regularized-Lovelock / Horndeski infinite tower
-
-**Background:** regular known planar branch.
-
-**Problem already known in the literature:** odd ghost/gradient instability
-and an infinitely strongly-coupled even scalar mode on that branch.
-
-See [docs/candidate-scorecard.md](docs/candidate-scorecard.md).
-
-## Research priority
-
-The present priority order is:
-
-1. **P0 — archive the two-vector odd result as a completed failure test and
-   finish the independent physical tensor-master reduction only if useful for
-   the hidden-cone claim.**
-2. **P1 — turn recurring failure mechanisms into model-independent
-   principal-safety / no-go statements where possible.**
-3. **P2 — local analytic Class-II/GQTG is retained only as an EFT/control
-   family; the main surviving completion candidate is nonlocal QTG.**
-
-See [ROADMAP.md](ROADMAP.md).
-
-## Novelty policy
-
-The repository explicitly separates:
-
-- **KNOWN**
-- **REPRODUCED HERE**
-- **NEW CALCULATION CANDIDATE**
-- **SYNTHESIS / CRITERION**
-- **CONJECTURE**
-
-in [NOVELTY.md](NOVELTY.md).
-
-No "first", "new theorem", or similar priority claim should be made until the
-derivation is complete and a targeted literature search has been documented.
-
-## Repository map
-
-Core documents:
-
-- [RESEARCH_HANDOFF.md](RESEARCH_HANDOFF.md) — current restart point, completed results, open branches, and next-session instructions.
-- [NOVELTY.md](NOVELTY.md) — novelty/status map and priority-claim policy.
-- [THEORY.md](THEORY.md) — current mathematical skeleton.
-- [ROADMAP.md](ROADMAP.md) — research priorities and open calculations.
-- [docs/principal-safe-screening.md](docs/principal-safe-screening.md) —
-  acceptance criteria.
-- [docs/candidate-scorecard.md](docs/candidate-scorecard.md) — candidate
-  comparison.
-- [docs/open-problems.md](docs/open-problems.md) — unresolved failure modes.
-
-Selected calculations:
-
-- [notes/vector-odd-kinetic-analysis.md](notes/vector-odd-kinetic-analysis.md)
-- [notes/tensor-principal-cone.md](notes/tensor-principal-cone.md)
-- [notes/scalar-tensor-no-go.md](notes/scalar-tensor-no-go.md)
-- [notes/covariant-lift-degeneracy.md](notes/covariant-lift-degeneracy.md)
-- [notes/r4-differentiability.md](notes/r4-differentiability.md)
-- [notes/principal-gate-classII-nlqt.md](notes/principal-gate-classII-nlqt.md) — new-gate comparison of analytic Class-II/GQTG and nonlocal QTG
-
-Reproducible symbolic checks live under [src/symbolic/](src/symbolic/).
-
-## Reproducibility
-
-Install dependencies:
-
-\`\`\`bash
-python -m pip install -r requirements.txt
-\`\`\`
-
-Run all symbolic checks:
-
-\`\`\`bash
-for f in src/symbolic/*.py; do
-  echo "==> $f"
-  python "$f" || exit 1
-done
-\`\`\`
-
-GitHub Actions also runs the symbolic suite on pushes and pull requests once
-the workflow is enabled in this repository.
-
-## Starting references
-
-1. S. A. Hayward, *Formation and Evaporation of Nonsingular Black Holes*,
-   Phys. Rev. Lett. **96**, 031103 (2006).
-2. R. Kase, M. Minamitsuji, S. Tsujikawa, Y.-L. Zhang,
-   *Black hole perturbations in vector-tensor theories: The odd-mode
-   analysis*, JCAP **02** (2018) 048, arXiv:1801.01787.
-3. F. Di Filippo, I. Kolář, D. Kubizňák,
-   *Inner-extremal regular black holes from pure gravity*,
-   Phys. Rev. D **111**, L041505 (2025).
-4. A. Eichhorn, P. G. S. Fernandes,
-   *Regular black holes without mass-inflation instability and gravastars
-   from modified gravity*, Phys. Rev. D **113**, L081501 (2026).
-5. J. Borissova, R. Carballo-Rubio,
-   *Regular black holes from pure gravity in four dimensions*,
-   Phys. Rev. D **113**, 124004 (2026).
-6. A. Colléaux, I. Kolář, T. Málek,
-   *Quasi-topological gravity for 4-dimensional Taub-NUT, near-horizon
-   extreme Kerr, and swirling symmetries*, arXiv:2606.17784.
-
-## License
-
-- **Code:** Apache License 2.0 — see [LICENSE](LICENSE).
-- **Research text, documentation, equations, and original figures:** CC BY
-  4.0 — see [LICENSE-DOCS](LICENSE-DOCS).
-
-## Status
-
-Early-stage research repository. The project is deliberately adversarial:
-candidate models are expected to fail tests, and those failures are treated as
-useful results.
-
-
-## NLQT status: restricted PASS, generic 4D sector still open
-
-The current leading candidate, nonlocal QTG, passes several important gates:
-
-- exact regular spherical background;
-- restored derivative order relative to local QT;
-- zero-free form-factor proof on maximally symmetric backgrounds;
-- zero-kernel proof on the spherical perturbation subspace;
-- ordinary massless-graviton pole structure on flat space.
-
-But the repository does **not** presently claim generic four-dimensional
-principal safety.
-
-Two obstructions remain:
-
-1. the spherical response does not uniquely determine the off-spherical
-   quadratic action;
-2. the nonlocal operator inherits the differentiability of the chosen local
-   QT base action.
-
-Therefore the next NLQT task starts by choosing a differentiable full 4D QT
-base action, not merely by specifying the Hayward response \(h(\psi)\).
-
-See:
-
-- [notes/principal-gate-classII-nlqt.md](notes/principal-gate-classII-nlqt.md)
-- [notes/ss-completion-ambiguity.md](notes/ss-completion-ambiguity.md)
-- [notes/nlqt-base-hessian-inheritance.md](notes/nlqt-base-hessian-inheritance.md)
-- [notes/nlqt-zero-kernel-kinetic-core-status.md](notes/nlqt-zero-kernel-kinetic-core-status.md)
-- [notes/cosmological-heavy-seed-interface.md](notes/cosmological-heavy-seed-interface.md) — Chon et al. heavy-seed cosmological simulation as a realistic outer-boundary benchmark for screened-BH formation/accretion.
-
-
-## Cosmological heavy-seed formation benchmark
-
-The 2026 Nature calculation by Chon et al.,
-
-*Overmassive black holes and little red dots naturally form in simulations*,
-Nature **657**, 621–625 (2026),
-DOI \`10.1038/s41586-026-10985-8\`,
-
-is used as a **realistic outer-boundary benchmark**, not as a direct
-strong-field test.
-
-The simulation resolves cosmological collapse and BH feeding down to
-approximately \(500\) au in a dedicated accretion zoom, while the
-horizon/core scale of a \(10^6M_\odot\) BH is many orders of magnitude
-smaller.
-
-The repository therefore separates
-
-\[
-\text{cosmological feeding}
-\longrightarrow
-\text{strong-field inner closure}
-\longrightarrow
-\text{radiative / kinetic feedback}.
-\]
-
-Current interface pieces:
-
-- [notes/cosmological-heavy-seed-interface.md](notes/cosmological-heavy-seed-interface.md)
-  — source/subgrid audit and coupling design;
-- [data/heavy_seed_source_envelope.csv](data/heavy_seed_source_envelope.csv)
-  — source-stated anchors and clearly labelled operational phase descriptors;
-- [src/numerical/heavy_seed_boundary_harness.py](src/numerical/heavy_seed_boundary_harness.py)
-  — replaceable inner-boundary closure;
-- [src/numerical/heavy_seed_sed_adapter.py](src/numerical/heavy_seed_sed_adapter.py)
-  — baseline broken-power-law radiation adapter;
-- [src/numerical/heavy_seed_feedback_sensitivity.py](src/numerical/heavy_seed_feedback_sensitivity.py)
-  — end-to-end feedback sensitivity plumbing;
-- [src/numerical/heavy_seed_timescale_separation.py](src/numerical/heavy_seed_timescale_separation.py)
-  — quasi-stationary inner-solution timescale check.
-
-The paper's full simulation outputs are not public in the cited data release;
-the Nature data-availability statement says they are available from the
-corresponding author on reasonable request.  The repository therefore avoids
-presenting hand-read figure values as exact source data.
-
-
-## SMS collapse formation gate
-
-The heavy-seed benchmark now distinguishes three different pieces of physics:
-
-\[
-\boxed{
-\text{cosmological feeding}
-\rightarrow
-\text{SMS radial instability}
-\rightarrow
-\text{post-GRI fate}
-\rightarrow
-\text{BH/screened-object accretion}.
-}
-\]
-
-Saio et al. (2024) provide a GR radial-mode benchmark
-\(M_{\rm crit}(\dot M_*)\), including the very small compactness at GRI onset.
-Nagele & Umeda (2024) then show with GR hydrodynamics that GRI does **not**
-automatically imply BH formation: Pop III models can collapse or undergo
-thermonuclear pulsations depending non-monotonically on the accretion rate.
-
-For a genuinely high-curvature screening theory, the most direct formation
-test is therefore the nonlinear evolution of a GR-collapse branch after GRI,
-not an ad hoc shift of the weak-field stellar threshold.
-
-See:
-
-- [notes/sms-gr-instability-formation-gate.md](notes/sms-gr-instability-formation-gate.md)
-- [notes/sms-post-gri-fate-gate.md](notes/sms-post-gri-fate-gate.md)
-- [src/numerical/sms_gri_benchmark.py](src/numerical/sms_gri_benchmark.py)
-- [src/numerical/sms_gri_curvature_separation.py](src/numerical/sms_gri_curvature_separation.py)
-- [src/numerical/sms_post_gri_fate_benchmark.py](src/numerical/sms_post_gri_fate_benchmark.py)
-- [notes/sms-formation-systematics.md](notes/sms-formation-systematics.md) — constant-rate versus cosmological variable-accretion applicability.
-- [notes/sms-screening-activation-scale.md](notes/sms-screening-activation-scale.md) — GR-to-screened matching radius from curvature-scale separation.
-- [notes/sms-gr-collapse-endpoints.md](notes/sms-gr-collapse-endpoints.md) — rotating full-GR endpoint benchmarks for horizon/remnant/disk/ejecta comparisons.
+コードは [Apache-2.0](LICENSE)、研究文章・式・図は [CC BY 4.0](LICENSE-DOCS)。計算の再現、先行研究、条件付きの推論、未解決の物理を区別して記録します。
