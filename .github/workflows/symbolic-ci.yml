@@ -1,95 +1,58 @@
+# Full reproducibility only. Normal PRs use pr-checks.yml.
+# Name retained so symbolic-ci-monitor.yml continues reporting full runs.
 name: Symbolic CI
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "src/symbolic/**"
-      - "src/numerical/**"
-      - "data/heavy_seed_source_envelope.csv"
-      - "requirements.txt"
-      - ".github/workflows/symbolic-ci.yml"
-  pull_request:
-    paths:
-      - "src/symbolic/**"
-      - "src/numerical/**"
-      - "data/heavy_seed_source_envelope.csv"
-      - "requirements.txt"
-      - ".github/workflows/symbolic-ci.yml"
+  schedule:
+    - cron: '23 19 * * 0' # Weekly, Monday 04:23 JST (Sunday 19:23 UTC).
   workflow_dispatch:
 
 permissions:
   contents: read
 
+# Do not auto-cancel full runs. PRs have their own independent cancellation group.
+concurrency:
+  group: full-reproducibility-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
-  symbolic:
-    name: symbolic (Python ${{ matrix.python-version }})
+  python:
+    name: Full Python ${{ matrix.python }} / shard ${{ matrix.shard }}
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11", "3.12"]
-
+        python: ['3.11', '3.12']
+        shard: [0, 1, 2, 3]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
           cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Generate complete target list
+        run: python scripts/ci/checks.py plan --full --plan "$RUNNER_TEMP/ci-plan.json"
+      - name: Run the complete suite in disjoint, isolated shards
+        run: >-
+          python scripts/ci/checks.py run --plan "$RUNNER_TEMP/ci-plan.json"
+          --shard ${{ matrix.shard }} --shards 4
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
+  selector-tests:
+    name: CI selector tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/ci/test_checks.py
 
-      - name: Compile research scripts
-        run: |
-          python -m compileall -q src/symbolic src/numerical
-
-      - name: Run symbolic assertions
-        shell: bash
-        run: |
-          set -uo pipefail
-          mapfile -t files < <(find src/symbolic -maxdepth 1 -type f -name '*.py' | sort)
-          if [ "${#files[@]}" -eq 0 ]; then
-            echo "No symbolic scripts found."
-            exit 1
-          fi
-
-          status=0
-          for file in "${files[@]}"; do
-            echo "::group::${file}"
-            if ! python "${file}"; then
-              echo "::error file=${file}::symbolic assertion failed"
-              status=1
-            fi
-            echo "::endgroup::"
-          done
-          exit "${status}"
-
-      - name: Run numerical harnesses
-        shell: bash
-        run: |
-          set -uo pipefail
-          mapfile -t files < <(find src/numerical -maxdepth 1 -type f -name '*.py' | sort)
-          status=0
-          for file in "${files[@]}"; do
-            echo "::group::${file}"
-            if ! python "${file}"; then
-              echo "::error file=${file}::numerical harness failed"
-              status=1
-            fi
-            echo "::endgroup::"
-          done
-          exit "${status}"
-
-      - name: Summary
-        if: always()
-        run: |
-          echo "### Symbolic CI" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Python: ${{ matrix.python-version }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Symbolic scripts: $(find src/symbolic -maxdepth 1 -type f -name '*.py' | wc -l)" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Numerical harnesses: $(find src/numerical -maxdepth 1 -type f -name '*.py' | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+  lean:
+    uses: ./.github/workflows/chronology-six-gate.yml

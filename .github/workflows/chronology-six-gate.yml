@@ -1,40 +1,19 @@
-name: Chronology six-gate checks
+# Python checks are owned by pr-checks.yml / symbolic-ci.yml: no duplicate job.
+name: Lean checks
 on:
-  pull_request:
-    paths:
-      - 'src/symbolic/chronology_six_gate_checks.py'
-      - 'src/lean/ChronologySixGate.lean'
-      - '.github/workflows/chronology-six-gate.yml'
+  workflow_call:
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  calculations:
-    name: Six-gate calculations (Python ${{ matrix.python }})
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
-    strategy:
-      fail-fast: false
-      matrix:
-        python: ['3.11', '3.12']
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python }}
-      - run: python -m pip install sympy==1.14.0 mpmath==1.3.0
-      - name: Algebra and independent scalar time-evolution checks
-        run: python src/symbolic/chronology_six_gate_checks.py --json "$RUNNER_TEMP/six-gate.json"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: chronology-six-gate-python-${{ matrix.python }}
-          path: ${{ runner.temp }}/six-gate.json
   conditional-causal-lemma:
     name: Conditional causal-order lemma (Lean 4.19.0)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Install pinned Lean release
         shell: bash
         run: |
@@ -45,13 +24,23 @@ jobs:
           mkdir -p "$RUNNER_TEMP/lean"
           tar --use-compress-program=unzstd -xf "$RUNNER_TEMP/lean.tar.zst" \
             --strip-components=1 -C "$RUNNER_TEMP/lean"
-      - name: Kernel check; print explicit axiom dependencies
+      - name: Kernel-check standalone Lean files; retain axiom output
         shell: bash
         run: |
           set -euo pipefail
           "$RUNNER_TEMP/lean/bin/lean" --version
-          "$RUNNER_TEMP/lean/bin/lean" src/lean/ChronologySixGate.lean | tee "$RUNNER_TEMP/lean-check.txt"
+          mapfile -d '' -t files < <(git ls-files -z 'src/lean/*.lean')
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo 'No Lean files remain; no theorem is claimed checked.'
+            exit 0
+          fi
+          for file in "${files[@]}"; do
+            echo "Checking $file"
+            "$RUNNER_TEMP/lean/bin/lean" "$file"
+          done | tee "$RUNNER_TEMP/lean-check.txt"
       - uses: actions/upload-artifact@v4
         with:
           name: chronology-conditional-causal-lemma
           path: ${{ runner.temp }}/lean-check.txt
+          if-no-files-found: ignore
+          retention-days: 7

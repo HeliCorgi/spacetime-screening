@@ -55,20 +55,36 @@ Taub–NUTの未検証部分を埋める前に、**既知の別模型で検査�
 | 新規性・既知結果の区別 | [NOVELTY.md](NOVELTY.md) |
 | 時間遡行についての最新の6条件判定 | [six-gate audit](notes/heterotic-taubnut-six-gate-audit.md) |
 
-## 再現と検証
+## 再現と検証・AIの再開手順
+
+**次のAIも、まず [AGENTS.md](AGENTS.md) と [CI運用ルール](docs/ci-policy.md) を読んでください。**
+会話履歴に頼らず、検査対象・実行方法・結果の報告を引き継げるようにしています。
+
+| 変更／実行の目的 | 自動検査 |
+|---|---|
+| README・ノートだけ | ローカルリンク等の軽量検査。研究計算なし |
+| 独立した計算スクリプト | PR全体の変更・影響範囲をPython 3.12で検査 |
+| 共有コード・依存・入力データ、または影響不明 | Python全件に拡大（通常PRは3.12） |
+| 週次／手動の完全検証 | 全スクリプトをPython 3.11／3.12で実行 |
+| Leanの変更 | Leanを検査。PythonだけのPRでLeanを重複実行しない |
+
+[PR checks](.github/workflows/pr-checks.yml) は対象と理由を記録し、古いPR runを自動キャンセルします。
+[Symbolic CI](.github/workflows/symbolic-ci.yml) は週次・手動の全件再現性検査です。
+**精度やassertを削らず、無関係な計算・重複実行を減らします。**
 
 ```bash
-python -m pip install sympy==1.14.0 mpmath==1.3.0
-python src/symbolic/chronology_six_gate_checks.py --json /tmp/six-gate.json
+python scripts/ci/test_checks.py
+# コミット済みPR差分（未コミット変更は含まれません）
+python scripts/ci/checks.py plan --base origin/main --head HEAD --plan /tmp/ci-plan.json
+python scripts/ci/checks.py docs --plan /tmp/ci-plan.json
+python -m pip install -r requirements.txt
+python scripts/ci/checks.py run --plan /tmp/ci-plan.json
 ```
 
-Lean 4.19.0がある場合：
-
-```bash
-lean src/lean/ChronologySixGate.lean
-```
-
-[専用GitHub Actions](.github/workflows/chronology-six-gate.yml) がPython 3.11／3.12とLeanを検査します。コードcommit `1a18f679…` の専用run #1は3jobとも成功。数値検算は50桁／80桁で比較しています。**CIは記述した計算を検査するもので、6条件の物理的成立を保証しません。**
+六条件の検算を直接再現する場合は、引き続き
+`python src/symbolic/chronology_six_gate_checks.py --json /tmp/six-gate.json` を使えます。
+Leanは [再利用workflow](.github/workflows/chronology-six-gate.yml) に集約しています。
+**CIは選択された計算の検査であり、6条件の物理的成立を保証しません。**
 
 ## ライセンス
 
