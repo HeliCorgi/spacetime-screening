@@ -46,7 +46,7 @@ algebra is in
 | D1 | Taub and NUT regions are geometrically connected? | **YES / PUBLISHED** |
 | D2 | Exact metric+dilaton force zero wave flux at \(x=1\)? | **NO / CALCULATED HERE** |
 | D3 | Chronology-relevant untwisted BRST-physical string state exists? | **YES / EXPLICIT CONSTRUCTION** |
-| D4 | Such a state has nonzero Taub-to-NUT transmission? | **OPEN, but no local minisuperspace wall** |
+| D4 | Such a state has nonzero Taub-to-NUT transmission? | **YES at flux-normalized free-string/minisuperspace level: T=0.998130316...** |
 | D5 | Interactions and finite-\(g_s\) effects remain controlled? | **OPEN** |
 | D6 | Gauge-invariant observable realizes return to the causal past? | **OPEN** |
 | D7 | Time-machine configuration forms predictively from regular chronal data? | **NOT ESTABLISHED** |
@@ -797,6 +797,68 @@ PASSED at one exact anomaly-free model point.}
 
 The next unresolved gate is a fully normalized physical transmission
 observable and then interactions/backreaction.
+
+
+# 13.2 Flux-normalized transmission gate: passed in the free-string channel
+
+The explicit BRST state has now been inserted into the exact hypergeometric
+radial problem and normalized by conserved flux.
+
+See:
+
+notes/heterotic-taubnut-transmission-amplitude.md
+
+and:
+
+src/symbolic/heterotic_taubnut_transmission_amplitude.py
+
+For
+
+\[
+\omega=\frac{\sqrt{10}}2,
+\]
+
+the exact reflection and transmission probabilities are
+
+\[
+\boxed{
+\mathcal R
+=
+0.0018696839355381227\ldots
+}
+\]
+
+and
+
+\[
+\boxed{
+\mathcal T
+=
+0.9981303160644618773\ldots
+}.
+\]
+
+They obey
+
+\[
+\boxed{
+\mathcal R+\mathcal T=1
+}
+\]
+
+exactly by the Wronskian/connection-coefficient identity.
+
+Thus the first NUT chronology horizon is not merely locally penetrable: for
+this explicit physical state the flux-normalized free one-string channel is
+almost transparent.
+
+The Taub region is not a conventional stationary scattering exterior, so
+\(\mathcal T\) is most rigorously a reciprocal horizon↔NUT coefficient for
+the analytically continued mode. It is nevertheless the natural free-string
+Taub→NUT barrier-transmission magnitude.
+
+The remaining chronology-protection gates are now interaction,
+finite-\(g_s\) backreaction and a relational closed-timelike-return observable.
 
 # 14. Binary verdict
 
