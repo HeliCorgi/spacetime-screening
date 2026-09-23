@@ -3,6 +3,39 @@
 **研究目的：現実の3+1次元時空に、送信者が選んだ情報を過去へ届ける通信路を作れるか。**
 幾何、支える量子物質、有限の装置、受信記録を同じ物理過程として成立させることを目指します。
 
+## 四次元アーキテクチャ探索 — 初回バッチ
+
+> **原プロトコルに沿う探索・記録・反証検査の初版です。7候補／部分構成、2,282計算点で A=0・B=3・C=4。**
+> **過去通信の成功例は得ていません。** Bは未検証の仮定が残る候補、Cは指定した範囲での障害です。分類数は自然界の確率ではありません。
+
+| 初回探索 | 判定 |
+|---|---|
+| 通常の四次元局所source／未時間差接続の回転型 | **C**：それぞれの時間構造では、後の操作が過去の記録を変える経路を作れない |
+| Schwarzschild薄殻、EOS勾配0〜1 | **C**：指定した受動的な半径方向安定性を満たさない |
+| 同じ薄殻、EOS勾配4へ変更 | **B**：100点中14点が半径方向安定。物質・全安定性・過去の確率は未構成 |
+| 質量で時刻接続を制御するFKZリング | **B**：負の支持源を仮定した古典的経路。量子装置として未成立 |
+| 独立した支柱付きCasimirセルを負の総線源にする | **C**：明記した支持条件では装置全体のエネルギーが正 |
+| 別スケールの厚さを持つ四次元collar | **B**：24点中18点が局所平坦QEIの必要条件を通るだけ。自己支持状態は未供給 |
+
+**[科学的結果・実在論文・適用範囲](notes/architecture-search-batch-v1.md)** ／ **[実行手順と未実装範囲](docs/architecture-search.md)** ／ [候補台帳](architecture/batch-v1.json) ／ [原プロトコル](docs/4d-past-signalling-protocol.txt)
+
+台帳から機械可読JSONとMarkdown報告を生成します。全候補を別実装で検算し、未計算の受信確率は0ではなくnullにします。
+**A主張は自動clearanceを停止し、人間の審査を必須にします。** この版は自動マージを行いません。
+反証検査は同じ作成者による別プログラムであり、独立研究者の査読ではありません。全模型空間の網羅でもありません。
+
+```bash
+python -m pip install -r architecture/requirements.lock
+python scripts/test_architecture_search.py
+python scripts/architecture_search.py run --output /tmp/architecture/raw
+python scripts/architecture_verify.py --records /tmp/architecture/raw/candidates.json --output /tmp/architecture/verification.json
+python scripts/architecture_search.py finalize --records /tmp/architecture/raw/candidates.json --verification /tmp/architecture/verification.json --output /tmp/architecture/verified --gate
+```
+
+[Actions定義](.github/workflows/architecture-search.yml)は生成・候補ごとの反証・報告を分離します。**この配布時点ではローカル検算のみで、リモート実行済みとはしていません。**
+既存のNUT・MMP・四次元支持源の成果は以下に保持しています。
+
+---
+
 ## 現在地 — 2026-09-24：量子状態から、装置と初期重力応答まで
 
 > **正常な四次元量子場で、喉が要求する密度と全圧力を一点では再現できました。**
