@@ -1,0 +1,394 @@
+{
+  "schema_version": 1,
+  "batch_id": "rn-a-target-v2",
+  "source_base_sha": "89f55b1e3f559c7ffffd0665ce520816f122d52e",
+  "protocol_file": "docs/4d-past-signalling-protocol.txt",
+  "protocol_sha256": "3b024b673c099d1886112372fe9b0b6095505380c6c202d93c5ea8b9389159dd",
+  "precision_dps": [
+    50,
+    80
+  ],
+  "search_mode": "bounded A-directed continuation; honest B/C classification",
+  "candidates": [
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "quantum_state": "No renormalized shell state or quantum state on the proposed eventual handle is supplied. No field is promoted from its classical stress to a physical quantum preparation.",
+      "support_accounting": {
+        "complete": false,
+        "details": "Shell proper energy, both-exterior Maxwell Killing energy and pressure-inclusive Komar identity computed. The latter sums to two ADM masses. This accounts for required sources, not physical fabrication; total apparatus is absent."
+      },
+      "sender_intervention": {
+        "description": "Proposed future sender encodes b by opposite signs of a compact-support source. Not executed on this geometry.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite-time stored receiver record Y; full detector not constructed.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "value": null,
+        "computed": false,
+        "receiver_precedes_sender": null,
+        "error_bound": null,
+        "interpretation": "Unknown; not replaced by zero or by a transmission coefficient."
+      },
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "code": [
+        "scripts/architecture_rn_models.py",
+        "scripts/architecture_rn_search.py",
+        "scripts/architecture_rn_verify.py",
+        "scripts/architecture_search.py"
+      ],
+      "approximation_order": "Exact classical distributional Einstein-Maxwell-shell matching and linear spherical perturbations. No zero-thickness renormalized stress; no semiclassical backreaction solution or full physical apparatus.",
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "assumption_changes": [
+        {
+          "field": "bulk geometry/field content",
+          "old": "Schwarzschild vacuum with Q=0",
+          "new": "Reissner-Nordstrom with radial Maxwell flux Q!=0",
+          "reason": "Test the known charge-stabilization route rather than relax eta above one."
+        },
+        {
+          "field": "EOS slope",
+          "old": "eta=4 in the previous conditional stability candidate",
+          "new": "eta in [0,1], witness eta=3/4",
+          "reason": "Search for stability without a super-unit constitutive derivative."
+        },
+        {
+          "field": "surface constitutive explanation",
+          "old": "No surface action",
+          "new": "Optional P(X)=C*(X/X0)^alpha+B, alpha=(1+1/eta)/2",
+          "reason": "Check intrinsic positive kinetic coefficients while explicitly retaining B as an unsupplied negative vacuum-energy offset."
+        }
+      ],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "partial",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "6": {
+          "name": "stability",
+          "state": "partial",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        }
+      },
+      "candidate_id": "rn-causal-slope-support",
+      "title": "Aを狙う電荷付き薄殻：0〜1のEOS勾配で安定な支持部品",
+      "candidate_kind": "geometry_and_support",
+      "geometry": "3+1D RN: ds^2=-f(r)dt^2+dr^2/f(r)+r^2 dOmega^2, f=1-2M/r+Q^2/r^2. Two exteriors r>=a0>r_plus glued at S^2; no naked singularity or horizon in the retained region.",
+      "matter_content": "Classical Maxwell radial flux; neutral distributional shell sigma<0, p>0. Opposite charges at the two asymptotic ends. An intrinsic scalar P(X) can match the constitutive law, but its negative vacuum offset is NOT a constructed 4D quantum material.",
+      "topology": "R(time) x (R(radial) x S^2) with two asymptotically flat ends. An extra same-exterior connection and time-dependent mouth preparation remain unconstructed.",
+      "boundary_conditions": "Fixed equal M and Q^2 on both ends; neutral throat, continuous Maxwell flux and no shell charge reservoir; Israel junction, no radial energy flux; local affine EOS p=p0+eta*(sigma-sigma0). This is not the charged-shell/linear-through-origin EOS of the 2024 thermodynamic paper.",
+      "symmetries": [
+        "Spherical shell; radial perturbations only; angular geometry and area 4pi a^2 retained."
+      ],
+      "stress_energy": {
+        "kind": "classical_distributional_required_source",
+        "formula": "rho_EM=Q^2/(8piG r^4), pr_EM=-rho_EM, pt_EM=rho_EM; sigma0=-sqrt(f0)/(2piG a0), p0=(1-M/a0)/(4piG a0 sqrt(f0)). Radial complete-ray ANEC at Killing E=1 is -1/(2piG a0).",
+        "renormalized": false,
+        "full_tensor_matched": true
+      },
+      "backreaction": {
+        "level": "classical_distributional_matching",
+        "details": "All 4D bulk Einstein components and shell junction self-gravity checked. Geometry is a seed requiring a shell, not generated from a known quantum state."
+      },
+      "causal_structure": "Static support seed has a real global time and no past channel. It is a component candidate for an eventual time-shifted same-exterior handle, not itself a time machine.",
+      "assumptions": [
+        "Bulk four dimensions retained; a timelike surface source has 2+1-dimensional worldvolume but is embedded in the complete 3+1D junction.",
+        "Charge is fixed during the linear radial perturbation; no pair-production/discharge evolution included.",
+        "Eta is a constitutive derivative, not automatically a physical signal speed. Positive intrinsic kinetic coefficients are checked only for the explicitly assumed surface P(X).",
+        "No insertion of a free negative time delay into the receiver distribution.",
+        "A positive radial Hessian is not stability against all perturbations and is not an operational signalling claim."
+      ],
+      "stability": "a0^2 Vpp>0 in 179 of 1620 admissible grid points; 270 invalid exterior points are excluded, not treated as physical C results. An open strict-subextremal box is rationally certified. Nonradial, charge-loss, material and quantum stability uncomputed.",
+      "obstructions": [
+        "A classical canonical 4D scalar plus Maxwell has nonnegative null stress and cannot alone replace the required negative radial shell ANEC. This does not exclude quantum matter.",
+        "An exactly extremal limiting throat has vanishing lapse; finite epsilon>0 only. Its limiting zero shell proper energy does not remove the negative affine null integral."
+      ],
+      "unresolved_assumptions": [
+        "A finite-thickness quantum source with computed renormalized full stress and the required EOS is absent.",
+        "Negative surface vacuum offset, supports, pump, field preparation and full apparatus are not supplied.",
+        "Nonradial and quantum stability, electric discharge and time-dependent mouth control remain uncomputed.",
+        "A same-exterior second path with nontrivial cycle time holonomy has not been constructed.",
+        "No past do(0)/do(1) joint probability, finite receiver memory or controllable operation on such a cycle is derived."
+      ],
+      "scope": "B is a stronger conditional support component than the uncharged eta=4 case, not a successful channel. Charge-assisted stability is a known result; this batch reproduces it with an exact nonextremal witness and an independent certificate, and audits source/clock costs.",
+      "literature": [
+        {
+          "id": "ER",
+          "title": "Linearized stability of charged thin-shell wormholes",
+          "authors": "Ernesto F. Eiroa; Gustavo E. Romero",
+          "year": 2004,
+          "url": "https://arxiv.org/abs/gr-qc/0303093",
+          "used_for": "Published charge-assisted radial stability; not a quantum-source or past-channel construction.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        },
+        {
+          "id": "E08",
+          "title": "Stability of thin-shell wormholes with spherical symmetry",
+          "authors": "Ernesto F. Eiroa",
+          "year": 2008,
+          "url": "https://arxiv.org/abs/0805.1403",
+          "used_for": "Eqs. (9)-(13),(35)-(37): shell source, affine EOS and independent stability discriminant. PDF text read; screenshot service failed; no plotted data used.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        },
+        {
+          "id": "E24",
+          "title": "Dynamical and thermodynamical stability of a charged thin-shell wormhole",
+          "authors": "Ernesto F. Eiroa; Griselda Figueroa-Aguirre; Miguel L. Penafiel; Santiago E. Perez Bergliaffa",
+          "year": 2024,
+          "url": "https://arxiv.org/abs/2408.14328",
+          "used_for": "Scope comparison only: charged surface, EOS and thermodynamic choices differ. No thermodynamic theorem transferred to this neutral-shell affine EOS.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        }
+      ],
+      "status": "B"
+    },
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "quantum_state": "No renormalized shell state or quantum state on the proposed eventual handle is supplied. No field is promoted from its classical stress to a physical quantum preparation.",
+      "support_accounting": {
+        "complete": false,
+        "details": "Shell proper energy, both-exterior Maxwell Killing energy and pressure-inclusive Komar identity computed. The latter sums to two ADM masses. This accounts for required sources, not physical fabrication; total apparatus is absent."
+      },
+      "sender_intervention": {
+        "description": "Proposed future sender encodes b by opposite signs of a compact-support source. Not executed on this geometry.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite-time stored receiver record Y; full detector not constructed.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "value": null,
+        "computed": false,
+        "receiver_precedes_sender": null,
+        "error_bound": null,
+        "interpretation": "Unknown; not replaced by zero or by a transmission coefficient."
+      },
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "code": [
+        "scripts/architecture_rn_models.py",
+        "scripts/architecture_rn_search.py",
+        "scripts/architecture_rn_verify.py",
+        "scripts/architecture_search.py"
+      ],
+      "approximation_order": "Exact classical distributional Einstein-Maxwell-shell matching and linear spherical perturbations. No zero-thickness renormalized stress; no semiclassical backreaction solution or full physical apparatus.",
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "assumption_changes": [
+        {
+          "field": "clock sewing",
+          "old": "t_right=t_left",
+          "new": "t_right=t_left+Delta, with a single seam",
+          "reason": "Test whether an apparent free backward delay is a physical cycle holonomy or just separate clock origins."
+        }
+      ],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "6": {
+          "name": "stability",
+          "state": "partial",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "partial",
+          "meaning": "Global causal obstruction proved; a detector probability model has not been constructed."
+        }
+      },
+      "candidate_id": "rn-single-seam-offset",
+      "title": "偽陽性対照：二つの外部を一度つなぐ時計差は過去通信にならない",
+      "candidate_kind": "channel",
+      "geometry": "3+1D RN: ds^2=-f(r)dt^2+dr^2/f(r)+r^2 dOmega^2, f=1-2M/r+Q^2/r^2. Two exteriors r>=a0>r_plus glued at S^2; no naked singularity or horizon in the retained region.",
+      "matter_content": "Classical Maxwell radial flux; neutral distributional shell sigma<0, p>0. Opposite charges at the two asymptotic ends. An intrinsic scalar P(X) can match the constitutive law, but its negative vacuum offset is NOT a constructed 4D quantum material.",
+      "topology": "The same two-ended RN seed, with t_right=t_left+Delta at its only seam; Delta is constant and time is not periodically identified.",
+      "boundary_conditions": "One seam only, orientation-preserving isometric constant clock shift; independent real time origins at two asymptotic infinities. No additional external path joins the ends.",
+      "symmetries": [
+        "Spherical shell; radial perturbations only; angular geometry and area 4pi a^2 retained."
+      ],
+      "stress_energy": {
+        "kind": "classical_distributional_required_source",
+        "formula": "rho_EM=Q^2/(8piG r^4), pr_EM=-rho_EM, pt_EM=rho_EM; sigma0=-sqrt(f0)/(2piG a0), p0=(1-M/a0)/(4piG a0 sqrt(f0)). Radial complete-ray ANEC at Killing E=1 is -1/(2piG a0).",
+        "renormalized": false,
+        "full_tensor_matched": true
+      },
+      "backreaction": {
+        "level": "classical_distributional_matching",
+        "details": "All 4D bulk Einstein components and shell junction self-gravity checked. Geometry is a seed requiring a shell, not generated from a known quantum state."
+      },
+      "causal_structure": "T=t_left on the left and T=t_right-Delta on the right is global; g^{-1}(dT,dT)=-1/f<0. Future causal curves increase T. Two seam crossings have opposite offset signs.",
+      "assumptions": [
+        "Exactly one orientation-preserving seam between separate ends; no periodic time or second exterior connection.",
+        "Sender and receiver communicate along future-directed causal trajectories of the specified metric."
+      ],
+      "stability": "Uses an admissible fixed RN seed. Its causal obstruction does not depend on radial instability or a conjectured chronology horizon.",
+      "obstructions": [
+        "A real global temporal function orders the entire geometry; a negative coordinate-time difference across the seam is not arrival in the same receiver clock past."
+      ],
+      "unresolved_assumptions": [],
+      "scope": "C excludes the stated single-seam constant-offset channel, not moving mouths, multi-path handles or quantum time-shifted geometries.",
+      "literature": [
+        {
+          "id": "ER",
+          "title": "Linearized stability of charged thin-shell wormholes",
+          "authors": "Ernesto F. Eiroa; Gustavo E. Romero",
+          "year": 2004,
+          "url": "https://arxiv.org/abs/gr-qc/0303093",
+          "used_for": "Published charge-assisted radial stability; not a quantum-source or past-channel construction.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        },
+        {
+          "id": "E08",
+          "title": "Stability of thin-shell wormholes with spherical symmetry",
+          "authors": "Ernesto F. Eiroa",
+          "year": 2008,
+          "url": "https://arxiv.org/abs/0805.1403",
+          "used_for": "Eqs. (9)-(13),(35)-(37): shell source, affine EOS and independent stability discriminant. PDF text read; screenshot service failed; no plotted data used.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        },
+        {
+          "id": "MTY",
+          "title": "Wormholes, Time Machines, and the Weak Energy Condition",
+          "authors": "Morris; Thorne; Yurtsever",
+          "year": 1988,
+          "url": "https://doi.org/10.1103/PhysRevLett.61.1446",
+          "used_for": "Contrast with a genuine mouth/outer-route closed path. Constant-offset single-seam temporal-function audit is derived in the present note.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        }
+      ],
+      "status": "C"
+    }
+  ],
+  "coverage": {
+    "not_assessed_now": [
+      {
+        "class": "Full quantum source and finite apparatus",
+        "reason": "No renormalized material model sustaining the RN shell or finite hardware constructed."
+      },
+      {
+        "class": "Same-exterior moving mouths / multi-loop geometry",
+        "reason": "Cannot replace it by a constant time offset between separate infinities."
+      },
+      {
+        "class": "2026 topological-wormhole one-loop model",
+        "reason": "Literature screened only. It assumes a classical anisotropic support and does not supply a self-consistent controllable past experiment."
+      },
+      {
+        "class": "Full nonradial/quantum/charge-loss evolution",
+        "reason": "Radial potential and intrinsic EFT do not settle these modes."
+      }
+    ]
+  }
+}

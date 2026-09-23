@@ -1,0 +1,78 @@
+name: RN A-target search
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'architecture/rn-a-target-v2.json'
+      - 'architecture/requirements.lock'
+      - 'scripts/architecture_rn_*.py'
+      - 'scripts/test_architecture_rn_search.py'
+      - 'scripts/architecture_search.py'
+      - 'docs/4d-past-signalling-protocol.txt'
+      - 'notes/rn-a-target-candidate.md'
+      - '.github/workflows/architecture-rn-search.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: rn-a-target-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r architecture/requirements.lock
+      - name: Preserve original protocol tests and run RN negative controls
+        run: |
+          python scripts/test_architecture_search.py
+          python scripts/test_architecture_rn_search.py
+      - name: Generate records with no invented past receiver law
+        run: python scripts/architecture_rn_search.py run --output "$RUNNER_TEMP/rn/raw"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: rn-a-target-raw
+          path: ${{ runner.temp }}/rn/raw/
+          retention-days: 30
+          if-no-files-found: warn
+  verify:
+    needs: generate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r architecture/requirements.lock
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: rn-a-target-raw
+          path: ${{ runner.temp }}/rn/raw
+      - name: Separate verifier without importing the RN generator
+        run: >-
+          python scripts/architecture_rn_verify.py
+          --records "$RUNNER_TEMP/rn/raw/candidates.json"
+          --output "$RUNNER_TEMP/rn/verification.json"
+      - name: Verify provenance and block any claimed A before clearance
+        run: >-
+          python scripts/architecture_rn_search.py finalize
+          --records "$RUNNER_TEMP/rn/raw/candidates.json"
+          --verification "$RUNNER_TEMP/rn/verification.json"
+          --output "$RUNNER_TEMP/rn/verified" --gate
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: rn-a-target-report
+          path: ${{ runner.temp }}/rn/
+          retention-days: 30
+          if-no-files-found: warn
