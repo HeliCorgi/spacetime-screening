@@ -1,0 +1,643 @@
+4D Past-Signalling Architecture Search Protocol
+
+1. Purpose
+
+This document defines an automated research protocol for searching for candidate mechanisms capable of transmitting sender-controlled information into the past within 3+1-dimensional semiclassical gravity.
+
+The project does not assume either of the following conclusions in advance:
+
+1. Past-directed controllable communication is possible.
+2. Past-directed controllable communication is universally impossible.
+
+The purpose is to systematically search the specified model space, construct candidate configurations where possible, and quantitatively identify obstructions where they arise.
+
+The primary target is not merely the existence of a wormhole, closed timelike curve, temporal correlation, or negative-energy configuration.
+
+The primary target is a controllable causal communication channel.
+
+⸻
+
+2. Primary Communication Criterion
+
+Let the future sender choose a classical bit
+
+[
+b \in {0,1}.
+]
+
+Let the past receiver measure an observable (Y).
+
+A candidate constitutes a successful past-signalling mechanism only if it demonstrates that
+
+[
+P(Y\mid do(b=0))
+\neq
+P(Y\mid do(b=1)).
+]
+
+The distinction must arise from the sender’s controllable choice rather than from a pre-existing correlation, post-selection artifact, or uncontrolled boundary condition.
+
+The candidate must also satisfy the following physical requirements:
+
+- a self-consistent 3+1D semiclassical spacetime;
+- a specified quantum state or matter source;
+- a calculable renormalized stress-energy tensor;
+- accounting for the stress-energy required to create and maintain the geometry;
+- causal propagation from the sender’s intervention to the receiver’s measurement;
+- consistency of the relevant initial and boundary data;
+- stability analysis appropriate to the model;
+- explicit identification of any quantum inequalities or energy-condition constraints;
+- no hidden use of the desired communication result as an input assumption.
+
+A result based only on the existence of a CTC or wormhole does not satisfy the primary criterion.
+
+⸻
+
+3. Architecture Search Space
+
+The automated search should investigate, where mathematically and computationally tractable, the following classes of spacetime and matter configurations.
+
+3.1 Wormhole geometries
+
+- traversable wormholes
+- ring wormholes
+- toroidal throats
+- non-spherical throats
+- multi-mouth wormholes
+- multiple-loop causal structures
+- thin-shell wormholes
+- thick-shell wormholes
+- rotating wormholes
+- non-static wormholes
+- time-shifted wormhole mouths
+- moving wormhole mouths
+- configurations involving relative mouth velocity
+- configurations involving multiple wormhole mouths
+
+The search must not assume that spherical symmetry is necessary unless the candidate model explicitly imposes it.
+
+⸻
+
+3.2 Quantum-state configurations
+
+Investigate, where applicable:
+
+- vacuum states
+- squeezed vacuum states
+- multimode squeezed states
+- anisotropic squeezed states
+- coherent states
+- coherent + squeezed hybrid states
+- non-vacuum quantum states
+- massive scalar fields
+- massless scalar fields
+- fermionic fields
+- Maxwell fields
+- conformal fields
+- interacting quantum fields
+- large-(N) field content
+- states involving nontrivial boundaries
+- Casimir configurations
+- finite Casimir apparatus
+- localized negative-energy pulses
+
+For every quantum-state candidate, calculate or bound
+
+[
+\langle T_{\mu\nu}\rangle_{\rm ren}.
+]
+
+Where possible, determine whether the required stress tensor can be maintained for the required duration and spatial extent.
+
+⸻
+
+3.3 Matter and support structures
+
+The search should distinguish between:
+
+1. the quantum source responsible for the desired stress-energy;
+2. ordinary positive-energy structural material;
+3. exotic or anomalous support;
+4. external pumping or state-preparation mechanisms.
+
+A candidate must account for all components contributing to the total stress-energy budget.
+
+The existence of a negative-energy quantum component is not by itself sufficient.
+
+⸻
+
+3.4 Geometry/state coupling
+
+For each candidate, attempt to solve the coupled problem
+
+[
+G_{\mu\nu}+\Lambda g_{\mu\nu}
+
+8\pi G
+\langle T_{\mu\nu}\rangle_{\rm ren}.
+]
+
+The calculation should distinguish between:
+
+- prescribed background geometry;
+- test-field approximation;
+- leading-order gravitational backreaction;
+- semiclassical self-consistent solution;
+- fully time-dependent evolution.
+
+A stress tensor that reproduces the required source locally but produces only a small perturbation of ordinary spacetime must not be classified as a successful wormhole-generation mechanism.
+
+⸻
+
+4. Search Procedure
+
+Each candidate architecture should pass through the following pipeline.
+
+Stage 1: Literature and model identification
+
+Identify the closest published or analytically defined model.
+
+Record:
+
+- geometry;
+- matter content;
+- dimensionality;
+- field equations;
+- boundary conditions;
+- topology;
+- energy conditions;
+- known stability results;
+- known quantum inequalities;
+- known dynamical evolution;
+- known chronology constraints.
+
+The source and scope of every imported assumption must be recorded.
+
+⸻
+
+Stage 2: Classical geometry
+
+Construct the spacetime metric
+
+[
+g_{\mu\nu}(x)
+]
+
+and determine:
+
+- throat structure;
+- causal structure;
+- geodesics;
+- chronology;
+- existence of CTCs where relevant;
+- time orientation;
+- sender-to-receiver causal relation.
+
+A CTC or time-shift alone is not sufficient for success.
+
+⸻
+
+Stage 3: Quantum source
+
+Specify the quantum state and field content.
+
+Calculate or approximate
+
+[
+\langle T_{\mu\nu}\rangle_{\rm ren}.
+]
+
+Determine:
+
+- local energy density;
+- pressures;
+- fluxes;
+- anisotropy;
+- integrated null energy;
+- relevant quantum inequalities;
+- duration of negative-energy regions;
+- spatial support;
+- total energy.
+
+⸻
+
+Stage 4: Backreaction
+
+Insert the calculated stress tensor into the semiclassical Einstein equation.
+
+Determine whether the proposed source actually generates or maintains the required geometry.
+
+The following cases must be distinguished:
+
+Local matching
+
+The source matches the desired stress tensor at one or more points.
+
+Approximate matching
+
+The source reproduces some required components or ratios but not the complete source.
+
+Global matching
+
+The source reproduces the stress tensor throughout the relevant region.
+
+Dynamical self-consistency
+
+The coupled geometry and quantum state remain self-consistent under time evolution.
+
+Only the latter two should be considered strong evidence toward a physical construction.
+
+⸻
+
+Stage 5: Support accounting
+
+Include the complete apparatus wherever applicable.
+
+For example:
+
+[
+T_{\mu\nu}^{\rm total}
+
+T_{\mu\nu}^{\rm quantum}
++
+T_{\mu\nu}^{\rm support}
++
+T_{\mu\nu}^{\rm apparatus}.
+]
+
+Do not treat the desired exotic source as existing independently of the apparatus required to produce it.
+
+Explicitly calculate the energetic and mechanical cost of:
+
+- confinement;
+- boundaries;
+- struts;
+- shells;
+- pumping;
+- state preparation;
+- field containment;
+- stabilization;
+- synchronization.
+
+⸻
+
+Stage 6: Stability and evolution
+
+Test the candidate against relevant perturbations.
+
+Where feasible, calculate:
+
+- linear stability;
+- mode growth;
+- ghost or gradient instabilities;
+- collapse;
+- black-hole formation;
+- throat closure;
+- chronology-horizon behavior;
+- quantum backreaction;
+- signal capture;
+- runaway energy growth.
+
+A static solution must not automatically be interpreted as a realizable dynamical device.
+
+⸻
+
+Stage 7: Information-channel test
+
+Define the sender intervention explicitly.
+
+For example,
+
+[
+do(b=0)
+]
+
+and
+
+[
+do(b=1).
+]
+
+Run the same physical configuration under both interventions.
+
+Calculate the receiver observable distribution:
+
+[
+P_0(Y)=P(Y\mid do(b=0)),
+]
+
+[
+P_1(Y)=P(Y\mid do(b=1)).
+]
+
+Test whether
+
+[
+P_0(Y)\neq P_1(Y).
+]
+
+Where numerical methods are used, specify a statistical distinguishability criterion and numerical error budget.
+
+The analysis must distinguish:
+
+- genuine causal dependence;
+- ordinary correlation;
+- entanglement correlation;
+- post-selection;
+- boundary-condition dependence;
+- numerical artifacts;
+- instability-induced differences.
+
+Only sender-controlled causal dependence qualifies as successful communication.
+
+⸻
+
+5. Classification
+
+Every candidate must receive exactly one primary status.
+
+A: Constructive candidate
+
+The candidate demonstrates
+
+[
+P(Y\mid do(b=0))
+\neq
+P(Y\mid do(b=1))
+]
+
+within a self-consistent 3+1D semiclassical model, with the relevant geometry, quantum state, stress-energy accounting, and causal channel explicitly constructed.
+
+This is a major result and requires unusually strong verification.
+
+A candidate must not receive status A merely because:
+
+- a wormhole exists;
+- a CTC exists;
+- negative energy exists;
+- a time shift exists;
+- two regions are correlated;
+- a signal propagates in a prescribed background.
+
+⸻
+
+B: Conditional escape
+
+The candidate achieves or approaches the communication criterion only under additional assumptions that are:
+
+- unverified;
+- experimentally unavailable;
+- mathematically unproven;
+- physically speculative;
+- outside the presently established model;
+- dependent on an unresolved consistency condition.
+
+Examples include a required quantum state whose preparation is unknown, a special topology, an unverified stability condition, or a source whose semiclassical existence has not been established.
+
+The unresolved assumption must be explicitly listed.
+
+⸻
+
+C: Obstruction
+
+The candidate fails within the specified model because of a demonstrated mathematical, numerical, causal, energetic, quantum, or dynamical obstruction.
+
+The obstruction must be stated with its scope.
+
+For example:
+
+C: finite Casimir apparatus under specified support assumptions.
+
+is valid.
+
+The following is not valid without a substantially broader theorem:
+
+C: Casimir mechanisms are impossible.
+
+The project should treat obstruction results as progress because they reduce the viable search space.
+
+⸻
+
+6. Scope Discipline
+
+Every negative result must state exactly which assumptions produced it.
+
+The automated system must distinguish:
+
+[
+\text{model-specific obstruction}
+]
+
+from
+
+[
+\text{general impossibility theorem}.
+]
+
+It must not promote the former into the latter.
+
+Likewise, a constructive result in a toy model must not automatically be promoted to a result in full 3+1D semiclassical gravity.
+
+⸻
+
+7. Automated Agent Strategy
+
+The search may be performed by an AI-driven research agent.
+
+The agent should be allowed to:
+
+- generate candidate geometries;
+- modify ansätze;
+- search literature;
+- derive symbolic expressions;
+- generate numerical experiments;
+- write Python code;
+- run parameter sweeps;
+- perform perturbation analysis;
+- compare alternative quantum states;
+- attempt to falsify its own candidates;
+- identify hidden assumptions;
+- propose relaxations of failed assumptions.
+
+The agent must not silently relax physical assumptions.
+
+Every change to:
+
+- dimensionality;
+- topology;
+- boundary conditions;
+- field content;
+- energy conditions;
+- symmetry;
+- quantum state;
+- coupling;
+- approximation order;
+- initial data
+
+must be recorded.
+
+⸻
+
+8. Adversarial Verification
+
+For every apparent A or B result, spawn an independent verification task.
+
+The verifier should attempt to find:
+
+1. an algebraic error;
+2. a numerical instability;
+3. an inconsistent boundary condition;
+4. an implicit exotic source;
+5. an energy-accounting omission;
+6. a violation of the assumed approximation;
+7. a hidden post-selection;
+8. a failure of causal controllability;
+9. a distinction between correlation and intervention;
+10. a collapse or chronology-protection mechanism omitted by the candidate.
+
+A candidate should survive independent attempts at falsification before being promoted.
+
+⸻
+
+9. GitHub Actions Integration
+
+GitHub Actions should function as the reproducibility and orchestration layer.
+
+A typical workflow is:
+
+candidate generation
+        ↓
+literature/model audit
+        ↓
+symbolic derivation
+        ↓
+numerical calculation
+        ↓
+Einstein/backreaction check
+        ↓
+support-energy accounting
+        ↓
+stability check
+        ↓
+do(0) / do(1) experiment
+        ↓
+classification
+        ↓
+independent verification
+        ↓
+artifact/report generation
+
+Actions should automatically:
+
+- install pinned dependencies;
+- run symbolic checks;
+- run numerical tests;
+- execute parameter sweeps;
+- run existing repository tests;
+- generate machine-readable candidate records;
+- generate Markdown reports;
+- archive numerical outputs;
+- record commit hashes;
+- record model assumptions;
+- reject reports lacking required fields.
+
+The workflow should not automatically merge a candidate classified as A.
+
+Human review should remain mandatory for any purported constructive result.
+
+⸻
+
+10. Candidate Record
+
+Each candidate should produce a machine-readable record containing at minimum:
+
+candidate_id:
+status: A | B | C
+geometry:
+matter_content:
+quantum_state:
+dimension:
+topology:
+assumptions:
+boundary_conditions:
+symmetries:
+approximation_order:
+stress_energy:
+backreaction:
+support_accounting:
+stability:
+causal_structure:
+sender_intervention:
+receiver_observable:
+P_Y_do_0:
+P_Y_do_1:
+distinguishability:
+obstructions:
+unresolved_assumptions:
+literature:
+code:
+verification:
+scope:
+
+The human-readable Markdown report should be generated from this record.
+
+⸻
+
+11. Search Philosophy
+
+The system must not optimize for finding a positive result.
+
+It should optimize for accurately mapping the space of physically and mathematically viable constructions.
+
+A failed candidate is useful if it identifies a new obstruction.
+
+A successful candidate is useful only if the success survives the full physical consistency checks.
+
+The desired output is therefore not simply:
+
+“Can time travel work?”
+
+but a progressively refined map:
+
+candidate space
+     ↓
+known obstruction
+     ↓
+remaining parameter space
+     ↓
+conditional escape
+     ↓
+new obstruction
+     ↓
+remaining parameter space
+     ↓
+constructive candidate
+
+The central invariant is:
+
+[
+\boxed{
+P(Y\mid do(b=0))
+\neq
+P(Y\mid do(b=1))
+}
+]
+
+under a self-consistent 3+1D semiclassical gravitational model.
+
+Anything weaker should be reported as an intermediate result rather than a completed past-signalling apparatus.
+
+⸻
+
+12. Non-Goals
+
+This protocol does not claim:
+
+- that past signalling is possible;
+- that past signalling is impossible;
+- that any particular wormhole model is physically realizable;
+- that a numerical result constitutes experimental evidence;
+- that CI verification constitutes peer review;
+- that a successful toy model constitutes a realizable machine.
+
+The repository should preserve these distinctions throughout the search.

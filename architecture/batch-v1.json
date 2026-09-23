@@ -1,0 +1,1112 @@
+{
+  "schema_version": 1,
+  "batch_id": "initial-4d-v1",
+  "source_base_sha": "e0eeff041d319def80c6b749935b7cd689b5553b",
+  "protocol_file": "docs/4d-past-signalling-protocol.txt",
+  "protocol_sha256": "3b024b673c099d1886112372fe9b0b6095505380c6c202d93c5ea8b9389159dd",
+  "source_transcription_note": "Original is preserved byte-for-byte. Missing equality signs in the displayed coupled-source equations (source sections 3.4 and Stage 5) are explicitly interpreted as equalities in the methods note; no source bytes were edited.",
+  "search_mode": "bounded deterministic candidate families; curated literature and hypotheses; no autonomous web discovery inside Actions",
+  "precision_dps": [
+    50,
+    80
+  ],
+  "candidates": [
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "quantum_state": "Incoming Minkowski vacuum; linear source gives coherent response. Unit-variance readout noise is a calibrated-model assumption, not a derived full detector.",
+      "support_accounting": {
+        "complete": false,
+        "details": "Positive finite radiated energy computed. Mechanical shell, pump and actual detector stresses not computed; not needed for the scoped no-past causal statement."
+      },
+      "sender_intervention": {
+        "description": "Same lambda,a,T and incoming state; only sign (-1)^b of J changes at t>=0.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Y=phi_cl(t=-1,R=5)+Gaussian meter noise with mean 0 and variance 1.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "value": null,
+        "computed": false,
+        "receiver_precedes_sender": null,
+        "error_bound": null,
+        "interpretation": "Unknown; not replaced by zero or by a transmission coefficient."
+      },
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "code": [
+        "scripts/architecture_models.py",
+        "scripts/architecture_search.py",
+        "scripts/architecture_verify.py"
+      ],
+      "approximation_order": "G^0 test-field response on 3+1D Minkowski; no gravitational backreaction solved.",
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "assumption_changes": [],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "6": {
+          "name": "stability",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        }
+      },
+      "candidate_id": "flat-local-source",
+      "title": "通常の四次元場：後の操作で過去の記録を変える対照",
+      "candidate_kind": "channel",
+      "geometry": "Minkowski ds^2=-dt^2+dx^2+dy^2+dz^2; finite-radius spherical source shell, receiver R=5 outside a=1.",
+      "matter_content": "Normal massless minimal real scalar; externally switched classical source; specified independent Gaussian readout noise.",
+      "topology": "R_t x R^3; no identifications or pre-existing wormhole.",
+      "assumptions": [
+        "Retarded ordinary hyperbolic propagation; receiver record completed at t=-1, source starts at t=0.",
+        "c=hbar=1; J_b=(-1)^b lambda sin^4(pi t/T) delta(r-a)/(4pi a^2), supported on 0<t<T.",
+        "Gaussian additive meter with variance 1; no conditioning on future records."
+      ],
+      "boundary_conditions": "No incoming source-dependent radiation; source compact in time; outgoing retarded field. Spherical shell is a spatial idealization with finite radius, not a point-source UV claim.",
+      "symmetries": [
+        "Spherical source; 3 spatial dimensions retained."
+      ],
+      "stress_energy": {
+        "kind": "test_field",
+        "formula": "Away from J, renormalized coherent stress is T_mu_nu[phi_cl]; div T=J grad phi during driving. E_rad=35 lambda^2 T/(1024 pi a^2)>0 for T=2a.",
+        "renormalized": true,
+        "full_tensor_matched": false
+      },
+      "backreaction": {
+        "level": "test_field",
+        "details": "Fixed ordinary spacetime; no geometry creation."
+      },
+      "stability": "Ordinary free scalar propagation. No wormhole instability or chronology horizon in this background.",
+      "causal_structure": "Global Minkowski time; source lies later than the measured record. Finite source front at t=R-a=4.",
+      "obstructions": [
+        "The retarded field and all later trace-preserving operations leave the already recorded past marginal unchanged; D=0 in this stated protocol."
+      ],
+      "unresolved_assumptions": [
+        "Not an implementation of a full semiclassical apparatus; future contrast is only a control experiment."
+      ],
+      "scope": "C applies to the specified ordinary retarded local-source protocol, not to spacetimes without this global time or to alternative quantum dynamics.",
+      "literature": [
+        {
+          "id": "SM",
+          "title": "Information transmission without energy exchange",
+          "authors": "Robert H. Jonsson; Eduardo Martin-Martinez; Achim Kempf",
+          "year": 2015,
+          "url": "https://arxiv.org/abs/1405.3988",
+          "used_for": "Reference for distinguishing causal field-mediated communication from correlation; shell-source formula and noisy meter below are this batch's own elementary test-field calculation, not imported from this paper.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "quantum_state": "Not constructed for the full geometry; see stress_energy.",
+      "support_accounting": {
+        "complete": false,
+        "details": "No completed apparatus; omitted components are listed in unresolved_assumptions."
+      },
+      "sender_intervention": {
+        "description": "Proposed future sender encodes b by opposite signs of a compact-support source. Not executed on this geometry.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite-time stored receiver record Y; full detector not constructed.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "value": null,
+        "computed": false,
+        "receiver_precedes_sender": null,
+        "error_bound": null,
+        "interpretation": "Unknown; not replaced by zero or by a transmission coefficient."
+      },
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "code": [
+        "scripts/architecture_models.py",
+        "scripts/architecture_search.py",
+        "scripts/architecture_verify.py"
+      ],
+      "approximation_order": "Exact causal statement for this 4D prescribed metric class, independent of stress approximation.",
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "assumption_changes": [],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "6": {
+          "name": "stability",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        }
+      },
+      "candidate_id": "rotating-global-time",
+      "title": "回転Teo型：エルゴ領域だけで過去へ送る案",
+      "candidate_kind": "channel",
+      "geometry": "ds^2=-N^2 dt^2+Q^2 dx^2+R^2[dtheta^2+sin^2(theta)(dphi-omega dt)^2]; N,Q,R>0. Example N=Q=1,R=sqrt(b^2+x^2),omega=2J/R^3.",
+      "matter_content": "Required exotic source for this prescribed rotating geometry; signal matter constrained to metric causal cones.",
+      "topology": "R_t x R_x x S^2; phi periodic; t real and single-valued across the throat.",
+      "assumptions": [
+        "Positive regular lapse; positive spatial metric.",
+        "No time shift at gluing, no periodic time, no modified signal cones.",
+        "Receiver is earlier on the same exterior laboratory worldline."
+      ],
+      "boundary_conditions": "Two asymptotically flat ends; smooth throat in x; no chronology-changing identification.",
+      "symmetries": [
+        "Stationary, axisymmetric; not assumed spherical when J is nonzero."
+      ],
+      "stress_energy": {
+        "kind": "required_not_supplied",
+        "formula": "T_req=G[g]/(8piG), generally NEC violating; full renormalized supporting state not supplied.",
+        "renormalized": false,
+        "full_tensor_matched": false
+      },
+      "backreaction": {
+        "level": "prescribed_geometry",
+        "details": "Not solved; obstruction already at causal Stage 2."
+      },
+      "stability": "No claim of mode stability; possible ergoregion is retained. It is not a chronology horizon.",
+      "causal_structure": "g^{tt}=-1/N^2<0: t is a global time function; causal future-directed curves cannot return to earlier laboratory t.",
+      "obstructions": [
+        "Global time rules out the intended past causal relation, even at points where covariant g_tt>0."
+      ],
+      "unresolved_assumptions": [
+        "Source and ergoregion stability not solved; unnecessary to the stated causal exclusion."
+      ],
+      "scope": "No-go for unshifted positive-lapse Teo-type topology only. A time-shifted gluing changes this input and must be a separate candidate.",
+      "literature": [
+        {
+          "id": "TEO",
+          "title": "Rotating traversable wormholes",
+          "authors": "Edward Teo",
+          "year": 1998,
+          "url": "https://arxiv.org/abs/gr-qc/9803098",
+          "used_for": "Eqs. (16),(19), positive lapse, proper-radial coordinates; global-time inference is derived here for the specified unshifted topology. PDF text; screenshot failed.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "quantum_state": "Not constructed for the full geometry; see stress_energy.",
+      "support_accounting": {
+        "complete": false,
+        "details": "Shell stress specified, but no fabrication, confinement, pump or apparatus to realize it."
+      },
+      "sender_intervention": {
+        "description": "Proposed future sender encodes b by opposite signs of a compact-support source. Not executed on this geometry.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite-time stored receiver record Y; full detector not constructed.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "value": null,
+        "computed": false,
+        "receiver_precedes_sender": null,
+        "error_bound": null,
+        "interpretation": "Unknown; not replaced by zero or by a transmission coefficient."
+      },
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "code": [
+        "scripts/architecture_models.py",
+        "scripts/architecture_search.py",
+        "scripts/architecture_verify.py"
+      ],
+      "approximation_order": "Exact classical thin-shell equilibrium; linear radial stability. Singular shell is not a computed renormalized quantum stress.",
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "assumption_changes": [],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "6": {
+          "name": "stability",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        }
+      },
+      "candidate_id": "schwarzschild-eos-0-to-1",
+      "title": "薄殻：0<=dp/dsigma<=1の受動的・反復利用案",
+      "candidate_kind": "geometry_and_support",
+      "geometry": "Two 4D Schwarzschild exteriors r>=a(tau)>2M; f=1-2M/r; ds^2=-f dt^2+f^-1 dr^2+r^2 dOmega^2; timelike shell joining them.",
+      "matter_content": "Distributional exotic shell with sigma0<0 and pressure p0; no normal quantum source supplied.",
+      "topology": "Two asymptotically flat ends joined at S^2; a separate same-universe embedding/time-shift would be required for the proposed time machine.",
+      "boundary_conditions": "Israel junction conditions, fixed equal mass M on both sides, no external flux; p=p0+eta(sigma-sigma0) near equilibrium.",
+      "symmetries": [
+        "Spherical shell; radial perturbations only; angular geometry and area 4pi a^2 retained."
+      ],
+      "stress_energy": {
+        "kind": "distributional_required_source",
+        "formula": "G=c=1: sigma0=-sqrt(1-2M/a0)/(2pi a0); p0=(1-M/a0)/(4pi a0 sqrt(1-2M/a0)); T=S delta(normal).",
+        "renormalized": false,
+        "full_tensor_matched": true
+      },
+      "backreaction": {
+        "level": "classical_distributional_matching",
+        "details": "Israel equations include shell self-gravity; no semiclassical material completion or motion-induced time shift."
+      },
+      "causal_structure": "Static seed has no backward channel. A MTY-type global clock shift is an additional unresolved input, not installed in the probability calculation.",
+      "assumptions": [
+        "0<=mu=M/a0<1/2; 0<=eta=dp/dsigma<=1.",
+        "Candidate requires passive linear radial stability for repeatable use; not a claim about every single transient signal.",
+        "eta is only a slope until microphysics establishes a sound-speed interpretation."
+      ],
+      "stability": "a0^2 Vpp=-2[2mu+mu^2/(1-2mu)+(1+2eta)(1-3mu)]. Analytic positivity certificate for -Vpp, plus exact rational sweep.",
+      "obstructions": [
+        "All shells in the stated eta and mu domain have Vpp<0: passive radial equilibrium is unstable."
+      ],
+      "unresolved_assumptions": [
+        "No quantum supporting material; active stabilization and one-shot transient protocols not tested."
+      ],
+      "scope": "C for this passively stable apparatus requirement and EOS interval, not all thin shells or all transient communication.",
+      "literature": [
+        {
+          "id": "PV",
+          "title": "Thin-shell wormholes: Linearization stability",
+          "authors": "Eric Poisson; Matt Visser",
+          "year": 1995,
+          "url": "https://arxiv.org/abs/gr-qc/9506083",
+          "used_for": "Eqs. (11)-(27),(30)-(36); static Israel source and radial stability. Full PDF text; screenshots failed; no figure data used.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        },
+        {
+          "id": "MTY",
+          "title": "Wormholes, Time Machines, and the Weak Energy Condition",
+          "authors": "M. S. Morris; K. S. Thorne; U. Yurtsever",
+          "year": 1988,
+          "url": "https://doi.org/10.1103/PhysRevLett.61.1446",
+          "used_for": "Conditional moved/time-shifted-mouth architecture; no claim of laboratory construction.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "quantum_state": "Not constructed for the full geometry; see stress_energy.",
+      "support_accounting": {
+        "complete": false,
+        "details": "Shell stress specified, but no fabrication, confinement, pump or apparatus to realize it."
+      },
+      "sender_intervention": {
+        "description": "Proposed future sender encodes b by opposite signs of a compact-support source. Not executed on this geometry.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite-time stored receiver record Y; full detector not constructed.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "value": null,
+        "computed": false,
+        "receiver_precedes_sender": null,
+        "error_bound": null,
+        "interpretation": "Unknown; not replaced by zero or by a transmission coefficient."
+      },
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "code": [
+        "scripts/architecture_models.py",
+        "scripts/architecture_search.py",
+        "scripts/architecture_verify.py"
+      ],
+      "approximation_order": "Exact classical thin-shell equilibrium; linear radial stability. Singular shell is not a computed renormalized quantum stress.",
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "assumption_changes": [
+        {
+          "from_candidate": "schwarzschild-eos-0-to-1",
+          "field": "EOS slope eta",
+          "old": "[0,1]",
+          "new": "4",
+          "reason": "Test the exact published radial-stability loophole; not a hidden relaxation of matter assumptions."
+        }
+      ],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "6": {
+          "name": "stability",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        }
+      },
+      "candidate_id": "schwarzschild-eos-4",
+      "title": "薄殻：EOS勾配を4へ緩めた安定性の条件付き候補",
+      "candidate_kind": "geometry_and_support",
+      "geometry": "Two 4D Schwarzschild exteriors r>=a(tau)>2M; f=1-2M/r; ds^2=-f dt^2+f^-1 dr^2+r^2 dOmega^2; timelike shell joining them.",
+      "matter_content": "Distributional exotic shell with sigma0<0 and pressure p0; no normal quantum source supplied.",
+      "topology": "Two asymptotically flat ends joined at S^2; a separate same-universe embedding/time-shift would be required for the proposed time machine.",
+      "boundary_conditions": "Israel junction conditions, fixed equal mass M on both sides, no external flux; p=p0+eta(sigma-sigma0) near equilibrium.",
+      "symmetries": [
+        "Spherical shell; radial perturbations only; angular geometry and area 4pi a^2 retained."
+      ],
+      "stress_energy": {
+        "kind": "distributional_required_source",
+        "formula": "G=c=1: sigma0=-sqrt(1-2M/a0)/(2pi a0); p0=(1-M/a0)/(4pi a0 sqrt(1-2M/a0)); T=S delta(normal).",
+        "renormalized": false,
+        "full_tensor_matched": true
+      },
+      "backreaction": {
+        "level": "classical_distributional_matching",
+        "details": "Israel equations include shell self-gravity; no semiclassical material completion or motion-induced time shift."
+      },
+      "causal_structure": "Static seed has no backward channel. A MTY-type global clock shift is an additional unresolved input, not installed in the probability calculation.",
+      "assumptions": [
+        "Same geometric input as the 0..1 candidate; eta is explicitly replaced by 4.",
+        "Only radial stability is established; no implication for nonradial, ghost or gradient stability.",
+        "No inference that eta=4 is a measured signal velocity; source microphysics is absent."
+      ],
+      "stability": "For eta=4, Vpp>0 on (43-sqrt(13))/102 < mu < (43+sqrt(13))/102; at mu=2/5, a0^2 Vpp=2/5.",
+      "obstructions": [],
+      "unresolved_assumptions": [
+        "A normal quantum source with this exotic density and constitutive slope is not supplied.",
+        "Full angular/matter stability, manufacture and same-universe time-shift formation are unresolved.",
+        "No past receiver probability or controllable joint record derived."
+      ],
+      "scope": "B is a partial stability escape under a changed EOS, not evidence of a self-consistent past channel.",
+      "literature": [
+        {
+          "id": "PV",
+          "title": "Thin-shell wormholes: Linearization stability",
+          "authors": "Eric Poisson; Matt Visser",
+          "year": 1995,
+          "url": "https://arxiv.org/abs/gr-qc/9506083",
+          "used_for": "Eqs. (11)-(27),(30)-(36); static Israel source and radial stability. Full PDF text; screenshots failed; no figure data used.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        },
+        {
+          "id": "MTY",
+          "title": "Wormholes, Time Machines, and the Weak Energy Condition",
+          "authors": "M. S. Morris; K. S. Thorne; U. Yurtsever",
+          "year": 1988,
+          "url": "https://doi.org/10.1103/PhysRevLett.61.1446",
+          "used_for": "Conditional moved/time-shifted-mouth architecture; no claim of laboratory construction.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "quantum_state": "Not constructed for the full geometry; see stress_energy.",
+      "support_accounting": {
+        "complete": false,
+        "details": "No completed apparatus; omitted components are listed in unresolved_assumptions."
+      },
+      "sender_intervention": {
+        "description": "Proposed future sender encodes b by opposite signs of a compact-support source. Not executed on this geometry.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite-time stored receiver record Y; full detector not constructed.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "value": null,
+        "computed": false,
+        "receiver_precedes_sender": null,
+        "error_bound": null,
+        "interpretation": "Unknown; not replaced by zero or by a transmission coefficient."
+      },
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "code": [
+        "scripts/architecture_models.py",
+        "scripts/architecture_search.py",
+        "scripts/architecture_verify.py"
+      ],
+      "approximation_order": "Published weak-field/distant-mouth classical construction; no dynamical quantum completion.",
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "assumption_changes": [],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "6": {
+          "name": "stability",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        }
+      },
+      "candidate_id": "fkz-mass-controlled-ring",
+      "title": "FKZリング：正の質量で時計差を制御する条件付き経路",
+      "candidate_kind": "channel",
+      "geometry": "4D locally static weak-field ring wormhole with two disc mouths in the same exterior; one oblate positive-mass shell. FKZ oblate metric and patchwise potential.",
+      "matter_content": "Presupposed negative-tension conical ring plus ordinary mass M; probe signal.",
+      "topology": "Nontrivial same-exterior disc identification with negative angular deficit -2pi; topology is supplied, not generated.",
+      "assumptions": [
+        "Weak GM/(Rc^2); a<<R<<L; late locally-static approximation remains valid only conditionally.",
+        "B_opt approximated by L/c; error in the long-time extrapolation is not rigorously bounded.",
+        "The negative ring source mu_line=-c^4/(4G) must exist independently of the positive control mass."
+      ],
+      "boundary_conditions": "FKZ patch matching for clock rates and potential; exotic ring core and quantum state unresolved.",
+      "symmetries": [
+        "Locally axial near each mouth; global two-mouth weak-field geometry not replaced by a spherical shell."
+      ],
+      "stress_energy": {
+        "kind": "required_not_supplied",
+        "formula": "Negative ring line energy -c^4/(4G) plus positive oblate mass. No full renormalized stress or core state.",
+        "renormalized": false,
+        "full_tensor_matched": false
+      },
+      "backreaction": {
+        "level": "classical_weak_field",
+        "details": "Positive mass produces I_C~GM/(a c^2)[atan(a/R)-a/L]; no quantum backreaction through onset."
+      },
+      "stability": "Quantum chronology-horizon response, finite ring stability and switching transient not established.",
+      "causal_structure": "Conditional return delay B_opt-(exp(I_C)-1)t2; negative at t2>onset if the idealized geometry survives.",
+      "obstructions": [],
+      "unresolved_assumptions": [
+        "Negative tension and topology manufacture.",
+        "Self-consistent renormalized state and apparatus through chronology formation.",
+        "Finite receiver joint probabilities; sender choice must not alter uncontrolled boundary data."
+      ],
+      "scope": "B for the published classical path and explicit unprovided inputs. Not a past probability estimate or construction time.",
+      "literature": [
+        {
+          "id": "FKZ",
+          "title": "Ring wormholes and time machines",
+          "authors": "Valeri P. Frolov; Pavel Krtous; Andrei Zelnikov",
+          "year": 2023,
+          "url": "https://arxiv.org/abs/2305.03887",
+          "used_for": "Eq. (5.35) and Eqs. (6.1)-(6.9); weak-field clock holonomy. PDF text and page 18 image checked.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "quantum_state": "Renormalized parallel-plate Maxwell vacuum approximation; finite-edge and dispersive corrections not computed.",
+      "support_accounting": {
+        "complete": false,
+        "details": "Lower bound explicitly includes force-carrying struts; plate mass can only strengthen bound. Detailed edges/pump/manufacture not included."
+      },
+      "sender_intervention": {
+        "description": "Proposed future sender encodes b by opposite signs of a compact-support source. Not executed on this geometry.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite-time stored receiver record Y; full detector not constructed.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "value": null,
+        "computed": false,
+        "receiver_precedes_sender": null,
+        "error_bound": null,
+        "interpretation": "Unknown; not replaced by zero or by a transmission coefficient."
+      },
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "code": [
+        "scripts/architecture_models.py",
+        "scripts/architecture_search.py",
+        "scripts/architecture_verify.py"
+      ],
+      "approximation_order": "Flat-space vacuum and finite apparatus force accounting; not a strongly self-gravitating ring solution.",
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "assumption_changes": [],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "6": {
+          "name": "stability",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        }
+      },
+      "candidate_id": "finite-casimir-cell-line",
+      "title": "有限Casimirセルを負の総線エネルギー源として並べる案",
+      "candidate_kind": "support_component",
+      "geometry": "Finite approximately parallel conducting plates in locally flat 3+1D; intended assembly to replace a pure negative-total-energy line source.",
+      "matter_content": "4D Maxwell Casimir vacuum, positive ordinary plates and static DEC struts; weak cell self-gravity.",
+      "topology": "Ordinary apparatus in R^3; no wormhole topology supplied by these cells.",
+      "assumptions": [
+        "Independent cells, area much larger than gap squared, static equilibrium.",
+        "All struts obey dominant energy condition; plate masses nonnegative.",
+        "Target is negative total energy per assembled length, not merely a local negative pocket."
+      ],
+      "boundary_conditions": "Conducting plates, vacuum gap, mechanical support maintaining separation; ignore small edges only within stated regime.",
+      "symmetries": [
+        "Locally planar approximation; finite transverse area kept in energy and force."
+      ],
+      "stress_energy": {
+        "kind": "renormalized_vacuum_plus_support_bound",
+        "formula": "T_C=pi^2 hbar c/(720 d^4) diag(-1,1,1,-3); E_strut>=3|E_C|, E_all>=2|E_C|.",
+        "renormalized": true,
+        "full_tensor_matched": false
+      },
+      "backreaction": {
+        "level": "source_accounting",
+        "details": "Wrong sign of whole-cell energy for proposed negative line substitution; full curved geometry not solved."
+      },
+      "stability": "Static force balance checked; material mode stability not derived.",
+      "causal_structure": "A supporting component only; no direct communication or clock holonomy generated.",
+      "obstructions": [
+        "Even arbitrarily thin DEC struts make total cell energy positive, so independent cells cannot supply the specified negative-total-line source."
+      ],
+      "unresolved_assumptions": [
+        "Other apparatus topologies/orientations and nonlinear self-gravity are outside this calculation."
+      ],
+      "scope": "C only for the specified replacement-by-independent-cells design; does not prohibit all Casimir wormholes or positive-ADM wormholes.",
+      "literature": [
+        {
+          "id": "CM",
+          "title": "Can quantum mechanics breed negative masses?",
+          "authors": "Bruno Arderucio Costa; George E. A. Matsas",
+          "year": 2022,
+          "url": "https://arxiv.org/abs/2112.08881",
+          "used_for": "Eqs. (12),(17)-(22): finite parallel plates, DEC struts, static force balance; PDF text and page 4 image checked.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "quantum_state": "Not constructed for the full geometry; see stress_energy.",
+      "support_accounting": {
+        "complete": false,
+        "details": "No completed apparatus; omitted components are listed in unresolved_assumptions."
+      },
+      "sender_intervention": {
+        "description": "Proposed future sender encodes b by opposite signs of a compact-support source. Not executed on this geometry.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite-time stored receiver record Y; full detector not constructed.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Full past receiver experiment not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "value": null,
+        "computed": false,
+        "receiver_precedes_sender": null,
+        "error_bound": null,
+        "interpretation": "Unknown; not replaced by zero or by a transmission coefficient."
+      },
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "code": [
+        "scripts/architecture_models.py",
+        "scripts/architecture_search.py",
+        "scripts/architecture_verify.py"
+      ],
+      "approximation_order": "Exact required Einstein tensor for prescribed collar; approximate local-flat QEI test; no semiclassical matching.",
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "assumption_changes": [],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "completed",
+          "meaning": "Completed scoped diagnostic, not completion of a physical device."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "partial",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "6": {
+          "name": "stability",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "not_reached",
+          "meaning": "See explicit source/geometry/unknown fields."
+        }
+      },
+      "candidate_id": "thin-collar-qei-window",
+      "title": "厚さを別スケールにした四次元collarの必要条件",
+      "candidate_kind": "geometry_and_support",
+      "geometry": "ds^2=-dt^2+dx^2+r(x)^2 dOmega^2, r=b+sqrt(x^2+eps^2)-eps, eps<<b.",
+      "matter_content": "Required anisotropic stress; candidate N ordinary minimal massless scalar fields. Actual quantum state and apparatus not constructed.",
+      "topology": "Presupposed two-ended throat R_x x S^2; not a topology-creation process.",
+      "assumptions": [
+        "Static source maintained throughout sampler support; cT=f eps with f=.01.",
+        "Use 4D flat timelike QEI as a local-flat short-time diagnostic, not an exact curved-space inequality.",
+        "Candidate is restricted to parameter rows that pass this necessary diagnostic."
+      ],
+      "boundary_conditions": "Smooth even collar, asymptotically flat ends; state and same-universe clock matching unspecified.",
+      "symmetries": [
+        "Spherical four-dimensional collar; thin layer eps separated from b."
+      ],
+      "stress_energy": {
+        "kind": "required_and_bounded_not_matched",
+        "formula": "At x=0, 8piG(rho,pr,pt)=((1-2b/eps)/b^2,-1/b^2,1/(b eps)); QEI flat bound -N hbar c pi^2/[48(f eps)^4].",
+        "renormalized": false,
+        "full_tensor_matched": false
+      },
+      "backreaction": {
+        "level": "prescribed_geometry",
+        "details": "Tensor requirement computed, not produced by the candidate state. QEI compatibility cannot certify existence."
+      },
+      "stability": "No angular/radial quantum-matter stability result for this source.",
+      "causal_structure": "Unshifted seed has no backward channel. Proposed future time-shift must be generated and maintained, not inserted as a success input.",
+      "obstructions": [],
+      "unresolved_assumptions": [
+        "Required anisotropic renormalized quantum stress throughout collar.",
+        "Finite source preparation, full curved QEI, stability and semiclassical matching.",
+        "Time-shift formation, global state and past record probabilities."
+      ],
+      "scope": "B only as a conditional escape from the single-scale flat-QEI diagnostic. Every surviving row remains an unconstructed source, not a solved channel.",
+      "literature": [
+        {
+          "id": "FE",
+          "title": "Bounds on negative energy densities in flat spacetime",
+          "authors": "C. J. Fewster; S. P. Eveson",
+          "year": 1998,
+          "url": "https://arxiv.org/abs/gr-qc/9805024",
+          "used_for": "4D timelike QEI for free minimal massless scalar; does not furnish a curved-space source.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        },
+        {
+          "id": "FR",
+          "title": "Quantum Field Theory Constrains Traversable Wormhole Geometries",
+          "authors": "L. H. Ford; T. A. Roman",
+          "year": 1996,
+          "url": "https://arxiv.org/abs/gr-qc/9510071",
+          "used_for": "Short-sampling local-flat diagnostic and separated geometric scales, not a sufficiency theorem.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        },
+        {
+          "id": "MTY",
+          "title": "Wormholes, Time Machines, and the Weak Energy Condition",
+          "authors": "M. S. Morris; K. S. Thorne; U. Yurtsever",
+          "year": 1988,
+          "url": "https://doi.org/10.1103/PhysRevLett.61.1446",
+          "used_for": "Conditional moved/time-shifted-mouth architecture; no claim of laboratory construction.",
+          "checked_on": "2026-09-24",
+          "type": "primary_source"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "assessed_now": [
+      "ordinary 4D retarded field",
+      "rotating unshifted Teo-type geometry",
+      "spherical Schwarzschild thin shell",
+      "separate-scale thick collar",
+      "ring time-holonomy",
+      "finite Casimir apparatus"
+    ],
+    "not_assessed_now": [
+      {
+        "class": "multi-mouth / multiple-loop / branched networks",
+        "reason": "Requires a shared global field state and junction data; no single-ring formula transferred."
+      },
+      {
+        "class": "fully moving mouths / relative velocities / dynamic clock holonomy",
+        "reason": "No complete 4D formation evolution included."
+      },
+      {
+        "class": "non-spherical finite toroidal support / rotating ring matter",
+        "reason": "Teo and FKZ causal checks are not full stress-source solutions."
+      },
+      {
+        "class": "multimode and anisotropic squeezed supports",
+        "reason": "Previous repository work exists, but not rerun or promoted into this initial batch."
+      },
+      {
+        "class": "massive / fermionic / interacting / nonconformal quantum supports",
+        "reason": "No renormalized all-component source implemented in this batch."
+      },
+      {
+        "class": "large-N semiclassical resummation",
+        "reason": "N=100 collar diagnostic is only a field-count scaling, not a large-N solution."
+      },
+      {
+        "class": "coherent+squeezed hybrid, active pumps and boundary control",
+        "reason": "No full localized apparatus and quantum state solved."
+      },
+      {
+        "class": "full nonlinear semiclassical evolution / stochastic gravity",
+        "reason": "No full evolution or noise kernel computed."
+      },
+      {
+        "class": "topology creation",
+        "reason": "No topology-changing solution produced."
+      }
+    ]
+  }
+}
