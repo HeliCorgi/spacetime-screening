@@ -28,7 +28,7 @@
 通常の質量ゼロscalarの異方的波束をスクイーズすると、原点で
 
 ```math
-\langle T_{\hat a\hat b}\rangle=\operatorname{diag}(-A_s,-A_s,A_s,A_s),
+\langle T_{\hat a\hat b}\rangle=\mathrm{diag}(-A_s,-A_s,A_s,A_s),
 \qquad A_s=\frac{4(1-e^{-2s})}{\pi^2a^4}>0
 ```
 
