@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "batch_id": "sa-quantum-record-v4",
+  "source_base_sha": "4ad470bc12187c4a9eee040ec9d34964cee5b446",
+  "protocol_file": "docs/4d-past-signalling-protocol.txt",
+  "protocol_sha256": "3b024b673c099d1886112372fe9b0b6095505380c6c202d93c5ea8b9389159dd",
+  "precision_dps": [
+    50,
+    80
+  ],
+  "candidates": [
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "candidate_kind": "channel",
+      "geometry": "SA: ds_MP^2=-U^-2 dT^2+U^2 dx^2; ds_RN^2=-f dt^2+dr^2/f+r^2 dOmega^2; U0=2,A=2,m=1/5,e=1/10.",
+      "matter_content": "Classical charged shells and Maxwell background; neutral real minimally coupled 4D test scalar; localized classical source and ideal qubit detector.",
+      "quantum_state": "Global positive Hadamard two-point function on the full sewn spacetime is not supplied.",
+      "topology": "Same MP exterior joined through different ends of extended RN; horizons and timelike singularities retained as input.",
+      "assumptions": [
+        "Prescribed 3+1D SA geometry, not formed dynamically",
+        "No scalar surface action; minimal coupling",
+        "Same preparation and source support for b=0,1",
+        "Receiver uses a finite proper-time window",
+        "No choice of boundary data depending on the transmitted bit"
+      ],
+      "boundary_conditions": "Continuity of phi and common normal derivative at both shells; global horizon data and timelike-singularity boundary law remain to be selected and checked.",
+      "symmetries": [
+        "Exterior axisymmetry retained; no global spherical-mode decoupling",
+        "Inner RN partial-wave scattering only for the boundary diagnostic"
+      ],
+      "approximation_order": "Exact linear test-field/interface identities; exact local endpoint and restricted thermal conditions; no semiclassical self-consistent full solution.",
+      "stress_energy": {
+        "kind": "conditional_coherent_shift_identity",
+        "formula": "<T_ab>_b=<T_ab>_0+T_ab[varphi], same for +/-; <T_ab>_0 on full SA not computed.",
+        "renormalized": false,
+        "full_tensor_matched": false
+      },
+      "backreaction": {
+        "level": "not_solved",
+        "details": "No whole-SA RSET or evolved metric; smooth coherent displacement cannot repair a singular connected two-point function."
+      },
+      "support_accounting": {
+        "complete": false,
+        "details": "Classical shells inherited; source, detector, core boundary and formation/stabilization apparatus not completed."
+      },
+      "stability": "Common two-sided equilibrium fails locally; no theorem against all non-equilibrium states or all finite records.",
+      "causal_structure": "Classical SA return relation is imported with its global extension; new full retarded/response kernel not constructed.",
+      "sender_intervention": {
+        "description": "J_b=(-1)^b j, fixed compact support; bit record R retained.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite-time Ramsey sigma_y outcome Y=+/-1 after gapless sigma_z phi coupling; kernels uncomputed on full SA.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Global response and state covariance on sewn SA are not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Global response and state covariance on sewn SA are not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "computed": false,
+        "value": null,
+        "error_bound": null,
+        "receiver_precedes_sender": null,
+        "interpretation": "Unknown is not zero. Local control noise is not the SA covariance."
+      },
+      "unresolved_assumptions": [
+        "Globally admissible non-equilibrium state and all boundary data",
+        "Sewing, CCR, positivity and Hadamard regularity simultaneously",
+        "RSET/backreaction including all relevant modes",
+        "Formation, stabilization and complete finite apparatus",
+        "Actual m_h,V_h and past receiver joint probabilities"
+      ],
+      "obstructions": [],
+      "literature": [
+        {
+          "authors": "F. Schein; P. C. Aichelburg",
+          "title": "Traversable Wormholes in Geometries of Charged Shells",
+          "year": 1996,
+          "url": "https://arxiv.org/abs/gr-qc/9606069",
+          "used_for": "MP/RN shells; proper-time matching; classical global geometry",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "M. Martellini; C. Reina; A. Treves",
+          "title": "Klein-Gordon field in a naked-singularity background",
+          "year": 1978,
+          "url": "https://doi.org/10.1103/PhysRevD.17.2573",
+          "used_for": "Published endpoint/reflection issue; abstract checked; present calculation rederived",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "K. Sanders",
+          "title": "On the construction of Hartle-Hawking-Israel states across a static bifurcate Killing horizon",
+          "year": 2015,
+          "url": "https://arxiv.org/abs/1310.5537",
+          "used_for": "Thermal horizon regularity; no existence theorem applied to whole SA",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "N. Zilberman; A. Levi; A. Ori",
+          "title": "Quantum fluxes at the inner horizon of a spherical charged black hole",
+          "year": 2020,
+          "url": "https://arxiv.org/abs/1906.11303",
+          "used_for": "Four-dimensional radial equation; no RN-state flux coefficient transplanted",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "E. Tjoa; K. Gallock-Yoshimura",
+          "title": "Channel capacity of relativistic quantum communication with rapid interaction",
+          "year": 2022,
+          "url": "https://arxiv.org/abs/2202.12301",
+          "used_for": "Field/detector methodology; finite-time gapless law independently derived",
+          "checked_on": "2026-09-24"
+        }
+      ],
+      "code": [
+        "src/symbolic/sa_quantum_junction_v4.py",
+        "src/numerical/sa_inner_scattering_v4.py",
+        "scripts/sa_quantum_verify_v4.py",
+        "scripts/sa_quantum_report_v4.py"
+      ],
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "scope": "Continuation of the specific SA candidate. This is not a completed past-directed information channel.",
+      "assumption_changes": [
+        {
+          "field": "signal/detector",
+          "old": "unspecified full field and receiver",
+          "new": "minimal neutral scalar; compact source +/-j; finite-window phase-sensitive qubit",
+          "reason": "Derive a probability functional without fixing missing global kernels by hand."
+        }
+      ],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed"
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "partial"
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "partial"
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "not_reached"
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial"
+        },
+        "6": {
+          "name": "stability",
+          "state": "partial"
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "partial"
+        }
+      },
+      "candidate_id": "sa-global-ramsey-continuation",
+      "status": "B",
+      "title": "二荷電殻全体：有限Ramsey記録へ接続する継続候補",
+      "verdict": "global_kernels_and_boundary_completion_missing"
+    },
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "candidate_kind": "channel",
+      "geometry": "SA: ds_MP^2=-U^-2 dT^2+U^2 dx^2; ds_RN^2=-f dt^2+dr^2/f+r^2 dOmega^2; U0=2,A=2,m=1/5,e=1/10.",
+      "matter_content": "Classical charged shells and Maxwell background; neutral real minimally coupled 4D test scalar; localized classical source and ideal qubit detector.",
+      "quantum_state": "Global positive Hadamard two-point function on the full sewn spacetime is not supplied.",
+      "topology": "Same MP exterior joined through different ends of extended RN; horizons and timelike singularities retained as input.",
+      "assumptions": [
+        "Prescribed 3+1D SA geometry, not formed dynamically",
+        "No scalar surface action; minimal coupling",
+        "Same preparation and source support for b=0,1",
+        "Receiver uses a finite proper-time window",
+        "No choice of boundary data depending on the transmitted bit",
+        "One common Killing inverse temperature",
+        "Two-sided Euclidean/Hadamard regularity at BOTH nonextremal bifurcate horizons"
+      ],
+      "boundary_conditions": "Continuity of phi and common normal derivative at both shells; global horizon data and timelike-singularity boundary law remain to be selected and checked.",
+      "symmetries": [
+        "Exterior axisymmetry retained; no global spherical-mode decoupling",
+        "Inner RN partial-wave scattering only for the boundary diagnostic"
+      ],
+      "approximation_order": "Exact linear test-field/interface identities; exact local endpoint and restricted thermal conditions; no semiclassical self-consistent full solution.",
+      "stress_energy": {
+        "kind": "conditional_coherent_shift_identity",
+        "formula": "<T_ab>_b=<T_ab>_0+T_ab[varphi], same for +/-; <T_ab>_0 on full SA not computed.",
+        "renormalized": false,
+        "full_tensor_matched": false
+      },
+      "backreaction": {
+        "level": "not_solved",
+        "details": "No whole-SA RSET or evolved metric; smooth coherent displacement cannot repair a singular connected two-point function."
+      },
+      "support_accounting": {
+        "complete": false,
+        "details": "Classical shells inherited; source, detector, core boundary and formation/stabilization apparatus not completed."
+      },
+      "stability": "Common two-sided equilibrium fails locally; no theorem against all non-equilibrium states or all finite records.",
+      "causal_structure": "Classical SA return relation is imported with its global extension; new full retarded/response kernel not constructed.",
+      "sender_intervention": {
+        "description": "J_b=(-1)^b j, fixed compact support; bit record R retained.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite-time Ramsey sigma_y outcome Y=+/-1 after gapless sigma_z phi coupling; kernels uncomputed on full SA.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Global response and state covariance on sewn SA are not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Global response and state covariance on sewn SA are not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "computed": false,
+        "value": null,
+        "error_bound": null,
+        "receiver_precedes_sender": null,
+        "interpretation": "Unknown is not zero. Local control noise is not the SA covariance."
+      },
+      "unresolved_assumptions": [
+        "Globally admissible non-equilibrium state and all boundary data",
+        "Sewing, CCR, positivity and Hadamard regularity simultaneously",
+        "RSET/backreaction including all relevant modes",
+        "Formation, stabilization and complete finite apparatus",
+        "Actual m_h,V_h and past receiver joint probabilities"
+      ],
+      "obstructions": [
+        "beta*kappa_T=2pi cannot hold at both horizons because kappa_minus/kappa_plus=(r_plus/r_minus)^2>1."
+      ],
+      "literature": [
+        {
+          "authors": "F. Schein; P. C. Aichelburg",
+          "title": "Traversable Wormholes in Geometries of Charged Shells",
+          "year": 1996,
+          "url": "https://arxiv.org/abs/gr-qc/9606069",
+          "used_for": "MP/RN shells; proper-time matching; classical global geometry",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "M. Martellini; C. Reina; A. Treves",
+          "title": "Klein-Gordon field in a naked-singularity background",
+          "year": 1978,
+          "url": "https://doi.org/10.1103/PhysRevD.17.2573",
+          "used_for": "Published endpoint/reflection issue; abstract checked; present calculation rederived",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "K. Sanders",
+          "title": "On the construction of Hartle-Hawking-Israel states across a static bifurcate Killing horizon",
+          "year": 2015,
+          "url": "https://arxiv.org/abs/1310.5537",
+          "used_for": "Thermal horizon regularity; no existence theorem applied to whole SA",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "N. Zilberman; A. Levi; A. Ori",
+          "title": "Quantum fluxes at the inner horizon of a spherical charged black hole",
+          "year": 2020,
+          "url": "https://arxiv.org/abs/1906.11303",
+          "used_for": "Four-dimensional radial equation; no RN-state flux coefficient transplanted",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "E. Tjoa; K. Gallock-Yoshimura",
+          "title": "Channel capacity of relativistic quantum communication with rapid interaction",
+          "year": 2022,
+          "url": "https://arxiv.org/abs/2202.12301",
+          "used_for": "Field/detector methodology; finite-time gapless law independently derived",
+          "checked_on": "2026-09-24"
+        }
+      ],
+      "code": [
+        "src/symbolic/sa_quantum_junction_v4.py",
+        "src/numerical/sa_inner_scattering_v4.py",
+        "scripts/sa_quantum_verify_v4.py",
+        "scripts/sa_quantum_report_v4.py"
+      ],
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "scope": "Only this shared-temperature, two-sided nonextremal thermal construction. Not an all-state no-go.",
+      "assumption_changes": [
+        {
+          "field": "signal/detector",
+          "old": "unspecified full field and receiver",
+          "new": "minimal neutral scalar; compact source +/-j; finite-window phase-sensitive qubit",
+          "reason": "Derive a probability functional without fixing missing global kernels by hand."
+        },
+        {
+          "field": "quantum-state ansatz",
+          "old": "unspecified non-equilibrium state",
+          "new": "one common KMS parameter in all static regions, regular at both bifurcations",
+          "reason": "Test a concrete equilibrium preparation; not claim all stationary or non-equilibrium states are KMS."
+        }
+      ],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed"
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "partial"
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "partial"
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "not_reached"
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial"
+        },
+        "6": {
+          "name": "stability",
+          "state": "partial"
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "partial"
+        }
+      },
+      "candidate_id": "sa-single-kms-two-horizons",
+      "status": "C",
+      "title": "単一KMS温度で両分岐地平面を正則化",
+      "verdict": "single_temperature_double_horizon_incompatible"
+    },
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "candidate_kind": "channel",
+      "geometry": "SA: ds_MP^2=-U^-2 dT^2+U^2 dx^2; ds_RN^2=-f dt^2+dr^2/f+r^2 dOmega^2; U0=2,A=2,m=1/5,e=1/10.",
+      "matter_content": "Classical charged shells and Maxwell background; neutral real minimally coupled 4D test scalar; localized classical source and ideal qubit detector.",
+      "quantum_state": "Global positive Hadamard two-point function on the full sewn spacetime is not supplied.",
+      "topology": "Same MP exterior joined through different ends of extended RN; horizons and timelike singularities retained as input.",
+      "assumptions": [
+        "Prescribed 3+1D SA geometry, not formed dynamically",
+        "No scalar surface action; minimal coupling",
+        "Same preparation and source support for b=0,1",
+        "Receiver uses a finite proper-time window",
+        "No choice of boundary data depending on the transmitted bit",
+        "Parity-invariant common field state",
+        "Detector begins in energy eigenstate",
+        "Only parity-even energy/excitation observable is read"
+      ],
+      "boundary_conditions": "Continuity of phi and common normal derivative at both shells; global horizon data and timelike-singularity boundary law remain to be selected and checked.",
+      "symmetries": [
+        "Exterior axisymmetry retained; no global spherical-mode decoupling",
+        "Inner RN partial-wave scattering only for the boundary diagnostic"
+      ],
+      "approximation_order": "Exact linear test-field/interface identities; exact local endpoint and restricted thermal conditions; no semiclassical self-consistent full solution.",
+      "stress_energy": {
+        "kind": "conditional_coherent_shift_identity",
+        "formula": "<T_ab>_b=<T_ab>_0+T_ab[varphi], same for +/-; <T_ab>_0 on full SA not computed.",
+        "renormalized": false,
+        "full_tensor_matched": false
+      },
+      "backreaction": {
+        "level": "not_solved",
+        "details": "No whole-SA RSET or evolved metric; smooth coherent displacement cannot repair a singular connected two-point function."
+      },
+      "support_accounting": {
+        "complete": false,
+        "details": "Classical shells inherited; source, detector, core boundary and formation/stabilization apparatus not completed."
+      },
+      "stability": "Common two-sided equilibrium fails locally; no theorem against all non-equilibrium states or all finite records.",
+      "causal_structure": "Classical SA return relation is imported with its global extension; new full retarded/response kernel not constructed.",
+      "sender_intervention": {
+        "description": "J_b=(-1)^b j, fixed compact support; bit record R retained.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Energy/excitation measurement of initially energy-diagonal UDW detector.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Global response and state covariance on sewn SA are not constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "Global response and state covariance on sewn SA are not constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "computed": false,
+        "value": null,
+        "error_bound": null,
+        "receiver_precedes_sender": null,
+        "interpretation": "Unknown is not zero. Local control noise is not the SA covariance."
+      },
+      "unresolved_assumptions": [
+        "Globally admissible non-equilibrium state and all boundary data",
+        "Sewing, CCR, positivity and Hadamard regularity simultaneously",
+        "RSET/backreaction including all relevant modes",
+        "Formation, stabilization and complete finite apparatus",
+        "Actual m_h,V_h and past receiver joint probabilities"
+      ],
+      "obstructions": [
+        "Combined field parity and detector Z maps b=0 to b=1 while preserving interaction, preparation of energy-diagonal detector and readout."
+      ],
+      "literature": [
+        {
+          "authors": "F. Schein; P. C. Aichelburg",
+          "title": "Traversable Wormholes in Geometries of Charged Shells",
+          "year": 1996,
+          "url": "https://arxiv.org/abs/gr-qc/9606069",
+          "used_for": "MP/RN shells; proper-time matching; classical global geometry",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "M. Martellini; C. Reina; A. Treves",
+          "title": "Klein-Gordon field in a naked-singularity background",
+          "year": 1978,
+          "url": "https://doi.org/10.1103/PhysRevD.17.2573",
+          "used_for": "Published endpoint/reflection issue; abstract checked; present calculation rederived",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "K. Sanders",
+          "title": "On the construction of Hartle-Hawking-Israel states across a static bifurcate Killing horizon",
+          "year": 2015,
+          "url": "https://arxiv.org/abs/1310.5537",
+          "used_for": "Thermal horizon regularity; no existence theorem applied to whole SA",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "N. Zilberman; A. Levi; A. Ori",
+          "title": "Quantum fluxes at the inner horizon of a spherical charged black hole",
+          "year": 2020,
+          "url": "https://arxiv.org/abs/1906.11303",
+          "used_for": "Four-dimensional radial equation; no RN-state flux coefficient transplanted",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "authors": "E. Tjoa; K. Gallock-Yoshimura",
+          "title": "Channel capacity of relativistic quantum communication with rapid interaction",
+          "year": 2022,
+          "url": "https://arxiv.org/abs/2202.12301",
+          "used_for": "Field/detector methodology; finite-time gapless law independently derived",
+          "checked_on": "2026-09-24"
+        }
+      ],
+      "code": [
+        "src/symbolic/sa_quantum_junction_v4.py",
+        "src/numerical/sa_inner_scattering_v4.py",
+        "scripts/sa_quantum_verify_v4.py",
+        "scripts/sa_quantum_report_v4.py"
+      ],
+      "verification": {
+        "computational": "pending",
+        "independent_task": null,
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "scope": "This sign code and parity-even receiver only, conditional on an admissible common field theory. No all-encoding no-go.",
+      "assumption_changes": [
+        {
+          "field": "signal/detector",
+          "old": "unspecified full field and receiver",
+          "new": "minimal neutral scalar; compact source +/-j; finite-window phase-sensitive qubit",
+          "reason": "Derive a probability functional without fixing missing global kernels by hand."
+        },
+        {
+          "field": "readout",
+          "old": "phase-sensitive Ramsey receiver",
+          "new": "ground-state excitation/energy readout",
+          "reason": "Check a false positive: opposite coherent signs have equal intensity."
+        }
+      ],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed"
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "partial"
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "partial"
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "not_reached"
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial"
+        },
+        "6": {
+          "name": "stability",
+          "state": "partial"
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "partial"
+        }
+      },
+      "candidate_id": "sa-sign-code-energy-readout",
+      "status": "C",
+      "title": "等エネルギー符号化を励起数だけで読む受信器",
+      "verdict": "parity_even_readout_has_no_sign_dependence"
+    }
+  ],
+  "forbidden_interpretations": [
+    "Reflection phase is not a probability",
+    "4D flat-space noise is not the SA noise",
+    "A finite conditional probability formula is not a global state construction",
+    "The two boundary extensions are not proven globally compatible"
+  ],
+  "research_start_sha": "2304cbc39b638491d20cb9ece2f44b05bb216426"
+}
