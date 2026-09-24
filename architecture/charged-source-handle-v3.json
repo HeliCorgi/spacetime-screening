@@ -1,0 +1,379 @@
+{
+  "schema_version": 1,
+  "batch_id": "charged-source-handle-v3",
+  "source_base_sha": "2304cbc39b638491d20cb9ece2f44b05bb216426",
+  "protocol_file": "docs/4d-past-signalling-protocol.txt",
+  "protocol_sha256": "3b024b673c099d1886112372fe9b0b6095505380c6c202d93c5ea8b9389159dd",
+  "precision_dps": [
+    50,
+    80
+  ],
+  "candidates": [
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "sender_intervention": {
+        "description": "Proposed compact-support current with bit-dependent sign; not executed on either candidate. Same externally specified geometry and resources for each bit.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "A finite-time stored record Y at the sender laboratory before the send event; not constructed.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "No complete quantum source, intervention and finite past-receiver experiment has been constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "No complete quantum source, intervention and finite past-receiver experiment has been constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "computed": false,
+        "value": null,
+        "error_bound": null,
+        "receiver_precedes_sender": null,
+        "interpretation": "Unknown probabilities are not transmission coefficients and are not replaced by zero."
+      },
+      "verification": {
+        "computational": "pending",
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true,
+        "independent_task": null
+      },
+      "code": [
+        "scripts/architecture_charged_models.py",
+        "scripts/architecture_charged_verify.py",
+        "scripts/architecture_charged_search.py",
+        "scripts/test_architecture_charged_search.py",
+        "scripts/architecture_search.py"
+      ],
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "candidate_id": "rn-smooth-conformal-source",
+      "status": "C",
+      "candidate_kind": "geometry_and_support",
+      "title": "有限厚さRN：中性自由共形場だけによる指定形状の支持検査",
+      "geometry": "ds^2=-f(r(x))dt^2+dx^2/f(r(x))+r(x)^2 dOmega^2; r=a+sqrt(x^2+epsilon^2)-epsilon; f=1-2M/r+Q^2/r^2; a>r_plus, epsilon>0.",
+      "matter_content": "Classical radial Maxwell flux plus a finite number of NEUTRAL free massless conformally coupled scalars, neutral free massless Dirac fields and/or independent free Maxwell fields. No material boundary, no charged-field gauge anomaly, no other supporting matter.",
+      "quantum_state": "Any locally Hadamard state of that neutral free conformal sector; use its exact state-independent renormalized trace, not a fabricated full RSET.",
+      "topology": "R_t x R_x x S^2, two asymptotically flat ends, no time identification.",
+      "assumptions": [
+        "Exactly the displayed r(x) and f(r) at all radii; no asymptotic lapse adjustment.",
+        "Einstein gravity with finite renormalized G, Lambda=0, and arbitrary finite conventional curvature-squared counterterms.",
+        "Finite species numbers fixed as r goes to infinity.",
+        "Neutral free conformal quantum matter only; no beta(g)*F^2, masses, nonminimal nonconformal couplings, material boundaries or traceful additional support."
+      ],
+      "boundary_conditions": "Smooth reflection at x=0; ordinary asymptotically flat falloffs at both ends. No delta-shell approximation in the C proof.",
+      "symmetries": [
+        "Static spherical 4D background; quantum trace argument does not require stationary/Gaussian state."
+      ],
+      "approximation_order": "Exact necessary trace equation for the specified semiclassical ansatz and neutral free conformal fields; it is an ansatz-specific nonexistence result, not a perturbative no-go for other geometries.",
+      "stress_energy": {
+        "kind": "required_full_tensor_compared_with_renormalized_trace_only",
+        "formula": "8piG(rho,pr,pt)=[(1-f*rprime^2-2*f*r*rsecond-fprime*r*rprime)/r^2,(-1+f*rprime^2+fprime*r*rprime)/r^2,fsecond/2+fprime*rprime/r+f*rsecond/r]. Subtract Q^2/r^4*(1,-1,1). Quantum trace=(c_W W^2-a_E E4+beta boxR)/(16pi^2).",
+        "renormalized": false,
+        "full_tensor_matched": false,
+        "renormalized_trace_computed": true
+      },
+      "backreaction": {
+        "level": "prescribed_geometry_source_consistency_test",
+        "details": "r^4 R -> -2epsilon^2 while r^4 quantum trace ->0 for every finite species choice and finite beta. Trace equation fails. A logarithmic lapse change cancels this leading mismatch, but is not a solved replacement."
+      },
+      "support_accounting": {
+        "complete": false,
+        "details": "Classical Maxwell source and entire geometric residual included. No finite apparatus is supplied. C applies only to the no-other-support source hypothesis."
+      },
+      "stability": "No dynamical stability conclusion for the support sector. The separate minimally coupled test scalar has nonnegative radial spatial potential; this is not a conformal source or a semiclassical solution.",
+      "causal_structure": "A global t exists since f>0. This candidate tests a support component, not a past-directed path.",
+      "obstructions": [
+        "The exact specified smooth RN ansatz has an order r^-4 Einstein trace unavailable from its assumed neutral free conformal matter, whose anomaly begins at r^-6."
+      ],
+      "unresolved_assumptions": [
+        "A different lapse/profile or nonconformal/charged/interacting field requires a new coupled calculation.",
+        "Full renormalized tensor for any replacement, apparatus, global path and past receiver probabilities remain absent."
+      ],
+      "literature": [
+        {
+          "title": "Twenty Years of the Weyl Anomaly",
+          "authors": "M. J. Duff",
+          "year": 1994,
+          "url": "https://arxiv.org/abs/hep-th/9308075",
+          "used_for": "4D neutral free conformal trace structure and scalar/Dirac/Maxwell coefficients, Eqs.21-31. Gauge beta F^2 terms are explicitly outside our C result.",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "title": "The renormalized stress-energy tensor for scalar fields in the Boulware state with applications to extremal black holes",
+          "authors": "J. Arrechea, C. Breen, A. Ottewill, L. Pisani, P. Taylor",
+          "year": 2025,
+          "url": "https://arxiv.org/abs/2409.04528",
+          "used_for": "Numerical 4D RN RSET and reduced-order backreaction exist; no values transplanted to a different glued geometry/state.",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "title": "Linearized stability of charged thin-shell wormholes",
+          "authors": "E. F. Eiroa and G. E. Romero",
+          "year": 2004,
+          "url": "https://arxiv.org/abs/gr-qc/0303093",
+          "used_for": "Preceding spherical RN shell stability; NOT transferred to the smoothed or axisymmetric geometries.",
+          "checked_on": "2026-09-24"
+        }
+      ],
+      "scope": "C only for the displayed globally prescribed finite-thickness shape with the stated neutral conformal-only residual source. Not a prohibition of all RN, all QFT or all large-N models.",
+      "assumption_changes": [
+        {
+          "field": "shell thickness",
+          "old": "RN Israel delta shell of PR21",
+          "new": "smooth r=a+sqrt(x^2+epsilon^2)-epsilon",
+          "reason": "Define ordinary 4D curvature and avoid undefined squared distributions in quantum stress."
+        },
+        {
+          "field": "matter content",
+          "old": "unspecified exotic shell/P(X) offset",
+          "new": "neutral free conformal-only candidate source",
+          "reason": "Test a physically defined source class via its exact quantum trace."
+        }
+      ],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "completed",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "partial",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "partial",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "6": {
+          "name": "stability",
+          "state": "partial",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "not_reached",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        }
+      }
+    },
+    {
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "sender_intervention": {
+        "description": "Proposed compact-support current with bit-dependent sign; not executed on either candidate. Same externally specified geometry and resources for each bit.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "A finite-time stored record Y at the sender laboratory before the send event; not constructed.",
+      "P_Y_do_0": {
+        "computed": false,
+        "distribution": null,
+        "reason": "No complete quantum source, intervention and finite past-receiver experiment has been constructed."
+      },
+      "P_Y_do_1": {
+        "computed": false,
+        "distribution": null,
+        "reason": "No complete quantum source, intervention and finite past-receiver experiment has been constructed."
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "computed": false,
+        "value": null,
+        "error_bound": null,
+        "receiver_precedes_sender": null,
+        "interpretation": "Unknown probabilities are not transmission coefficients and are not replaced by zero."
+      },
+      "verification": {
+        "computational": "pending",
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true,
+        "independent_task": null
+      },
+      "code": [
+        "scripts/architecture_charged_models.py",
+        "scripts/architecture_charged_verify.py",
+        "scripts/architecture_charged_search.py",
+        "scripts/test_architecture_charged_search.py",
+        "scripts/architecture_search.py"
+      ],
+      "construction_evidence": {
+        "global_stress_matching": false,
+        "semiclassical_self_consistency": false,
+        "apparatus_complete": false,
+        "stability_appropriate": false,
+        "initial_boundary_consistency": false,
+        "finite_receiver_record": false,
+        "intervention_not_correlation": false,
+        "renormalized_source_supplied": false
+      },
+      "candidate_id": "mp-same-exterior-handle",
+      "status": "B",
+      "candidate_kind": "geometry_and_support",
+      "title": "同じ外部空間の二口MPハンドル：真の古典的帰還経路",
+      "geometry": "ds^2=-U^-2 dt^2+U^2 dX^2, U=1+m/r_++m/r_-. Excise balls radius a around z=+/-d/2, d>2a. Identify their timelike boundaries by z-reflection and t_right=t_left+Delta; cross right to left to acquire -Delta.",
+      "matter_content": "Exact classical electrovac outside a charged timelike seam. A_t=1/(sqrt(G)U), Gaussian Maxwell normalization. Seam sigma=-(U+a U_n)/(2piG U^2 a), p=1/(4piG U a), q_s=-U_n/(2pi sqrt(G)U^2). sigma<0.",
+      "quantum_state": "Not constructed on the quotient; no global Hadamard state or renormalized quantum realization of the seam has been supplied.",
+      "topology": "One asymptotically flat spatial exterior with a handle joining two excised balls. Before adding holonomy there is one time coordinate; nonzero holonomy is prescribed in seam identification.",
+      "assumptions": [
+        "Equal positive MP centre parameters, m>0, d>2a; the singular centres are removed.",
+        "Exact reflection isometry matches angle-dependent first fundamental forms.",
+        "Time holonomy is given as input geometry, not manufactured by a control protocol.",
+        "A charged negative-energy distributional seam is permitted at the classical diagnostic stage only.",
+        "No spherical RN stability theorem is imported to this axially symmetric charged seam."
+      ],
+      "boundary_conditions": "Isometric timelike cut-and-paste, Israel stress and Maxwell current jumps. One asymptotic time normalization. No RN black-hole interior or inner Cauchy-horizon traversal is used.",
+      "symmetries": [
+        "Static axisymmetric local metric; mouths not intrinsically round because U varies with polar angle."
+      ],
+      "approximation_order": "Exact classical distributional Einstein-Maxwell construction. Not semiclassical and not a finite-thickness quantum solution. The axial optical path is a sufficient return route, not a certified globally shortest path.",
+      "stress_energy": {
+        "kind": "classical_distributional_required_source",
+        "formula": "Bulk Maxwell plus explicit sigma,p,q_s at the seam. Proper seam energy=-2a(1+m/d)/G, charge=2m/sqrt(G), ADM mass at infinity=2m/G. These are distinct quantities, not an additive fabrication budget.",
+        "renormalized": false,
+        "full_tensor_matched": true
+      },
+      "backreaction": {
+        "level": "classical_distributional_solution_with_prescribed_source",
+        "details": "Bulk Einstein-Maxwell identity, first and second fundamental forms, electromagnetic surface source and tangential Ward balance checked. Source is derived from geometry, not generated by a quantum state."
+      },
+      "support_accounting": {
+        "complete": false,
+        "details": "All classical bulk and seam sources required by the junction are included. Their quantum manufacture, power/control apparatus, finite-thickness stability and time-holonomy preparation are not supplied."
+      },
+      "stability": "No full linear or nonlinear stability analysis of the charged axisymmetric handle. Prior RN radial stability is not inherited.",
+      "causal_structure": "External axial null path has T_axis=(d-2a)+4m log((d-a)/a)+m^2[2(1/a-1/(d-a))+4/d log((d-a)/a)]. Combined with right-to-left crossing gives return minus send=T_axis-Delta. For m=1,a=.1,d=10,Delta=60 this is negative with finite proper-time margin. Delta=0 is an explicit no-past control.",
+      "obstructions": [],
+      "unresolved_assumptions": [
+        "Negative-energy charged seam is not a finite-thickness quantum material.",
+        "Time shift/topology not created by a physically specified human control process.",
+        "No global quantum state, chronology stability, backreaction or detector probabilities.",
+        "This MP geometry is not the separately analyzed smooth RN geometry; their partial results cannot be multiplied into one apparatus."
+      ],
+      "literature": [
+        {
+          "title": "A Class of Exact Solutions of Einstein's Field Equations",
+          "authors": "S. D. Majumdar",
+          "year": 1947,
+          "url": "https://doi.org/10.1103/PhysRev.72.390",
+          "used_for": "Harmonic conformastatic Einstein-Maxwell exterior; not a quantum source.",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "title": "Traversable wormholes: Some simple examples",
+          "authors": "M. Visser",
+          "year": 1989,
+          "url": "https://arxiv.org/abs/0809.0907",
+          "used_for": "Cut-and-paste and distributional shell method; the equal two-centre direct seam here is our specified variant.",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "title": "Traversable Wormholes in Geometries of Charged Shells",
+          "authors": "F. Schein and P. C. Aichelburg",
+          "year": 1996,
+          "url": "https://arxiv.org/abs/gr-qc/9606069",
+          "used_for": "Same-asymptotic MP/RN construction as comparison. Their RN interior/Cauchy horizon is NOT used here; their positive shell claim is NOT imported.",
+          "checked_on": "2026-09-24"
+        },
+        {
+          "title": "Linearized stability of charged thin-shell wormholes",
+          "authors": "E. F. Eiroa and G. E. Romero",
+          "year": 2004,
+          "url": "https://arxiv.org/abs/gr-qc/0303093",
+          "used_for": "Preceding spherical RN shell stability; NOT transferred to the smoothed or axisymmetric geometries.",
+          "checked_on": "2026-09-24"
+        }
+      ],
+      "scope": "B: a true same-exterior classical causal path with all required classical junction sources, conditional on the imposed exotic seam and time holonomy. Not A and not a quantum device.",
+      "assumption_changes": [
+        {
+          "field": "topology",
+          "old": "two separate RN exteriors joined once",
+          "new": "two boundaries of one exact two-centre MP exterior identified",
+          "reason": "Introduce a real exterior return path; avoid a removable clock offset."
+        },
+        {
+          "field": "symmetry and charge",
+          "old": "spherical neutral RN seam at fixed Q flux",
+          "new": "axisymmetric MP with charged seam and angle-dependent lapse",
+          "reason": "One exact multi-centre 4D geometry rather than a sum of unrelated RN metrics."
+        },
+        {
+          "field": "time identification",
+          "old": "one removable offset between disconnected exteriors",
+          "new": "prescribed holonomy around a handle in the same exterior",
+          "reason": "Construct a non-gauge classical return condition without claiming a formation protocol."
+        }
+      ],
+      "stages": {
+        "1": {
+          "name": "literature",
+          "state": "completed",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "2": {
+          "name": "classical_geometry",
+          "state": "completed",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "3": {
+          "name": "quantum_source",
+          "state": "not_reached",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "4": {
+          "name": "backreaction",
+          "state": "partial",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "5": {
+          "name": "support_accounting",
+          "state": "partial",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "6": {
+          "name": "stability",
+          "state": "partial",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        },
+        "7": {
+          "name": "information_channel",
+          "state": "not_reached",
+          "meaning": "Scoped diagnostic only; not completion of a physical apparatus."
+        }
+      }
+    }
+  ]
+}
