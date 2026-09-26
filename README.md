@@ -3,6 +3,46 @@
 **研究目的：現実の3+1次元時空に、送信者が選んだ情報を過去へ届ける通信路を作れるか。**
 幾何、支える量子物質、有限の装置、受信記録を同じ物理過程として成立させることを目指します。
 
+## v8：4D stress tensorを総監査し、Deutsch則の3+1D QFT導出を判定
+
+> **今回の追加分類：A=0 / B=5 / C=1。** v7の `D_past=e^-1>0` はDeutsch則を新しい基礎法則として仮定するBの内部では維持します。
+> stress tensor側にはMMP、Jiang–Jiang、Popov、Kain、Mehulic–Prokopecという実在する4D候補が残ります。
+> **しかし exact Deutsch fixed-point selection は standard linear 3+1D QFT の operation-independent supermap からは導出できません。**
+
+| 今回の判定 | 結果 |
+|---|---|
+| **MMP fermion Casimir** | **B**：quantum stressをEinstein方程式へ入れた4D self-consistent throat。ただしlong wormholeでambient causalityを破らない |
+| **Jiang–Jiang 2026** | **B**：Hadamard-renormalized scalar RSETがMT throat条件を満たす領域あり。ただしprescribed geometry |
+| **Popov long throat** | **B**：semiclassical Einstein equationのself-consistent long-throat解。local/WKB regimeでtime machine未構成 |
+| **Kain quantized EDM** | **B**：semiclassical QFTのstatic wormhole。quantum configurationのdynamic traversability未解 |
+| **Mehulic–Prokopec 2026** | **B**：one-loop RSET/backreactionをlinear `hbar` orderまで計算。classical supportが残る |
+| **Deutsch from standard QFT** | **C**：fixed-point selectorのconvex-linearity gapが `pi^2/24 = 0.4112335167...` |
+
+zero-tidal 1 m throatをsingle-scale vacuum RSET `N C hbar c/b0^4` で支えるscale matchingは
+
+```math
+\boxed{NC=\frac{b_0^2}{8\pi\ell_P^2}=1.523141897782187\times10^{68}\quad(b_0=1\,\mathrm m).}
+```
+
+Deutsch側ではv7の `a=1/2`, `c=pi/8`、50/50 operation mixtureについて
+
+```math
+V_{\rm affine}=\frac12+\frac{\pi^2}{16},\qquad
+V_{\rm fixed(mix)}=\frac12+\frac{\pi^2}{48},
+```
+
+```math
+\boxed{\Delta V=\frac{\pi^2}{24}>0.}
+```
+
+通常のfixed-state QFTではlocal operationからoutputへのhigher-order mapはaffineなので、このexact Deutsch selectorとは一致できません。escapeにはoperation-dependent global boundary、postselection/final-state、明示的非線形量子則、または新しいquantum-gravity state-selection lawが必要で、それはstandard QFTからの導出ではありません。
+
+**[全stress候補・スケール計算・Deutsch非affinity証明](notes/stress-deutsch-qft-v8.md)** ／ [順方向計算](src/symbolic/stress_deutsch_qft_v8.py) ／ [別検算](src/symbolic/stress_deutsch_qft_verify_v8.py) ／ [機械可読レコード](architecture/stress-deutsch-qft-v8.json)
+
+次の問題は一つだけ：**Deutsch selectorと同じnon-affine state selectionを生む明示的quantum-gravity / nonlinear global-boundary functionalを先に定義し、その理論自身のBorn rule、local operation、renormalized 4D stress tensor、Einstein limitを検査する。**
+
+---
+
 
 ## Deutsch固定点で #25 のCを逃がす — v7
 
