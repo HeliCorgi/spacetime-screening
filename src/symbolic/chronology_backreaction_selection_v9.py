@@ -37,8 +37,11 @@ def exact_v7_branch():
     require(mean == sp.pi/4, "v7 mean")
     require(vp == sp.Rational(5, 6), "v7 P variance")
     require(d == sp.exp(-1), "v7 D")
+
+    # Loop-mode energy above vacuum; sign of mean drops out.
     excess = sp.simplify((vx + vp - 1 + mean**2) / 2)
     require(excess == sp.Rational(1, 6) + sp.pi**2/32, "bit-symmetric energy")
+
     p0p = sp.simplify((1+d)/2)
     p1p = sp.simplify((1-d)/2)
     return {
@@ -80,6 +83,7 @@ def nonaffinity_feature():
 def degenerate_tie_breaker():
     """Identity loop has infinitely many fixed points; relative entropy selects a reference state."""
     p = sp.symbols('p', positive=True)
+    # Reference classical full-rank state r=(2/3,1/3).
     D = p*sp.log(p/sp.Rational(2,3)) + (1-p)*sp.log((1-p)/sp.Rational(1,3))
     d1 = sp.simplify(sp.diff(D,p))
     d2 = sp.simplify(sp.diff(D,p,2))
@@ -96,6 +100,7 @@ def degenerate_tie_breaker():
 
 def chronology_protection_control():
     """If the only fixed point violates an admissibility/stress cap, the chronology solution is rejected."""
+    # Classical 2-level replacement channel p -> excited state (0,1).
     fixed_energy = sp.Integer(1)
     cap = sp.Rational(1,2)
     require(fixed_energy > cap, "protection control")
@@ -110,12 +115,14 @@ def chronology_protection_control():
 
 def no_remote_ensemble_signalling_control():
     """Selection depends on the reduced chronology density operator, not its ensemble decomposition."""
+    # Bell state AB; any trace-preserving local map on remote B preserves rho_A.
     bell = sp.Matrix([1,0,0,1])/sp.sqrt(2)
     rho = bell*bell.T
     X = sp.Matrix([[0,1],[1,0]])
     U = sp.kronecker_product(sp.eye(2), X)
     out = U*rho*U.T
     def ptr_B(rr):
+        # trace B, basis |A,B>
         return sp.Matrix(2,2,lambda i,j: sum(rr[2*i+k,2*j+k] for k in range(2)))
     require(ptr_B(rho) == sp.eye(2)/2, "Bell reduction")
     require(ptr_B(out) == ptr_B(rho), "remote TP control")
@@ -130,10 +137,12 @@ def no_remote_ensemble_signalling_control():
 
 def cut_covariance_control():
     """Fixed-point mismatch and relative-entropy ordering are invariant under unitary cut transport."""
+    # Simple qubit example: rho=diag(2/3,1/3), Phi replacement to rho. Move cut with X.
     rho = sp.diag(sp.Rational(2,3), sp.Rational(1,3))
     X = sp.Matrix([[0,1],[1,0]])
     moved = X*rho*X
     require(moved == sp.diag(sp.Rational(1,3), sp.Rational(2,3)), "cut move")
+    # Exact fixed equality is preserved under conjugation.
     require(X*rho*X == moved, "unitary covariance")
     return {
         "control":"unitary conjugation of chronology cut",
