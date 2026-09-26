@@ -1,5 +1,38 @@
 # Spacetime Screening
 
+## 新しいtoy量子重力則：CBSSL — v9
+
+> **新しい物理法則のtoy proposalです。既存QFTから導出したとは主張しません。**
+> CTC領域だけで、(1) loop consistency、(2) semiclassical Einstein residual、(3) reference Hadamard stateへのrelative entropy、の順にstate/metricを選ぶ **Chronology-Backreaction State-Selection Law (CBSSL)** を定義しました。
+> globally hyperbolic領域では発動せず、ordinary initial-value QFTをそのまま使います。
+
+```math
+(g_*,rho_*)=LexArgMin_{g,rho}(C_loop, R_sc, I_ref),
+```
+
+```math
+C_loop=D_B^2(rho,Phi_{g,E}[rho]),\qquad
+R_sc=\int_C\sqrt{-g}\,w\,E_{\mu\nu}E_{\rho\sigma}q^{\mu\rho}q^{\nu\sigma}.
+```
+
+stationary chronology solutionは `C_loop=0`, `R_sc=0`, finite RSET, fixed external chargesを同時に満たす場合だけ許可。fixed pointが複数なら `S(rho||rho_ref)` 最小を選びます。Deutsch maximum-entropy tie-breakとは異なります。
+
+v7の固定signal componentでは
+
+```math
+P(Y=+1|do(0))=(1+e^{-1})/2,\quad
+P(Y=+1|do(1))=(1-e^{-1})/2,\quad
+D_{\rm past}=e^{-1}=0.367879441171442\ldots
+```
+
+を保持。bit反転でloop signalのquadratic stress/energyは同一です。v8でstandard QFTに対する障害だった `Delta V=pi^2/24` のnon-affinityは、このtoy lawではchronology-sector固有の新しい物理効果として明示的に採用します。
+
+**判定：A=0 / B=1 / C=0。** Bなのは、CBSSL自体が新仮説であり、full SA 3+1D return map・CBSSL-selected RSET・global Einstein backreaction・multipartite relativistic consistencyをまだ解いていないためです。
+
+**[CBSSLの定義・stress/backreaction条件・既存理論との差](notes/chronology-backreaction-selection-v9.md)** ／ [計算](src/symbolic/chronology_backreaction_selection_v9.py) ／ [別検算](src/symbolic/chronology_backreaction_selection_verify_v9.py) ／ [機械可読レコード](architecture/chronology-backreaction-selection-v9.json)
+
+---
+
 **研究目的：現実の3+1次元時空に、送信者が選んだ情報を過去へ届ける通信路を作れるか。**
 幾何、支える量子物質、有限の装置、受信記録を同じ物理過程として成立させることを目指します。
 
