@@ -3,6 +3,42 @@
 **研究目的：現実の3+1次元時空に、送信者が選んだ情報を過去へ届ける通信路を作れるか。**
 幾何、支える量子物質、有限の装置、受信記録を同じ物理過程として成立させることを目指します。
 
+
+## Deutsch固定点で #25 のCを逃がす — v7
+
+> **今回の判定：A=0 / B=1 / C=0。** SA v5 の二入力制御は固定部品として使い、pulse形状の再最適化はしていません。
+> v6 の operation-independent linear process を、**実際に選ばれたfuture operationごとに loop state を固定点で選ぶ Deutsch 型則**へ変更すると、正規化された自己無撞着 toy model で **非零の過去識別度**が得られます。
+> **ただし、この固定点則をSAの3+1D半古典QFTから導出していないためAではありません。**
+
+```math
+P(Y=+1\mid do(0))=\frac{1+e^{-1}}2,\qquad
+P(Y=-1\mid do(0))=\frac{1-e^{-1}}2,
+```
+
+```math
+P(Y=+1\mid do(1))=\frac{1-e^{-1}}2,\qquad
+P(Y=-1\mid do(1))=\frac{1+e^{-1}}2,
+```
+
+```math
+\boxed{D_{\rm past}=e^{-1}=0.367879441171442\ldots>0.}
+```
+
+| 固定したもの／新しく変えたもの | 結果 |
+|---|---|
+| **SA v5** | 二入力・散乱を完成部品として固定。局所pulse最適化は今回の目的外 |
+| **新しいglobal rule** | 選択されたoperation (E) ごとに `rho*=Phi_E(rho*)` を要求するDeutsch型固定点則 |
+| **明示例** | forward pure-loss amplitude `a=1/2`（`eta=1/4`）、Ramsey `lambda=1`、一周のX変位 `c=pi/8` |
+| **do(0/1)** | 固定点のX平均が `+/- pi/4`、`V_X=1/2`。上記の非零受信分布を厳密導出 |
+| **copy / NOT** | full bosonic CPTP feedback mapも自己無撞着固定点へ収束し、受信分布は双方 `(1/2,1/2)` |
+| **Aへ不足する一点** | Deutschのoperation-dependent fixed-point selectionをSA 3+1D QFTの物理的境界／初期値問題から導出できていない |
+
+**[全導出・固定点状態・copy/NOT・適用範囲](notes/sa-deutsch-fixed-point-v7.md)** ／ [順方向計算](src/numerical/sa_deutsch_fixed_point_v7.py) ／ [別検算](src/symbolic/sa_deutsch_fixed_point_verify_v7.py) ／ [候補台帳](architecture/sa-deutsch-fixed-point-v7.json)
+
+次に解く計算問題は一つだけです：**SA二殻の3+1D scalar QFTから一周reduced superoperator `Phi_E^SA` をin-in / Schwinger–Keldyshで導出し、実際の物理的境界・初期値処方がoperation-dependent固定点条件 `rho=Phi_E^SA(rho)` を強制するか判定すること。** これがYESならA候補として半古典応力・反作用へ進み、NOならこのDeutsch escapeはCです。
+
+---
+
 ## #25を閉じる：二入力制御＋有限受信器＋通常の前向き記録
 
 > **SA v5はここでは完成部品として固定します。以後の判定でpulse形状の局所最適化は使いません。** 未来送信局のbit操作、二入力、散乱、過去worldtube受信、通常の前向き記録を一つの閉じた操作模型として扱います。
