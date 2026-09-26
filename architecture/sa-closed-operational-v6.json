@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "candidate_id": "sa-two-input-closed-operational-v6",
+  "status": "C",
+  "dimension": 4,
+  "dimension_split": {
+    "space": 3,
+    "time": 1
+  },
+  "geometry": "Prescribed Schein-Aichelburg same-exterior MP/shell/RN handle; SA v5 two-input RN scattering is frozen as a completed subcomponent.",
+  "matter_content": "Classical charged shells and Maxwell background; neutral real massless minimally coupled scalar signal; two external source ports; finite Ramsey qubit receiver; ordinary classical memory.",
+  "quantum_state": "One operation-independent centered Gaussian seed on the modeled field algebra, with bit-antisymmetric coherent displacement. The C proof is independent of the unknown numerical seed variance.",
+  "topology": "Same exterior is connected through the prescribed SA handle; ordinary MP exterior path carries the stored receiver record forward to the sender.",
+  "assumptions": [
+    "SA v5 inverse scattering is accepted as a completed subcomponent; no further pulse-shape optimization is used.",
+    "The future sender can causally control both external source ports before their emissions.",
+    "The global probability/process law is linear, normalized and independent of which local future CPTP operation is selected.",
+    "Past receiver records can be stored and transported ordinarily forward to the future laboratory.",
+    "Standard local copy and NOT measure-and-prepare operations are admissible."
+  ],
+  "boundary_conditions": "Use the fixed SA v5 shell/RN mode interfaces and the same Gaussian seed for both bits; no future-operation-dependent boundary condition or postselection.",
+  "symmetries": [
+    "No new symmetry beyond the frozen SA v5 component; the operational closure is binary but does not replace the 3+1D spacetime by a 1+1D theory."
+  ],
+  "approximation_order": "Exact binary process-normalization algebra on top of the frozen linear 4D signal component; not a full nonlinear semiclassical evolution.",
+  "stress_energy": {
+    "kind": "not_needed_for_the_normalization_obstruction",
+    "formula": "The two bit states differ by opposite coherent means over one seed; the C proof uses only the induced finite-receiver kernel and does not assign an unknown RSET the value zero.",
+    "renormalized": false,
+    "full_tensor_matched": false
+  },
+  "backreaction": {
+    "level": "not_required_for_this_scoped_C",
+    "details": "Formation/backreaction remain unresolved in SA generally, but even granting the fixed background and two-port propagation cannot yield D_past>0 under the stated operation-composition assumptions."
+  },
+  "support_accounting": {
+    "complete": false,
+    "details": "SA formation and apparatus budgets are not completed; they are granted rather than used as the obstruction."
+  },
+  "stability": "Not the active obstruction. The result is a normalization/composability obstruction for the closed intervention model.",
+  "causal_structure": "Past receiver R precedes future sender S along an ordinary exterior path; the SA handle supplies the candidate return influence S -> R. Closing R -> S memory and S -> R candidate channel creates the tested loop.",
+  "sender_intervention": {
+    "description": "At future station S, do(b) writes b∈{0,1} to one classical controller. Ordinary forward control lines drive two source ports: F_A^(b)=(-1)^b conjugate(T) g and F_B^(b)=-(-1)^b R g. Each port applies the corresponding Weyl displacement. No postselection.",
+    "same_preparation": true,
+    "uses_postselection": false,
+    "future_boundary_condition_is_input": false
+  },
+  "receiver_observable": "Finite worldtube Ramsey qubit initially |+x>, U_R=exp[-i lambda sigma_z Phi(F)], sigma_y measurement with all Y=±1 outcomes stored.",
+  "P_Y_do_0": {
+    "computed": true,
+    "distribution": {
+      "+1": "1/2",
+      "-1": "1/2"
+    },
+    "derivation": "Closed-process normalization with admissible copy and NOT future controllers forces d=0."
+  },
+  "P_Y_do_1": {
+    "computed": true,
+    "distribution": {
+      "+1": "1/2",
+      "-1": "1/2"
+    },
+    "derivation": "Closed-process normalization with admissible copy and NOT future controllers forces d=0."
+  },
+  "distinguishability": {
+    "metric": "total_variation",
+    "computed": true,
+    "value": 0,
+    "receiver_precedes_sender": true,
+    "derivation": "Open Ramsey kernel has D=|d|; closed copy/NOT history totals are 1+d and 1-d, so normalization of both forces d=0."
+  },
+  "obstructions": [
+    "For the open receiver kernel K(r|b)=[1+(-1)^(r+b)d]/2, closing the stored record through copy gives Z=1+d and through NOT gives Z=1-d.",
+    "One fixed operation-independent normalized process must normalize both admissible local operations; hence d=0.",
+    "Per-operation global renormalization changes the future controller distribution and is postselection/final-boundary behavior rather than the stated do-intervention."
+  ],
+  "unresolved_assumptions": [
+    "SA formation, full RSET/backreaction and material stability remain unresolved but are not needed to derive this C.",
+    "Escapes require changing the model class: operation-dependent boundary/background, nonlinear/final-state rule, forbidden copy/NOT operations, or inability to preserve the receiver record."
+  ],
+  "quantitative_obstruction": {
+    "open_kernel": "P(Y=y|do(b))=[1+y(-1)^b d]/2",
+    "open_D": "|d|",
+    "copy_total": "1+d",
+    "not_total": "1-d",
+    "attempted_nonzero_D_normalization_defect": "exactly D for each of copy and NOT, with opposite signs",
+    "minimum_column_TV_change_to_fixed_no_signal_kernel": "D/2",
+    "final_D_past": 0
+  },
+  "literature": [
+    {
+      "authors": "F. Schein; P. C. Aichelburg",
+      "title": "Traversable Wormholes in Geometries of Charged Shells",
+      "year": 1996,
+      "url": "https://arxiv.org/abs/gr-qc/9606069"
+    },
+    {
+      "authors": "C. Kehle; Y. Shlapentokh-Rothman",
+      "title": "A scattering theory for linear waves on the interior of Reissner-Nordstrom black holes",
+      "year": 2019,
+      "url": "https://arxiv.org/abs/1804.05438"
+    },
+    {
+      "authors": "O. Oreshkov; F. Costa; C. Brukner",
+      "title": "Quantum correlations with no causal order",
+      "year": 2012,
+      "url": "https://arxiv.org/abs/1105.4464"
+    },
+    {
+      "authors": "T. Morimae",
+      "title": "The process matrix framework for a single-party system",
+      "year": 2014,
+      "url": "https://arxiv.org/abs/1408.1464"
+    },
+    {
+      "authors": "E. Tjoa; K. Gallock-Yoshimura",
+      "title": "Channel capacity of relativistic quantum communication with rapid interaction",
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2202.12301"
+    }
+  ],
+  "code": [
+    "src/symbolic/sa_two_input_state_v5.py",
+    "src/symbolic/sa_closed_loop_v6.py",
+    "src/symbolic/sa_closed_loop_verify_v6.py"
+  ],
+  "verification": {
+    "computational": "exact forward algebra plus separate verifier; PR CI required",
+    "external_peer_review": "not_performed",
+    "human_review_for_A": true
+  },
+  "scope": "Model-specific C for the frozen SA v5 signal component embedded in one linear, operation-independent, composable quantum/probability process with ordinary record transport and standard local CPTP operations."
+}
