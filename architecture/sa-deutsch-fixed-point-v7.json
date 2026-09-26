@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "batch_id": "sa-deutsch-fixed-point-v7",
+  "source_base_sha": "fbc4e2bf567e00e021f94216f470198f5ce41880",
+  "protocol_file": "docs/4d-past-signalling-protocol.txt",
+  "classification": {
+    "A": 0,
+    "B": 1,
+    "C": 0
+  },
+  "candidates": [
+    {
+      "candidate_id": "sa-deutsch-fixed-point-v7",
+      "status": "B",
+      "dimension": 4,
+      "dimension_split": {
+        "space": 3,
+        "time": 1
+      },
+      "geometry": "Frozen SA v5 same-exterior MP/shell/RN signal component plus an explicit effective loop mode and ordinary forward pure-loss segment.",
+      "matter_content": "SA v5 classical background and scalar signal; one smeared bosonic loop mode; finite Ramsey qubit receiver; vacuum environment for a standard eta=1/4 attenuator.",
+      "quantum_state": "For each selected future operation, impose Deutsch self-consistency rho*=Phi_operation(rho*). For do(b) the exact loop fixed point is specified by the displayed characteristic function; this rule is postulated, not derived from SA QFT.",
+      "topology": "SA same-exterior handle retained as prescribed background; the additional fixed-point rule is a nonstandard global quantum law.",
+      "assumptions": [
+        "SA v5 is frozen as a completed signal part",
+        "Deutsch operation-dependent fixed-point law",
+        "pure-loss amplitude 1/2 on the ordinary forward segment",
+        "future sender controls both v5 ports",
+        "no postselection"
+      ],
+      "boundary_conditions": "No future final-state projection. The loop state is selected by rho=Phi_E(rho) separately for the actually chosen local operation E.",
+      "symmetries": [
+        "Single selected wavepacket mode for the fixed-point toy; not a spherical replacement of the full MP exterior."
+      ],
+      "approximation_order": "Exact one-mode CPTP/fixed-point algebra and finite-Fock verification on top of the frozen linear SA signal component; not a full 3+1D semiclassical derivation of the Deutsch law.",
+      "stress_energy": {
+        "kind": "finite-mode toy only",
+        "renormalized": false,
+        "full_tensor_matched": false,
+        "details": "Finite mode energy is bounded; the full SA renormalized stress tensor for this operation-dependent state is not computed."
+      },
+      "backreaction": {
+        "level": "not_solved",
+        "details": "No semiclassical Einstein solution selects or supports the Deutsch fixed point."
+      },
+      "support_accounting": {
+        "complete": false,
+        "details": "SA formation and the physical mechanism enforcing the fixed-point law are unsupplied."
+      },
+      "stability": "The eta=1/4 effective loop is contractive for fixed do(b); copy/NOT feedback fixed points were numerically iterated in truncated Fock space. This is not full spacetime stability.",
+      "causal_structure": "Future do(b) drives the two frozen SA ports; the candidate backward field reaches the earlier finite receiver; its ordinary record can return forward. Deutsch consistency replaces the v6 operation-independent process law.",
+      "sender_intervention": {
+        "description": "do(b) chooses the common sign of the two frozen SA v5 inverse-scattering inputs, producing an x displacement (-1)^b*pi/8 per loop pass.",
+        "same_preparation": true,
+        "uses_postselection": false,
+        "future_boundary_condition_is_input": false
+      },
+      "receiver_observable": "Finite Ramsey qubit with U=exp(-i sigma_z X), measured in sigma_y; all Y=+/-1 results retained.",
+      "P_Y_do_0": {
+        "computed": true,
+        "distribution": {
+          "+1": "(1+e^-1)/2",
+          "-1": "(1-e^-1)/2"
+        },
+        "numeric": {
+          "+1": 0.6839397205857212,
+          "-1": 0.31606027941427883
+        }
+      },
+      "P_Y_do_1": {
+        "computed": true,
+        "distribution": {
+          "+1": "(1-e^-1)/2",
+          "-1": "(1+e^-1)/2"
+        },
+        "numeric": {
+          "+1": 0.3160602794142783,
+          "-1": 0.6839397205857212
+        }
+      },
+      "distinguishability": {
+        "metric": "total_variation",
+        "computed": true,
+        "value": "e^-1",
+        "numeric": 0.36787944117144233,
+        "receiver_precedes_sender": true
+      },
+      "obstructions": [],
+      "unresolved_assumptions": [
+        "Derive the operation-dependent Deutsch fixed-point selection rule from the full 3+1D SA quantum field theory rather than postulate it.",
+        "Compute the corresponding full renormalized stress tensor and semiclassical backreaction."
+      ],
+      "literature": [
+        {
+          "authors": "D. Deutsch",
+          "title": "Quantum mechanics near closed timelike lines",
+          "year": 1991,
+          "url": "https://doi.org/10.1103/PhysRevD.44.3197",
+          "used_for": "Fixed-point CTC prescription; not a derivation from SA."
+        },
+        {
+          "authors": "H. D. Politzer",
+          "title": "Path integrals, density matrices, and information flow with closed timelike curves",
+          "year": 1994,
+          "url": "https://doi.org/10.1103/PhysRevD.49.3981",
+          "used_for": "Inequivalent CTC quantum prescriptions and nonlinearity/coherence caveat."
+        },
+        {
+          "authors": "S. Aaronson; J. Watrous",
+          "title": "Closed Timelike Curves Make Quantum and Classical Computing Equivalent",
+          "year": 2009,
+          "url": "https://arxiv.org/abs/0808.2669",
+          "used_for": "Modern statement of Deutsch causal consistency as a fixed point of the evolution map."
+        }
+      ],
+      "code": [
+        "src/numerical/sa_deutsch_fixed_point_v7.py",
+        "src/symbolic/sa_deutsch_fixed_point_verify_v7.py"
+      ],
+      "verification": {
+        "computational": "exact algebra plus finite-Fock iteration",
+        "external_peer_review": "not_performed",
+        "human_review_for_A": true
+      },
+      "scope": "Positive D_past in an explicit Deutsch-rule toy completion. B, not A, because the fixed-point law and its full 3+1D RSET/backreaction are not derived from the SA semiclassical theory.",
+      "calculation": {
+        "exact": {
+          "parameters": {
+            "attenuation_amplitude": "1/2",
+            "eta": "1/4",
+            "lambda": "1",
+            "c": "pi/8"
+          },
+          "fixed_point_x_mean": {
+            "do_0": "pi/4",
+            "do_1": "-pi/4"
+          },
+          "fixed_point_variances": {
+            "V_X": "1/2",
+            "V_P": "5/6"
+          },
+          "exact_receiver_contrast": "exp(-1)",
+          "P_Y_do_0": {
+            "+1": "(1+exp(-1))/2",
+            "-1": "(1-exp(-1))/2"
+          },
+          "P_Y_do_1": {
+            "+1": "(1-exp(-1))/2",
+            "-1": "(1+exp(-1))/2"
+          },
+          "D_past": "exp(-1)",
+          "copy_record_fixed_point": {
+            "+1": "1/2",
+            "-1": "1/2",
+            "subleading_eigenvalue": "exp(-1)"
+          },
+          "not_record_fixed_point": {
+            "+1": "1/2",
+            "-1": "1/2",
+            "subleading_eigenvalue": "-exp(-1)"
+          },
+          "fixed_point_characteristic_function": "chi_b(kx,kp)=exp[i(-1)^b*pi*kx/4] exp[-(kx^2+kp^2)/4] prod_{n=1} cos(2^{-n} kp)"
+        },
+        "fock_runs": [
+          {
+            "cutoff": 10,
+            "dps": 30,
+            "rows": {
+              "0": {
+                "iterations": 46,
+                "frobenius_step": "9.755246493e-15",
+                "P_plus": "0.683913382583699643964317847602",
+                "P_minus": "0.316086617416300356035682152398",
+                "trace": "1.0"
+              },
+              "1": {
+                "iterations": 46,
+                "frobenius_step": "9.755246493e-15",
+                "P_plus": "0.316086617416300356035682152398",
+                "P_minus": "0.683913382583699643964317847602",
+                "trace": "1.0"
+              },
+              "copy": {
+                "iterations": 23,
+                "frobenius_step": "4.678017141e-15",
+                "P_plus": "0.5",
+                "P_minus": "0.5",
+                "trace": "1.0"
+              },
+              "not": {
+                "iterations": 28,
+                "frobenius_step": "4.316703749e-15",
+                "P_plus": "0.5",
+                "P_minus": "0.5",
+                "trace": "1.0"
+              }
+            }
+          },
+          {
+            "cutoff": 14,
+            "dps": 30,
+            "rows": {
+              "0": {
+                "iterations": 46,
+                "frobenius_step": "9.755378751e-15",
+                "P_plus": "0.683939684055277127371062453452",
+                "P_minus": "0.316060315944722872628937546548",
+                "trace": "1.0"
+              },
+              "1": {
+                "iterations": 46,
+                "frobenius_step": "9.755378751e-15",
+                "P_plus": "0.316060315944722872628937546548",
+                "P_minus": "0.683939684055277127371062453452",
+                "trace": "1.0"
+              },
+              "copy": {
+                "iterations": 23,
+                "frobenius_step": "5.002592903e-15",
+                "P_plus": "0.5",
+                "P_minus": "0.5",
+                "trace": "1.0"
+              },
+              "not": {
+                "iterations": 28,
+                "frobenius_step": "4.097149111e-15",
+                "P_plus": "0.5",
+                "P_minus": "0.5",
+                "trace": "1.0"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
