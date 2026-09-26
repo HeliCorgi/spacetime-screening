@@ -6,6 +6,10 @@
 
 ## 0. 結論
 
+### v5を固定部品として扱う
+
+本節以降では PR #25 / SA v5 の二入力逆散乱・状態準備診断を**完成した下位部品として固定**する。`g` やpulse形状の局所最適化は行わず、今回の判定根拠にも使わない。問うのは、未来の自由なbit選択を実際の外部操作として二入力へ与え、その結果を過去側の有限worldtube受信器で測る一つの閉じた確率模型が成立するかだけである。
+
 **この閉じ方では C。A にはならない。**
 
 PR #25 の二入力制御を使い、未来側 `do(b)`、共通量子状態、RN 内部散乱、過去側有限 Ramsey 受信器、測定、受信記録の通常の前向き保存まで一つの操作模型にした。
@@ -94,7 +98,7 @@ F_A^{(b)}=(-1)^b\overline{\cal T}g,
 F_B^{(b)}=-(-1)^b{\cal R}g.
 ```
 
-これは **未来送信操作の定義**である。二つの特性入力を物理装置が準備できることをここでは最大限有利に仮定する。
+これは **未来送信操作 `do(b)` の実装定義**である。未来の外部送信局 `S` は古典register `b` を一度だけ自由に設定し、通常の未来向き制御線で二つのsource port A/Bへ同じbitを配る。port A/B は共通seed上のincoming scalar modeへそれぞれ Weyl displacement `D(F_A^(b))`, `D(F_B^(b))` を施す。送信局から両portまでの制御線はMP外部の通常の因果未来内に置き、receiver結果や未来の境界条件を入力に使わない。**v5部品がこの二modeの合成を実装するものとして固定し、ここではpulse形状を再最適化しない。**
 
 PR #25 の `Q/M=.99` の低周波極限では
 
@@ -348,6 +352,7 @@ python src/symbolic/sa_closed_loop_verify_v6.py \
 - **[SA]** F. Schein, P. C. Aichelburg, *Traversable Wormholes in Geometries of Charged Shells*, PRL **77**, 4130–4133 (1996). https://arxiv.org/abs/gr-qc/9606069 。同一外部へ戻る古典背景と time identification。量子整合性の出典ではない。
 - **[KSR]** C. Kehle, Y. Shlapentokh-Rothman, *A scattering theory for linear waves on the interior of Reissner–Nordström black holes*, Ann. Henri Poincaré **20**, 1583–1650 (2019). https://arxiv.org/abs/1804.05438 。PR #25 の二入力散乱と可逆性。
 - **[OCB]** O. Oreshkov, F. Costa, C. Brukner, *Quantum correlations with no causal order*, Nature Communications **3**, 1092 (2012). https://arxiv.org/abs/1105.4464 。局所 CP map と global normalization を使う process 条件。今回の qubit 一人版はコードで再導出。
+- **[M14]** T. Morimae, *The process matrix framework for a single-party system* (2014). https://arxiv.org/abs/1408.1464 。一人のpartyではprocess-matrix枠組みが通常の量子物理へ縮退するという独立の文献確認。今回の代数証明の代替ではなく整合性確認として使う。
 - **[D22]** E. Tjoa, K. Gallock-Yoshimura, *Channel capacity of relativistic quantum communication with rapid interaction*, PRD **105**, 085011 (2022). https://arxiv.org/abs/2202.12301 。場＋有限量子受信器の通信解析の参考。SA時空を解いた論文ではない。
 
 **適用範囲を越えて「自然界では過去通信が一般に不可能」とは結論しない。** 今回得たのは、#25を standard linear/composable quantum operation と普通の forward record まで含めて閉じた場合の明確なC型障害である。
