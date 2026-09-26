@@ -1,0 +1,81 @@
+{
+  "base_sha": "fbf98de97fe11b9dea40e7d195227ea4a088b5a5",
+  "classification": {"A": 0, "B": 1, "C": 0},
+  "law": {
+    "law_id": "cbssl-v9",
+    "law_name": "Chronology-Backreaction State-Selection Law (CBSSL)",
+    "status": "B",
+    "claim_type": "new toy physical law proposed in this project; not established physics and not claimed as literature-first",
+    "activation": "Only when the geometry admits a closed causal return map across a chronology cut. If no return map exists, use ordinary initial-value QFT with no CBSSL state reselection.",
+    "boundary_state_space": "Positive trace-one density operators (or algebraic states in the continuum limit) on the complete chronology-cut algebra, including all classical control records that cross the cut.",
+    "return_map": "Phi[g,E] is the complete CPTP return channel induced by ordinary local QFT/apparatus propagation away from the chronology boundary for the actually implemented local operation E.",
+    "selection": "Lexicographically minimize (C_loop, R_sc, I_ref): first chronology mismatch C_loop=D_B^2(rho,Phi[rho]); among its minimizers minimize the positive semiclassical Einstein residual R_sc; among remaining degeneracy minimize quantum relative entropy I_ref=D(rho||rho_ref). A stationary chronology solution is admitted only if min C_loop=0 and min R_sc=0 with finite renormalized stress and fixed asymptotic charges.",
+    "semiclassical_residual": "E_mn=G_mn+Lambda g_mn-8*pi*G<T_mn>_ren; R_sc=integral_C sqrt(-g) w E_mn E_rs q^(mr)q^(ns), with q^(mn)=g^(mn)+2 u^m u^n positive in the apparatus frame. Renormalization counterterms/reference state are fixed once, not per operation.",
+    "tie_breaker": "Relative entropy to one operation-independent local Hadamard/reference state; identity-loop control selects the reference state, unlike Deutsch maximum entropy.",
+    "no_postselection": "Once (g*,rho*) is selected, all local outcome probabilities use the ordinary Born rule and all outcomes are kept. No conditioning on a future measurement outcome.",
+    "charge_constraint": "Admissible states/geometries must preserve the asymptotic/gauge charges fixed by the external preparation; the selector may not create arbitrary ADM charge or gauge charge.",
+    "representation_rule": "The law acts on the complete physical CPTP map including retained classical randomizer/control registers. It does not depend on a hidden convex decomposition of the same reduced channel.",
+    "chronology_protection_branch": "If no admissible finite-RSET fixed point with zero semiclassical residual exists, the assumed stationary chronology-violating geometry is not a physical solution and must backreact/evolve out of that class.",
+    "novel_nonaffinity": "Operation -> selected loop state is intentionally non-affine. The v7/v8 q=1/2 witness is Delta V=pi^2/24.",
+    "v7_positive_channel": {
+      "a": "1/2", "eta": "1/4", "lambda": "1", "c": "pi/8",
+      "mean_X": {"do_0": "pi/4", "do_1": "-pi/4"},
+      "V_X": "1/2", "V_P": "5/6",
+      "loop_energy_excess_over_hbar_omega": "1/6 + pi**2/32",
+      "bit_energy_difference": "0",
+      "P_Y_do_0": {"+1": "(1+exp(-1))/2", "-1": "(1-exp(-1))/2"},
+      "P_Y_do_1": {"+1": "(1-exp(-1))/2", "-1": "(1+exp(-1))/2"},
+      "D_past": "exp(-1)",
+      "numeric": {
+        "P0_plus": 0.6839397205857212,
+        "P1_plus": 0.31606027941427883,
+        "D_past": 0.36787944117144233,
+        "energy_excess": 0.4750918042007091
+      }
+    },
+    "unresolved_assumptions": [
+      "No microscopic quantum-gravity derivation of CBSSL is supplied; it is the proposed fundamental toy law itself.",
+      "The full 3+1D SA return channel on the continuum field algebra is not computed under CBSSL.",
+      "The full renormalized stress tensor and a self-consistent SA metric solving the CBSSL semiclassical residual are not yet constructed.",
+      "Restriction of the nonlinear selector to chronology regions avoids changing ordinary globally hyperbolic QFT by fiat; full compatibility with relativistic causality in multipartite quantum gravity is not proven."
+    ],
+    "classification_reason": "Positive sender-controlled D_past is explicit in the v7 mode and paradoxical copy/NOT loops have fixed points, but the new boundary law and full 3+1D RSET/backreaction are speculative/unconstructed. Therefore B, not A."
+  },
+  "controls": {
+    "nonaffinity": {
+      "selected_then_mixed_variance": "1/2+pi^2/16",
+      "mixed_operation_then_selected_variance": "1/2+pi^2/48",
+      "gap": "pi^2/24",
+      "numeric_gap": 0.4112335167120566,
+      "interpretation": "CBSSL is intentionally non-affine in the complete chronology-return operation; this is forbidden for an ordinary fixed-process quantum supermap but is postulated only when a causal return exists."
+    },
+    "degenerate_tie_breaker": {
+      "loop_channel": "identity",
+      "fixed_point_set": "all density matrices",
+      "reference_state": "diag(2/3,1/3)",
+      "selected_state": "diag(2/3,1/3)",
+      "contrast_with_Deutsch_max_entropy": "Deutsch maximum-entropy tie-break would select I/2; CBSSL instead selects the admissible fixed point closest in relative entropy to the specified local Hadamard/reference state."
+    },
+    "chronology_protection": {
+      "channel": "replacement to excited state",
+      "unique_fixed_point_energy": "1 energy-unit",
+      "admissible_energy_cap": "1/2 energy-unit",
+      "admissible_fixed_point_exists": false,
+      "law_result": "no stationary chronology-violating solution in this toy sector; geometry must leave the assumed stationary chronology class"
+    },
+    "remote_ensemble": {
+      "control": "Bell-pair remote local unitary",
+      "chronology_reduced_state_before": "I/2",
+      "chronology_reduced_state_after": "I/2",
+      "selector_change": false,
+      "scope": "This only tests decomposition/remote-unitary invariance when the remote operation is outside the chronology-return map. It is not a general proof against all nonlinear superluminal signalling."
+    },
+    "cut_covariance": {
+      "control": "unitary conjugation of chronology cut",
+      "fixed_point_equality_preserved": true,
+      "law_requirement": "Bures distance and quantum relative entropy are unitarily invariant, so the selection ordering is cut-covariant under unitary transport of the complete boundary algebra."
+    }
+  },
+  "environment": {"python": "3.13.5", "sympy": "1.14.0", "mpmath": "1.3.0"},
+  "code_sha256": "053ece30548399f78be08b97a1a27bc3572c40bef28660c86e9dba64b042c7fa"
+}
