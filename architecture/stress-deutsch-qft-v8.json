@@ -1,0 +1,98 @@
+{
+  "batch_id": "stress-deutsch-qft-v8",
+  "base_sha": "6a408e42abef6355699d276c1bc45547198954ae",
+  "classification": {
+    "A": 0,
+    "B": 5,
+    "C": 1
+  },
+  "central_result": "Stress-tensor candidates survive as conditional components, but the exact Deutsch operation-dependent fixed-point selector cannot be obtained from an operation-independent standard linear 3+1D QFT supermap. No A completion.",
+  "stress_scale": {
+    "planck_length_m": "1.61625502392855e-35",
+    "zero_tidal_1m_required_product_N_times_C": "1.523141897782187e+68",
+    "examples": [
+      {
+        "dimensionless_RSET_coefficient_C": "1",
+        "required_species_N_at_1m": "1.5231418977822e+68"
+      },
+      {
+        "dimensionless_RSET_coefficient_C": "0.01",
+        "required_species_N_at_1m": "1.5231418977822e+70"
+      },
+      {
+        "dimensionless_RSET_coefficient_C": "0.001",
+        "required_species_N_at_1m": "1.5231418977822e+71"
+      },
+      {
+        "dimensionless_RSET_coefficient_C": "0.0001",
+        "required_species_N_at_1m": "1.5231418977822e+72"
+      }
+    ],
+    "v7_loop_mode_energy_over_hbar_omega": "pi**2/32 + 2/3",
+    "v7_loop_mode_excess_over_vacuum": "1/6 + pi**2/32",
+    "v7_signal_support_comment": "For a minimally coupled coherent scalar displacement, the classical null contraction is (k.grad phi)^2 >= 0; the signal mode is not itself the exotic throat support."
+  },
+  "deutsch_nonaffinity": {
+    "a": "1/2",
+    "c": "pi/8",
+    "q": "1/2",
+    "deterministic_fixed_mean_abs": "pi/4",
+    "fixed_selector_affine_mixture_variance": "1/2+pi^2/16",
+    "fixed_point_of_mixed_channel_variance": "1/2+pi^2/48",
+    "nonaffinity_variance_gap": "pi^2/24",
+    "numeric_gap": 0.4112335167120566,
+    "general_gap": "8*a*q*(1-q)*c^2/((1-a)^2*(1+a))",
+    "interpretation": "Deutsch fixed-point selection is not affine in the inserted operation. A fixed-state, operation-independent standard quantum supermap is affine, so it cannot reproduce this selector for all local operations."
+  },
+  "candidates": [
+    {
+      "id": "mmp-4d-fermion-casimir",
+      "status": "B",
+      "stress_status": "strongest explicit semiclassical support candidate",
+      "facts": "4D Einstein-Maxwell plus charged massless fermions; negative Casimir-like null stress is inserted into Einstein equations and the throat solution is solved.",
+      "blocker": "The published solution is deliberately a long wormhole satisfying the ambient causality bound; changing it into a time machine requires a new dynamical self-consistent solution."
+    },
+    {
+      "id": "jiang-jiang-zero-tidal-rset-2026",
+      "status": "B",
+      "stress_status": "exact renormalized throat RSET on a prescribed geometry",
+      "facts": "Hadamard/pragmatic mode-sum RSET has three (m b0, xi) regions satisfying Morris-Thorne throat conditions.",
+      "blocker": "The geometry is prescribed and the paper tests throat conditions; it does not solve the full coupled semiclassical Einstein equation. For a single-scale 1m throat, matching requires N*C=1.523e68."
+    },
+    {
+      "id": "popov-long-throat",
+      "status": "B",
+      "stress_status": "self-consistent semiclassical long-throat solution in a local/WKB regime",
+      "facts": "Vacuum polarization of a nonconformal scalar is used in semiclassical Einstein equations to obtain a long throat.",
+      "blocker": "Long-throat/local approximation and macroscopic scale require a large dimensionless parameter; no complete asymptotically-flat time-machine construction or CTC quantum state is supplied."
+    },
+    {
+      "id": "kain-qft-edm",
+      "status": "B",
+      "stress_status": "static semiclassical QFT wormhole configurations",
+      "facts": "Quantized Einstein-Dirac-Maxwell static spherically symmetric wormholes are constructed in semiclassical QFT.",
+      "blocker": "Dynamical traversability/stability of the quantum configurations is not established; related EDM evolutions studied by Kain form black holes and trap signals."
+    },
+    {
+      "id": "mehulic-prokopec-2026",
+      "status": "B",
+      "stress_status": "explicit one-loop RSET/backreaction correction",
+      "facts": "Massive minimally coupled scalar one-loop RSET is renormalized and backreaction solved to linear order in hbar.",
+      "blocker": "The wormhole is still supported classically by anisotropic matter/negative mouth shells; the paper explicitly leaves fully self-consistent semiclassical solving for future work."
+    },
+    {
+      "id": "deutsch-from-standard-qft",
+      "status": "C",
+      "stress_status": "not a stress-source candidate",
+      "facts": "A fixed initial state plus ordinary linear quantum evolution defines an affine higher-order map of any inserted local CP operation.",
+      "blocker": "The explicit v7 Gaussian Deutsch selector is non-affine: at q=1/2 the variance gap is pi^2/24. Thus the exact Deutsch selection law cannot be derived from an operation-independent standard linear QFT process on a fixed background. A nonlinear/operation-dependent boundary law or new quantum-gravity rule is required."
+    }
+  ],
+  "next_single_problem": "If one insists on the Deutsch escape, derive a genuinely nonlinear/operation-dependent state-selection law from a specified quantum-gravity boundary functional (not ordinary fixed-state QFT) and compute its renormalized 4D stress tensor. Standard 3+1D QFT is closed by the non-affinity obstruction.",
+  "environment": {
+    "python": "3.13.5",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "code_sha256": "3884d08dd7f02f983d99e2e7ddd3928947da51add34e37ce9b523dba5a98e240"
+}
