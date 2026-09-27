@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "batch_id": "cbssl-rset-core-v10",
+  "base_sha": "c27097e29e05275b56a922e5c63e0b99526d1da2",
+  "classification": {
+    "A": 0,
+    "B": 1,
+    "C": 0
+  },
+  "candidate_id": "cbssl-popov-helical-core-v10",
+  "status": "B",
+  "dimension": 4,
+  "dimension_split": {
+    "space": 3,
+    "time": 1
+  },
+  "geometry": "Regulated M2 x S2 constant long-throat core with imposed helical chronology identification (t,x)~(t-Delta,x+L), L=100r0, Delta=2L.",
+  "matter_content": "Published Popov renormalized scalar support RSET + classical electrostatic field; independent zero-stress Z2 signal order parameter.",
+  "stress_energy": {
+    "renormalized": true,
+    "full_tensor_matched_in_regulated_core": true,
+    "r_planck": "101.4933616691277848090930477809412531792577387412069",
+    "Q_squared": "20601.822061962252961632375628991644733357093389645794",
+    "max_abs_residual": "9.01e-66",
+    "R_sc_density": "1.93e-130"
+  },
+  "backreaction": {
+    "level": "self_consistent_regulated_3plus1D_core",
+    "jacobian_determinant": "3.605757766897522e-14",
+    "interpretation": "Small static spherical diagonal extra RSET corrections can be compensated by nearby r,Q^2 by the implicit-function theorem."
+  },
+  "sender_intervention": {
+    "description": "do(b) is a complete local reset/bias of an independent Z2 order parameter to chi=(-1)^b v; CBSSL selects the corresponding loop fixed point.",
+    "same_preparation": true,
+    "uses_postselection": false,
+    "future_boundary_condition_is_input": false
+  },
+  "receiver_observable": "Finite worldtube sign detector with Gaussian apparatus noise v/sigma=3.",
+  "P_Y_do_0": {
+    "computed": true,
+    "distribution": {
+      "+1": "0.99865010196836990547334818523240502262217063184162",
+      "-1": "0.0013498980316300945266518147675949773778293681583806"
+    }
+  },
+  "P_Y_do_1": {
+    "computed": true,
+    "distribution": {
+      "+1": "0.0013498980316300945266518147675949773778293681583806",
+      "-1": "0.99865010196836990547334818523240502262217063184162"
+    }
+  },
+  "distinguishability": {
+    "metric": "total_variation",
+    "computed": true,
+    "value": "0.99730020393673981094669637046481004524434126368324",
+    "receiver_precedes_sender": true
+  },
+  "unresolved_assumptions": [
+    "Full CBSSL-selected support-field two-point function and nonlocal/topological renormalized RSET on the helical chronology quotient.",
+    "Asymptotically flat finite mouths/transition layers and complete apparatus stress.",
+    "Dynamical stability and cutoff/cut independence."
+  ],
+  "next_single_problem": "Compute the support scalar two-point function on the helical chronology quotient, derive the nonlocal/topological delta<RSET> by a regulated mode/image sum, then solve the enlarged semiclassical equations and test whether R_sc=0 survives.",
+  "literature": [
+    {
+      "authors": "A. A. Popov",
+      "title": "Semiclassical long throats of the wormholes",
+      "year": 2014,
+      "url": "https://arxiv.org/abs/1809.06202"
+    },
+    {
+      "authors": "S. Jiang; J. Jiang",
+      "title": "Stress-energy tensor of quantized scalar fields in a zero-tidal wormhole",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2603.01003"
+    }
+  ],
+  "verification": {
+    "computational": "direct 4D curvature + 50/80-digit nonlinear solve + separate verifier",
+    "external_peer_review": "not_performed",
+    "human_review_for_A": true
+  },
+  "scope": "B: published 3+1D renormalized support tensor closes R_sc in the regulated core and past-bit probabilities are explicit; global chronology-quotient RSET and finite manufactured geometry remain incomplete."
+}
