@@ -1,5 +1,47 @@
 # Spacetime Screening
 
+## CBSSL v10：3+1D renormalized RSETで R_sc=0 のregulated core
+
+> **判定：A=0 / B=1 / C=0。** CBSSL v9をtoy lawとして固定し、実在する4D renormalized stress tensorを半古典Einstein方程式へ直接入れ、regulated chronology coreで `R_sc=0` を解きました。
+> **ただしglobal chronology quotient上のsupport-fieldの非局所RSETは未計算なのでAには上げません。**
+
+```math
+ds^2=-dt^2+dx^2+r_0^2d\Omega_2^2,
+\qquad
+G^\mu{}_{\nu}=\operatorname{diag}(-1/r_0^2,-1/r_0^2,0,0).
+```
+
+Popovのpublished long-throat scalar RSET＋classical electrostatic fieldを使い、`xi=-10000`, `m^2=1000`, `m_DS=m` で直接solve：
+
+```text
+r0 = 101.4933616691277848... l_P
+Q^2 = 20601.82206196225296...
+max |Einstein residual| = 9.01e-66
+R_sc / Vol(core) = 1.93e-130
+```
+
+bit carrierは独立なZ2 order parameter `V(chi)=lambda_chi(chi^2-v^2)^2/4`。CBSSLが選ぶ `chi=+v/-v` では両bitとも `T_mn(signal)=0` なので、通信操作がsolved support backgroundを変えません。
+
+finite past receiverを `v/sigma=3` のsign detectorとすると
+
+```math
+P(Y=+1|do(0))=0.9986501019683699...,
+```
+```math
+P(Y=+1|do(1))=0.0013498980316301...,
+```
+```math
+\boxed{D_{\rm past}=0.9973002039367398...>0.}
+```
+
+global chronologyは `(t,x)~(t-Delta,x+L)`, `L=100r0`, `Delta=2L` のtoy quotientとして課しています。**Popov local RSETをこのquotientのexact global RSETだとは扱いません。** 未計算のtopology/image correctionに対する2-parameter Jacobianは `det J=3.6057577669e-14 != 0` で、十分小さいstatic spherical correctionなら nearby `r,Q^2` へretuneして `R_sc=0` を維持できます。
+
+**[全導出・RSET・Einstein solve・適用範囲](notes/cbssl-rset-core-v10.md)** ／ [順方向計算](src/symbolic/cbssl_rset_core_v10.py) ／ [別検算](src/symbolic/cbssl_rset_core_verify_v10.py) ／ [候補台帳](architecture/cbssl-rset-core-v10.json)
+
+次の一問は一つだけ：**helical chronology quotient上のCBSSL-selected support scalar two-point functionを構成し、nonlocal/topological `delta<T_mn>_ren` をmode/image sumで計算して、拡張semiclassical equationsでも `R_sc=0` が生き残るか判定する。**
+
+---
+
 ## 新しいtoy量子重力則：CBSSL — v9
 
 > **新しい物理法則のtoy proposalです。既存QFTから導出したとは主張しません。**
