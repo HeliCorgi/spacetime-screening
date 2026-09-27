@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "batch_id": "cbssl-global-rset-v11",
+  "base_sha": "3e64a86e8f65b8a1dc3ec5e71159a9b9f3332551",
+  "classification": {
+    "A": 0,
+    "B": 0,
+    "C": 1
+  },
+  "candidate_id": "cbssl-global-rset-helical-v11",
+  "status": "C",
+  "scope_of_C": "The v10 simple helical quotient completed with the standard spacelike Hadamard image state and point-split topological RSET. This is not a no-go for every CBSSL law or every nonstandard chronology prescription.",
+  "flat_helical_control": {
+    "geometry": "Minkowski 3+1 with (t,x)~(t-Delta,x+L)",
+    "deck_norm_squared": "a^2=L^2-Delta^2",
+    "image_state_domain": "a^2>0",
+    "G_quot": "sum_n G_M^+(x,gamma^n x')",
+    "Delta_G_topo": "sum_{n!=0} G_M^+(x,gamma^n x')",
+    "Delta_phi2": "1/(12 a^2)",
+    "RSET_covariant": "(pi^2/(90 a^4))*(eta_mn-4 e_m e_n)",
+    "adapted_frame": "(pi^2/(90 a^4))*diag(-1,-3,1,1)",
+    "convergence": {
+      "two_point_images": "n^-2",
+      "RSET_images": "n^-4"
+    },
+    "checks": {
+      "hadamard": true,
+      "conserved": true,
+      "symmetric": true,
+      "trace_zero": true,
+      "flat_trace_anomaly_zero": true,
+      "finite": true
+    }
+  },
+  "chronology_horizon": {
+    "condition": "Delta=L",
+    "Delta_phi2_scaling": "a^-2",
+    "RSET_scaling": "a^-4",
+    "RSET_invariant_scaling": "a^-8",
+    "finite": false,
+    "regularized_to_success": false
+  },
+  "causal_gate": {
+    "past_advance_condition": "Delta>L",
+    "Hadamard_image_condition": "Delta<L",
+    "overlap": false
+  },
+  "v10_retest": {
+    "r_planck": "101.4933616691277848090930477809412531792577387412069",
+    "Q_squared": "20601.822061962252961632375628991644733357093389645794",
+    "L_over_r0": "100",
+    "Delta_over_L": "2",
+    "deck_character": "timelike",
+    "global_Hadamard_image_state": false,
+    "global_finite_RSET": false,
+    "global_self_consistent_backreaction": false,
+    "state_regularity": false,
+    "stability": "not_established",
+    "safe_side_a_where_Casimir_equals_EM_scale_planck": "10.915295649570702722357426406710798571225783863206"
+  },
+  "sa_extension": {
+    "MP_local_helical_norm_squared": "ell^2=U^2 rho^2 alpha^2-Delta^2/U^2",
+    "local_chronology_horizon": "ell^2=0",
+    "shell_control": {
+      "U0": "2",
+      "rho": "1",
+      "alpha": "2*pi",
+      "Delta_critical": "8*pi"
+    },
+    "candidate_G_quot": "sum_n G_local^+(x,gamma^n x') on spacelike-orbit region",
+    "full_global_Hadamard_G_local_available": false,
+    "full_mode_sum_completed": false,
+    "universal_short_loop_Delta_phi2": "~1/(12 ell^2)",
+    "universal_short_loop_RSET": "~pi^2/(90 ell^4)",
+    "reason": "Existing SA work lacks one global positive Hadamard state across shells, RN horizons, and the timelike-singularity boundary; the helical image sector also diverges as the orbit becomes null."
+  },
+  "communication": {
+    "P_Y_do_0": {
+      "computed": true,
+      "formal_local_only": true,
+      "distribution": {
+        "+1": "0.99865010196836990547334818523240502262217063184162",
+        "-1": "0.0013498980316300945266518147675949773778293681583806"
+      }
+    },
+    "P_Y_do_1": {
+      "computed": true,
+      "formal_local_only": true,
+      "distribution": {
+        "+1": "0.0013498980316300945266518147675949773778293681583806",
+        "-1": "0.99865010196836990547334818523240502262217063184162"
+      }
+    },
+    "D_past": {
+      "computed": true,
+      "value": "0.99730020393673981094669637046481004524434126368324"
+    },
+    "globally_certified": false,
+    "reason": "Positive D_past in the isolated Z2 signal sector does not override failed global-state, RSET, backreaction, regularity, and stability gates."
+  },
+  "sacrificed_physics": [
+    "Global hyperbolicity / ordinary initial-value QFT: past advance requires a timelike quotient outside the safe spacelike Hadamard image branch.",
+    "Standard linear quantum dynamics: CBSSL is explicitly a new non-affine chronology-sector selection law, not derived from standard QFT or a microscopic QG theory.",
+    "Full SA quantum-state/boundary completion: the RN timelike-singularity self-adjoint boundary and two-horizon regularity are unresolved.",
+    "Dynamical topology formation: the helical identification/handle is imposed rather than evolved from ordinary Cauchy data with finite mouths and apparatus.",
+    "Controlled semiclassical expansion: r0~101.5 lP, xi=-10000, limited printed RSET coefficient precision, higher-curvature/stress-fluctuation corrections unsolved.",
+    "Dynamical/stochastic stability: expectation-value backreaction in a restricted static ansatz does not control nonspherical, time-dependent, or RSET-fluctuation instabilities."
+  ],
+  "literature": [
+    {
+      "authors": "V. A. De Lorenci; E. S. Moreira Jr.",
+      "title": "Vacuum polarization on the spinning circle",
+      "year": 2001,
+      "url": "https://arxiv.org/abs/gr-qc/0112055"
+    },
+    {
+      "authors": "B. S. Kay; M. J. Radzikowski; R. M. Wald",
+      "title": "Quantum Field Theory on Spacetimes with a Compactly Generated Cauchy Horizon",
+      "year": 1997,
+      "url": "https://arxiv.org/abs/gr-qc/9603012"
+    },
+    {
+      "authors": "F. Schein; P. C. Aichelburg",
+      "title": "Traversable Wormholes in Geometries of Charged Shells",
+      "year": 1996,
+      "url": "https://arxiv.org/abs/gr-qc/9606069"
+    },
+    {
+      "authors": "A. A. Popov",
+      "title": "Semiclassical long throats of the wormholes",
+      "year": 2014,
+      "url": "https://arxiv.org/abs/1809.06202"
+    }
+  ],
+  "verification": {
+    "forward": "src/symbolic/cbssl_global_rset_v11.py",
+    "independent_verifier": "src/symbolic/cbssl_global_rset_verify_v11.py",
+    "local_environment": "Python 3.13.5 / SymPy 1.14.0 / mpmath 1.3.0",
+    "local_result": "forward PASS; independent verifier PASS",
+    "remote_CI": "pending until latest PR head run is inspected",
+    "human_review_for_A": true
+  }
+}
