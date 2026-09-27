@@ -235,8 +235,7 @@ def main():
           "code_sha256":hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
     if args.output:
         args.output.parent.mkdir(parents=True,exist_ok=True)
-        args.output.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"
-",encoding="utf-8")
+        args.output.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
     print(json.dumps({"passed":True,"classification":data["classification"],"r_planck":runs[-1]["r_planck"],
                       "Q_squared":runs[-1]["Q_squared"],"R_sc_density":runs[-1]["R_sc_density"],
                       "D_past":signal["D_past"]},ensure_ascii=False))
