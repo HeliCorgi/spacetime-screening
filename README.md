@@ -1,5 +1,72 @@
 # Spacetime Screening
 
+## CBSSL v14：wormhole mouth を局所作用で UV 不透明にする
+
+> **判定：A=0 / B=0 / C=3。** v13 の phenomenological \(q(u)=\frac12e^{-u^4}\) をやめ、mouth sheet に positive brane-localized kinetic+mass term を置いて frequency-dependent scattering を局所作用から導出しました。
+
+一枚のmouth sheetでは
+
+\[
+S_{\rm sheet}
+=
+\frac12\int dt
+\left[
+\zeta(\partial_t\phi)^2-\mu\phi^2
+\right]_{x=0},
+\]
+
+\[
+t(u)=\frac{2iu}{(u+i)^2},
+\qquad
+|t|^2=\frac{4u^2}{(1+u^2)^2}
+\]
+
+となり、\(u=1\) は完全透過、\(u\to\infty\) では \(t\sim2i/u\) なので本当にUV不透明です。localized energyも \(\zeta,\mu>0\) なら正です。
+
+ただし natural two-mouth amplitude \(q_2=t^2\sim u^{-2}\) は 4D point-split RSET の null-loop integral を有限化できません。
+
+4段 filter まで積むと
+
+\[
+q_4=t^4\sim16/u^4
+\]
+
+で
+
+\[
+\int_0^\infty |q_4|du=\pi/2,
+\qquad
+\int_0^\infty u^2|q_4|du=5\pi/2
+\]
+
+となり、実軸RSETは有限化できます。
+
+しかし past advance \(a=3/4\) を feedback へ戻すと
+
+\[
+D_N(u)=1-t(u)^N e^{-iau}.
+\]
+
+upper imaginary axis \(u=iy\) では
+
+\[
+\left[\frac{2y}{(1+y)^2}\right]^N e^{ay}
+\]
+
+が有限 \(N\) なら必ず 0 から \(\infty\) へ渡るため upper-half-plane pole が存在します。4段版は
+
+\[
+\omega r=i\,9.273959245421\ldots
+\]
+
+で線形不安定です。
+
+さらに v13 の \(e^{-u^4}\) cutoff は real axis では良いものの、\(u=Re^{i\pi/4}\) で \(|q|=\frac12e^{R^4}\) と発散するため passive causal \(H_\infty\) transfer としては採用しません。
+
+**[全導出](notes/cbssl-uv-opaque-mouth-v14.md)** ／ [forward](src/symbolic/cbssl_uv_opaque_mouth_v14.py) ／ [独立 verifier](src/symbolic/cbssl_uv_opaque_mouth_verify_v14.py) ／ [候補台帳](architecture/cbssl-uv-opaque-mouth-v14.json)
+
+---
+
 ## CBSSL v13：\(\Delta G^+_{\rm handle}\) を実際に構成する
 
 > **判定：A=0 / B=1 / C=1。** v12 で分離した causal handle 自身の two-point function を、closed geometric image branch と UV-soft open Gaussian branch に分けて検査しました。
