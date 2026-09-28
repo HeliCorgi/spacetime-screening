@@ -1,5 +1,62 @@
 # Spacetime Screening
 
+## CBSSL v13：\(\Delta G^+_{\rm handle}\) を実際に構成する
+
+> **判定：A=0 / B=1 / C=1。** v12 で分離した causal handle 自身の two-point function を、closed geometric image branch と UV-soft open Gaussian branch に分けて検査しました。
+
+closed geometric handle では、primitive loop interval \(s^2\) に対して固定 attenuation \(q>0\) を入れても
+
+\[
+\Delta\langle\phi^2\rangle_{\rm handle}
+=
+\frac{{\rm Li}_2(q)}{2\pi^2s^2},
+\qquad
+\Delta T_{\rm handle}\sim
+\frac{{\rm Li}_4(q)}{\pi^2s^4},
+\]
+
+なので null-loop limit の発散は残ります。v12 actual handle は timelike side にあり、standard Hadamard image state としては **C**。
+
+一方、mouth を modewise pure-loss Gaussian channel
+
+\[
+a\mapsto q(u)e^{iu\theta}a+\sqrt{1-q(u)^2}\,b,
+\qquad
+q(u)=\frac12e^{-u^4},
+\]
+
+にし、environment occupation を \(N(u)=10^{-2}e^{-u^4}\) とすると fixed state は \(n_*(u)=N(u)\)。その結果
+
+\[
+\Delta G^+_{\rm handle}(x,x')
+=
+\int
+\frac{d^3k}{2(2\pi)^3\omega}
+N(\omega r)
+\left[e^{-ik\cdot(x-x')}+e^{+ik\cdot(x-x')}\right]
+\]
+
+を explicit に構成できます。これは nonzero、positive quasifree、CCR-preserving、\(C^\infty\) なので safe Hadamard singularityを壊しません。
+
+finite handle RSET を v12 coreへ加えて再solveすると
+
+\[
+r=101.4934092093\ldots l_P,\qquad
+Q^2=20601.8094095671\ldots,
+\]
+
+\[
+f^2=6.04273196702\times10^{-8}l_P^{-2}
+\]
+
+で再び semiclassical residual を数値0にできます。
+
+**ただし後者は ordinary closed local QFT on a geometric wormhole ではありません。** UV-soft frequency-dependent mouth interaction と environment/reservoir を追加した open-system completionなので B に留めます。reservoir stress、microscopic local action、full chronology-cut algebra、formation、stability は未完成です。
+
+**[全導出](notes/cbssl-handle-twopoint-v13.md)** ／ [forward](src/symbolic/cbssl_handle_twopoint_v13.py) ／ [独立 verifier](src/symbolic/cbssl_handle_twopoint_verify_v13.py) ／ [候補台帳](architecture/cbssl-handle-twopoint-v13.json)
+
+---
+
 ## CBSSL v12：causal shortcut と topological scale を分離
 
 > **判定：A=0 / B=1 / C=0。** v11 の「同じ \(\Delta,L\) が Hadamard topology と past advance を同時に背負う」構造をやめ、pure spatial \(S^1\) compactification と別の traversable-handle clock shift に分離しました。
