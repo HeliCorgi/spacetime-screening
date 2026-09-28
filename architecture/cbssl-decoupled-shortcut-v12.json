@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "batch_id": "cbssl-decoupled-shortcut-v12",
+  "base_sha": "669b263e832d2f1d040706a13119470677caead4",
+  "classification": {
+    "A": 0,
+    "B": 1,
+    "C": 0
+  },
+  "candidate_id": "cbssl-decoupled-topology-shortcut-v12",
+  "status": "B",
+  "scope": "Decouple the support-field spatial compactification scale from the causal shortcut/time-shift scale. Safe S1 RSET and regulated core are solved; the chronology handle's own global support-field state/RSET remains unsolved.",
+  "safe_topology": {
+    "geometry": "R_t x S1_x(A_topo) x S2(r)",
+    "identification": "x~x+A_topo, with no time component",
+    "A_topo_over_r": "4",
+    "Hadamard_spatial_circle_state": true,
+    "mode_sum": "massless conformal scalar decomposed into 1+1 massive angular modes; periodic-circle Bessel K1 winding sum",
+    "coefficients": {
+      "c_t": "0.00039115324987090346409958722388060179527777892968766",
+      "c_x": "-0.0013135652650630378856936929316968132131234586046131",
+      "c_theta": "0.0004612060075960672107970528539081057089228398374627"
+    },
+    "trace_coefficient": "0 within numerical convergence",
+    "massive_nonconformal_shortest_image": {
+      "A_times_m_eff_l0": "12825.54524312650761231650336547845722498",
+      "log10_K1": "-5572.019491772705052939937832",
+      "treatment": "exponentially suppressed, not set to mathematical zero"
+    }
+  },
+  "anisotropy_without_compensator": {
+    "closes_constant_M2xS2_core": false,
+    "reason": "safe S1 Casimir has T^t_t != T^x_x while G^t_t=G^x_x and the v10 Popov+EM sectors have equal t/x mixed components",
+    "t_minus_x_residual_near_root": "~ -4.04e-10"
+  },
+  "winding_compensator": {
+    "field": "dimensionless periodic axion theta with winding number one",
+    "action": "-f^2/2 integral sqrt(-g) (d theta)^2",
+    "stress_mixed": "diag(-W,+W,-W,-W), W=2*pi^2*f^2/A_topo^2",
+    "solved_f_squared_planck2": "0.000000067071373107626554796016376825883302237115149482113",
+    "winding_energy_density_planck4": "0.0000000000080328790762338049617388474353314004657487342852818"
+  },
+  "safe_sector_backreaction": {
+    "self_consistent": true,
+    "r_planck": "101.493414436444159387764058468831254295220623744727700718908",
+    "Q_squared": "20601.8104706021477372440972679482820348875223175054240006675",
+    "A_topo_planck": "405.973657745776637551056233875325017180882494978910802875632",
+    "jacobian_determinant": "2.17069298494404153817195310727e-16",
+    "chronology_handle_RSET_included": false
+  },
+  "causal_shortcut": {
+    "model": "eternal prescribed traversable handle/time shift, separate from the S1 image deck",
+    "d_ext_over_r": "1",
+    "tau_shortcut_over_r": "1/4",
+    "Delta_clock_over_r": "2",
+    "A_topo_over_r": "4",
+    "inequality": "tau_shortcut+d_ext < Delta_clock < A_topo",
+    "loop_coordinate_time_over_r": "-3/4",
+    "past_advance_over_r": "3/4",
+    "spatial_image_deck_timelike": false,
+    "chronology_horizon_formation_modeled": false
+  },
+  "communication": {
+    "P_Y_do_0": {
+      "computed": true,
+      "conditional": true,
+      "distribution": {
+        "+1": "0.99865010196836990547334818523240502262217063184162",
+        "-1": "0.0013498980316300945266518147675949773778293681583806"
+      }
+    },
+    "P_Y_do_1": {
+      "computed": true,
+      "conditional": true,
+      "distribution": {
+        "+1": "0.0013498980316300945266518147675949773778293681583806",
+        "-1": "0.99865010196836990547334818523240502262217063184162"
+      }
+    },
+    "D_past": "0.99730020393673981094669637046481004524434126368324",
+    "globally_certified": false
+  },
+  "global_state_gate": {
+    "safe_S1_support_state": "constructed",
+    "chronology_handle_support_state": "not_constructed",
+    "chronology_handle_RSET": "not_computed",
+    "full_global_Hadamard_state": false,
+    "full_semiclassical_solution_including_handle": false
+  },
+  "unresolved_assumptions": [
+    "Construct the support-field two-point function and nonlocal RSET associated with the separate chronology handle itself.",
+    "Show that the eternal prescribed time-shift handle admits a positive state with the required local Hadamard behavior and CBSSL loop condition.",
+    "If the handle/time shift is dynamically formed, re-test compact-generation/KRW chronology-horizon obstructions.",
+    "Construct finite mouths/transition layers and include complete apparatus stress.",
+    "Establish nonspherical, time-dependent and stress-fluctuation stability."
+  ],
+  "sacrificed_physics_added_in_v12": [
+    "Extra periodic axion winding matter is introduced to compensate the safe S1 Casimir anisotropy.",
+    "The time-shift handle is eternal/prescribed; formation from ordinary Cauchy data and chronology-horizon crossing are not modeled."
+  ],
+  "literature": [
+    {
+      "authors": "M. S. Morris; K. S. Thorne; U. Yurtsever",
+      "title": "Wormholes, Time Machines, and the Weak Energy Condition",
+      "year": 1988,
+      "url": "https://doi.org/10.1103/PhysRevLett.61.1446"
+    },
+    {
+      "authors": "B. S. Kay; M. J. Radzikowski; R. M. Wald",
+      "title": "Quantum Field Theory on Spacetimes with a Compactly Generated Cauchy Horizon",
+      "year": 1997,
+      "url": "https://arxiv.org/abs/gr-qc/9603012"
+    },
+    {
+      "authors": "D. N. Page",
+      "title": "Stress Tensors for Instantaneous Vacua in 1+1 Dimensions",
+      "year": 1996,
+      "url": "https://arxiv.org/abs/gr-qc/9603005"
+    },
+    {
+      "authors": "M. A. Valuyan",
+      "title": "Casimir energy calculation for massive scalar field on spherical surfaces: an alternative approach",
+      "year": 2018,
+      "url": "https://arxiv.org/abs/1810.05895"
+    },
+    {
+      "authors": "A. A. Popov",
+      "title": "Semiclassical long throats of the wormholes",
+      "year": 2018,
+      "url": "https://arxiv.org/abs/1809.06202"
+    }
+  ],
+  "verification": {
+    "forward": "src/symbolic/cbssl_decoupled_shortcut_v12.py",
+    "independent_verifier": "src/symbolic/cbssl_decoupled_shortcut_verify_v12.py",
+    "remote_CI": "pending until stacked PR latest head is inspected",
+    "human_review_for_A": true
+  }
+}
