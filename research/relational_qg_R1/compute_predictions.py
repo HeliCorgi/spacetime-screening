@@ -70,6 +70,7 @@ def tensor_bootstrap():
         subs=dict(zip(p,ps));rank=Kf.subs(subs).rank();gr=R.subs(subs).rank()
         dof=10-rank-gr;assert dof==2
         poles.append({'p_cov':ps,'field_kernel_dimension':10-rank,'gauge_rank':gr,'physical_polarizations':dof})
+    # TT projector on 6-dimensional symmetric spatial tensors, Frobenius orthonormal basis.
     tensor_basis=[]
     for i in range(3):
         e=np.zeros((3,3));e[i,i]=1;tensor_basis.append(e)
@@ -91,9 +92,11 @@ def tensor_bootstrap():
 def gaussian_predictions():
     rows=[]
     for x in [.1,.5,1.,2.,3.,4.,6.,10.]:
+        # Fourier inversion, with ell=1 and radius=x.
         calc,err=quad(lambda k: (2/np.pi)*np.exp(-k*k)*np.sinc(k*x/np.pi),0,np.inf,epsabs=2e-12,epsrel=2e-12)
         exact=kernel(x)
         assert abs(calc-exact)<2e-11
+        # Independent thin-lens line integral 2 int dz dPhi/db, GM=c=ell=1.
         lens_num,le=quad(lambda z:4*x*force_ratio(np.sqrt(x*x+z*z))/(x*x+z*z)**1.5,
                          0,np.inf,epsabs=1e-11,epsrel=1e-11)
         lens_exact=4/x*(-np.expm1(-x*x/4))
@@ -112,7 +115,7 @@ def quantum_phase():
     ds=[.1,.25,.5,.75,1.,1.5,2.,4.]
     dstar=brentq(phase_difference,.1,2.,xtol=1e-14)
     rows=[]
-    tau=10.
+    tau=10. # G mA mB t/(hbar ell)
     for d in ds+[dstar]:
         v=np.array([kernel(3*d),kernel(4*d),kernel(2*d),kernel(3*d)])
         amps=np.exp(1j*tau*v)/2
@@ -131,6 +134,7 @@ def quantum_phase():
             'rows':rows,'scope':'Leading quasistatic order G; packet overlap, traps, radiation, and laboratory decoherence omitted'}
 
 def stable_operator_control():
+    # Graph-defined averaging uses the same symmetric spatial Laplacian for every species.
     from scipy.linalg import expm
     n=17;L=np.zeros((n,n))
     for i in range(n):
