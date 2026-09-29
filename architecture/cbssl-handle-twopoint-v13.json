@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "batch_id": "cbssl-handle-twopoint-v13",
+  "base_sha": "735e51ad470df93f4e680169084a9fdf90c77556",
+  "classification": {
+    "A": 0,
+    "B": 1,
+    "C": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": "cbssl-closed-geometric-handle-image-v13",
+      "status": "C",
+      "scope": "Short-throat flat-space geometric image completion of the separate v12 chronology handle.",
+      "primitive_optical_loop_over_r": "5/4",
+      "Delta_clock_over_r": "2",
+      "actual_loop_interval_squared_over_r2": "-39/16",
+      "fixed_attenuation_q": "1/2",
+      "Delta_G_coincidence_spacelike": "Li_2(q)/(2*pi^2*s^2)",
+      "RSET_scale_spacelike": "Li_4(q)/(pi^2*s^4)",
+      "null_limit_finite": false,
+      "actual_timelike_Hadamard_image_state": false,
+      "safe_S1_destroyed": false,
+      "verdict": "fixed attenuation does not remove the handle's own null-loop singularity; v12 past-advance point lies on timelike side"
+    },
+    {
+      "candidate_id": "cbssl-uv-soft-open-handle-v13",
+      "status": "B",
+      "scope": "Open Gaussian chronology-return channel on the safe S1 support-field algebra.",
+      "return_map": "a -> q(u) exp(i u theta) a + sqrt(1-q(u)^2) b",
+      "q_profile": "q(u)=0.5 exp(-u^4)",
+      "environment_occupation": "N(u)=0.01 exp(-u^4)",
+      "theta_loop": "-3/4",
+      "unique_fixed_occupation": "n_*(u)=N(u)",
+      "Delta_G_handle_plus": "integral d^3k/[2(2pi)^3 omega] N(omega*r) [exp(-ik.(x-x'))+exp(+ik.(x-x'))]",
+      "properties": {
+        "nonzero": true,
+        "positive_quasifree_state": true,
+        "CCR_preserved": true,
+        "Hadamard_preserved": true,
+        "UV_smooth": true
+      },
+      "Delta_phi2": "N0/(8*pi^(3/2)*r^2)",
+      "RSET_mixed": "rho_H*diag(-1,1/3,1/3,1/3), rho_H=N0/(8*pi^2*r^4)",
+      "backreaction": {
+        "solved": true,
+        "r_planck": "101.493409209336616392369345538282521575811509225016813502221",
+        "Q_squared": "20601.8094095670965927149337350253228122965782424534090391668",
+        "axion_f_squared_planck2": "0.0000000604273196701685324273018920638175249747568202019540398960139",
+        "jacobian_determinant": "2.17069421468806221606460209276e-16"
+      },
+      "return_gain_low_frequency": "q(0)=1/2",
+      "globally_certified_communication": false,
+      "unresolved_assumptions": [
+        "This is an open-system mouth channel, not a closed local geometric QFT on the wormhole/time-machine spacetime.",
+        "Reservoir/apparatus stress-energy is not completely included.",
+        "No microscopic local action is supplied for q(u)=0.5 exp(-u^4).",
+        "The complete chronology-cut algebra including the environment is not solved.",
+        "Dynamical formation and compactly-generated-horizon/KRW tests remain open.",
+        "Stability and stress fluctuations remain open."
+      ],
+      "sacrificed_physics": [
+        "closed-system locality at the mouths",
+        "transparent high-frequency propagation",
+        "support-field-only unitarity",
+        "reservoir-free gravity accounting"
+      ]
+    }
+  ],
+  "communication_control": {
+    "P_Y_do_0": {
+      "+1": "0.99865010196836990547334818523240502262217063184162",
+      "-1": "0.0013498980316300945266518147675949773778293681583806"
+    },
+    "P_Y_do_1": {
+      "+1": "0.0013498980316300945266518147675949773778293681583806",
+      "-1": "0.99865010196836990547334818523240502262217063184162"
+    },
+    "D_past": "0.99730020393673981094669637046481004524434126368324",
+    "globally_certified": false
+  },
+  "literature": [
+    {
+      "authors": "M. Visser",
+      "title": "From wormhole to time machine: Comments on Hawking's Chronology Protection Conjecture",
+      "year": 1993,
+      "url": "https://arxiv.org/abs/hep-th/9202090"
+    },
+    {
+      "authors": "M. Visser",
+      "title": "Hawking's chronology protection conjecture: singularity structure of the quantum stress-energy tensor",
+      "year": 1994,
+      "url": "https://arxiv.org/abs/hep-th/9303023"
+    },
+    {
+      "authors": "M. Visser",
+      "title": "van Vleck determinants: traversable wormhole spacetimes",
+      "year": 1994,
+      "url": "https://arxiv.org/abs/gr-qc/9311026"
+    },
+    {
+      "authors": "B. S. Kay; M. J. Radzikowski; R. M. Wald",
+      "title": "Quantum Field Theory on Spacetimes with a Compactly Generated Cauchy Horizon",
+      "year": 1997,
+      "url": "https://arxiv.org/abs/gr-qc/9603012"
+    },
+    {
+      "authors": "J. Tolksdorf; R. Verch",
+      "title": "Quantum physics, fields and closed timelike curves: The D-CTC condition in quantum field theory",
+      "year": 2016,
+      "url": "https://arxiv.org/abs/1609.01496"
+    }
+  ],
+  "verification": {
+    "forward": "src/symbolic/cbssl_handle_twopoint_v13.py",
+    "independent_verifier": "src/symbolic/cbssl_handle_twopoint_verify_v13.py",
+    "remote_CI": "pending",
+    "human_review_for_A": true
+  }
+}
