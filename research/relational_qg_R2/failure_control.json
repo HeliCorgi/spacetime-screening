@@ -1,0 +1,5 @@
+{
+  "bad_recoil_value_rejected": true,
+  "exit_code": 1,
+  "last_error": "AssertionError: independent recoil mismatch"
+}
