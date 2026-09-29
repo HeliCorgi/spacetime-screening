@@ -1,0 +1,19 @@
+{
+  "high_precision": {
+    "phase_zero_d_over_ell": "0.654976082565987974826915447230402808182224835251996949342304",
+    "phase_zero_residual": "0.0",
+    "kernel_at_r_over_ell_1": "0.52049987781304653768274665389196452873645157575796",
+    "Fourier_error_at_1": "0.0",
+    "finite_packet_width_sigma_over_ell_0p05_node": "0.6557942916077583672616362138509529"
+  },
+  "lattice_checks": [
+    {"lattice_spacing_over_ell":0,"quadrature_per_axis":96,"node_d_over_ell":0.6549760825661695},
+    {"lattice_spacing_over_ell":0,"quadrature_per_axis":160,"node_d_over_ell":0.6549760825660136},
+    {"lattice_spacing_over_ell":0.25,"quadrature_per_axis":160,"node_d_over_ell":0.6500200523259383},
+    {"lattice_spacing_over_ell":0.125,"quadrature_per_axis":160,"node_d_over_ell":0.6537487379119432},
+    {"lattice_spacing_over_ell":0.0625,"quadrature_per_axis":160,"node_d_over_ell":0.6546699656484342}
+  ],
+  "forward_results_sha256": "ed70b7d28267b03c2f7efd315b2f2609da65b37244f7ac2917c2467a8f810bd6",
+  "all_assertions_passed": true,
+  "scope": "Checks the defined weak-field model; not a proof of nonlinear general covariance or 3D phase emergence."
+}
