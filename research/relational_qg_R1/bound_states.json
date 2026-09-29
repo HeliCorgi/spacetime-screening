@@ -1,0 +1,51 @@
+{
+  "dimensionless_radial_H": "-1/2 d^2/dx^2-g erf(x/2)/x",
+  "boundary_conditions": "u(0)=u(xmax)=0; normalized reduced radial wavefunction",
+  "rows": [
+    {
+      "g": 0.1,
+      "Coulomb_ground_energy": -0.005000000000000001,
+      "finite_potential_lower_bound": -0.05641895835477564,
+      "large_g_harmonic_plus_quartic": -0.0515891221235906,
+      "runs": [
+        {"n":4000,"xmax":200.0,"ground_energy":-0.00474778094385139,"rms_radius_over_ell":18.161277811631415},
+        {"n":8000,"xmax":200.0,"ground_energy":-0.004747760676759525,"rms_radius_over_ell":18.16136736801876}
+      ],
+      "refinement_energy_difference": 2.0267091864999143e-08
+    },
+    {
+      "g": 1.0,
+      "Coulomb_ground_energy": -0.5,
+      "finite_potential_lower_bound": -0.5641895835477563,
+      "large_g_harmonic_plus_quartic": -0.24484600437042958,
+      "runs": [
+        {"n":4000,"xmax":20.0,"ground_energy":-0.23707536856740682,"rms_radius_over_ell":3.3794106328417652},
+        {"n":8000,"xmax":20.0,"ground_energy":-0.2370752986224226,"rms_radius_over_ell":3.3794123666965263}
+      ],
+      "refinement_energy_difference": 6.9944984221193e-08
+    },
+    {
+      "g": 10.0,
+      "Coulomb_ground_energy": -50.0,
+      "finite_potential_lower_bound": -5.6418958354775635,
+      "large_g_harmonic_plus_quartic": -4.327972473165713,
+      "runs": [
+        {"n":4000,"xmax":12.0,"ground_energy":-4.327087520419109,"rms_radius_over_ell":1.3862102403798848},
+        {"n":8000,"xmax":12.0,"ground_energy":-4.327086839898654,"rms_radius_over_ell":1.3862111620236317}
+      ],
+      "refinement_energy_difference": 6.805204550985877e-07
+    },
+    {
+      "g": 100.0,
+      "Coulomb_ground_energy": -5000.0,
+      "finite_potential_lower_bound": -56.41895835477563,
+      "large_g_harmonic_plus_quartic": -51.959897563002365,
+      "runs": [
+        {"n":4000,"xmax":12.0,"ground_energy":-51.959761600067125,"rms_radius_over_ell":0.7219226820870996},
+        {"n":8000,"xmax":12.0,"ground_energy":-51.959752745710944,"rms_radius_over_ell":0.7219242275513973}
+      ],
+      "refinement_energy_difference": 8.854356181586809e-06
+    }
+  ],
+  "scope": "Nonrelativistic two-body weak-metric regime; not a black-hole-collapse calculation."
+}
