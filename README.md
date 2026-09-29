@@ -1,5 +1,41 @@
 # Spacetime Screening
 
+## CBSSL v11：Global RSET / helical chronology quotient
+
+> **判定：A=0 / B=0 / C=1（対象は v10 simple helical quotient の標準 Hadamard image-state completion）。**
+> flat spacelike quotient では image sum と point splitting から既知の periodic-scalar Casimir tensor を再現しますが、過去 advance 条件 Delta>L と Hadamard image-state 条件 Delta<L は両立しません。境界 Delta=L では topological two-point function / RSET が発散します。
+
+flat control では
+
+\[
+\Delta G^+_{\rm topo}=\sum_{n\neq0}G_M^+(x,\gamma^n x'),
+\qquad
+\Delta\langle\phi^2\rangle=\frac{1}{12a^2},
+\quad a^2=L^2-\Delta^2,
+\]
+
+\[
+\Delta\langle T_{\mu\nu}\rangle_{\rm topo}
+=
+\frac{\pi^2}{90a^4}(\eta_{\mu\nu}-4e_\mu e_\nu)
+\]
+
+を image sum から得て、保存則・対称性・trace=0・収束を検証しました。chronology horizon では RSET が a^-4、tensor invariant が a^-8 で発散します。
+
+v10 の Delta=2L は timelike deck branch なので、spacelike cylinder の Casimir tensorを解析接続して global RSET とみなしません。したがって v10 の formal Z2 値 D_past=0.9973002039... は残しても、global RSET / backreaction / state regularity / stability は別ゲートで失敗または未証明となり、globally certified past communication にはしません。
+
+SA については MP 部分の axial helical norm
+
+\[
+\ell^2=U^2\rho^2\alpha^2-\Delta^2/U^2
+\]
+
+と null-orbit 近傍の universal image divergence を導出しました。ただし全 SA の positive Hadamard base state が未構成なので、不足 mode data を埋めて full sum 成功とはしていません。
+
+**[全導出・物理的に犠牲にしている点](notes/cbssl-global-rset-v11.md)** ／ [forward](src/symbolic/cbssl_global_rset_v11.py) ／ [独立 verifier](src/symbolic/cbssl_global_rset_verify_v11.py) ／ [候補台帳](architecture/cbssl-global-rset-v11.json)
+
+---
+
 ## CBSSL v10：3+1D renormalized RSETで R_sc=0 のregulated core
 
 > **判定：A=0 / B=1 / C=0。** CBSSL v9をtoy lawとして固定し、実在する4D renormalized stress tensorを半古典Einstein方程式へ直接入れ、regulated chronology coreで `R_sc=0` を解きました。
