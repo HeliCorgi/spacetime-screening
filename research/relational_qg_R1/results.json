@@ -1,0 +1,362 @@
+{
+  "original_control": {
+    "scope": "Anchored 81-state submodel, not the unpinned original uniform q mode",
+    "energies": [
+      0.0999218123861977,
+      0.19991560896083152,
+      0.2913564269668675
+    ],
+    "interaction_shift": -0.008552978568597866,
+    "adiabatic_pi_phase_time": 367.30977733582824,
+    "quench_dynamics": [
+      {
+        "t": 0,
+        "negativity": 5.033261743114297e-16,
+        "purity": 0.9999999999999988,
+        "trace_error": 5.551115123125783e-16
+      },
+      {
+        "t": 50,
+        "negativity": 0.09643670528966956,
+        "purity": 0.9519217534812142,
+        "trace_error": 2.220446049250313e-16
+      },
+      {
+        "t": 100,
+        "negativity": 0.17323277484172503,
+        "purity": 0.9250258442110887,
+        "trace_error": 4.440892098500626e-16
+      },
+      {
+        "t": 200,
+        "negativity": 0.36100216141485963,
+        "purity": 0.9673858044066271,
+        "trace_error": 4.440892098500626e-16
+      },
+      {
+        "t": 367.30977733582824,
+        "negativity": 0.4516345088897853,
+        "purity": 0.9078853748950905,
+        "trace_error": 4.440892098500626e-16
+      }
+    ],
+    "uniform_massless_vacuum_E0_ratio": [
+      {
+        "q": -2,
+        "ratio": 54.598150033144236
+      },
+      {
+        "q": -1,
+        "ratio": 7.38905609893065
+      },
+      {
+        "q": 0,
+        "ratio": 1
+      },
+      {
+        "q": 1,
+        "ratio": 0.1353352832366127
+      },
+      {
+        "q": 2,
+        "ratio": 0.01831563888873418
+      }
+    ]
+  },
+  "tensor_bootstrap": {
+    "coefficient_solution": "{(d, 2*d, -2*d, d)}",
+    "exact_gauge_null_identity": true,
+    "null_momentum_counts": [
+      {
+        "p_cov": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "field_kernel_dimension": 6,
+        "gauge_rank": 4,
+        "physical_polarizations": 2
+      },
+      {
+        "p_cov": [
+          5,
+          3,
+          4,
+          0
+        ],
+        "field_kernel_dimension": 6,
+        "gauge_rank": 4,
+        "physical_polarizations": 2
+      },
+      {
+        "p_cov": [
+          3,
+          1,
+          2,
+          2
+        ],
+        "field_kernel_dimension": 6,
+        "gauge_rank": 4,
+        "physical_polarizations": 2
+      }
+    ],
+    "TT_projector_checks": [
+      {
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "eigenvalues": [
+          0,
+          0,
+          0,
+          0,
+          0.9999999999999998,
+          1
+        ],
+        "projector_error": 2.220446049250313e-16
+      },
+      {
+        "direction": [
+          1,
+          2,
+          3
+        ],
+        "eigenvalues": [
+          -1.8812670562536693e-16,
+          -1.0383962423053756e-16,
+          -5.981324310733135e-17,
+          3.77309756135934e-19,
+          0.9999999999999998,
+          0.9999999999999999
+        ],
+        "projector_error": 1.1102230246251565e-16
+      },
+      {
+        "direction": [
+          3,
+          -4,
+          2
+        ],
+        "eigenvalues": [
+          -2.0423475224030603e-16,
+          -3.98657224823987e-17,
+          -1.48512103609542e-17,
+          2.0170833608509788e-16,
+          0.9999999999999999,
+          1
+        ],
+        "projector_error": 1.1102230246251565e-16
+      }
+    ],
+    "scope": "Linearized, flat-background, two-derivative sector; not emergent from the original graph Hamiltonian"
+  },
+  "gaussian_predictions": {
+    "kernel": "erf(r/(2 ell))/r",
+    "center_kernel": "1/(sqrt(pi) ell)",
+    "center_force": "G m1 m2 r/(6 sqrt(pi) ell^3) + O(r^3)",
+    "rows": [
+      {
+        "r_over_ell": 0.1,
+        "ell_times_kernel": 0.5637197779701661,
+        "force_over_Newton": 0.00009389067571565629,
+        "potential_Fourier_error": 2.220446049250313e-16,
+        "b_over_ell": 0.1,
+        "lensing_over_point_GR": 0.0024968776025398763,
+        "lensing_integral_error": 4.3021142204224816e-16
+      },
+      {
+        "r_over_ell": 0.5,
+        "ell_times_kernel": 0.5526527803364738,
+        "force_over_Newton": 0.011322857824208332,
+        "potential_Fourier_error": 1.1102230246251565e-16,
+        "b_over_ell": 0.5,
+        "lensing_over_point_GR": 0.06058693718652421,
+        "lensing_integral_error": 4.440892098500626e-16
+      },
+      {
+        "r_over_ell": 1,
+        "ell_times_kernel": 0.5204998778130465,
+        "force_over_Newton": 0.08110858834532414,
+        "potential_Fourier_error": 1.1102230246251565e-16,
+        "b_over_ell": 1,
+        "lensing_over_point_GR": 0.22119921692859512,
+        "lensing_integral_error": 1.1102230246251565e-16
+      },
+      {
+        "r_over_ell": 2,
+        "ell_times_kernel": 0.4213503964748574,
+        "force_over_Newton": 0.42759329552912007,
+        "potential_Fourier_error": 0,
+        "b_over_ell": 2,
+        "lensing_over_point_GR": 0.6321205588285577,
+        "lensing_integral_error": 4.440892098500626e-16
+      },
+      {
+        "r_over_ell": 3,
+        "ell_times_kernel": 0.3220350488251036,
+        "force_over_Newton": 0.7877097126398667,
+        "potential_Fourier_error": 0,
+        "b_over_ell": 3,
+        "lensing_over_point_GR": 0.8946007754381357,
+        "lensing_integral_error": 2.220446049250313e-16
+      },
+      {
+        "r_over_ell": 4,
+        "ell_times_kernel": 0.24883056625473818,
+        "force_over_Newton": 0.9539882943107686,
+        "potential_Fourier_error": 2.7755575615628914e-17,
+        "b_over_ell": 4,
+        "lensing_over_point_GR": 0.9816843611112658,
+        "lensing_integral_error": 0
+      },
+      {
+        "r_over_ell": 6,
+        "ell_times_kernel": 0.16666298491716688,
+        "force_over_Newton": 0.9995601503471612,
+        "potential_Fourier_error": 5.551115123125783e-17,
+        "b_over_ell": 6,
+        "lensing_over_point_GR": 0.9998765901959134,
+        "lensing_integral_error": 0
+      },
+      {
+        "r_over_ell": 10,
+        "ell_times_kernel": 0.09999999999984625,
+        "force_over_Newton": 0.9999999999201082,
+        "potential_Fourier_error": 1.3877787807814457e-17,
+        "b_over_ell": 10,
+        "lensing_over_point_GR": 0.9999999999861121,
+        "lensing_integral_error": 5.551115123125783e-17
+      }
+    ],
+    "radiation": [
+      {
+        "omega_ell_over_c": 0.01,
+        "power_ratio": 0.9999000049998333
+      },
+      {
+        "omega_ell_over_c": 0.1,
+        "power_ratio": 0.990049833749168
+      },
+      {
+        "omega_ell_over_c": 0.5,
+        "power_ratio": 0.7788007830714049
+      },
+      {
+        "omega_ell_over_c": 1,
+        "power_ratio": 0.36787944117144233
+      },
+      {
+        "omega_ell_over_c": 2,
+        "power_ratio": 0.01831563888873418
+      },
+      {
+        "omega_ell_over_c": 3,
+        "power_ratio": 0.00012340980408667956
+      }
+    ],
+    "scope": "Leading order G, GM/(c^2 ell)<<1; source-to-probe interaction includes two identical form-factor vertices"
+  },
+  "quantum_phase": {
+    "geometry": "A0=0,A1=d; B0=3d,B1=4d; sharply localized, static held packets",
+    "DeltaK": "2 K(3d)-K(4d)-K(2d)",
+    "phase": "chi=(G mA mB t/hbar) DeltaK",
+    "small_d": "DeltaK=d^2/(6 sqrt(pi) ell^3)+O(d^4/ell^5)",
+    "large_d": "DeltaK=-1/(12d)+exponentially small terms",
+    "phase_zero_d_over_ell": 0.654976082565983,
+    "phase_zero_ell_DeltaK": 1.1102230246251565e-16,
+    "rows": [
+      {
+        "d_over_ell": 0.1,
+        "ell_DeltaK": 0.0009020897314692133,
+        "point_Newton_ell_DeltaK": -0.8333333333333333,
+        "tau": 10,
+        "negativity": 0.002255216681911613,
+        "negativity_formula": 0.0022552166819115676
+      },
+      {
+        "d_over_ell": 0.25,
+        "ell_DeltaK": 0.004492433676672292,
+        "point_Newton_ell_DeltaK": -0.3333333333333333,
+        "tau": 10,
+        "negativity": 0.011230139776774048,
+        "negativity_formula": 0.011230139776774041
+      },
+      {
+        "d_over_ell": 0.5,
+        "ell_DeltaK": 0.006357237250116166,
+        "point_Newton_ell_DeltaK": -0.16666666666666666,
+        "tau": 10,
+        "negativity": 0.015890416965225973,
+        "negativity_formula": 0.015890416965225657
+      },
+      {
+        "d_over_ell": 0.75,
+        "ell_DeltaK": -0.006460376414817837,
+        "point_Newton_ell_DeltaK": -0.1111111111111111,
+        "tau": 10,
+        "negativity": 0.016148132503738824,
+        "negativity_formula": 0.016148132503738866
+      },
+      {
+        "d_over_ell": 1,
+        "ell_DeltaK": -0.026110865079388423,
+        "point_Newton_ell_DeltaK": -0.08333333333333333,
+        "tau": 10,
+        "negativity": 0.06509188530754997,
+        "negativity_formula": 0.06509188530755013
+      },
+      {
+        "d_over_ell": 1.5,
+        "ell_DeltaK": -0.04490368555857327,
+        "point_Newton_ell_DeltaK": -0.05555555555555555,
+        "tau": 10,
+        "negativity": 0.11131845126487501,
+        "negativity_formula": 0.11131845126487522
+      },
+      {
+        "d_over_ell": 2,
+        "ell_DeltaK": -0.04050459449324717,
+        "point_Newton_ell_DeltaK": -0.041666666666666664,
+        "tau": 10,
+        "negativity": 0.10057068842960674,
+        "negativity_formula": 0.10057068842960673
+      },
+      {
+        "d_over_ell": 4,
+        "ell_DeltaK": -0.020833331406176103,
+        "point_Newton_ell_DeltaK": -0.020833333333333332,
+        "tau": 10,
+        "negativity": 0.051989189573789896,
+        "negativity_formula": 0.051989189573789805
+      },
+      {
+        "d_over_ell": 0.654976082565983,
+        "ell_DeltaK": 1.1102230246251565e-16,
+        "point_Newton_ell_DeltaK": -0.1272311089694458,
+        "tau": 10,
+        "negativity": 2.4134947938674605e-16,
+        "negativity_formula": 2.7755575615628914e-16
+      }
+    ],
+    "scope": "Leading quasistatic order G; packet overlap, traps, radiation, and laboratory decoherence omitted"
+  },
+  "spatial_operator": {
+    "n_sites": 17,
+    "spectral_min": 0.13765935331999354,
+    "spectral_max": 0.9999999999999997,
+    "constant_mode_error": 4.440892098500626e-16,
+    "relabel_covariance_error": 3.3306690738754696e-16,
+    "point_pair_lower_bound": "H_two_body >= -G mA mB/(sqrt(pi) ell)",
+    "important_limit": "Smoothing does not remove the k=0 cosmological/vacuum mode"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "source_sha256": "c6bf9d646cc22025c75e82da0b111e537093426c1368d66327c7f04fb028a4d6"
+}
