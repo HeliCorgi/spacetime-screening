@@ -1,5 +1,51 @@
 # Spacetime Screening
 
+## CBSSL v12：causal shortcut と topological scale を分離
+
+> **判定：A=0 / B=1 / C=0。** v11 の「同じ \(\Delta,L\) が Hadamard topology と past advance を同時に背負う」構造をやめ、pure spatial \(S^1\) compactification と別の traversable-handle clock shift に分離しました。
+
+明示的 witness は
+
+\[
+A_{\rm topo}=4r,\qquad
+d_{\rm ext}=r,\qquad
+\tau_{\rm shortcut}=r/4,\qquad
+\Delta_{\rm clock}=2r,
+\]
+
+なので
+
+\[
+\tau_{\rm shortcut}+d_{\rm ext}
+<
+\Delta_{\rm clock}
+<
+A_{\rm topo},
+\qquad
+\Delta t_{\rm loop}=-3r/4.
+\]
+
+これで **safe spatial image state と classical past advance の parameter region は同時に存在**します。
+
+ただし safe \(S^1\) Casimir は \(T^t{}_t\neq T^x{}_x\) なので v10 の constant core はそのままでは閉じません。periodic axion の winding stressを一自由度追加して \((r,Q^2,f^2)\) を再solveすると
+
+\[
+r=101.4934144364\ldots l_P,\qquad
+Q^2=20601.8104706021\ldots,
+\]
+
+\[
+f^2=6.70713731076\times10^{-8}l_P^{-2}
+\]
+
+で safe-topology sector の semiclassical residual を再び数値0にできます。
+
+**まだ A ではありません。** 今回計算した global/topological RSET は safe \(S^1\) の分だけで、別に入れた chronology handle 自体の support-field \(G^+\) / RSET は未構成です。time-shift handle も eternal/prescribed としており、formation と chronology-horizon crossing は解いていません。
+
+**[全導出・追加で犠牲にした物理](notes/cbssl-decoupled-shortcut-v12.md)** ／ [forward](src/symbolic/cbssl_decoupled_shortcut_v12.py) ／ [独立 verifier](src/symbolic/cbssl_decoupled_shortcut_verify_v12.py) ／ [候補台帳](architecture/cbssl-decoupled-shortcut-v12.json)
+
+---
+
 ## CBSSL v11：Global RSET / helical chronology quotient
 
 > **判定：A=0 / B=0 / C=1（対象は v10 simple helical quotient の標準 Hadamard image-state completion）。**
