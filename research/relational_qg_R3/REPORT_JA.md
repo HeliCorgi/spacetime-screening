@@ -202,7 +202,7 @@ full spatial potentialとdelta Aを展開すると `A_2 Delta g=S[f]/4`。Sはf�
 
 二次初期dataは積分として
 
-$$g(x)=-\frac1{16\pi}\int K_2(|x-y|)S[f](y)d^3y$$
+$$g(x)=-\frac1{16\pi}\int K_2(|x-y|)S_f(y)d^3y$$
 
 と構成できる。これは摂動的な初期constraintの解であって、全非線形evolutionではない。
 
