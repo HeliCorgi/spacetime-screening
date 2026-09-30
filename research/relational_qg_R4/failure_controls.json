@@ -1,0 +1,39 @@
+{
+  "all_invalid_inputs_rejected": true,
+  "rows": [
+    {
+      "test": "old_kinetic_ordering",
+      "exit_code": 1,
+      "last_error_line": "AssertionError: unrepaired kinetic ordering",
+      "elapsed_seconds": 4.027028647999941
+    },
+    {
+      "test": "full_evolution_overclaim",
+      "exit_code": 1,
+      "last_error_line": "AssertionError: unsupported claim: full_evolution_solved",
+      "elapsed_seconds": 3.9521437719999994
+    },
+    {
+      "test": "wrong_ADM_mass",
+      "exit_code": 1,
+      "last_error_line": "AssertionError: independent ADM mass mismatch",
+      "elapsed_seconds": 3.9148928949998663
+    },
+    {
+      "test": "changed_lapse_profile",
+      "exit_code": 1,
+      "last_error_line": "AssertionError: center lapse",
+      "elapsed_seconds": 3.845910842000194
+    },
+    {
+      "test": "unsupported_epsilon",
+      "exit_code": 1,
+      "last_error_line": "ValueError: this released solver is restricted to 0<epsilon<=4"
+    },
+    {
+      "test": "invalid_sigma",
+      "exit_code": 1,
+      "last_error_line": "ValueError: modes>=8, quadrature>=4*modes, sigma>0, scale>0 required"
+    }
+  ]
+}
