@@ -1,0 +1,43 @@
+{
+  "base_sha": "39fa44951a83d44d3bdae88ee6a0ab9b6ad5af34",
+  "ordering": {
+    "physical_test": "nonzero transverse tracefree Fourier modes 1 and 5",
+    "lapse": "1+cos(4x)/2",
+    "lapse_range": [
+      "1/2",
+      "3/2"
+    ],
+    "old_matrix": "Matrix([[4/9, 41/729], [41/729, 4/729]])",
+    "repaired_matrix": "Matrix([[4/9, 1/81], [1/81, 4/729]])",
+    "old_determinant": "-385/531441",
+    "repaired_determinant": "5/2187",
+    "old_eigenvalues": [
+      "-0.00160440301166923605061337",
+      "0.451535815906045093389434"
+    ],
+    "repaired_eigenvalues": [
+      "0.00514002045225183264479806",
+      "0.444791392442124024694022"
+    ],
+    "repaired_ordering": "S N S",
+    "positivity_scope": "tracefree kinetic quadratic form, N>0; not full interacting energy or stability",
+    "initial_p_zero_constraints_unchanged": true,
+    "on_shell_ghost_proved": false
+  },
+  "radial_action": {
+    "weak_strong_identity": true,
+    "tensor_rough_laplacian_identity": true,
+    "radial_principal_coefficient": "-exp(-3*zeta) d_r^6 delta_zeta",
+    "general_time_symmetric_principal_symbol": "-M_P^2 sqrt(gamma) ell^4 (gamma^ij k_i k_j)^3/4",
+    "principal_elliptic_for_positive_spatial_metric": true,
+    "global_invertibility_proved": false,
+    "asymptotic_boundary": "4 M_ADM in G=1 units"
+  },
+  "implemented_checks_passed": true,
+  "full_quantum_gravity": false,
+  "environment": {
+    "python": "3.13.5",
+    "sympy": "1.14.0"
+  },
+  "source_sha256": "c1bbbe218b33a505ae50983d3eee7ea080513164c35576d1b7a54950c4f0d3a1"
+}

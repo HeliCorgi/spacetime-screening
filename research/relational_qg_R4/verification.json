@@ -1,0 +1,52 @@
+{
+  "verified": true,
+  "kinetic": {
+    "old_smallest": "-0.001604403011669236050613372872858249861743",
+    "repaired_smallest": "0.005140020452251832644798062875382689083439",
+    "scope": "positive-lapse TT test, not an on-shell curved-background ghost theorem"
+  },
+  "profile": {
+    "epsilon": "1.0",
+    "sample_checks": [
+      {
+        "r_over_ell": "0.05",
+        "hamiltonian_error": "-7.3529353711495033779e-10",
+        "lapse_error": "-1.569876437399638979e-9"
+      },
+      {
+        "r_over_ell": "0.3",
+        "hamiltonian_error": "-2.3647802959711653751e-10",
+        "lapse_error": "3.6552255064685594974e-10"
+      },
+      {
+        "r_over_ell": "1.0",
+        "hamiltonian_error": "-5.810783012983817617e-11",
+        "lapse_error": "-7.656257091221993631e-11"
+      },
+      {
+        "r_over_ell": "3.0",
+        "hamiltonian_error": "9.691560453331849275e-13",
+        "lapse_error": "-1.3579288687362872691e-11"
+      },
+      {
+        "r_over_ell": "10.0",
+        "hamiltonian_error": "2.599143554763958576e-14",
+        "lapse_error": "-6.399397053948108622e-14"
+      }
+    ],
+    "lapse_bound": "0.648012407527751703851013198578",
+    "adm_mass_over_rest": "0.837121485578098449420419550256",
+    "mean_lapse": "0.710961647291668627273502073573",
+    "evaluation_dps": 65,
+    "note": "one stored reference profile checked independently; coefficients remain double precision"
+  },
+  "evidence_sha256": "3ce4a9ad1e4bf8decbf87976f586487fb70232c4ff76289d0ea22e55acf041ef",
+  "verifier_sha256": "4f305a6d6e254675f6bb083e01a61f3f5865b60bfa706cf05769d2c13a7188d1",
+  "full_evolution_solved": false,
+  "generic_stability_proved": false,
+  "environment": {
+    "python": "3.13.5",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  }
+}
