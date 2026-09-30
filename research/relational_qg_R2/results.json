@@ -1,0 +1,273 @@
+{
+  "base_sha": "4c600df0b331a19f9d21384bf58472bee01a5a16",
+  "model": "R2 = R1 kernel + conserving dynamical/operational closure",
+  "new_fundamental_parameters": 0,
+  "source_conservation": {
+    "fourier_convention": "exp(-i omega t+i k.x)",
+    "branch_difference": "T00=Qij d_i d_j f; T0i=-Qij d_t d_j f; Tij=Qij d_t^2 f",
+    "exact_flat_conservation": true,
+    "density_only_time_switching_rejected": true,
+    "bond_stress": "tau_ij=sum_(a<b) F_ab,i r_ab,j integral_0^1 delta(x-x_b-lambda r_ab) d lambda",
+    "bond_divergence": "d_j tau_ij=-sum_a F_a,i delta(x-x_a)",
+    "bond_weak_identity_residual": "0",
+    "quadratic_phase_cancels_for_equal_mass_and_COM_branches": true,
+    "quartic_cross_moment": "6 Delta M2_A Delta M2_B",
+    "scope": "Exact linear-source identity and Newtonian mass/momentum balance; not a microscopic apparatus action or nonlinear gravitational Ward identity."
+  },
+  "retarded_and_vacuum": {
+    "Gret": "theta(t)/(8 pi^(3/2) ell r) [exp(-(r-t)^2/(4ell^2))-exp(-(r+t)^2/(4ell^2))]",
+    "normalization": "integral_0^infty Gret dt=K_ell(r)/(4pi), c=1",
+    "mode_noise": "C_lambda(k,t)=hbar exp(-ell^2 k^2) cos(k t)/(2k), vacuum",
+    "same_form_factor_in_response_and_noise": true,
+    "rows": [
+      {
+        "t_over_ell": "0.5",
+        "r_over_ell": "1.0",
+        "ell2_Gret": "0.0082976038384607246894336749517276",
+        "spacelike": true,
+        "spectral_error": "0.0"
+      },
+      {
+        "t_over_ell": "1.0",
+        "r_over_ell": "2.0",
+        "ell2_Gret": "0.0075583904954581469563944294790825",
+        "spacelike": true,
+        "spectral_error": "1.0440487e-53"
+      },
+      {
+        "t_over_ell": "3.0",
+        "r_over_ell": "1.0",
+        "ell2_Gret": "0.0078471446563852855856311592425933",
+        "spacelike": false,
+        "spectral_error": "0.0"
+      },
+      {
+        "t_over_ell": "2.0",
+        "r_over_ell": "0.0",
+        "ell2_Gret": "0.01651660253224845997296722595703",
+        "spacelike": false,
+        "spectral_error": "0.0"
+      }
+    ],
+    "static_sum_rule_errors": [
+      "0.0",
+      "0.0",
+      "6.6819118e-52"
+    ],
+    "past_time_response": false,
+    "strict_metric_microcausality": false,
+    "vacuum_energy_removed": false,
+    "scope": "Linear canonical field remains ordinary massless TT; these are smeared couplings/observables, not a new fundamental Hadamard state."
+  },
+  "vacuum_dephasing": {
+    "source": "f(t,x)=exp(-t^2/(2tau^2)) w_sigma(x), integral w=1; Q STF constant",
+    "quadrupole": "Delta I_ij(t)=2 Q_ij exp(-t^2/(2tau^2))",
+    "overlap": "|<env_1|env_0>|=exp(-Gamma)",
+    "Gamma": "4 G QijQij tau^2/[5 hbar (ell^2+sigma^2+tau^2)^3], c=1",
+    "source_strength_GQ2_over_hbar_ell4": "0.01",
+    "sigma_over_ell": "0.2",
+    "rows": [
+      {
+        "pulse_tau_over_ell": "1.0",
+        "Gamma": "0.00094232233454704450022992664962948",
+        "visibility": "0.99905812151171768530852088287878"
+      },
+      {
+        "pulse_tau_over_ell": "2.0",
+        "Gamma": "0.00024995300883433914424088271404976",
+        "visibility": "0.99975007822681643768657488441995"
+      },
+      {
+        "pulse_tau_over_ell": "4.0",
+        "Gamma": "0.000025870284118843118147414466890538",
+        "visibility": "0.99997413005051407138760677482616"
+      },
+      {
+        "pulse_tau_over_ell": "8.0",
+        "Gamma": "0.0000018609228271265388089491339578728",
+        "visibility": "0.99999813907890438927137876698855"
+      }
+    ],
+    "environment_Gram_eigenvalues": [
+      "0.000081174654906298220823215662187248",
+      "0.010608351105455249706398258364019",
+      "0.26590832967550067385189916184995",
+      "3.7234021445641377782208793641238"
+    ],
+    "noise_free_state_selection_used": false,
+    "scope": "Exactly conserved prescribed branch difference in linear TT vacuum theory. Not an entire material apparatus, and not the same pulse as R1 static holding."
+  },
+  "recoil_phase": {
+    "R1_point_probe_node": "0.6549760825659879748269154472304",
+    "apparatus_positions": "A_b=[b d,-s-b d/eta]; B_b=[(3+b)d,3d+s-b d/eta]; masses=[m,eta*m]",
+    "phase": "sum_(p,q) m_p m_q [K(r00)+K(r11)-K(r01)-K(r10)]/m^2",
+    "rows": [
+      {
+        "support_offset_over_ell": "5.0",
+        "M_support_over_m": 100,
+        "node_d_over_ell": "0.73431661730325674844313333833137",
+        "phase_at_R1_node": "0.0046674001792801770825188521262454"
+      },
+      {
+        "support_offset_over_ell": "10.0",
+        "M_support_over_m": 100,
+        "node_d_over_ell": "0.67067832921751421618112074206861",
+        "phase_at_R1_node": "0.00092695749200626953821779445484952"
+      },
+      {
+        "support_offset_over_ell": "100.0",
+        "M_support_over_m": 100,
+        "node_d_over_ell": "0.65500150621407715708558442206456",
+        "phase_at_R1_node": "0.0000015146574909671334352821110938095"
+      }
+    ],
+    "large_support_mass_controls": [
+      {
+        "mass_ratio": 10,
+        "node_d_over_ell": "0.73458739627708167494671265789332"
+      },
+      {
+        "mass_ratio": 100,
+        "node_d_over_ell": "0.73431661730325674844313333833137"
+      },
+      {
+        "mass_ratio": 1000,
+        "node_d_over_ell": "0.73429123569119263997727575907426"
+      }
+    ],
+    "point_probe_node_is_universal": false,
+    "scope": "Quasistatic nonrelativistic branch energies including both recoils; splitting radiation and holding-device internal stress not computed by this table."
+  },
+  "preferred_frame": {
+    "preferred_frame_is_extra_structure": true,
+    "rest_frame_static_kernel": "4pi exp[-ell^2(q_perp^2+gamma^2 q_parallel^2)]/(q_perp^2+q_parallel^2)",
+    "small_beta_potential_kernel": "K_beta=K+ell^2 beta^2 d_z^2 K+O(beta^4)",
+    "far_field_kernel": "1/r+ell^2 beta^2 (3 cos(theta)^2-1)/r^3+O(beta^4/r^3,ell^4/r^5)",
+    "node": "d*/ell=d0+beta^2[A+B cos(theta)^2]+O(beta^4), point probes only",
+    "A": "0.02592657482855588442770049285336",
+    "B": "0.24970831679732633413035624505512",
+    "scope": "Uniform boost relative to the fixed foliation; not a covariant completion or an observational bound."
+  },
+  "orbits_and_balance": {
+    "J_series_over_x3": "1/(6*sqrt(pi)) - z**2/(40*sqrt(pi)) + z**4/(448*sqrt(pi)) + O(z**6)",
+    "Omega_squared": "G M J(r/ell)/r^3",
+    "Omega0_squared": "G M/(6 sqrt(pi) ell^3)",
+    "epicycle_squared": "G M [J/r^3+(dJ/dr)/r^2]>0",
+    "E_circular": "-G mu M K(r)+G mu M J/(2r)",
+    "P_quadrupole": "(32/5)G mu^2 r^4 Omega^6/c^5 exp[-4 ell^2 Omega^2/c^2]",
+    "balance": "dr/dt=-P/(dE_circular/dr)",
+    "epsilon_GM_over_c2ell": "0.01",
+    "rows": [
+      {
+        "r_over_ell": "0.1",
+        "Omega_over_Omega0": "0.99925038825016347074409024310424",
+        "radial_frequency_over_Omega": "1.9992500737121499700499327482291",
+        "E_over_GmuM_ell": "-0.56325032459158791624787750303392",
+        "power_form_factor_only": "0.99625141651815864643793233476205"
+      },
+      {
+        "r_over_ell": "0.5",
+        "Omega_over_Omega0": "0.9814905306630021257651477981901",
+        "radial_frequency_over_Omega": "1.9812968428551801868788411996622",
+        "E_over_GmuM_ell": "-0.54132992251226549385942290124548",
+        "power_form_factor_only": "0.99638324177936759740563302259751"
+      },
+      {
+        "r_over_ell": "1.0",
+        "Omega_over_Omega0": "0.92874505572039530271224122256331",
+        "radial_frequency_over_Omega": "1.9257883290466488457074981645396",
+        "E_over_GmuM_ell": "-0.4799455836403844673648043156521",
+        "power_form_factor_only": "0.99676091366175014229334946333953"
+      },
+      {
+        "r_over_ell": "2.0",
+        "Omega_over_Omega0": "0.75393437211834098452000999255305",
+        "radial_frequency_over_Omega": "1.7151092252222051122980493437242",
+        "E_over_GmuM_ell": "-0.31445207259257739317037222113099",
+        "power_form_factor_only": "0.99786431734481561197664089291283"
+      },
+      {
+        "r_over_ell": "4.0",
+        "Omega_over_Omega0": "0.39814808323622348864600322547369",
+        "radial_frequency_over_Omega": "1.1604397268445620686668591000995",
+        "E_over_GmuM_ell": "-0.12958202946589210523452589237255",
+        "power_form_factor_only": "0.99940393503340220399563005826966"
+      },
+      {
+        "r_over_ell": "6.0",
+        "Omega_over_Omega0": "0.22184042298303591321697383943322",
+        "radial_frequency_over_Omega": "1.0037544389852186083127853950192",
+        "E_over_GmuM_ell": "-0.083366305721570138176691539830289",
+        "power_form_factor_only": "0.99981491339909294747623515984466"
+      }
+    ],
+    "radiative_time_definition": "u=(32/5) nu epsilon^(5/2) t sqrt(GM/ell^3), nu=mu/M",
+    "elapsed": [
+      {
+        "r_over_ell": "2.0",
+        "radiative_time_u_from_r6": "237.52733056629855827344248420235"
+      },
+      {
+        "r_over_ell": "1.0",
+        "radiative_time_u_from_r6": "365.56842366543666259002672405328"
+      },
+      {
+        "r_over_ell": "0.5",
+        "radiative_time_u_from_r6": "743.22893348962802556363654203735"
+      },
+      {
+        "r_over_ell": "0.25",
+        "radiative_time_u_from_r6": "2141.2666023165038256341517389344"
+      },
+      {
+        "r_over_ell": "0.1",
+        "radiative_time_u_from_r6": "11724.055659541949409317383743242"
+      }
+    ],
+    "small_r_balance": "dr/dt=-(16/5)G mu Omega0^4/c^5 exp[-4ell^2Omega0^2/c^2] r^3+O(r^5)",
+    "classical_formal_late_time": "r proportional t^-1/2; Omega0-Omega proportional t^-1; P proportional t^-2",
+    "classical_origin_reached_at_finite_time": false,
+    "quantum_crossover_r_over_ell": "(6 sqrt(pi)/g)^(1/4), g=mu^2 G M ell/hbar^2; L~hbar, not a sharp transition",
+    "quantum_core_oscillator_frequency": "omega_quantum=Omega0",
+    "max_1_minus_power_form_factor": "0.0037541991974590040005399498910037",
+    "scope": "Adiabatic leading-quadrupole closure of the specified weak-metric Newtonian model. No complete 1PN flux, detector waveform, physical overlap endpoint, or BH claim."
+  },
+  "trajectory": {
+    "steps": 20000,
+    "step": 0.01,
+    "GM_ell_mu": 1,
+    "max_absolute_energy_drift": 9.046557891689844e-09,
+    "max_angular_momentum_drift": 5.717648576819556e-15,
+    "scope": "Finite-step numerical control, not exact conservation proof."
+  },
+  "finite_particle_continuation": {
+    "H_N": "sum_a p_a^2/(2m_a)-G sum_(a<b) m_a m_b K_ell(|x_a-x_b|)",
+    "finite_N_lower_bound": "-G/(sqrt(pi) ell) sum_(a<b) m_a m_b",
+    "kernel_Hessian_operator_norm_bound": "(1/2+1/e)/(3 sqrt(pi) ell^3)",
+    "dimensionless_Hessian_bound": "0.16321618016139183171472461683368",
+    "classical_result": "Smooth globally Lipschitz finite-N force gives unique global Newtonian trajectories; pair coincidences are not ODE singularities.",
+    "quantum_result": "For fixed finite N and masses, the bounded real interaction is a bounded perturbation of the self-adjoint free kinetic operator.",
+    "head_on_crossings": 10,
+    "head_on_energy_error": 2.6627536287016085e-08,
+    "does_not_establish": [
+      "thermodynamic stability as N grows",
+      "geodesic completeness",
+      "bounded 4D curvature",
+      "regular relativistic collapse"
+    ]
+  },
+  "unresolved": [
+    "nonlinear generally covariant completion",
+    "preferred-foliation microscopic origin",
+    "vacuum energy and radiative stability",
+    "strong-curvature continuation",
+    "microscopic full apparatus and full 1PN radiation matching"
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "mpmath": "1.3.0",
+    "sympy": "1.14.0"
+  },
+  "source_sha256": "6a71d63dc763dcaca99fdca7639a93e5111102e49f53cb44ee4d17ccb3b5e089",
+  "all_implemented_assertions_passed": true
+}
