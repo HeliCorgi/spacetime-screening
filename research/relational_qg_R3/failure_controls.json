@@ -1,0 +1,30 @@
+{
+  "all_mutations_rejected": true,
+  "cases": [
+    {
+      "mutation": "wrong_phase",
+      "exit_code": 1,
+      "last_error_line": "AssertionError: P2 phase mismatch"
+    },
+    {
+      "mutation": "wrong_curvature",
+      "exit_code": 1,
+      "last_error_line": "AssertionError: curvature coefficient mismatch"
+    },
+    {
+      "mutation": "extra_mode",
+      "exit_code": 1,
+      "last_error_line": "AssertionError: physical dof overclaim"
+    },
+    {
+      "mutation": "binding_sign",
+      "exit_code": 1,
+      "last_error_line": "AssertionError: binding mismatch"
+    },
+    {
+      "mutation": "overclaim",
+      "exit_code": 1,
+      "last_error_line": "AssertionError: full QG overclaim"
+    }
+  ]
+}
