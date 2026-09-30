@@ -1,0 +1,49 @@
+{
+  "base_sha": "7e25b4db8a81b6287c9f07e593a1c0f2310132de",
+  "canonical": {
+    "independent_constraints": 5,
+    "second_class_rank": 2,
+    "first_class_count": 3,
+    "gravitational_dof": 2,
+    "scope": "Flat nonzero spatial Fourier mode; conditional nonlinear count uses invertibility of mixed constraint operator"
+  },
+  "radial_density": {
+    "P2_node": "0.349424262330022755999760847628939802681825647",
+    "P2_binding": "0.207591388559956560049490925954210057984988157",
+    "P2_core_frequency_squared": "0.471404520791031682933896241403232692856557292"
+  },
+  "binding_identity": "-I_rho_zeta/2 + M_rest",
+  "global_nonlinear_wellposedness_proved": false,
+  "evidence": {
+    "sha256": "c729e24ce208ea4601faa6bf7e96727364810af45a0225d9133f143ca7901853",
+    "mixture_checks": [
+      {
+        "order": 2,
+        "mixture_phase_residual": "-1.7861835899357335875889434754293425823763766e-44"
+      },
+      {
+        "order": 4,
+        "mixture_phase_residual": "2.71481065350379893093118494211516940058614107e-45"
+      },
+      {
+        "order": 8,
+        "mixture_phase_residual": "-1.5556563012025253897379901445148085163331822e-44"
+      },
+      {
+        "order": 16,
+        "mixture_phase_residual": "2.91164318861993981273536764847375732976666394e-44"
+      },
+      {
+        "order": 32,
+        "mixture_phase_residual": "-1.12338518951772703347058456443151349661598346e-44"
+      }
+    ]
+  },
+  "all_implemented_assertions_passed": true,
+  "environment": {
+    "python": "3.13.5",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "source_sha256": "632efe12d5988b13044b859452e0238a27535252922156c8ba1a2521deb744c6"
+}

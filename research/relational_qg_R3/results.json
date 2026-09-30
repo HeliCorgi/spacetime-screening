@@ -1,0 +1,104 @@
+{
+  "base_sha": "7e25b4db8a81b6287c9f07e593a1c0f2310132de",
+  "model": "R3_m nonlinear Hamiltonian candidate with preferred foliation and second-class trace constraint",
+  "new_assumptions": [
+    "pi=0 on the asymptotically-flat branch",
+    "finite polynomial A_m for a specified m",
+    "specified nonlinear curvature operator ordering"
+  ],
+  "matching": {
+    "curvature_coefficient": "1/2",
+    "static_lapse": "-rho/(2*A*M2*k**2)",
+    "static_conformal_factor": "rho/(2*A*M2*k**2)",
+    "flat_Dirac_symbol": "-A*M2*k**2",
+    "Dirac_block_determinant": "b1**2*b2**2",
+    "regular_branch_gravitational_dof": 2,
+    "TT_reduced_action": "M2/8 integral [hdot A hdot - dh A dh]",
+    "two_modes_scope": "Requires invertible {H,pi}, boundary conditions, and pi=0. No global rank or nonlinear well-posedness theorem is claimed.",
+    "ordinary_GR_limit": "ell=0: ADM GR restricted to maximal slicing where that slicing exists",
+    "full_GR_refoliation_algebra_proved": false
+  },
+  "hierarchy": {
+    "A_m": "(1+ell^2 L/m)^m",
+    "B_m": "(A_m-1)/L, polynomially extended at L=0",
+    "rows": [
+      {
+        "order": 2,
+        "point_probe_node": "0.349424262330022755999760847628939802681826",
+        "center_kernel": "0.707106781186547524400844362104849039284836",
+        "Omega0_squared_ell3_over_GM": "0.471404520791031682933896241403232692856557",
+        "gaussian_sigma1_binding_magnitude": "0.207591388559956560049490925954210057984988"
+      },
+      {
+        "order": 4,
+        "point_probe_node": "0.503102583065247601640581238854684687380947",
+        "center_kernel": "0.625",
+        "Omega0_squared_ell3_over_GM": "0.166666666666666666666666666666666666666667",
+        "gaussian_sigma1_binding_magnitude": "0.203822327873281593939594622727179674450033"
+      },
+      {
+        "order": 8,
+        "point_probe_node": "0.579509411251238501485210333679683299417497",
+        "center_kernel": "0.592478142830134546812426233091758277057021",
+        "Omega0_squared_ell3_over_GM": "0.121533978016437855756395124736770928627081",
+        "gaussian_sigma1_binding_magnitude": "0.201726049868693742048178783832552047199298"
+      },
+      {
+        "order": 16,
+        "point_probe_node": "0.6174743328458465355600277844348749585847",
+        "center_kernel": "0.577857792377471923828125",
+        "Omega0_squared_ell3_over_GM": "0.10627269744873046875",
+        "gaussian_sigma1_binding_magnitude": "0.200619098600297465666388483416583836612402"
+      },
+      {
+        "order": 32,
+        "point_probe_node": "0.636302248671700081295485085835452979551746",
+        "center_kernel": "0.570910583987260533578245786008011043821542",
+        "Omega0_squared_ell3_over_GM": "0.0998313589485920058716058205041330787010346",
+        "gaussian_sigma1_binding_magnitude": "0.200050308643998636507871743454717708923003"
+      }
+    ],
+    "Gaussian_point_probe_node": "0.654976082565987974826915447230402808182225",
+    "Gaussian_Omega0_squared_ell3_over_GM": "0.0940315972579593811580132419267954309740084",
+    "point_probe_node_is_apparatus_independent": false,
+    "nonlinear_m_to_infinity_limit_proved": false
+  },
+  "operator_variation": {
+    "dA_inverse": "-A_inverse (dA) A_inverse",
+    "analytic_energy_derivative": "-0.186631944444444444444444444444444444444444",
+    "finite_difference_energy_derivative": "-0.186631944444444444444444471774449802812071",
+    "error": "2.73300053583676268837590380699165506660523e-26",
+    "naively_freezing_A_is_accepted": false,
+    "scope": "Noncommuting finite-matrix test of the operator variation, not a full curved-space field-equation solve"
+  },
+  "P2_binding": {
+    "kernel": "[1-exp(-sqrt(2)r/ell)(1+r/(sqrt(2)ell))]/r",
+    "effective_density": "exp(-r/a)/(8 pi a^3), a=ell/sqrt(2)",
+    "center_kernel_ell": "0.707106781186547524400844362104849039284836",
+    "Omega0_squared_ell3_over_GM": "0.471404520791031682933896241403232692856557",
+    "binding_mass_formula": "M_ADM=M_rest-(G/2) int rho(x)rho(y)K_m(|x-y|) dxdy +O(G^2), c=1",
+    "binding_coefficient_pair_space": "0.207591388559956560049490925954210057984988",
+    "binding_coefficient_field_space": "0.207591388559956560049490925954210057984988",
+    "mass_ratio_example_epsilon_0p01_through_first_correction": "0.99792408611440043439950509074045789942015",
+    "binding_scope": "Time-symmetric, smooth, weak asymptotically-flat initial data; integrated constraint through quadratic metric order. No full nonlinear initial-data solution is asserted."
+  },
+  "limits": {
+    "maximal_trace_constraint_on_homogeneous_positive_density_flat_slice": "pi=0 gives p=0 and R3=0, so H=rho cannot vanish; not a cosmological branch",
+    "optional_CMC_replacement": "C=pi-sqrt(gamma)*<pi/sqrt(gamma)>; global mode must be retained, not counted as a propagating scalar",
+    "CMC_extension_has_been_fully_analyzed": false,
+    "homogeneous_CMC_control": "If this extension is used, L=R3=0 leaves the GR flat-FLRW equations unchanged",
+    "dust_FLRW_R4": "4/(3*t**2)",
+    "dust_FLRW_Kretschmann": "80/(27*t**4)",
+    "generic_singularity_resolution": false,
+    "strict_metric_microcausality": false,
+    "radiatively_protected_coefficients": false,
+    "complete_quantum_gravity": false
+  },
+  "all_implemented_assertions_passed": true,
+  "environment": {
+    "python": "3.13.5",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "source_sha256": "aa81e1e32406d373b0db13c0cf6bb826b1da04d7100a75b98e3517cda3f03c03"
+}
