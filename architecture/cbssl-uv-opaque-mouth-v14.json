@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "batch_id": "cbssl-uv-opaque-mouth-v14",
+  "base_sha": "7f7fbec0b56c9592459e79b0c84a8be4ced8950c",
+  "classification": {
+    "A": 0,
+    "B": 0,
+    "C": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": "cbssl-local-two-mouth-uv-filter-v14",
+      "status": "C",
+      "mouth_action": "S_sheet=1/2 int dt [zeta (d_t phi)^2-mu phi^2]",
+      "positive_local_energy": true,
+      "transmission": "t(u)=2 i u/(u+i)^2 for mu=zeta=1 in r units",
+      "flux_unitary": true,
+      "signal_band": "t(1)=1",
+      "UV_scaling": "t~2 i/u",
+      "chronology_path_stages": 2,
+      "chronology_amplitude": "q2=t^2~u^-2",
+      "null_RSET": "diverges because u^2 |q2| -> 4",
+      "verdict": "genuine local UV opacity, but insufficient suppression for finite 4D point-split RSET"
+    },
+    {
+      "candidate_id": "cbssl-four-stage-passive-uv-filter-v14",
+      "status": "C",
+      "chronology_path_stages": 4,
+      "chronology_amplitude": "q4=t^4~16/u^4",
+      "signal_band": "q4(1)=1",
+      "real_axis_null_phi2_absolute_integral": "pi/2",
+      "real_axis_null_RSET_absolute_integral": "5*pi/2",
+      "real_axis_RSET_finite": true,
+      "feedback_denominator": "D4(u)=1-q4(u) exp(-i (3/4) u)",
+      "real_axis_feedback_zero": false,
+      "upper_half_plane_pole": "omega*r=i*9.273959245421315...",
+      "linear_stability": false,
+      "growth_time_over_r": "0.1078288...",
+      "verdict": "UV/RSET fixed on the real axis, but past-advance feedback creates an exponentially growing mode"
+    },
+    {
+      "candidate_id": "cbssl-v13-supergaussian-causal-audit-v14",
+      "status": "C",
+      "profile": "q(u)=0.5 exp(-u^4)",
+      "real_axis_bounded": true,
+      "passive_causal_Hinfinity": false,
+      "reason": "on u=R exp(i*pi/4), |q|=0.5 exp(R^4) is unbounded in the upper half plane",
+      "verdict": "v13 profile is an effective real-frequency regulator, not an accepted microscopic passive causal mouth transfer"
+    }
+  ],
+  "general_finite_stage_result": {
+    "imaginary_axis_gain": "G_N(y)=[2y/(1+y)^2]^N exp(a y), a=3/4",
+    "y_to_zero": "0",
+    "y_to_infinity": "infinity for every finite N when a>0",
+    "consequence": "at least one upper-half-plane feedback pole exists for every finite-stage filter in this family",
+    "pole_locations": {
+      "N2": "2.2965083134846744",
+      "N4": "9.273959245421315",
+      "N6": "18.72684416216217",
+      "N8": "29.37568443570611"
+    },
+    "causal_delay_tradeoff": "adding filter delay tau changes exp(a y) to exp((a-tau)y); avoiding the asymptotic pole requires tau>=a, which removes net past advance"
+  },
+  "physics_cost": {
+    "achieved": [
+      "local positive-energy mouth action",
+      "second-order time dynamics",
+      "exact flux-unitary frequency-dependent scattering",
+      "UV opacity",
+      "perfect transmission at chosen finite signal band"
+    ],
+    "failed": [
+      "natural two-mouth filter does not regularize RSET",
+      "four-stage regularization is linearly unstable under past-advance feedback",
+      "v13 super-Gaussian profile fails passive causal upper-half-plane boundedness"
+    ]
+  },
+  "literature": [
+    {
+      "authors": "G. Dvali; G. Gabadadze; M. Shifman",
+      "title": "(Quasi)Localized Gauge Field on a Brane: Dissipating Cosmic Radiation to Extra Dimensions?",
+      "year": 2000,
+      "url": "https://arxiv.org/abs/hep-th/0010071"
+    },
+    {
+      "authors": "A. Donini",
+      "title": "A scalar field coupled to a brane in M4 x S1. Part I",
+      "year": 2015,
+      "url": "https://arxiv.org/abs/1512.03978"
+    },
+    {
+      "authors": "S.-Y. Lin",
+      "title": "Unruh-DeWitt detectors as mirrors: Dynamical reflectivity and Casimir effect",
+      "year": 2018,
+      "url": "https://arxiv.org/abs/1806.00816"
+    },
+    {
+      "authors": "M. Visser",
+      "title": "Hawking's chronology protection conjecture: singularity structure of the quantum stress-energy tensor",
+      "year": 1993,
+      "url": "https://arxiv.org/abs/hep-th/9303023"
+    },
+    {
+      "authors": "B. S. Kay; M. J. Radzikowski; R. M. Wald",
+      "title": "Quantum Field Theory on Spacetimes with a Compactly Generated Cauchy Horizon",
+      "year": 1997,
+      "url": "https://arxiv.org/abs/gr-qc/9603012"
+    }
+  ],
+  "verification": {
+    "forward": "src/symbolic/cbssl_uv_opaque_mouth_v14.py",
+    "independent_verifier": "src/symbolic/cbssl_uv_opaque_mouth_verify_v14.py",
+    "remote_CI": "pending",
+    "human_review_for_A": true
+  }
+}
