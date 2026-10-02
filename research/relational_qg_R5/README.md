@@ -37,8 +37,7 @@ Optional figures (NumPy/Matplotlib are needed only for this rendering command):
 python research/relational_qg_R5/plot_results.py
 ```
 
-- [Allowed coefficient region](allowed_region.png)
-- [Different phase zeros in the same family](phase_family.png)
+- `allowed_region.png` and `phase_family.png` are reproducible local plot outputs from `plot_results.py`; they are not required by CI.
 - [Forward evidence](results.json)
 - [Independent verification](verification.json)
 - [Negative evidence controls](failure_controls.json)
