@@ -1,0 +1,139 @@
+{
+  "name": "B1 auxiliary-volume candidate (a specified VCDM potential)",
+  "framework_is_existing_research": true,
+  "potential_selected_by_inverse_design_not_derived_from_quantum_gravity": true,
+  "action_check": {
+    "lambda_eliminated": "-2*phi/3 - 2*ad/(N*a)",
+    "L_reduced": "M^2 a^3 [shear_dot_squared/(2N)+2 phi adot/a+N(phi^2/3-V)] + a^3 chidot^2/(2N)",
+    "full_Dirac_reduction_recomputed": false
+  },
+  "homogeneous_family": {
+    "potential": "-mu**2*cos(ph/mu)**2/3 + ph**2/3",
+    "rho_c": "M**2*mu**2/3",
+    "a": "a_b [1+(mu*(1+w)*t/2)^2]^(1/[3(1+w)])",
+    "rho": "rho_c/[1+(mu*(1+w)*t/2)^2]",
+    "phi": "mu atan(mu*(1+w)*t/2)",
+    "Hdot_at_bounce": "mu**2*(w + 1)/6",
+    "positive_density_dust_background": true,
+    "stiff_scalar_background": true,
+    "all_symbolic_residuals_zero": true
+  },
+  "anisotropic_stiff_family": {
+    "beta_i": "d_i asinh(mu*t), sum d_i=0",
+    "chi": "chi0+M sqrt(2/3-sum d_i^2) asinh(mu*t)",
+    "allowed_anisotropy": "sum d_i^2<2/3; positive canonical matter density",
+    "shear_fraction": "(3/2) sum d_i^2; constant, not an isotropization mechanism",
+    "isotropic_R_over_mu2": "-2*(x**2 - 3)/(3*(x**2 + 1)**2)",
+    "isotropic_K_over_mu4": "4*(5*x**4 - 12*x**2 + 9)/(27*(x**2 + 1)**4)",
+    "causal_geodesic_completeness_argument": "Every a_i is positive and smooth at finite t; a_i~|t|^(1/3 +/- d_i), and |d_i|<2/3. For conserved spatial momenta, proper/affine length has asymptotic integrand bounded below by a positive multiple of |t|^p with p>-1/3>-1.",
+    "all_symbolic_residuals_zero": true,
+    "samples": [
+      {
+        "d": [
+          "0",
+          "0",
+          "0"
+        ],
+        "constant_shear_fraction": "0"
+      },
+      {
+        "d": [
+          "1/5",
+          "-1/10",
+          "-1/10"
+        ],
+        "constant_shear_fraction": "9/100"
+      },
+      {
+        "d": [
+          "1/2",
+          "-1/4",
+          "-1/4"
+        ],
+        "constant_shear_fraction": "9/16"
+      }
+    ],
+    "generic_inhomogeneous_stability": false
+  },
+  "linear_scalar_check": {
+    "source": "arXiv:2212.13561v2 Eqs. 33-40, specialized to canonical stiff matter",
+    "variables": "x=mu*t; q=k/(a*mu); Z=z^2/a^2; k!=0 physical scalar modes",
+    "Z": "6*(x**2 + 1)*(q**2*x**2 + q**2 + 1)/(q**2*x**4 + q**2*x**2 + x**2 + 2)",
+    "c_R_squared": "(3*q**4*x**8 + 9*q**4*x**6 + 9*q**4*x**4 + 3*q**4*x**2 + 6*q**2*x**6 + 30*q**2*x**4 + 42*q**2*x**2 + 18*q**2 + 3*x**4 + 13*x**2 + 2)/(3*(x**2 + 1)*(q**2*x**2 + q**2 + 1)*(q**2*x**4 + q**2*x**2 + x**2 + 2))",
+    "Z_positive_all_finite_x_q": true,
+    "c_R_squared_positive_all_finite_x_q": true,
+    "homogeneous_limits_removable_in_reduced_coefficients": true,
+    "c_R_squared_at_bounce": "(9*q**2 + 1)/(3*(q**2 + 1))",
+    "strict_metric_microcausality_proved": false,
+    "strong_coupling_control": false,
+    "all_perturbations_bounded_for_all_times_proved": false,
+    "full_quantum_Hadamard_completion": false,
+    "leading_UV_boundary_layer_solution": "(u + I)*exp(-I*u)/sqrt(u**2 + 2)",
+    "rows": [
+      {
+        "mu_t": 0,
+        "k_over_a_mu": "1/10",
+        "Z": "3.03000000000000000",
+        "c_R_squared": "0.359735973597359736"
+      },
+      {
+        "mu_t": 0,
+        "k_over_a_mu": "1",
+        "Z": "6.00000000000000000",
+        "c_R_squared": "1.66666666666666667"
+      },
+      {
+        "mu_t": 0,
+        "k_over_a_mu": "10",
+        "Z": "303.000000000000000",
+        "c_R_squared": "2.97359735973597360"
+      },
+      {
+        "mu_t": 1,
+        "k_over_a_mu": "1/10",
+        "Z": "4.05298013245033113",
+        "c_R_squared": "1.02597065316192702"
+      },
+      {
+        "mu_t": 1,
+        "k_over_a_mu": "1",
+        "Z": "7.20000000000000000",
+        "c_R_squared": "1.53333333333333333"
+      },
+      {
+        "mu_t": 1,
+        "k_over_a_mu": "10",
+        "Z": "11.8817733990147783",
+        "c_R_squared": "1.01960640149008651"
+      },
+      {
+        "mu_t": 2,
+        "k_over_a_mu": "1/10",
+        "Z": "5.08064516129032258",
+        "c_R_squared": "1.15360983102918587"
+      },
+      {
+        "mu_t": 2,
+        "k_over_a_mu": "1",
+        "Z": "6.92307692307692308",
+        "c_R_squared": "1.13333333333333333"
+      },
+      {
+        "mu_t": 2,
+        "k_over_a_mu": "10",
+        "Z": "7.49252243270189432",
+        "c_R_squared": "1.00199083388556884"
+      }
+    ]
+  },
+  "all_implemented_symbolic_checks_passed": true,
+  "full_quantum_gravity_claim": false,
+  "generic_singularity_resolution_claim": false,
+  "observational_fit_performed": false,
+  "environment": {
+    "python": "3.13.5",
+    "sympy": "1.14.0"
+  },
+  "source_sha256": "0d4578492dc35e549f81f5c09f6355e7b2a69859807fb0a86a2fca6fdebee651"
+}
+
