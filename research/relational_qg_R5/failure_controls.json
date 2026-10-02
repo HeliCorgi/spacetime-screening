@@ -1,0 +1,55 @@
+{
+  "base_evidence_sha256": "7e12cc55a9c99df1d68e934c097d94beb1005a631cfb173617df1982754b57b1",
+  "verifier_sha256": "b3a48fcbe74fe899b5b9516243a2242a9423840e2290aa2eaddbc9f663f43f05",
+  "mutations": [
+    {
+      "mutation": "wrong_equal_factor_phase",
+      "exit_code": 1,
+      "success_file_written": false,
+      "error": "AssertionError: independent node mismatch"
+    },
+    {
+      "mutation": "wrong_scalar_tensor_coefficient",
+      "exit_code": 1,
+      "success_file_written": false,
+      "error": "AssertionError: incorrect scalar/TT coefficient"
+    },
+    {
+      "mutation": "full_gravity_overclaim",
+      "exit_code": 1,
+      "success_file_written": false,
+      "error": "AssertionError: physical overclaim"
+    },
+    {
+      "mutation": "mismatched_factor_coefficients",
+      "exit_code": 1,
+      "success_file_written": false,
+      "error": "AssertionError: coefficient/factor mismatch"
+    },
+    {
+      "mutation": "fabricated_small_kappa",
+      "exit_code": 1,
+      "success_file_written": false,
+      "error": "AssertionError: positive integral mismatch: kappa"
+    },
+    {
+      "mutation": "fabricated_uniform_bound",
+      "exit_code": 1,
+      "success_file_written": false,
+      "error": "AssertionError: robust upper bound mismatch"
+    },
+    {
+      "mutation": "uniqueness_overclaim",
+      "exit_code": 1,
+      "success_file_written": false,
+      "error": "AssertionError: uniqueness overclaim"
+    },
+    {
+      "mutation": "stale_source",
+      "exit_code": 1,
+      "success_file_written": false,
+      "error": "AssertionError: stale forward evidence"
+    }
+  ],
+  "all_negative_controls_rejected": true
+}
