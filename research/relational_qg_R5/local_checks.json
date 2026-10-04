@@ -1,0 +1,9 @@
+{
+  "forward_repeat_byte_identical": true,
+  "source_evidence_chain_valid": true,
+  "new_scripts_compile": true,
+  "package_local_links_checked": 11,
+  "forward_repeat_seconds": 1.268198636999955,
+  "remote_CI_run": null,
+  "base_sha": "a0639dd49667a1dac9585aafa99df6408125c472"
+}
