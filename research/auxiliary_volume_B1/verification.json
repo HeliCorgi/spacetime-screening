@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "method": "direct 4D Christoffel and Riemann contractions",
+  "R_over_mu2": "-2*(t**2 - 3)/(3*(t**2 + 1)**2)",
+  "K_over_mu4": "4*(5*t**4 - 12*t**2 + 9)/(27*(t**2 + 1)**4)",
+  "isotropic_R_upper": "2 mu^2",
+  "isotropic_K_upper": "4 mu^4/3",
+  "source_sha256": "7ca5a669606f72bb0d46fc450ab1e07bfc4092d8d9480f44a27b14ee473889ed",
+  "forward_evidence_sha256": "fc648f778cae22090b9bab3a91f8f4f680d43ce3a2a278b58cd41129cc32607d",
+  "full_theory_health_claim": false
+}
