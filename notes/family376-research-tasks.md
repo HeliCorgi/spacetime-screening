@@ -4,6 +4,13 @@
 
 ## R1 — 有限energyの閉じたdriverによる相対論的shear gate（最優先）
 
+**2026-10-08 追記（部分達成）:** [閉じたMaxwell・二流体driverの構成と検証](r1-closed-shear-driver.md)を追加した。
+正密度・総charge零の厳密なEinstein/Maxwell初期拘束、entropyを閉じる粘性構成則、
+非粘性の有限時間小振幅構成、近平衡の凍結rest-frame principal-symbol補題、
+正粘性の線形gateのuniform誤差と独立有理区間検算を得た。
+**正粘性を含むfull nonlinear Einstein gateの具体的振幅・全区間誤差は未認定。R1全体は完了にしない。**
+[実行範囲と再現](r1-closed-shear-validation.md)。以下の元仕様は保持する。
+
 **数学的定式化。** まず空間compactなCauchy面 \(\Sigma\simeq\mathbb T^3\) を選び、有限時間 \([0,T]\) だけを対象にする。物理的な長さL、速度A、smoothな時間pulse bを固定し、非相対論的参照gate
 
 \[
